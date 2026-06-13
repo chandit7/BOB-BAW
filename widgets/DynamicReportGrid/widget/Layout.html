@@ -1,0 +1,99 @@
+<div class="dynamic-report-grid" role="region" aria-label="Dynamic data grid">
+  <!-- Loading Overlay -->
+  <div class="grid-loading-overlay" role="status" aria-live="polite" aria-hidden="true">
+    <div class="grid-loading-spinner"></div>
+    <div class="grid-loading-text">Loading data...</div>
+  </div>
+
+  <!-- Error Message -->
+  <div class="grid-error-message" role="alert" aria-live="assertive" aria-hidden="true">
+    <svg class="grid-error-icon" width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm-.5 3h1v5h-1V4zm.5 7.5c-.4 0-.8-.3-.8-.8s.3-.8.8-.8.8.3.8.8-.4.8-.8.8z"/>
+    </svg>
+    <span class="grid-error-text">Error loading data</span>
+  </div>
+
+  <!-- Grid Controls -->
+  <div class="grid-controls">
+    <div class="grid-info" aria-live="polite">
+      <span class="grid-showing-text">Showing 0-0 of 0 rows</span>
+    </div>
+    <div class="grid-page-size-selector">
+      <label for="grid-page-size" class="grid-label">Rows per page:</label>
+      <select id="grid-page-size" class="grid-page-size-select" aria-label="Select rows per page">
+        <option value="10">10</option>
+        <option value="25" selected>25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Data Grid Table -->
+  <div class="grid-table-wrapper" role="region" aria-label="Data table" tabindex="0">
+    <table class="grid-table" role="table">
+      <thead role="rowgroup">
+        <tr role="row" class="grid-header-row">
+          <!-- Column headers will be dynamically generated -->
+        </tr>
+      </thead>
+      <tbody role="rowgroup" class="grid-body">
+        <!-- Data rows will be dynamically generated -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- No Data Message -->
+  <div class="grid-no-data" role="status" aria-hidden="true">
+    <svg class="grid-no-data-icon" width="48" height="48" viewBox="0 0 32 32" fill="currentColor">
+      <path d="M16 2C8.3 2 2 8.3 2 16s6.3 14 14 14 14-6.3 14-14S23.7 2 16 2zm0 26C9.4 28 4 22.6 4 16S9.4 4 16 4s12 5.4 12 12-5.4 12-12 12z"/>
+      <path d="M16 8c-.6 0-1 .4-1 1v8c0 .6.4 1 1 1s1-.4 1-1V9c0-.6-.4-1-1-1z"/>
+    </svg>
+    <div class="grid-no-data-text">No data available</div>
+  </div>
+
+  <!-- Pagination Controls -->
+  <div class="grid-pagination" role="navigation" aria-label="Pagination">
+    <div class="grid-page-info" aria-live="polite">
+      <span class="grid-page-text">Page 1 of 1</span>
+    </div>
+    <div class="grid-pagination-buttons">
+      <button 
+        type="button" 
+        class="grid-btn grid-btn-first" 
+        aria-label="Go to first page"
+        disabled>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M11 8L6 3v10l5-5zM5 3H4v10h1V3z"/>
+        </svg>
+      </button>
+      <button 
+        type="button" 
+        class="grid-btn grid-btn-prev" 
+        aria-label="Go to previous page"
+        disabled>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M10 13L5 8l5-5v10z"/>
+        </svg>
+      </button>
+      <button 
+        type="button" 
+        class="grid-btn grid-btn-next" 
+        aria-label="Go to next page"
+        disabled>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M6 3l5 5-5 5V3z"/>
+        </svg>
+      </button>
+      <button 
+        type="button" 
+        class="grid-btn grid-btn-last" 
+        aria-label="Go to last page"
+        disabled>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M5 8l5 5V3L5 8zM11 3h1v10h-1V3z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>

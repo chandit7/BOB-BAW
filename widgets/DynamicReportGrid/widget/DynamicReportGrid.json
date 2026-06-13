@@ -1,0 +1,294 @@
+{
+  "name": "DynamicReportGrid",
+  "description": "Production-ready server-side paginated data grid with dynamic configuration, SQL template support, and zero client-side data caching for IBM Business Automation Workflow",
+  "bindingType": {
+    "name": "GridData",
+    "type": "GridDataResult",
+    "isList": false
+  },
+  "configOptions": [
+    {
+      "name": "columns",
+      "type": "GridColumn",
+      "isList": true,
+      "label": "Column Definitions",
+      "description": "Array of column definitions with field names, labels, types, and formatters",
+      "required": true
+    },
+    {
+      "name": "pageSize",
+      "type": "Integer",
+      "label": "Initial Page Size",
+      "description": "Initial number of rows per page (10, 25, 50, or 100)",
+      "default": 25
+    },
+    {
+      "name": "pageSizeOptions",
+      "type": "Integer",
+      "isList": true,
+      "label": "Page Size Options",
+      "description": "Available page size options for user selection",
+      "default": [10, 25, 50, 100]
+    },
+    {
+      "name": "defaultSortColumn",
+      "type": "String",
+      "label": "Default Sort Column",
+      "description": "Column field name to sort by default",
+      "default": ""
+    },
+    {
+      "name": "defaultSortDirection",
+      "type": "String",
+      "label": "Default Sort Direction",
+      "description": "Default sort direction: ASC or DESC",
+      "default": "ASC"
+    },
+    {
+      "name": "size",
+      "type": "String",
+      "label": "Grid Size",
+      "description": "Grid sizing mode: small, medium, or large",
+      "default": "medium"
+    },
+    {
+      "name": "showStatusColumn",
+      "type": "Boolean",
+      "label": "Show Status Column",
+      "description": "Display status indicators with color-coded badges",
+      "default": false
+    },
+    {
+      "name": "statusColumnField",
+      "type": "String",
+      "label": "Status Column Field",
+      "description": "Field name containing status values (success, warning, error, info)",
+      "default": "status"
+    },
+    {
+      "name": "enableKeyboardNav",
+      "type": "Boolean",
+      "label": "Enable Keyboard Navigation",
+      "description": "Enable full keyboard navigation support",
+      "default": true
+    },
+    {
+      "name": "labels",
+      "type": "GridLabels",
+      "label": "UI Labels",
+      "description": "Configurable text labels for internationalization",
+      "default": {}
+    },
+    {
+      "name": "loadingText",
+      "type": "String",
+      "label": "Loading Text",
+      "description": "Text displayed during data fetch operations",
+      "default": "Loading data..."
+    },
+    {
+      "name": "errorText",
+      "type": "String",
+      "label": "Error Text",
+      "description": "Text displayed when query fails",
+      "default": "Error loading data. Please try again."
+    },
+    {
+      "name": "noDataText",
+      "type": "String",
+      "label": "No Data Text",
+      "description": "Text displayed when no results are found",
+      "default": "No data available"
+    },
+    {
+      "name": "autoRefresh",
+      "type": "Boolean",
+      "label": "Auto Refresh on Events",
+      "description": "Automatically trigger data refresh when pagination/sort events fire",
+      "default": false
+    }
+  ],
+  "businessObjects": [
+    {
+      "name": "GridColumn",
+      "type": "businessObject",
+      "description": "Column definition for dynamic grid configuration",
+      "properties": [
+        {
+          "name": "field",
+          "type": "String",
+          "required": true,
+          "description": "Database column name or field identifier"
+        },
+        {
+          "name": "label",
+          "type": "String",
+          "required": true,
+          "description": "Display label for column header"
+        },
+        {
+          "name": "dataType",
+          "type": "String",
+          "required": false,
+          "description": "Data type: string, number, date, boolean, currency"
+        },
+        {
+          "name": "formatter",
+          "type": "String",
+          "required": false,
+          "description": "Formatter function name: date, currency, percentage, custom"
+        },
+        {
+          "name": "width",
+          "type": "String",
+          "required": false,
+          "description": "Column width (e.g., '150px', '20%', 'auto')"
+        },
+        {
+          "name": "sortable",
+          "type": "Boolean",
+          "required": false,
+          "description": "Whether column is sortable"
+        },
+        {
+          "name": "align",
+          "type": "String",
+          "required": false,
+          "description": "Text alignment: left, center, right"
+        }
+      ]
+    },
+    {
+      "name": "GridDataResult",
+      "type": "businessObject",
+      "description": "Server response containing current page data and metadata",
+      "properties": [
+        {
+          "name": "rows",
+          "type": "ANY",
+          "isList": true,
+          "required": true,
+          "description": "Array of row objects for current page"
+        },
+        {
+          "name": "totalRows",
+          "type": "Integer",
+          "required": true,
+          "description": "Total number of rows in complete result set"
+        },
+        {
+          "name": "currentPage",
+          "type": "Integer",
+          "required": true,
+          "description": "Current page number (1-based)"
+        },
+        {
+          "name": "pageSize",
+          "type": "Integer",
+          "required": true,
+          "description": "Number of rows per page"
+        },
+        {
+          "name": "sortColumn",
+          "type": "String",
+          "required": false,
+          "description": "Current sort column field name"
+        },
+        {
+          "name": "sortDirection",
+          "type": "String",
+          "required": false,
+          "description": "Current sort direction: ASC or DESC"
+        },
+        {
+          "name": "error",
+          "type": "String",
+          "required": false,
+          "description": "Error message if query failed"
+        },
+        {
+          "name": "executionTime",
+          "type": "Integer",
+          "required": false,
+          "description": "Query execution time in milliseconds"
+        }
+      ]
+    },
+    {
+      "name": "GridLabels",
+      "type": "businessObject",
+      "description": "Configurable UI labels for internationalization",
+      "properties": [
+        {
+          "name": "firstPage",
+          "type": "String",
+          "required": false,
+          "description": "Label for first page button"
+        },
+        {
+          "name": "previousPage",
+          "type": "String",
+          "required": false,
+          "description": "Label for previous page button"
+        },
+        {
+          "name": "nextPage",
+          "type": "String",
+          "required": false,
+          "description": "Label for next page button"
+        },
+        {
+          "name": "lastPage",
+          "type": "String",
+          "required": false,
+          "description": "Label for last page button"
+        },
+        {
+          "name": "pageInfo",
+          "type": "String",
+          "required": false,
+          "description": "Template for page info display (e.g., 'Page {current} of {total}')"
+        },
+        {
+          "name": "rowsPerPage",
+          "type": "String",
+          "required": false,
+          "description": "Label for rows per page selector"
+        },
+        {
+          "name": "showing",
+          "type": "String",
+          "required": false,
+          "description": "Template for showing info (e.g., 'Showing {start}-{end} of {total}')"
+        }
+      ]
+    }
+  ],
+  "changeFunction": true,
+  "events": [
+    {
+      "name": "fetchData",
+      "description": "Fired when grid needs data - connect to service flow to fetch data"
+    },
+    {
+      "name": "pageChange",
+      "description": "Fired when user navigates to a different page"
+    },
+    {
+      "name": "sortChange",
+      "description": "Fired when user changes sort column or direction"
+    },
+    {
+      "name": "pageSizeChange",
+      "description": "Fired when user changes page size"
+    },
+    {
+      "name": "dataLoaded",
+      "description": "Fired when data fetch completes successfully"
+    },
+    {
+      "name": "dataError",
+      "description": "Fired when data fetch fails"
+    }
+  ]
+}
