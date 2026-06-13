@@ -351,6 +351,30 @@
         "DynamicReportGrid"
       ],
       "created": "2026-06-13T06:52:51.665574Z"
+    },
+    "TableData": {
+      "classId": "/12.21bdaba4-37ee-4d81-b59d-d9a9ecd64bd1",
+      "description": "Generic JSON contract for dynamic table - contains columns, data, and pagination",
+      "widgets": [
+        "DynamicServiceTable"
+      ],
+      "created": "2026-06-13T15:05:58.485450Z"
+    },
+    "TableColumn": {
+      "classId": "/12.449b8d08-15ea-464d-8cd5-decce4e85716",
+      "description": "Column descriptor for dynamic table rendering",
+      "widgets": [
+        "DynamicServiceTable"
+      ],
+      "created": "2026-06-13T15:05:58.486046Z"
+    },
+    "TablePagination": {
+      "classId": "/12.4ab19a0f-b212-4862-a393-4fa2a1e0c2a8",
+      "description": "Pagination metadata for dynamic table",
+      "widgets": [
+        "DynamicServiceTable"
+      ],
+      "created": "2026-06-13T15:05:58.486464Z"
     }
   },
   "notes": {

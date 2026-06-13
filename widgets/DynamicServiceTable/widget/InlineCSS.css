@@ -1,0 +1,492 @@
+/* DynamicServiceTable Widget Styles - IBM Carbon Design System */
+/* Font sizes based on @bpm-font-size-base (14px) from Carbon theme */
+
+.dt-container {
+	width: 100%;
+	min-height: 400px;
+	font-family: 'IBM Plex Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 14px; /* @bpm-font-size-base */
+	background: #ffffff;
+	border: 1px solid #e0e0e0; /* Gray 20 */
+	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+/* Header Section */
+.dt-container .dt-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 1.5rem;
+	border-bottom: 1px solid #e0e0e0;
+	background: #f4f4f4; /* Gray 10 */
+}
+
+.dt-container .dt-title-area {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.dt-container .dt-title {
+	font-size: 16px;
+	font-weight: 600;
+	color: #161616; /* Gray 100 */
+	line-height: 1.5;
+}
+
+.dt-container .dt-record-count {
+	font-size: 13px;
+	font-weight: 400;
+	color: #525252; /* Gray 70 */
+	padding: 0.25rem 0.75rem;
+	background: #e0e0e0; /* Gray 20 */
+	border-radius: 12px;
+}
+
+.dt-container .dt-toolbar {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.dt-container .dt-btn-icon {
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4px;
+	transition: background-color 0.2s ease;
+}
+
+.dt-container .dt-btn-icon:hover {
+	background: #e0e0e0; /* Gray 20 */
+}
+
+.dt-container .dt-btn-icon:active {
+	background: #c6c6c6; /* Gray 30 */
+}
+
+.dt-container .dt-btn-icon svg {
+	fill: #161616; /* Gray 100 */
+}
+
+/* Loading Overlay */
+.dt-container .dt-loading-overlay {
+	position: absolute;
+	top: 60px; /* Below header */
+	left: 0;
+	right: 0;
+	bottom: 60px; /* Above pagination */
+	background: rgba(255, 255, 255, 0.9);
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	z-index: 10;
+	gap: 1rem;
+}
+
+.dt-container .dt-loading-overlay.active {
+	display: flex;
+}
+
+.dt-container .dt-spinner {
+	width: 48px;
+	height: 48px;
+	border: 4px solid #e0e0e0; /* Gray 20 */
+	border-top-color: #0f62fe; /* Blue 60 */
+	border-radius: 50%;
+	animation: dt-spin 0.8s linear infinite;
+}
+
+@keyframes dt-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.dt-container .dt-loading-msg {
+	font-size: 14px;
+	color: #525252; /* Gray 70 */
+	font-weight: 500;
+}
+
+/* Table Wrapper - Scrollable */
+.dt-container .dt-table-wrap {
+	flex: 1;
+	overflow: auto;
+	position: relative;
+}
+
+/* Table Styles */
+.dt-container .dt-table {
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: auto;
+}
+
+/* Table Header */
+.dt-container .dt-thead {
+	position: sticky;
+	top: 0;
+	z-index: 5;
+	background: #f4f4f4; /* Gray 10 */
+}
+
+.dt-container .dt-thead tr {
+	border-bottom: 1px solid #e0e0e0; /* Gray 20 */
+}
+
+.dt-container .dt-thead th {
+	padding: 0.875rem 1rem;
+	text-align: left;
+	font-size: 13px;
+	font-weight: 600;
+	color: #161616; /* Gray 100 */
+	line-height: 1.33;
+	letter-spacing: 0.16px;
+	white-space: nowrap;
+	background: #f4f4f4; /* Gray 10 */
+	border-bottom: 1px solid #c6c6c6; /* Gray 30 */
+}
+
+/* Sortable Column Headers */
+.dt-container .dt-thead th.sortable {
+	cursor: pointer;
+	user-select: none;
+	position: relative;
+	padding-right: 2rem;
+	transition: background-color 0.2s ease;
+}
+
+.dt-container .dt-thead th.sortable:hover {
+	background: #e0e0e0; /* Gray 20 */
+}
+
+.dt-container .dt-thead th.sortable::after {
+	content: '⇅';
+	position: absolute;
+	right: 0.5rem;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 14px;
+	color: #8d8d8d; /* Gray 50 */
+	opacity: 0.5;
+}
+
+.dt-container .dt-thead th.sortable.sort-active::after {
+	opacity: 1;
+	color: #0f62fe; /* Blue 60 */
+}
+
+.dt-container .dt-thead th.sortable.sort-asc::after {
+	content: '▲';
+}
+
+.dt-container .dt-thead th.sortable.sort-desc::after {
+	content: '▼';
+}
+
+/* Table Body */
+.dt-container .dt-tbody tr {
+	border-bottom: 1px solid #e0e0e0; /* Gray 20 */
+	transition: background-color 0.2s ease;
+}
+
+.dt-container .dt-tbody tr:hover {
+	background: #f4f4f4; /* Gray 10 */
+}
+
+.dt-container .dt-tbody tr.selectable {
+	cursor: pointer;
+}
+
+.dt-container .dt-tbody tr.selectable:active {
+	background: #e0e0e0; /* Gray 20 */
+}
+
+.dt-container .dt-tbody td {
+	padding: 0.875rem 1rem;
+	font-size: 14px;
+	color: #161616; /* Gray 100 */
+	line-height: 1.43;
+	letter-spacing: 0.16px;
+	vertical-align: middle;
+}
+
+/* Empty State */
+.dt-container .dt-tbody .dt-empty {
+	text-align: center;
+	padding: 3rem 2rem;
+	color: #6f6f6f; /* Gray 60 */
+	font-style: italic;
+}
+
+/* Cell Type Styles */
+.dt-container .dt-tbody td.align-left {
+	text-align: left;
+}
+
+.dt-container .dt-tbody td.align-center {
+	text-align: center;
+}
+
+.dt-container .dt-tbody td.align-right {
+	text-align: right;
+}
+
+.dt-container .dt-tbody td.type-number,
+.dt-container .dt-tbody td.type-currency {
+	font-family: 'IBM Plex Mono', monospace;
+	text-align: right;
+}
+
+.dt-container .dt-tbody td.type-date,
+.dt-container .dt-tbody td.type-datetime {
+	white-space: nowrap;
+}
+
+/* Badge Styles */
+.dt-container .dt-badge {
+	display: inline-block;
+	padding: 0.25rem 0.75rem;
+	border-radius: 12px;
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 1.33;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.dt-container .dt-badge.badge-green {
+	background: #d0e2d0; /* Green 10 */
+	color: #0e6027; /* Green 70 */
+}
+
+.dt-container .dt-badge.badge-red {
+	background: #ffd7d9; /* Red 10 */
+	color: #750e13; /* Red 70 */
+}
+
+.dt-container .dt-badge.badge-yellow {
+	background: #fcf4d6; /* Yellow 10 */
+	color: #684e00; /* Yellow 70 */
+}
+
+.dt-container .dt-badge.badge-blue {
+	background: #d0e2ff; /* Blue 10 */
+	color: #002d9c; /* Blue 70 */
+}
+
+.dt-container .dt-badge.badge-gray {
+	background: #e0e0e0; /* Gray 20 */
+	color: #525252; /* Gray 70 */
+}
+
+/* Pagination Section */
+.dt-container .dt-pagination {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 1.5rem;
+	border-top: 1px solid #e0e0e0; /* Gray 20 */
+	background: #f4f4f4; /* Gray 10 */
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.dt-container .dt-page-info {
+	font-size: 13px;
+	color: #525252; /* Gray 70 */
+	font-weight: 400;
+}
+
+.dt-container .dt-page-size-wrap {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.dt-container .dt-page-size-wrap label {
+	font-size: 13px;
+	color: #525252; /* Gray 70 */
+	font-weight: 400;
+}
+
+.dt-container .dt-pagesize {
+	padding: 0.5rem 2rem 0.5rem 0.75rem;
+	border: 1px solid #8d8d8d; /* Gray 50 */
+	border-radius: 4px;
+	background: #ffffff;
+	color: #161616; /* Gray 100 */
+	font-size: 14px;
+	font-family: inherit;
+	cursor: pointer;
+	appearance: none;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%23161616' d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 0.5rem center;
+	background-size: 12px;
+}
+
+.dt-container .dt-pagesize:hover {
+	background-color: #f4f4f4; /* Gray 10 */
+}
+
+.dt-container .dt-pagesize:focus {
+	outline: 2px solid #0f62fe; /* Blue 60 */
+	outline-offset: 2px;
+}
+
+.dt-container .dt-page-nav {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.dt-container .dt-page-nav button {
+	padding: 0.5rem 1rem;
+	border: 1px solid #8d8d8d; /* Gray 50 */
+	border-radius: 4px;
+	background: #ffffff;
+	color: #161616; /* Gray 100 */
+	font-size: 14px;
+	font-weight: 500;
+	font-family: inherit;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.dt-container .dt-page-nav button:hover:not(:disabled) {
+	background: #f4f4f4; /* Gray 10 */
+	border-color: #161616; /* Gray 100 */
+}
+
+.dt-container .dt-page-nav button:active:not(:disabled) {
+	background: #e0e0e0; /* Gray 20 */
+}
+
+.dt-container .dt-page-nav button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+	border-color: #c6c6c6; /* Gray 30 */
+	color: #8d8d8d; /* Gray 50 */
+}
+
+.dt-container .dt-indicator {
+	font-size: 14px;
+	color: #161616; /* Gray 100 */
+	font-weight: 500;
+	min-width: 100px;
+	text-align: center;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 1056px) {
+	.dt-container .dt-header {
+		padding: 0.875rem 1rem;
+	}
+	
+	.dt-container .dt-pagination {
+		padding: 0.875rem 1rem;
+	}
+	
+	.dt-container .dt-tbody td,
+	.dt-container .dt-thead th {
+		padding: 0.75rem 0.875rem;
+	}
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 672px) {
+	.dt-container .dt-header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.75rem;
+	}
+	
+	.dt-container .dt-pagination {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	
+	.dt-container .dt-page-nav {
+		justify-content: space-between;
+	}
+	
+	.dt-container .dt-page-size-wrap {
+		justify-content: space-between;
+	}
+	
+	.dt-container .dt-table-wrap {
+		overflow-x: auto;
+	}
+	
+	.dt-container .dt-tbody td,
+	.dt-container .dt-thead th {
+		padding: 0.625rem 0.75rem;
+		font-size: 13px;
+	}
+}
+
+/* Print Styles */
+@media print {
+	.dt-container {
+		border: none;
+	}
+	
+	.dt-container .dt-toolbar,
+	.dt-container .dt-pagination {
+		display: none;
+	}
+	
+	.dt-container .dt-table-wrap {
+		overflow: visible;
+	}
+	
+	.dt-container .dt-tbody tr:hover {
+		background: transparent;
+	}
+	
+	.dt-container .dt-thead th.sortable::after {
+		display: none;
+	}
+}
+
+/* Accessibility - Focus States */
+.dt-container .dt-tbody tr.selectable:focus {
+	outline: 2px solid #0f62fe; /* Blue 60 */
+	outline-offset: -2px;
+}
+
+.dt-container .dt-tbody tr.selectable:focus:not(:focus-visible) {
+	outline: none;
+}
+
+/* Scrollbar Styling */
+.dt-container .dt-table-wrap::-webkit-scrollbar {
+	width: 12px;
+	height: 12px;
+}
+
+.dt-container .dt-table-wrap::-webkit-scrollbar-track {
+	background: #f4f4f4; /* Gray 10 */
+}
+
+.dt-container .dt-table-wrap::-webkit-scrollbar-thumb {
+	background: #c6c6c6; /* Gray 30 */
+	border-radius: 6px;
+}
+
+.dt-container .dt-table-wrap::-webkit-scrollbar-thumb:hover {
+	background: #8d8d8d; /* Gray 50 */
+}
+
+/* Made with Bob */

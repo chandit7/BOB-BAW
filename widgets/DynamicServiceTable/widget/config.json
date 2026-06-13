@@ -1,0 +1,110 @@
+{
+  "name": "DynamicServiceTable",
+  "description": "A reusable dynamic table widget that renders SQL query results with server-side pagination, sorting, and filtering for IBM Business Automation Workflow",
+  "bindingType": {
+    "name": "tableDataJSON",
+    "isList": false,
+    "type": "String"
+  },
+  "configOptions": [
+    {
+      "name": "title",
+      "type": "String",
+      "label": "Table Title",
+      "description": "Display title for the table",
+      "default": "Data Table"
+    },
+    {
+      "name": "showRefresh",
+      "type": "Boolean",
+      "label": "Show Refresh Button",
+      "description": "Display refresh button in toolbar",
+      "default": true
+    },
+    {
+      "name": "showRecordCount",
+      "type": "Boolean",
+      "label": "Show Record Count",
+      "description": "Display total record count in header",
+      "default": true
+    },
+    {
+      "name": "enableRowSelection",
+      "type": "Boolean",
+      "label": "Enable Row Selection",
+      "description": "Allow users to click rows to select them",
+      "default": true
+    },
+    {
+      "name": "currentPage",
+      "type": "Integer",
+      "label": "Current Page",
+      "description": "Current page number (1-based)",
+      "default": 1
+    },
+    {
+      "name": "pageSize",
+      "type": "Integer",
+      "label": "Page Size",
+      "description": "Number of rows per page",
+      "default": 100
+    },
+    {
+      "name": "sortColumn",
+      "type": "String",
+      "label": "Sort Column",
+      "description": "Current sort column field name",
+      "default": ""
+    },
+    {
+      "name": "sortDirection",
+      "type": "String",
+      "label": "Sort Direction",
+      "description": "Current sort direction (ASC or DESC)",
+      "default": "ASC"
+    },
+    {
+      "name": "isLoading",
+      "type": "Boolean",
+      "label": "Is Loading",
+      "description": "Loading state flag",
+      "default": false
+    },
+    {
+      "name": "onSort",
+      "type": "Event",
+      "label": "On Sort",
+      "description": "Event fired when column header is clicked for sorting",
+      "parameterName": "sortData"
+    },
+    {
+      "name": "onPageChange",
+      "type": "Event",
+      "label": "On Page Change",
+      "description": "Event fired when page navigation occurs",
+      "parameterName": "pageData"
+    },
+    {
+      "name": "onPageSizeChange",
+      "type": "Event",
+      "label": "On Page Size Change",
+      "description": "Event fired when rows per page is changed",
+      "parameterName": "sizeData"
+    },
+    {
+      "name": "onRowSelect",
+      "type": "Event",
+      "label": "On Row Select",
+      "description": "Event fired when a row is clicked",
+      "parameterName": "rowData"
+    },
+    {
+      "name": "onRefresh",
+      "type": "Event",
+      "label": "On Refresh",
+      "description": "Event fired when refresh button is clicked",
+      "parameterName": "refreshData"
+    }
+  ],
+  "changeFunction": true
+}
