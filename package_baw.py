@@ -27,6 +27,7 @@ WIDGET_NAMES = [
     "Breadcrumb",
     "Carousel",
     "DateOutput",
+    "DynamicReportGrid",
     "FileNetBrowser",
     "FileNetImport",
     "FolderTree",
