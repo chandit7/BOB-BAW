@@ -327,6 +327,30 @@
         "standalone"
       ],
       "created": "2026-06-03T12:59:35.216929Z"
+    },
+    "GridColumn": {
+      "classId": "/12.54e08c82-599b-462e-9105-a5becbfea67e",
+      "description": "Column definition for dynamic grid configuration",
+      "widgets": [
+        "DynamicReportGrid"
+      ],
+      "created": "2026-06-13T06:52:51.662816Z"
+    },
+    "GridDataResult": {
+      "classId": "/12.ce5c2d0d-c86a-4dc0-a7db-229b278722cb",
+      "description": "Server response containing current page data and metadata",
+      "widgets": [
+        "DynamicReportGrid"
+      ],
+      "created": "2026-06-13T06:52:51.664310Z"
+    },
+    "GridLabels": {
+      "classId": "/12.fc36218c-35a0-4275-b41f-1709bc6a4664",
+      "description": "Configurable UI labels for internationalization",
+      "widgets": [
+        "DynamicReportGrid"
+      ],
+      "created": "2026-06-13T06:52:51.665574Z"
     }
   },
   "notes": {

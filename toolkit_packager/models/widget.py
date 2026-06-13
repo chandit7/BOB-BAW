@@ -92,6 +92,7 @@ class Widget:
     def get_business_objects(self) -> List[dict]:
         """
         Get business object definitions from config.json.
+        Supports both embedded business objects and file-referenced business objects.
         
         Returns:
             List of business object definitions
@@ -102,12 +103,18 @@ class Widget:
         
         business_objects = []
         for bo_ref in config['businessObjects']:
-            bo_file = bo_ref.get('file')
-            if bo_file:
-                bo_path = self.files.get(bo_file)
-                if bo_path and bo_path.exists():
-                    bo_data = json.loads(bo_path.read_text(encoding='utf-8'))
-                    business_objects.append(bo_data)
+            # Check if business object is embedded directly in config
+            if 'name' in bo_ref and 'properties' in bo_ref:
+                # Embedded business object definition
+                business_objects.append(bo_ref)
+            else:
+                # File-referenced business object
+                bo_file = bo_ref.get('file')
+                if bo_file:
+                    bo_path = self.files.get(bo_file)
+                    if bo_path and bo_path.exists():
+                        bo_data = json.loads(bo_path.read_text(encoding='utf-8'))
+                        business_objects.append(bo_data)
         
         return business_objects
     
