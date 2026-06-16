@@ -2,8 +2,8 @@
   "toolkit": {
     "name": "reportUi",
     "shortName": "RUI",
-    "description": "Report UI toolkit with DynamicReportGrid widget for BAW",
-    "version": "1.0.7",
+    "description": "Report UI toolkit with enhanced DynamicServiceTable widget featuring configurable themes and search",
+    "version": "2.0.1",
     "bawVersion": "24.0.1",
     "id": "2066.cebc1c06-68a5-4d2e-986a-aaae3072cefb",
     "isToolkit": true,

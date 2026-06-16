@@ -1,6 +1,7 @@
 // DynamicServiceTable Widget - Main JavaScript Controller
 // Implements the reusable dynamic table framework for IBM BAW CP4BA
 // Uses a single String binding containing JSON payload
+// Supports theme switching (default/modern) and client-side search
 
 // Get widget context and configuration
 var tableDataJSON = this.getData(); // This is a String containing JSON
@@ -13,7 +14,9 @@ var config = {
 	pageSize: this.getOption("pageSize") || 100,
 	sortColumn: this.getOption("sortColumn") || "",
 	sortDirection: this.getOption("sortDirection") || "ASC",
-	isLoading: this.getOption("isLoading") || false
+	isLoading: this.getOption("isLoading") || false,
+	styleTheme: this.getOption("styleTheme") || "default",
+	enableSearch: this.getOption("enableSearch") !== false
 };
 
 // Register event handlers
@@ -37,6 +40,8 @@ var pageSizeSelect = container.querySelector(".dt-pagesize");
 var prevBtn = container.querySelector(".dt-btn-prev");
 var nextBtn = container.querySelector(".dt-btn-next");
 var indicator = container.querySelector(".dt-indicator");
+var searchInput = container.querySelector(".dt-search-input");
+var searchWrap = container.querySelector(".dt-search-wrap");
 
 // Store reference to widget context for event firing
 var widgetContext = this;
@@ -45,6 +50,7 @@ var widgetContext = this;
 var state = {
 	columns: [],
 	data: [],
+	allData: [], // Store all data for search filtering
 	pagination: {
 		page: config.currentPage,
 		pageSize: config.pageSize,
@@ -53,8 +59,18 @@ var state = {
 	sort: {
 		column: config.sortColumn,
 		direction: config.sortDirection
+	},
+	search: {
+		term: "",
+		isActive: false
 	}
 };
+
+// Apply theme to container
+function applyTheme() {
+	container.className = "dt-container theme-" + config.styleTheme;
+	console.log("DynamicServiceTable: Applied theme -", config.styleTheme);
+}
 
 // Parse JSON payload from String binding
 function parseTableData(jsonString) {
@@ -80,7 +96,8 @@ function updateFromJSON(parsedData) {
 		console.log("DynamicServiceTable: No parsed data to update from");
 		state.columns = [];
 		state.data = [];
-		state.pagination = { page: 1, pageSize: config.pageSize, totalRecords: 0 };
+		state.allData = [];
+		state.pagination = { page: config.currentPage, pageSize: config.pageSize, totalRecords: 0 };
 		return;
 	}
 	
@@ -92,19 +109,48 @@ function updateFromJSON(parsedData) {
 	
 	// Update data
 	if (parsedData.data && Array.isArray(parsedData.data)) {
-		state.data = parsedData.data;
+		state.allData = parsedData.data; // Store all data
+		state.data = parsedData.data; // Display data (may be filtered)
 		console.log("DynamicServiceTable: Updated data rows", state.data.length);
 	}
 	
-	// Update pagination
-	if (parsedData.pagination) {
-		state.pagination = {
-			page: parsedData.pagination.page || 1,
-			pageSize: parsedData.pagination.pageSize || config.pageSize,
-			totalRecords: parsedData.pagination.totalRecords || 0
-		};
-		console.log("DynamicServiceTable: Updated pagination", state.pagination);
+	// Update pagination - Configuration options take precedence over JSON data
+	// JSON data only provides totalRecords from server
+	state.pagination = {
+		page: config.currentPage,  // From widget configuration
+		pageSize: config.pageSize, // From widget configuration
+		totalRecords: (parsedData.pagination && parsedData.pagination.totalRecords) || 0  // From JSON data
+	};
+	console.log("DynamicServiceTable: Updated pagination", state.pagination);
+}
+
+// Client-side search functionality
+function performSearch(searchTerm) {
+	if (!searchTerm || searchTerm.trim() === '') {
+		// Reset to all data
+		state.data = state.allData;
+		state.search.isActive = false;
+		state.search.term = "";
+		console.log("DynamicServiceTable: Search cleared");
+		return;
 	}
+	
+	var term = searchTerm.toLowerCase().trim();
+	state.search.term = term;
+	state.search.isActive = true;
+	
+	// Filter data across all columns
+	state.data = state.allData.filter(function(row) {
+		return state.columns.some(function(col) {
+			var value = row[col.field];
+			if (value === null || value === undefined) {
+				return false;
+			}
+			return String(value).toLowerCase().indexOf(term) !== -1;
+		});
+	});
+	
+	console.log("DynamicServiceTable: Search filtered", state.data.length, "of", state.allData.length, "rows");
 }
 
 // Build table header from columns
@@ -142,19 +188,12 @@ function buildHeader() {
 		
 		// Add sort indicator if column is sortable
 		if (col.sortable) {
-			th.classList.add("dt-sortable");
-			
-			var sortIcon = document.createElement("span");
-			sortIcon.className = "dt-sort-icon";
+			th.classList.add("sortable");
 			
 			if (state.sort.column === col.field) {
-				sortIcon.classList.add("dt-sort-active");
-				sortIcon.textContent = state.sort.direction === "ASC" ? "▲" : "▼";
-			} else {
-				sortIcon.textContent = "⇅";
+				th.classList.add("sort-active");
+				th.classList.add(state.sort.direction === "ASC" ? "sort-asc" : "sort-desc");
 			}
-			
-			headerContent.appendChild(sortIcon);
 			
 			// Add click handler for sorting
 			th.addEventListener("click", function() {
@@ -187,7 +226,7 @@ function renderBody() {
 		
 		// Add row selection handler if enabled
 		if (config.enableRowSelection) {
-			tr.classList.add("dt-row-selectable");
+			tr.classList.add("selectable");
 			tr.addEventListener("click", function() {
 				handleRowSelect(row, rowIndex);
 			});
@@ -278,7 +317,7 @@ function renderBadge(value, column) {
 	var label = badgeConfig.label || value;
 	var color = badgeConfig.color || "gray";
 	
-	return '<span class="dt-badge dt-badge-' + color + '">' + escapeHtml(label) + '</span>';
+	return '<span class="dt-badge badge-' + color + '">' + escapeHtml(label) + '</span>';
 }
 
 // Render currency cell
@@ -337,23 +376,34 @@ function escapeHtml(text) {
 
 // Show empty state when no data
 function showEmptyState() {
-	tbody.innerHTML = '<tr><td colspan="' + (state.columns.length || 1) + '" class="dt-empty">No data available</td></tr>';
+	var message = state.search.isActive ? 
+		"No results found for '" + escapeHtml(state.search.term) + "'" : 
+		"No data available";
+	tbody.innerHTML = '<tr><td colspan="' + (state.columns.length || 1) + '" class="dt-empty">' + message + '</td></tr>';
 }
 
 // Update pagination controls
 function updatePagination() {
-	var totalPages = Math.ceil(state.pagination.totalRecords / state.pagination.pageSize);
+	var displayCount = state.search.isActive ? state.data.length : state.pagination.totalRecords;
+	var totalPages = Math.ceil(displayCount / state.pagination.pageSize);
 	var currentPage = state.pagination.page;
 	
 	// Update page info
 	var startRecord = (currentPage - 1) * state.pagination.pageSize + 1;
-	var endRecord = Math.min(currentPage * state.pagination.pageSize, state.pagination.totalRecords);
+	var endRecord = Math.min(currentPage * state.pagination.pageSize, displayCount);
 	
-	pageInfo.textContent = startRecord + "-" + endRecord + " of " + state.pagination.totalRecords;
+	if (displayCount === 0) {
+		pageInfo.textContent = "0 records";
+	} else {
+		pageInfo.textContent = startRecord + "-" + endRecord + " of " + displayCount;
+		if (state.search.isActive) {
+			pageInfo.textContent += " (filtered)";
+		}
+	}
 	
 	// Update navigation buttons
 	prevBtn.disabled = currentPage <= 1;
-	nextBtn.disabled = currentPage >= totalPages;
+	nextBtn.disabled = currentPage >= totalPages || displayCount === 0;
 	
 	// Update page size select
 	pageSizeSelect.value = state.pagination.pageSize;
@@ -364,7 +414,10 @@ function updatePagination() {
 // Update record count in header
 function updateRecordCount() {
 	if (config.showRecordCount) {
-		recordCountEl.textContent = state.pagination.totalRecords + " records";
+		var count = state.search.isActive ? 
+			state.data.length + " of " + state.allData.length : 
+			state.pagination.totalRecords;
+		recordCountEl.textContent = count + " records";
 		recordCountEl.style.display = "inline";
 	} else {
 		recordCountEl.style.display = "none";
@@ -374,11 +427,9 @@ function updateRecordCount() {
 // Update loading state
 function updateLoadingState() {
 	if (config.isLoading) {
-		loadingOverlay.style.display = "flex";
-		indicator.style.display = "block";
+		loadingOverlay.classList.add("active");
 	} else {
-		loadingOverlay.style.display = "none";
-		indicator.style.display = "none";
+		loadingOverlay.classList.remove("active");
 	}
 }
 
@@ -441,6 +492,12 @@ function handleRowSelect(row, rowIndex) {
 
 // Handle refresh event
 function handleRefresh() {
+	// Clear search when refreshing
+	if (searchInput) {
+		searchInput.value = "";
+		performSearch("");
+	}
+	
 	// Fire refresh event
 	widgetContext.fireEvent("onRefresh", {
 		timestamp: new Date().toISOString()
@@ -449,14 +506,37 @@ function handleRefresh() {
 	console.log("DynamicServiceTable: Refresh triggered");
 }
 
+// Handle search input
+function handleSearch() {
+	var searchTerm = searchInput.value;
+	performSearch(searchTerm);
+	renderBody();
+	updatePagination();
+	updateRecordCount();
+}
+
 // Setup event listeners
 function setupEventListeners() {
 	// Refresh button
 	if (refreshBtn && config.showRefresh) {
 		refreshBtn.addEventListener("click", handleRefresh);
-		refreshBtn.style.display = "inline-block";
+		refreshBtn.style.display = "flex";
 	} else if (refreshBtn) {
 		refreshBtn.style.display = "none";
+	}
+	
+	// Search input
+	if (searchInput && config.enableSearch) {
+		searchWrap.style.display = "flex";
+		searchInput.addEventListener("input", handleSearch);
+		searchInput.addEventListener("keyup", function(e) {
+			if (e.key === "Escape") {
+				searchInput.value = "";
+				handleSearch();
+			}
+		});
+	} else if (searchWrap) {
+		searchWrap.style.display = "none";
 	}
 	
 	// Page size select
@@ -478,7 +558,8 @@ function setupEventListeners() {
 	// Next page button
 	if (nextBtn) {
 		nextBtn.addEventListener("click", function() {
-			var totalPages = Math.ceil(state.pagination.totalRecords / state.pagination.pageSize);
+			var displayCount = state.search.isActive ? state.data.length : state.pagination.totalRecords;
+			var totalPages = Math.ceil(displayCount / state.pagination.pageSize);
 			if (state.pagination.page < totalPages) {
 				handlePageChange(state.pagination.page + 1);
 			}
@@ -489,6 +570,9 @@ function setupEventListeners() {
 // Initialize the widget
 function initialize() {
 	console.log("DynamicServiceTable: Initializing widget");
+	
+	// Apply theme
+	applyTheme();
 	
 	// Set title
 	if (titleEl) {

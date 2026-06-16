@@ -12,7 +12,8 @@ The DynamicServiceTable widget provides a robust solution for displaying tabular
 - ✅ **Type-Safe**: Uses String binding to avoid BAW type conversion errors
 - ✅ **Rich Formatting**: Supports currency, dates, numbers, badges, booleans, and links
 - ✅ **Server-Side Operations**: Pagination, sorting, and filtering handled by backend
-- ✅ **Carbon Design**: Styled with IBM Carbon Design System
+- ✅ **Configurable Themes**: Choose between Default (Carbon) or Modern (DynamicReportGrid-inspired) themes
+- ✅ **Client-Side Search**: Real-time filtering across all columns with keyboard shortcuts
 - ✅ **Event-Driven**: Fires events for sort, pagination, row selection, and refresh
 - ✅ **Responsive**: Adapts to different screen sizes
 - ✅ **Accessible**: Keyboard navigation and screen reader support
@@ -158,6 +159,8 @@ Clickable hyperlinks with optional URL templates.
 | Option | Type | Default | Description |
 |--------|------|---------|-------------|
 | title | String | "Data Table" | Table title displayed in header |
+| styleTheme | String | "default" | Visual theme: "default" (Carbon) or "modern" (DynamicReportGrid-inspired) |
+| enableSearch | Boolean | true | Enable client-side search functionality |
 | showRefresh | Boolean | true | Show refresh button in toolbar |
 | showRecordCount | Boolean | true | Show total record count in header |
 | enableRowSelection | Boolean | true | Allow users to click rows to select them |
@@ -166,6 +169,33 @@ Clickable hyperlinks with optional URL templates.
 | sortColumn | String | "" | Current sort column field name |
 | sortDirection | String | "ASC" | Current sort direction (ASC or DESC) |
 | isLoading | Boolean | false | Show loading overlay |
+
+### Theme Options
+
+**Default Theme** (`styleTheme: "default"`):
+- IBM Carbon Design System styling
+- Light gray header with dark text
+- Professional, corporate appearance
+- Best for enterprise applications
+
+**Modern Theme** (`styleTheme: "modern"`):
+- DynamicReportGrid-inspired design
+- Deep navy header (#0f3460) with white text
+- Enhanced visual hierarchy
+- Best for dashboards and reports
+
+See [`THEMES_AND_SEARCH_GUIDE.md`](./THEMES_AND_SEARCH_GUIDE.md) for detailed theme documentation.
+
+### Search Functionality
+
+When `enableSearch` is enabled:
+- Real-time filtering across all columns
+- Case-insensitive partial matching
+- Visual feedback for filtered results
+- Keyboard shortcut: ESC to clear search
+- Shows "X of Y (filtered)" in record count
+
+See [`THEMES_AND_SEARCH_GUIDE.md`](./THEMES_AND_SEARCH_GUIDE.md) for detailed search documentation.
 
 ## Events
 
@@ -303,33 +333,32 @@ var tableData = {
 tw.local.tableDataJSON = JSON.stringify(tableData);
 ```
 
-## Styling
+## Styling and Themes
 
-The widget uses IBM Carbon Design System colors and components:
+The widget supports two built-in themes:
 
-- **Table**: Carbon data table styles
-- **Badges**: Carbon tag colors (green, red, yellow, blue, gray)
-- **Buttons**: Carbon button styles
-- **Pagination**: Carbon pagination controls
-- **Loading**: Carbon loading spinner
+### Default Theme
+- IBM Carbon Design System colors and components
+- Light gray header (#f4f4f4)
+- Professional, clean appearance
+- Carbon-style badges and controls
 
-### Custom Styling
+### Modern Theme
+- DynamicReportGrid-inspired design
+- Deep navy header (#0f3460)
+- Enhanced visual hierarchy
+- Modern, bold appearance
 
-You can override styles using CSS:
-
-```css
-/* Custom table header color */
-.dt-th {
-    background-color: #0f62fe !important;
-    color: white !important;
-}
-
-/* Custom badge colors */
-.dt-badge-custom {
-    background-color: #8a3ffc;
-    color: white;
-}
+**To switch themes:**
+```javascript
+// In widget configuration
+styleTheme: "modern"  // or "default"
 ```
+
+**For detailed theme documentation, see:**
+- [`THEMES_AND_SEARCH_GUIDE.md`](./THEMES_AND_SEARCH_GUIDE.md) - Complete theme and search guide
+- Theme comparison and customization options
+- Visual examples and best practices
 
 ## Performance Considerations
 
@@ -400,14 +429,32 @@ badgeMap: JSON.stringify({ "active": { label: "Active", color: "green" } })
 2. Go to **Events** tab
 3. Add handlers for desired events (onSort, onPageChange, etc.)
 
+## Documentation
+
+### Core Documentation
+- **[README.md](./README.md)** (this file) - Main widget documentation
+- **[BAW_TEST_DATA.md](./BAW_TEST_DATA.md)** - Data format, column types, and BAW integration examples
+- **[THEMES_AND_SEARCH_GUIDE.md](./THEMES_AND_SEARCH_GUIDE.md)** - Theme configuration and search functionality guide
+
+### Integration Guides
+- **[SQL_INTEGRATION_GUIDE.md](./SQL_INTEGRATION_GUIDE.md)** - Database integration and SQL query examples
+- **[BO_TO_JSON_CONVERTER.js](./BO_TO_JSON_CONVERTER.js)** - Business Object to JSON conversion utilities
+- **[GENERIC_SQL_TEMPLATE.js](./GENERIC_SQL_TEMPLATE.js)** - Reusable SQL integration templates
+
+### Examples and Testing
+- **[GENERATE_500_RECORDS.js](./GENERATE_500_RECORDS.js)** - Generate test data for performance testing
+- **[LSW_TASK_EXAMPLE.js](./LSW_TASK_EXAMPLE.js)** - Complete LSW_TASK table integration example
+- **[REDESIGN_SUMMARY.md](./REDESIGN_SUMMARY.md)** - Widget architecture and design decisions
+
 ## Examples
 
-See [`BAW_TEST_DATA.md`](./BAW_TEST_DATA.md) for complete working examples including:
-- All column types
-- Badge configurations
-- SQL integration
-- Event handling
-- Pagination setup
+See the documentation files above for complete working examples including:
+- All column types (text, number, currency, date, boolean, badge, link)
+- Badge configurations with color mapping
+- SQL integration with BAW system tables
+- Event handling for sorting, pagination, and row selection
+- Server-side and client-side pagination
+- Theme switching and search functionality
 
 ## License
 

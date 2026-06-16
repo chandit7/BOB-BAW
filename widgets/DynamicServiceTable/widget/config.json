@@ -71,6 +71,20 @@
       "default": false
     },
     {
+      "name": "styleTheme",
+      "type": "String",
+      "label": "Style Theme",
+      "description": "Visual theme for the table (default or modern)",
+      "default": "default"
+    },
+    {
+      "name": "enableSearch",
+      "type": "Boolean",
+      "label": "Enable Search",
+      "description": "Enable client-side search within loaded data",
+      "default": true
+    },
+    {
       "name": "onSort",
       "type": "Event",
       "label": "On Sort",

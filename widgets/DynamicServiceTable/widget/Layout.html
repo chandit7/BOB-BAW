@@ -1,11 +1,17 @@
 <div class="dt-container">
-  <!-- Header: title + record count + refresh -->
+  <!-- Header: title + record count + search + refresh -->
   <div class="dt-header">
     <div class="dt-title-area">
       <span class="dt-title"></span>
       <span class="dt-record-count"></span>
     </div>
     <div class="dt-toolbar">
+      <div class="dt-search-wrap">
+        <svg class="dt-search-icon" width="16" height="16" viewBox="0 0 16 16">
+          <path d="M15 14.3l-3.5-3.5c.9-1.1 1.5-2.5 1.5-4 0-3.6-2.9-6.5-6.5-6.5S0 3.2 0 6.8s2.9 6.5 6.5 6.5c1.5 0 2.9-.5 4-1.5l3.5 3.5.7-.7zM6.5 12.3c-3 0-5.5-2.5-5.5-5.5s2.5-5.5 5.5-5.5 5.5 2.5 5.5 5.5-2.5 5.5-5.5 5.5z"/>
+        </svg>
+        <input type="text" class="dt-search-input" placeholder="Search in table..." />
+      </div>
       <button class="dt-btn-icon dt-btn-refresh" title="Refresh">
         <svg width="16" height="16" viewBox="0 0 16 16">
           <path d="M8 3v2.5L11.5 2 8 0v2.5C4.5 2.5 1.5 5.5 1.5 9s3 6.5 6.5 6.5c2.8 0 5.2-1.8 6.1-4.3h-1.6c-.8 1.6-2.4 2.8-4.5 2.8-2.8 0-5-2.2-5-5s2.2-5 5-5z"/>
