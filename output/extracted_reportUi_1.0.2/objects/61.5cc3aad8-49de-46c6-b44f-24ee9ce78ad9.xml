@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.5cc3aad8-49de-46c6-b44f-24ee9ce78ad9" name="MultiSelect.html">
+        <lastModified>1781333577004</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.5cc3aad8-49de-46c6-b44f-24ee9ce78ad9</managedAssetId>
+        <assetUuid>7c1c6d55-677a-4990-ae13-f0c6eface962</assetUuid>
+        <mimeType>text/html</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>2924</length>
+        <localLastModification>1781333577004</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:5cc3aad8-49de-46c6-b44f-24ee9ce78ad9</guid>
+        <versionId>f0eea12d-ec62-494a-885f-e67067ef7da2</versionId>
+    </managedAsset>
+</teamworks>

@@ -1,0 +1,1479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <coachView id="64.ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7" name="ProcessActivityTimeline">
+        <lastModified>1781330260364</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <coachViewId>64.ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7</coachViewId>
+        <isTemplate>false</isTemplate>
+        <layout>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;ns2:layout xmlns:ns2=&quot;http://www.ibm.com/bpm/CoachDesignerNG&quot; xmlns:ns3=&quot;http://www.ibm.com/bpm/coachview&quot;&gt;&lt;ns2:layoutItem xsi:type=&quot;ns2:CustomHTML&quot; version=&quot;8550&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&lt;ns2:id&gt;a5daacdc-9c3f-41d5-b7d0-7dd400cc3f4d&lt;/ns2:id&gt;&lt;ns2:layoutItemId&gt;CustomHTML1&lt;/ns2:layoutItemId&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;1bba2463-9bf9-4df1-bd47-d8806a18f7fb&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.contentType&lt;/ns2:optionName&gt;&lt;ns2:value&gt;TEXT&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;10913359-67ac-493d-9ba8-fbb17cf7d964&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.textContent&lt;/ns2:optionName&gt;&lt;ns2:value&gt;&amp;lt;div class=&amp;quot;processactivitytimeline_maincontentbox&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;timeline-container&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;timeline-line&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;timeline-activities&amp;quot;&amp;gt;
+      &amp;lt;!-- Process activity timeline events will be dynamically generated here --&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;/ns2:layoutItem&gt;&lt;/ns2:layout&gt;</layout>
+        <paletteIcon>/61.33d076f8-9077-4efd-b377-e90186439742</paletteIcon>
+        <previewImage isNull="true" />
+        <hasLabel>false</hasLabel>
+        <labelPosition>0</labelPosition>
+        <nineSliceX1Coord>0</nineSliceX1Coord>
+        <nineSliceX2Coord>0</nineSliceX2Coord>
+        <nineSliceY1Coord>0</nineSliceY1Coord>
+        <nineSliceY2Coord>0</nineSliceY2Coord>
+        <emitBoundary>false</emitBoundary>
+        <isPrototypeFunc>false</isPrototypeFunc>
+        <enableDevMode>false</enableDevMode>
+        <isMobileReady>false</isMobileReady>
+        <loadJsFunction isNull="true" />
+        <unloadJsFunction isNull="true" />
+        <viewJsFunction isNull="true" />
+        <changeJsFunction>// ProcessActivityTimeline - Change Event Handler
+// Executed when the widget data changes
+var _this = this;
+
+// Get the updated data
+var data = _this.getData();
+
+console.log(&#x27;ProcessActivityTimeline data changed:&#x27;, data);
+
+// The widget will automatically re-render through inlineJavascript.js
+// This event handler is here for any additional change-specific logic
+
+// Made with Bob</changeJsFunction>
+        <collaborationJsFunction isNull="true" />
+        <description>Timeline widget for displaying BAW process activities with status tracking, assignee information, and duration metrics</description>
+        <validateJsFunction isNull="true" />
+        <previewAdvHtml>/61.6d24807e-1059-4633-b415-21e28baf6509</previewAdvHtml>
+        <previewAdvJs>/61.7a61bd0d-5853-46e8-8a8b-5c27980c13a2</previewAdvJs>
+        <useUrlBinding>false</useUrlBinding>
+        <guid>guid:ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7</guid>
+        <versionId>60f97a94-c764-41a5-9efe-92ee5eb53579</versionId>
+        <field1 isNull="true" />
+        <field2 isNull="true" />
+        <field3>0</field3>
+        <field4 isNull="true" />
+        <field5>false</field5>
+        <clobField1 isNull="true" />
+        <bindingType name="ProcessActivityData">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewBindingTypeId>65.9c9aa134-050b-4243-b275-f23e1703b1d7</coachViewBindingTypeId>
+            <coachViewId>64.ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7</coachViewId>
+            <isList>true</isList>
+            <classId>/12.4a104796-f99a-4273-b7f8-5201b967af63</classId>
+            <seq>0</seq>
+            <description isNull="true" />
+            <guid>guid:c9e2d710-39fa-438e-8f7a-32c199fc7075</guid>
+            <versionId>aa3779a8-4cff-463c-925b-763f01d49669</versionId>
+        </bindingType>
+        <configOption name="processInstanceId">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.ea9da4d0-1562-4c3e-977c-f454d8536ae6</coachViewConfigOptionId>
+            <coachViewId>64.ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Process Instance ID</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>0</seq>
+            <description>BAW process instance ID to automatically fetch activity data (e.g., &#x27;2072.1072&#x27;). Leave empty to use manual data binding.</description>
+            <groupName></groupName>
+            <guid>guid:ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7-processinstanceid</guid>
+            <versionId>9c622059-ef34-4e9f-840c-77ee1c8f1330</versionId>
+        </configOption>
+
+        <configOption name="baseUrl">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.781a4fd7-d67b-4c13-b188-fff57ba9d9e5</coachViewConfigOptionId>
+            <coachViewId>64.ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>BAW Base URL</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>1</seq>
+            <description>BAW server base URL for API calls (default: current server)</description>
+            <groupName></groupName>
+            <guid>guid:ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7-baseurl</guid>
+            <versionId>88ef0433-987b-4fee-bc97-b4d4db15efda</versionId>
+        </configOption>
+
+        <configOption name="showTimestamps">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.683420d4-765a-4187-ae56-e753d1f00207</coachViewConfigOptionId>
+            <coachViewId>64.ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Show Timestamps</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>2</seq>
+            <description>Display timestamp information for each activity</description>
+            <groupName></groupName>
+            <guid>guid:ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7-showtimestamps</guid>
+            <versionId>5c7fe2a1-c3b6-4da2-9df4-55511799d796</versionId>
+        </configOption>
+
+        <configOption name="showIcons">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.43e36fa5-292f-4883-9f67-bf95732a18dd</coachViewConfigOptionId>
+            <coachViewId>64.ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Show Icons</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>3</seq>
+            <description>Display status icons for activities</description>
+            <groupName></groupName>
+            <guid>guid:ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7-showicons</guid>
+            <versionId>52e6ead1-27bc-431c-a2a4-d2aab1506e32</versionId>
+        </configOption>
+
+        <configOption name="showDetails">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.8089fb19-7001-41d4-870f-7b725cd7aa1f</coachViewConfigOptionId>
+            <coachViewId>64.ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Show Details</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>4</seq>
+            <description>Display activity details (assignee, duration, IDs)</description>
+            <groupName></groupName>
+            <guid>guid:ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7-showdetails</guid>
+            <versionId>a1543a44-651f-4d8d-a6bf-5ce382f52418</versionId>
+        </configOption>
+
+        <configOption name="compact">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.7d9eb2c0-384f-40a7-a30c-c75f78134270</coachViewConfigOptionId>
+            <coachViewId>64.ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Compact Mode</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>5</seq>
+            <description>Use compact spacing for timeline activities</description>
+            <groupName></groupName>
+            <guid>guid:ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7-compact</guid>
+            <versionId>c7102f35-8684-4dad-ae80-a2e7f562fbbe</versionId>
+        </configOption>
+
+        <configOption name="clickable">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.b2751be7-efb0-41aa-ae2e-0d358cc78775</coachViewConfigOptionId>
+            <coachViewId>64.ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Clickable</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>6</seq>
+            <description>Enable click interaction on timeline activities</description>
+            <groupName></groupName>
+            <guid>guid:ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7-clickable</guid>
+            <versionId>89b6ec49-8551-492d-84a4-e071bf8438f2</versionId>
+        </configOption>
+
+        <configOption name="activityClicked">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.d0720b61-e645-49f7-bd51-c69add8767a0</coachViewConfigOptionId>
+            <coachViewId>64.ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7</coachViewId>
+            <isList>false</isList>
+            <propertyType>EVENT</propertyType>
+            <label>Activity Clicked</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>7</seq>
+            <description>Event fired when a timeline activity is clicked</description>
+            <groupName></groupName>
+            <guid>guid:ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7-activityclicked</guid>
+            <versionId>d62eca95-7c63-4a14-acac-0650ac1a2fb5</versionId>
+        </configOption>
+        <inlineScript name="Inline Javascript">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.1697ac95-171e-4716-bf60-9ed19af341b9</coachViewInlineScriptId>
+            <coachViewId>64.ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7</coachViewId>
+            <scriptType>JS</scriptType>
+            <scriptBlock>// ProcessActivityTimeline Widget - Main JavaScript
+// Specialized for BAW process activity tracking with automatic data fetching
+
+// Get configuration options
+var processInstanceId = this.getOption(&quot;processInstanceId&quot;) || &quot;&quot;;
+var baseUrl = this.getOption(&quot;baseUrl&quot;) || &quot;&quot;;
+var showTimestamps = this.getOption(&quot;showTimestamps&quot;) !== false; // Default true
+var showIcons = this.getOption(&quot;showIcons&quot;) !== false; // Default true
+var showDetails = this.getOption(&quot;showDetails&quot;) !== false; // Default true
+var compact = this.getOption(&quot;compact&quot;) || false; // Default false
+var clickable = this.getOption(&quot;clickable&quot;) || false; // Default false
+
+// Register event handler for click events
+this.registerEventHandlingFunction(this, &quot;activityClicked&quot;, &quot;index&quot;);
+
+// Get the timeline container elements
+var timelineContainer = this.context.element.querySelector(&quot;.processactivitytimeline_maincontentbox&quot;);
+var timelineActivities = timelineContainer.querySelector(&quot;.timeline-activities&quot;);
+
+// Apply layout classes
+if (compact) {
+	timelineContainer.classList.add(&quot;compact&quot;);
+} else {
+	timelineContainer.classList.remove(&quot;compact&quot;);
+}
+
+// Clear existing timeline activities
+timelineActivities.innerHTML = &quot;&quot;;
+
+// Store reference to widget context for API calls
+var widgetContext = this;
+
+// Function to format timestamp
+function formatTimestamp(timestampValue) {
+	if (!timestampValue) return &quot;&quot;;
+	
+	try {
+		var date;
+		if (timestampValue instanceof Date) {
+			date = timestampValue;
+		} else if (typeof timestampValue === &quot;string&quot;) {
+			date = new Date(timestampValue);
+		} else {
+			return timestampValue.toString();
+		}
+		
+		// Format as locale date and time
+		return date.toLocaleString();
+	} catch (e) {
+		return timestampValue.toString();
+	}
+}
+
+// Function to format duration
+function formatDuration(durationMs) {
+	if (!durationMs || durationMs &lt;= 0) return &quot;&quot;;
+	
+	var seconds = Math.floor(durationMs / 1000);
+	var minutes = Math.floor(seconds / 60);
+	var hours = Math.floor(minutes / 60);
+	var days = Math.floor(hours / 24);
+	
+	if (days &gt; 0) {
+		return days + &quot;d &quot; + (hours % 24) + &quot;h&quot;;
+	} else if (hours &gt; 0) {
+		return hours + &quot;h &quot; + (minutes % 60) + &quot;m&quot;;
+	} else if (minutes &gt; 0) {
+		return minutes + &quot;m &quot; + (seconds % 60) + &quot;s&quot;;
+	} else {
+		return seconds + &quot;s&quot;;
+	}
+}
+
+// Function to get status display text
+function getStatusText(status) {
+	var statusMap = {
+		&quot;completed&quot;: &quot;Completed&quot;,
+		&quot;active&quot;: &quot;Active&quot;,
+		&quot;pending&quot;: &quot;Pending&quot;,
+		&quot;failed&quot;: &quot;Failed&quot;,
+		&quot;skipped&quot;: &quot;Skipped&quot;,
+		&quot;waiting&quot;: &quot;Waiting&quot;
+	};
+	return statusMap[status] || status || &quot;Pending&quot;;
+}
+
+// Function to map BAW stream event to ProcessActivityEvent
+function mapStreamEventToActivity(event) {
+	// Extract activity name from object or content
+	var activityName = &quot;Activity&quot;;
+	if (event.object &amp;&amp; event.object.displayName) {
+		activityName = event.object.displayName;
+	}
+	
+	// Extract assignee from actor
+	var assignee = &quot;System&quot;;
+	if (event.actor &amp;&amp; event.actor.displayName) {
+		assignee = event.actor.displayName;
+	}
+	
+	// Parse content to extract description (remove HTML tags)
+	var description = &quot;&quot;;
+	if (event.content) {
+		// Remove HTML tags and decode entities
+		description = event.content.replace(/&lt;[^&gt;]*&gt;/g, &#x27;&#x27;).trim();
+	}
+	
+	// Map BAW stream event structure to our ProcessActivityEvent format
+	var activity = {
+		name: activityName,
+		description: description,
+		startTime: event.published || new Date(),
+		status: &quot;completed&quot;, // Default status
+		assignee: assignee
+	};
+	
+	// Determine status based on verb and content
+	var contentLower = (event.content || &quot;&quot;).toLowerCase();
+	var verb = (event.verb || &quot;&quot;).toLowerCase();
+	
+	if (contentLower.indexOf(&quot;completed&quot;) &gt;= 0 || contentLower.indexOf(&quot;complete&quot;) &gt;= 0) {
+		activity.status = &quot;completed&quot;;
+	} else if (contentLower.indexOf(&quot;started&quot;) &gt;= 0 || contentLower.indexOf(&quot;work started&quot;) &gt;= 0) {
+		activity.status = &quot;active&quot;;
+	} else if (contentLower.indexOf(&quot;created&quot;) &gt;= 0 || contentLower.indexOf(&quot;claimed&quot;) &gt;= 0) {
+		activity.status = &quot;pending&quot;;
+	} else if (contentLower.indexOf(&quot;failed&quot;) &gt;= 0 || contentLower.indexOf(&quot;error&quot;) &gt;= 0) {
+		activity.status = &quot;failed&quot;;
+	} else if (contentLower.indexOf(&quot;skipped&quot;) &gt;= 0) {
+		activity.status = &quot;skipped&quot;;
+	} else if (contentLower.indexOf(&quot;waiting&quot;) &gt;= 0 || contentLower.indexOf(&quot;awaiting&quot;) &gt;= 0) {
+		activity.status = &quot;waiting&quot;;
+	}
+	
+	// Add additional fields if available
+	if (event.object) {
+		if (event.object.id) {
+			// Determine if it&#x27;s a task or instance ID based on objectType
+			if (event.object.objectType === &quot;ibm.bpm.task&quot;) {
+				activity.taskId = event.object.id;
+			} else if (event.object.objectType === &quot;ibm.bpm.instance&quot;) {
+				activity.instanceId = event.object.id;
+			}
+		}
+	}
+	
+	// Extract comments from replies
+	if (event.replies &amp;&amp; event.replies.items &amp;&amp; Array.isArray(event.replies.items)) {
+		activity.comments = event.replies.items.map(function(reply) {
+			return {
+				author: reply.author ? reply.author.displayName : &quot;Unknown&quot;,
+				content: reply.content || &quot;&quot;,
+				published: reply.published || &quot;&quot;,
+				id: reply.id || &quot;&quot;
+			};
+		});
+	}
+	
+	return activity;
+}
+
+// Function to group activities by task ID
+function groupActivitiesByTask(activities) {
+	var taskGroups = {};
+	var processActivities = [];
+	
+	// Group activities by task ID
+	activities.forEach(function(activity) {
+		if (activity.taskId) {
+			if (!taskGroups[activity.taskId]) {
+				taskGroups[activity.taskId] = [];
+			}
+			taskGroups[activity.taskId].push(activity);
+		} else {
+			// Process-level activities (not task-specific)
+			processActivities.push(activity);
+		}
+	});
+	
+	// Convert grouped tasks into timeline items
+	var result = [];
+	
+	// Add process-level activities first
+	processActivities.forEach(function(activity) {
+		result.push(activity);
+	});
+	
+	// Add grouped task activities
+	Object.keys(taskGroups).forEach(function(taskId) {
+		var taskEvents = taskGroups[taskId];
+		
+		// Sort events by timestamp (oldest first)
+		taskEvents.sort(function(a, b) {
+			var timeA = new Date(a.startTime || a.timestamp);
+			var timeB = new Date(b.startTime || b.timestamp);
+			return timeA - timeB;
+		});
+		
+		// Use the most recent event as the main activity
+		var mainActivity = taskEvents[taskEvents.length - 1];
+		
+		// Add sub-events to the main activity
+		mainActivity.subEvents = taskEvents.slice(0, -1);
+		
+		result.push(mainActivity);
+	});
+	
+	return result;
+}
+
+// Function to fetch process activity data from BAW REST API
+function fetchProcessActivityData(instanceId, callback) {
+	// Determine base URL
+	var apiBaseUrl = baseUrl;
+	if (!apiBaseUrl) {
+		// Use current server URL
+		apiBaseUrl = window.location.protocol + &quot;//&quot; + window.location.host;
+	}
+	
+	// Construct API URL
+	var apiUrl = apiBaseUrl + &quot;/bas/rest/bpm/wle/v1/social/instance/&quot; + instanceId + &quot;/stream&quot;;
+	
+	console.log(&quot;Fetching process activity data from:&quot;, apiUrl);
+	
+	// Create XMLHttpRequest
+	var xhr = new XMLHttpRequest();
+	xhr.open(&quot;GET&quot;, apiUrl, true);
+	xhr.setRequestHeader(&quot;Accept&quot;, &quot;application/json&quot;);
+	xhr.withCredentials = true; // Include credentials for authentication
+	
+	xhr.onload = function() {
+		if (xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) {
+			try {
+				var response = JSON.parse(xhr.responseText);
+				console.log(&quot;API Response:&quot;, response);
+				
+				// Extract activities from response
+				var activities = [];
+				if (response.items &amp;&amp; Array.isArray(response.items)) {
+					// Map stream events to activities
+					activities = response.items.map(mapStreamEventToActivity);
+				} else if (response.data &amp;&amp; response.data.items) {
+					activities = response.data.items.map(mapStreamEventToActivity);
+				} else if (response.data &amp;&amp; response.data.stream) {
+					activities = response.data.stream.map(mapStreamEventToActivity);
+				} else if (response.stream) {
+					activities = response.stream.map(mapStreamEventToActivity);
+				} else if (Array.isArray(response)) {
+					activities = response.map(mapStreamEventToActivity);
+				}
+				
+				// Group activities by task
+				var groupedActivities = groupActivitiesByTask(activities);
+				
+				console.log(&quot;Grouped activities:&quot;, groupedActivities);
+				callback(null, groupedActivities);
+			} catch (e) {
+				console.error(&quot;Error parsing API response:&quot;, e);
+				callback(e, null);
+			}
+		} else {
+			console.error(&quot;API request failed with status:&quot;, xhr.status);
+			callback(new Error(&quot;API request failed: &quot; + xhr.status), null);
+		}
+	};
+	
+	xhr.onerror = function() {
+		console.error(&quot;Network error while fetching process activity data&quot;);
+		callback(new Error(&quot;Network error&quot;), null);
+	};
+	
+	xhr.send();
+}
+
+// Function to submit a comment to a task
+function submitComment(taskId, message, callback) {
+	// Determine base URL
+	var apiBaseUrl = baseUrl;
+	if (!apiBaseUrl) {
+		// Use current server URL
+		apiBaseUrl = window.location.protocol + &quot;//&quot; + window.location.host;
+	}
+	
+	// Construct API URL with message parameter
+	var apiUrl = apiBaseUrl + &quot;/bas/rest/bpm/wle/v1/social/task/&quot; + taskId + &quot;/comment?message=&quot; + encodeURIComponent(message);
+	
+	console.log(&quot;Submitting comment to:&quot;, apiUrl);
+	
+	// Create XMLHttpRequest
+	var xhr = new XMLHttpRequest();
+	xhr.open(&quot;POST&quot;, apiUrl, true);
+	xhr.setRequestHeader(&quot;Accept&quot;, &quot;application/json&quot;);
+	xhr.setRequestHeader(&quot;Content-Type&quot;, &quot;application/json&quot;);
+	xhr.withCredentials = true; // Include credentials for authentication
+	
+	xhr.onload = function() {
+		if (xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) {
+			console.log(&quot;Comment submitted successfully&quot;);
+			callback(true);
+		} else {
+			console.error(&quot;Failed to submit comment. Status:&quot;, xhr.status);
+			callback(false);
+		}
+	};
+	
+	xhr.onerror = function() {
+		console.error(&quot;Network error while submitting comment&quot;);
+		callback(false);
+	};
+	
+	xhr.send();
+}
+
+// Function to create a process activity timeline item
+function createActivityItem(activity, index) {
+	var div = document.createElement(&quot;div&quot;);
+	div.className = &quot;timeline-item timeline-activity&quot;;
+	
+	// Determine activity status
+	var status = activity.status || &quot;pending&quot;;
+	div.classList.add(status);
+	
+	// Add clickable class if there are sub-events
+	if (activity.subEvents &amp;&amp; activity.subEvents.length &gt; 0) {
+		div.classList.add(&quot;has-drilldown&quot;);
+	}
+	
+	// Create activity marker (circle)
+	var marker = document.createElement(&quot;div&quot;);
+	marker.className = &quot;timeline-marker activity-marker&quot;;
+	
+	// Add icon/text to marker based on status
+	if (showIcons) {
+		if (status === &quot;completed&quot;) {
+			marker.textContent = &quot;✓&quot;;
+			div.classList.add(&quot;milestone&quot;);
+		} else if (status === &quot;active&quot;) {
+			marker.textContent = &quot;!&quot;;
+			div.classList.add(&quot;critical&quot;);
+		} else if (status === &quot;failed&quot;) {
+			marker.textContent = &quot;✗&quot;;
+		} else if (status === &quot;waiting&quot;) {
+			marker.textContent = &quot;⏱&quot;;
+		} else {
+			marker.textContent = (index + 1).toString();
+		}
+	} else {
+		marker.textContent = (index + 1).toString();
+	}
+	
+	div.appendChild(marker);
+	
+	// Create activity content container
+	var contentDiv = document.createElement(&quot;div&quot;);
+	contentDiv.className = &quot;timeline-content activity-content&quot;;
+	
+	// Create activity header
+	var headerDiv = document.createElement(&quot;div&quot;);
+	headerDiv.className = &quot;timeline-header activity-header&quot;;
+	
+	// Create left side of header (name and user info)
+	var headerLeft = document.createElement(&quot;div&quot;);
+	
+	// Create activity name
+	var nameDiv = document.createElement(&quot;div&quot;);
+	nameDiv.className = &quot;activity-name&quot;;
+	nameDiv.textContent = activity.name || activity.activityName || &quot;Activity &quot; + (index + 1);
+	headerLeft.appendChild(nameDiv);
+	
+	// Create user info section if assignee exists
+	if (activity.assignee) {
+		var userInfoDiv = document.createElement(&quot;div&quot;);
+		userInfoDiv.className = &quot;user-info&quot;;
+		
+		// Create user avatar
+		var avatarDiv = document.createElement(&quot;div&quot;);
+		avatarDiv.className = &quot;user-avatar&quot;;
+		// Get initials from assignee name
+		var initials = activity.assignee.split(&#x27; &#x27;).map(function(n) { return n[0]; }).join(&#x27;&#x27;).substring(0, 2).toUpperCase();
+		avatarDiv.textContent = initials;
+		userInfoDiv.appendChild(avatarDiv);
+		
+		// Create user details container
+		var userDetailsDiv = document.createElement(&quot;div&quot;);
+		
+		// User name
+		var userNameDiv = document.createElement(&quot;div&quot;);
+		userNameDiv.className = &quot;user-name&quot;;
+		userNameDiv.textContent = activity.assignee;
+		userDetailsDiv.appendChild(userNameDiv);
+		
+		// Timestamp
+		if (showTimestamps &amp;&amp; (activity.startTime || activity.timestamp)) {
+			var timestampDiv = document.createElement(&quot;div&quot;);
+			timestampDiv.className = &quot;timestamp activity-timestamp&quot;;
+			var timestampValue = activity.startTime || activity.timestamp;
+			timestampDiv.textContent = formatTimestamp(timestampValue);
+			userDetailsDiv.appendChild(timestampDiv);
+		}
+		
+		userInfoDiv.appendChild(userDetailsDiv);
+		headerLeft.appendChild(userInfoDiv);
+	}
+	
+	headerDiv.appendChild(headerLeft);
+	
+	// Create status badge (right side of header)
+	var statusDiv = document.createElement(&quot;div&quot;);
+	statusDiv.className = &quot;tag activity-status&quot;;
+	statusDiv.textContent = getStatusText(status);
+	headerDiv.appendChild(statusDiv);
+	
+	contentDiv.appendChild(headerDiv);
+	
+	// Create activity description if provided
+	if (activity.description) {
+		var descDiv = document.createElement(&quot;div&quot;);
+		descDiv.className = &quot;activity-description&quot;;
+		descDiv.textContent = activity.description;
+		contentDiv.appendChild(descDiv);
+	}
+	
+	// Add comments section if present or if activity has taskId
+	var commentsDiv = document.createElement(&quot;div&quot;);
+	commentsDiv.className = &quot;timeline-comments&quot;;
+	
+	// Display existing comments
+	if (activity.comments &amp;&amp; activity.comments.length &gt; 0) {
+		activity.comments.forEach(function(comment) {
+			var commentDiv = document.createElement(&quot;div&quot;);
+			commentDiv.className = &quot;timeline-comment&quot;;
+			
+			// Comment avatar
+			var avatarDiv = document.createElement(&quot;div&quot;);
+			avatarDiv.className = &quot;user-avatar&quot;;
+			var initials = comment.author.split(&#x27; &#x27;).map(function(n) { return n[0]; }).join(&#x27;&#x27;).substring(0, 2).toUpperCase();
+			avatarDiv.textContent = initials;
+			commentDiv.appendChild(avatarDiv);
+			
+			// Comment content
+			var commentContentDiv = document.createElement(&quot;div&quot;);
+			commentContentDiv.className = &quot;comment-content&quot;;
+			
+			var commentText = document.createElement(&quot;div&quot;);
+			commentText.innerHTML = &quot;&lt;strong&gt;&quot; + comment.author + &quot;:&lt;/strong&gt; &quot; + comment.content;
+			commentContentDiv.appendChild(commentText);
+			
+			if (comment.published) {
+				var commentTime = document.createElement(&quot;div&quot;);
+				commentTime.className = &quot;timestamp&quot;;
+				commentTime.textContent = formatTimestamp(comment.published);
+				commentContentDiv.appendChild(commentTime);
+			}
+			
+			commentDiv.appendChild(commentContentDiv);
+			commentsDiv.appendChild(commentDiv);
+		});
+	}
+	
+	// Add comment input section for tasks
+	if (activity.taskId) {
+		var commentInputDiv = document.createElement(&quot;div&quot;);
+		commentInputDiv.className = &quot;comment-input-section&quot;;
+		
+		// Comment input container
+		var inputContainer = document.createElement(&quot;div&quot;);
+		inputContainer.className = &quot;comment-input-container&quot;;
+		
+		// Text input
+		var commentInput = document.createElement(&quot;input&quot;);
+		commentInput.type = &quot;text&quot;;
+		commentInput.className = &quot;comment-input&quot;;
+		commentInput.placeholder = &quot;Add a comment...&quot;;
+		commentInput.setAttribute(&quot;data-task-id&quot;, activity.taskId);
+		inputContainer.appendChild(commentInput);
+		
+		// Submit button
+		var submitBtn = document.createElement(&quot;button&quot;);
+		submitBtn.className = &quot;comment-submit-btn&quot;;
+		submitBtn.textContent = &quot;Post&quot;;
+		submitBtn.setAttribute(&quot;data-task-id&quot;, activity.taskId);
+		submitBtn.onclick = function() {
+			var taskId = this.getAttribute(&quot;data-task-id&quot;);
+			var input = this.previousElementSibling;
+			var message = input.value.trim();
+			
+			if (message) {
+				// Disable button during submission
+				submitBtn.disabled = true;
+				submitBtn.textContent = &quot;Posting...&quot;;
+				
+				submitComment(taskId, message, function(success) {
+					// Re-enable button
+					submitBtn.disabled = false;
+					submitBtn.textContent = &quot;Post&quot;;
+					
+					if (success) {
+						// Insert comment immediately in UI
+						var newCommentDiv = document.createElement(&quot;div&quot;);
+						newCommentDiv.className = &quot;timeline-comment&quot;;
+						
+						// Comment avatar
+						var avatarDiv = document.createElement(&quot;div&quot;);
+						avatarDiv.className = &quot;user-avatar&quot;;
+						// Use current user initials (you can get from BAW context if available)
+						var currentUser = &quot;User&quot;; // Default, could be enhanced to get actual user
+						var initials = currentUser.split(&#x27; &#x27;).map(function(n) { return n[0]; }).join(&#x27;&#x27;).substring(0, 2).toUpperCase();
+						avatarDiv.textContent = initials;
+						newCommentDiv.appendChild(avatarDiv);
+						
+						// Comment content
+						var commentContentDiv = document.createElement(&quot;div&quot;);
+						commentContentDiv.className = &quot;comment-content&quot;;
+						
+						var commentText = document.createElement(&quot;div&quot;);
+						commentText.innerHTML = &quot;&lt;strong&gt;&quot; + currentUser + &quot;:&lt;/strong&gt; &quot; + message;
+						commentContentDiv.appendChild(commentText);
+						
+						// Timestamp
+						var commentTime = document.createElement(&quot;div&quot;);
+						commentTime.className = &quot;timestamp&quot;;
+						commentTime.textContent = &quot;Just now&quot;;
+						commentContentDiv.appendChild(commentTime);
+						
+						newCommentDiv.appendChild(commentContentDiv);
+						
+						// Insert before the input section
+						commentsDiv.insertBefore(newCommentDiv, commentInputDiv);
+						
+						// Clear input
+						input.value = &quot;&quot;;
+					}
+				});
+			}
+		};
+		inputContainer.appendChild(submitBtn);
+		
+		commentInputDiv.appendChild(inputContainer);
+		commentsDiv.appendChild(commentInputDiv);
+	}
+	
+	// Only append comments div if there are comments or input section
+	if (activity.comments &amp;&amp; activity.comments.length &gt; 0 || activity.taskId) {
+		contentDiv.appendChild(commentsDiv);
+	}
+	
+	div.appendChild(contentDiv);
+	
+	// Add sub-events (drilldown) if present
+	if (activity.subEvents &amp;&amp; activity.subEvents.length &gt; 0) {
+		var drilldownDiv = document.createElement(&quot;div&quot;);
+		drilldownDiv.className = &quot;timeline-drilldown&quot;;
+		drilldownDiv.style.display = &quot;none&quot;; // Hidden by default
+		
+		activity.subEvents.forEach(function(subEvent) {
+			var subEventDiv = document.createElement(&quot;div&quot;);
+			subEventDiv.className = &quot;timeline-sub-event&quot;;
+			
+			// Sub-event content
+			var subContentDiv = document.createElement(&quot;div&quot;);
+			subContentDiv.className = &quot;sub-event-content&quot;;
+			
+			// Sub-event description
+			var subDescDiv = document.createElement(&quot;div&quot;);
+			subDescDiv.className = &quot;sub-event-description&quot;;
+			subDescDiv.textContent = subEvent.description || subEvent.name;
+			subContentDiv.appendChild(subDescDiv);
+			
+			// Sub-event timestamp and assignee
+			var subMetaDiv = document.createElement(&quot;div&quot;);
+			subMetaDiv.className = &quot;sub-event-meta&quot;;
+			
+			if (subEvent.assignee) {
+				var subAssigneeSpan = document.createElement(&quot;span&quot;);
+				subAssigneeSpan.textContent = subEvent.assignee;
+				subMetaDiv.appendChild(subAssigneeSpan);
+				
+				if (subEvent.startTime || subEvent.timestamp) {
+					var separator = document.createElement(&quot;span&quot;);
+					separator.textContent = &quot; • &quot;;
+					subMetaDiv.appendChild(separator);
+				}
+			}
+			
+			if (subEvent.startTime || subEvent.timestamp) {
+				var subTimeSpan = document.createElement(&quot;span&quot;);
+				var timestampValue = subEvent.startTime || subEvent.timestamp;
+				subTimeSpan.textContent = formatTimestamp(timestampValue);
+				subMetaDiv.appendChild(subTimeSpan);
+			}
+			
+			subContentDiv.appendChild(subMetaDiv);
+			subEventDiv.appendChild(subContentDiv);
+			drilldownDiv.appendChild(subEventDiv);
+		});
+		
+		div.appendChild(drilldownDiv);
+		
+		// Add toggle button
+		var toggleBtn = document.createElement(&quot;button&quot;);
+		toggleBtn.className = &quot;drilldown-toggle&quot;;
+		toggleBtn.textContent = &quot;Show &quot; + activity.subEvents.length + &quot; earlier event&quot; + (activity.subEvents.length &gt; 1 ? &quot;s&quot; : &quot;&quot;);
+		toggleBtn.onclick = function(e) {
+			e.stopPropagation();
+			var isExpanded = drilldownDiv.style.display !== &quot;none&quot;;
+			drilldownDiv.style.display = isExpanded ? &quot;none&quot; : &quot;block&quot;;
+			toggleBtn.textContent = isExpanded
+				? &quot;Show &quot; + activity.subEvents.length + &quot; earlier event&quot; + (activity.subEvents.length &gt; 1 ? &quot;s&quot; : &quot;&quot;)
+				: &quot;Hide earlier events&quot;;
+		};
+		contentDiv.appendChild(toggleBtn);
+	}
+	
+	// Add click event handler if clickable
+	if (clickable) {
+		div.addEventListener(&quot;click&quot;, function(e) {
+			e.preventDefault();
+			
+			// Call custom onClick handler if provided
+			if (activity.onClick &amp;&amp; typeof activity.onClick === &quot;function&quot;) {
+				activity.onClick(activity, index);
+			}
+			
+			// Fire boundary event for activity click
+			if (typeof me !== &quot;undefined&quot; &amp;&amp; me.ui &amp;&amp; me.ui.fireEvent) {
+				me.ui.fireEvent(&quot;activityClicked&quot;, {
+					index: index,
+					activity: activity
+				});
+			}
+		});
+	}
+	
+	return div;
+}
+
+// Function to render timeline activities
+function renderActivities(activities) {
+	// Clear existing activities
+	timelineActivities.innerHTML = &quot;&quot;;
+	
+	if (activities &amp;&amp; Array.isArray(activities) &amp;&amp; activities.length &gt; 0) {
+		activities.forEach(function(activity, index) {
+			var activityItem = createActivityItem(activity, index);
+			timelineActivities.appendChild(activityItem);
+		});
+	} else {
+		// Show message when no activities found
+		var messageDiv = document.createElement(&quot;div&quot;);
+		messageDiv.className = &quot;timeline-activity&quot;;
+		messageDiv.style.textAlign = &quot;center&quot;;
+		messageDiv.style.padding = &quot;2rem&quot;;
+		messageDiv.style.color = &quot;#525252&quot;;
+		messageDiv.textContent = &quot;No process activities found&quot;;
+		timelineActivities.appendChild(messageDiv);
+	}
+}
+
+// Main logic: Check if we should fetch data or use bound data
+if (processInstanceId &amp;&amp; processInstanceId.trim() !== &quot;&quot;) {
+	// Fetch data from BAW REST API
+	console.log(&quot;Fetching process activity data for instance:&quot;, processInstanceId);
+	
+	// Show loading indicator
+	var loadingDiv = document.createElement(&quot;div&quot;);
+	loadingDiv.className = &quot;timeline-activity&quot;;
+	loadingDiv.style.textAlign = &quot;center&quot;;
+	loadingDiv.style.padding = &quot;2rem&quot;;
+	loadingDiv.textContent = &quot;Loading process activities...&quot;;
+	timelineActivities.appendChild(loadingDiv);
+	
+	fetchProcessActivityData(processInstanceId, function(error, activities) {
+		if (error) {
+			console.error(&quot;Error fetching process activity data:&quot;, error);
+			// Show error message
+			timelineActivities.innerHTML = &quot;&quot;;
+			var errorDiv = document.createElement(&quot;div&quot;);
+			errorDiv.className = &quot;timeline-activity&quot;;
+			errorDiv.style.textAlign = &quot;center&quot;;
+			errorDiv.style.padding = &quot;2rem&quot;;
+			errorDiv.style.color = &quot;#da1e28&quot;;
+			errorDiv.textContent = &quot;Error loading process activities: &quot; + error.message;
+			timelineActivities.appendChild(errorDiv);
+		} else {
+			// Render fetched activities
+			renderActivities(activities);
+		}
+	});
+} else {
+	// Use bound data
+	var activityData = widgetContext.getData().items;
+	
+	if (activityData &amp;&amp; Array.isArray(activityData) &amp;&amp; activityData.length &gt; 0) {
+		renderActivities(activityData);
+	} else {
+		// Show default sample activities
+		var defaultActivities = [
+			{
+				name: &quot;Process Started&quot;,
+				description: &quot;Process instance initiated&quot;,
+				startTime: &quot;2026-05-29T08:00:00&quot;,
+				status: &quot;completed&quot;,
+				assignee: &quot;System&quot;,
+				duration: 5000
+			},
+			{
+				name: &quot;Review Task&quot;,
+				description: &quot;Document review and approval&quot;,
+				startTime: &quot;2026-05-29T08:05:00&quot;,
+				status: &quot;completed&quot;,
+				assignee: &quot;John Doe&quot;,
+				duration: 1800000,
+				taskId: &quot;TASK-001&quot;
+			},
+			{
+				name: &quot;Data Validation&quot;,
+				description: &quot;Validating submitted data&quot;,
+				startTime: &quot;2026-05-29T08:35:00&quot;,
+				status: &quot;active&quot;,
+				assignee: &quot;System&quot;
+			},
+			{
+				name: &quot;Manager Approval&quot;,
+				description: &quot;Awaiting manager approval&quot;,
+				status: &quot;pending&quot;,
+				assignee: &quot;Jane Smith&quot;
+			},
+			{
+				name: &quot;Final Processing&quot;,
+				description: &quot;Final processing and completion&quot;,
+				status: &quot;pending&quot;,
+				assignee: &quot;System&quot;
+			}
+		];
+		
+		renderActivities(defaultActivities);
+	}
+}
+
+// Made with Bob</scriptBlock>
+            <seq>0</seq>
+            <description></description>
+            <guid>guid:ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7-js</guid>
+            <versionId>782d4342-50e9-4055-b26b-ddc5606b2e2a</versionId>
+        </inlineScript>
+
+        <inlineScript name="Inline CSS">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.f66fd186-6a90-4fa4-8b2d-cd9c6bcb64af</coachViewInlineScriptId>
+            <coachViewId>64.ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7</coachViewId>
+            <scriptType>CSS</scriptType>
+            <scriptBlock>/* ProcessActivityTimeline Widget Styles - Carbon Design System */
+/* Specialized for BAW process activity tracking */
+
+.processactivitytimeline_maincontentbox {
+	width: 100%;
+	min-height: 120px;
+	padding: 2rem 0;
+	font-family: &#x27;IBM Plex Sans&#x27;, &#x27;Helvetica Neue&#x27;, Helvetica, Arial, sans-serif; /* @bpm-font-family-sans-serif */
+	font-size: 14px; /* @bpm-font-size-base */
+	color: #161616; /* @bpm-text-color */
+}
+
+.processactivitytimeline_maincontentbox .timeline-container {
+	position: relative;
+	padding-left: 40px; /* Space for timeline markers */
+}
+
+/* Central Timeline Line */
+.processactivitytimeline_maincontentbox .timeline-container .timeline-line {
+	position: absolute;
+	left: 20px;
+	top: 0;
+	bottom: 0;
+	width: 2px;
+	background: #e0e0e0; /* Gray 20 - @cds-ui-03 */
+	z-index: 0;
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	z-index: 1;
+	gap: 0;
+}
+
+/* Timeline Activity Item */
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity {
+	position: relative;
+	margin-bottom: 48px; /* @cds-spacing-06 equivalent */
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity:last-child {
+	margin-bottom: 0;
+}
+
+/* Activity Marker - Circular indicator on timeline */
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .activity-marker {
+	position: absolute;
+	left: -32px;
+	top: 0;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	background: #0f62fe; /* @bpm-color-primary */
+	border: 3px solid #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #ffffff;
+	font-size: 12px;
+	font-weight: 600; /* @bpm-font-weight-semibold */
+	z-index: 2;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Activity Marker - Completed/Milestone State */
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.completed .activity-marker,
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.milestone .activity-marker {
+	background: #198038; /* @bpm-color-success */
+}
+
+/* Activity Marker - Active/Critical State with Pulse */
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.active .activity-marker,
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.critical .activity-marker {
+	background: #da1e28; /* @bpm-color-alert */
+	animation: activityPulse 2s infinite;
+}
+
+@keyframes activityPulse {
+	0%, 100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+}
+
+/* Activity Marker - Pending State */
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.pending .activity-marker {
+	background: #8d8d8d; /* Gray 50 - @cds-text-03 */
+}
+
+/* Activity Marker - Failed State */
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.failed .activity-marker {
+	background: #da1e28; /* @bpm-color-alert */
+}
+
+/* Activity Marker - Waiting State */
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.waiting .activity-marker {
+	background: #f1c21b; /* Warning yellow */
+}
+
+/* Activity Content Container */
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .activity-content {
+	background: #f4f4f4; /* Gray 10 - @cds-ui-01 */
+	padding: 16px; /* @cds-spacing-04 equivalent */
+	border-radius: 4px;
+	border-left: 3px solid #0f62fe; /* @bpm-color-primary */
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.completed .activity-content,
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.milestone .activity-content {
+	border-left-color: #198038; /* @bpm-color-success */
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.active .activity-content,
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.critical .activity-content {
+	border-left-color: #da1e28; /* @bpm-color-alert */
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.pending .activity-content {
+	border-left-color: #8d8d8d; /* Gray 50 */
+}
+
+/* Activity Header */
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .activity-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 12px; /* @cds-spacing-03 equivalent */
+}
+
+/* Activity Timestamp */
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .activity-timestamp {
+	font-size: 12px; /* @bpm-font-size-small */
+	font-weight: 400; /* @bpm-font-weight-normal */
+	color: #525252; /* Gray 70 */
+	margin-top: 4px;
+}
+
+/* Activity Status Badge */
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .activity-status {
+	font-size: 11px;
+	font-weight: 600; /* @bpm-font-weight-semibold */
+	padding: 4px 12px; /* @cds-spacing-02 @cds-spacing-03 */
+	border-radius: 4px;
+	white-space: nowrap;
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.completed .activity-status,
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.milestone .activity-status {
+	background: #d2f4ea; /* Light green */
+	color: #0e6027; /* Dark green */
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.active .activity-status,
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.critical .activity-status {
+	background: #ffd7d9; /* Light red */
+	color: #750e13; /* Dark red */
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.pending .activity-status {
+	background: #fcf4d6; /* Light yellow */
+	color: #8e6a00; /* Dark yellow */
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.failed .activity-status {
+	background: #ffd7d9; /* Light red */
+	color: #750e13; /* Dark red */
+}
+
+/* Activity Name */
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .activity-name {
+	font-size: 14px; /* @bpm-font-size-base */
+	font-weight: 600; /* @bpm-font-weight-semibold */
+	color: #161616; /* @bpm-text-color */
+	margin-bottom: 0;
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.completed .activity-name,
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.milestone .activity-name {
+	color: #198038; /* @bpm-color-success */
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.active .activity-name,
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.critical .activity-name {
+	color: #da1e28; /* @bpm-color-alert */
+}
+
+/* Activity Description */
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .activity-description {
+	font-size: 14px; /* @bpm-font-size-base */
+	font-weight: 400; /* @bpm-font-weight-normal */
+	color: #525252; /* Gray 70 - @cds-text-02 */
+	line-height: 1.43;
+	margin-top: 12px; /* @cds-spacing-03 */
+}
+
+/* User Info Section */
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .user-info {
+	display: flex;
+	align-items: center;
+	gap: 8px; /* @cds-spacing-02 */
+	margin-top: 8px;
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .user-avatar {
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	background: #0f62fe; /* @bpm-color-primary */
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 10px; /* @bpm-font-size-xsmall */
+	font-weight: 600; /* @bpm-font-weight-semibold */
+	flex-shrink: 0;
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .user-name {
+	font-size: 14px; /* @bpm-font-size-base */
+	font-weight: 400; /* @bpm-font-weight-normal */
+	color: #161616; /* @bpm-text-color */
+}
+
+/* Status Icons - Process-specific SVG Style */
+.activity_icon_completed {
+	background-image: url(&quot;data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M13%2021.17L6.83%2015l-1.42%201.41L13%2024%2027%2010l-1.41-1.41z%22%2F%3E%3C%2Fsvg%3E&quot;);
+	width: 32px;
+	height: 32px;
+	background-size: 32px 32px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.activity_icon_active {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #ffffff;
+	box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+}
+
+.activity_icon_pending {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #c6c6c6; /* @bpm-link-text-color-disabled */
+}
+
+.activity_icon_failed {
+	background-image: url(&quot;data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M24%209.4L22.6%208%2016%2014.6%209.4%208%208%209.4%2014.6%2016%208%2022.6%209.4%2024%2016%2017.4%2022.6%2024%2024%2022.6%2017.4%2016z%22%2F%3E%3C%2Fsvg%3E&quot;);
+	width: 32px;
+	height: 32px;
+	background-size: 32px 32px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.activity_icon_skipped {
+	background-image: url(&quot;data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20fill%3D%22%238d8d8d%22%20d%3D%22M16%204L6%2014h6v14h8V14h6z%22%20transform%3D%22rotate(90%2016%2016)%22%2F%3E%3C%2Fsvg%3E&quot;);
+	width: 32px;
+	height: 32px;
+	background-size: 32px 32px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.activity_icon_waiting {
+	background-image: url(&quot;data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20fill%3D%22%23161616%22%20d%3D%22M16%202C8.3%202%202%208.3%202%2016s6.3%2014%2014%2014%2014-6.3%2014-14S23.7%202%2016%202zm0%2026C9.4%2028%204%2022.6%204%2016S9.4%204%2016%204s12%205.4%2012%2012-5.4%2012-12%2012z%22%2F%3E%3Cpath%20fill%3D%22%23161616%22%20d%3D%22M20.6%2016.6L17%2014V8h-2v7l4.4%203z%22%2F%3E%3C%2Fsvg%3E&quot;);
+	width: 32px;
+	height: 32px;
+	background-size: 32px 32px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/* Clickable Activities */
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.clickable {
+	cursor: pointer;
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.clickable:hover .activity-content {
+	background: #ffffff;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Drilldown Styles */
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .drilldown-toggle {
+	margin-top: 12px; /* @cds-spacing-03 */
+	padding: 6px 12px;
+	background: #ffffff;
+	border: 1px solid #e0e0e0; /* Gray 20 */
+	border-radius: 4px;
+	font-size: 12px; /* @bpm-font-size-small */
+	font-weight: 400; /* @bpm-font-weight-normal */
+	color: #0f62fe; /* @bpm-color-primary */
+	cursor: pointer;
+	transition: all 0.2s;
+	font-family: &#x27;IBM Plex Sans&#x27;, &#x27;Helvetica Neue&#x27;, Helvetica, Arial, sans-serif; /* @bpm-font-family-sans-serif */
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .drilldown-toggle:hover {
+	background: #e0e0e0; /* Gray 20 */
+	border-color: #0f62fe; /* @bpm-color-primary */
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .timeline-drilldown {
+	margin-top: 12px; /* @cds-spacing-03 */
+	padding-top: 12px;
+	border-top: 1px solid #e0e0e0; /* Gray 20 */
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .timeline-sub-event {
+	padding: 8px 12px;
+	margin-bottom: 8px;
+	background: #ffffff;
+	border-left: 2px solid #e0e0e0; /* Gray 20 */
+	border-radius: 2px;
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .timeline-sub-event:last-child {
+	margin-bottom: 0;
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .sub-event-description {
+	font-size: 13px;
+	font-weight: 400; /* @bpm-font-weight-normal */
+	color: #525252; /* Gray 70 */
+	margin-bottom: 4px;
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .sub-event-meta {
+	font-size: 11px;
+	color: #8d8d8d; /* Gray 50 */
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity.has-drilldown .activity-content {
+	cursor: default;
+}
+
+/* Comments Section */
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .timeline-comments {
+	margin-top: 16px;
+	padding-top: 16px;
+	border-top: 1px solid #e0e0e0; /* Gray 20 */
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .timeline-comment {
+	display: flex;
+	gap: 12px;
+	padding: 12px 0;
+	border-bottom: 1px solid #f4f4f4; /* Gray 10 */
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .timeline-comment:last-child {
+	border-bottom: none;
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .timeline-comment .user-avatar {
+	flex-shrink: 0;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background-color: #0f62fe; /* @bpm-color-primary */
+	color: #ffffff; /* @bpm-body-bg */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 12px; /* @bpm-font-size-small */
+	font-weight: 600; /* @bpm-font-weight-semibold */
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .comment-content {
+	flex: 1;
+	min-width: 0;
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .comment-content &gt; div:first-child {
+	font-size: 14px; /* @bpm-font-size-base */
+	color: #161616; /* @bpm-text-color */
+	line-height: 1.5;
+	word-wrap: break-word;
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .comment-content strong {
+	font-weight: 600; /* @bpm-font-weight-semibold */
+	color: #161616; /* @bpm-text-color */
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .comment-content .timestamp {
+	font-size: 12px; /* @bpm-font-size-small */
+	color: #525252; /* Gray 70 */
+	margin-top: 4px;
+}
+
+/* Comment Input Section */
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .comment-input-section {
+	margin-top: 12px;
+	padding-top: 12px;
+	border-top: 1px solid #f4f4f4; /* Gray 10 */
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .comment-input-container {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .comment-input {
+	flex: 1;
+	padding: 8px 12px;
+	font-family: &#x27;IBM Plex Sans&#x27;, &#x27;Helvetica Neue&#x27;, Helvetica, Arial, sans-serif; /* @bpm-font-family-sans-serif */
+	font-size: 14px; /* @bpm-font-size-base */
+	color: #161616; /* @bpm-text-color */
+	background: #ffffff; /* @bpm-body-bg */
+	border: 1px solid #8d8d8d; /* Gray 50 */
+	border-radius: 0;
+	outline: none;
+	transition: border-color 0.2s;
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .comment-input:focus {
+	border-color: #0f62fe; /* @bpm-color-primary */
+	border-width: 2px;
+	padding: 7px 11px; /* Adjust padding to maintain size */
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .comment-input::placeholder {
+	color: #8d8d8d; /* Gray 50 */
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .comment-submit-btn {
+	padding: 8px 16px;
+	font-family: &#x27;IBM Plex Sans&#x27;, &#x27;Helvetica Neue&#x27;, Helvetica, Arial, sans-serif; /* @bpm-font-family-sans-serif */
+	font-size: 14px; /* @bpm-font-size-base */
+	font-weight: 400; /* @bpm-font-weight-normal */
+	color: #ffffff; /* @bpm-body-bg */
+	background: #0f62fe; /* @bpm-color-primary */
+	border: none;
+	border-radius: 0;
+	cursor: pointer;
+	transition: background-color 0.2s;
+	white-space: nowrap;
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .comment-submit-btn:hover {
+	background: #0353e9; /* @bpm-color-primary-dark */
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .comment-submit-btn:active {
+	background: #0043ce; /* @bpm-link-text-color-hover */
+}
+
+.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .comment-submit-btn:disabled {
+	background: #c6c6c6; /* @bpm-link-text-color-disabled */
+	cursor: not-allowed;
+}
+
+/* Compact Mode */
+.processactivitytimeline_maincontentbox.compact .timeline-container .timeline-activities .timeline-activity {
+	margin-bottom: 32px; /* @cds-spacing-05 */
+}
+
+.processactivitytimeline_maincontentbox.compact .timeline-container .timeline-activities .timeline-activity .activity-content {
+	padding: 12px; /* @cds-spacing-03 */
+}
+
+/* Responsive Design */
+@media (max-width: 672px) {
+	.processactivitytimeline_maincontentbox .timeline-container {
+		padding-left: 32px;
+	}
+	
+	.processactivitytimeline_maincontentbox .timeline-container .timeline-activities .timeline-activity .activity-content {
+		padding: 12px;
+	}
+}
+
+/* Made with Bob */</scriptBlock>
+            <seq>1</seq>
+            <description></description>
+            <guid>guid:ab7916c9-d9ac-41f0-aa4a-824ed75ae2f7-css</guid>
+            <versionId>ad9b4e0a-3780-4061-8936-3401ad5e675a</versionId>
+        </inlineScript>
+    </coachView>
+</teamworks>

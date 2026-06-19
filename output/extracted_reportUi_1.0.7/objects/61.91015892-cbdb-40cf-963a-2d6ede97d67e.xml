@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.91015892-cbdb-40cf-963a-2d6ede97d67e" name="Timeline.html">
+        <lastModified>1781330260421</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.91015892-cbdb-40cf-963a-2d6ede97d67e</managedAssetId>
+        <assetUuid>0aa9edbe-530b-4121-8cbc-b3b4fb446c71</assetUuid>
+        <mimeType>text/html</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>2162</length>
+        <localLastModification>1781330260421</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:91015892-cbdb-40cf-963a-2d6ede97d67e</guid>
+        <versionId>61c29b3b-98aa-44a6-8158-2d1d9bfb7f0e</versionId>
+    </managedAsset>
+</teamworks>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.50377173-9684-4f1b-abff-da0be44ca668" name="MultiCheckbox.html">
+        <lastModified>1781330059466</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.50377173-9684-4f1b-abff-da0be44ca668</managedAssetId>
+        <assetUuid>c8c399f7-97e1-4c62-b6ed-0a3cb191466d</assetUuid>
+        <mimeType>text/html</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>1520</length>
+        <localLastModification>1781330059466</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:50377173-9684-4f1b-abff-da0be44ca668</guid>
+        <versionId>88f7c243-8cc3-4f54-9fdd-2f808956ef15</versionId>
+    </managedAsset>
+</teamworks>

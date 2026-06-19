@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.cb76b5f3-750d-4701-856e-9e10ce2f7feb" name="FolderTreeSnippet.js">
+        <lastModified>1781331758797</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.cb76b5f3-750d-4701-856e-9e10ce2f7feb</managedAssetId>
+        <assetUuid>3616267f-f392-49ec-b8c1-cd04499503e1</assetUuid>
+        <mimeType>application/javascript</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>7090</length>
+        <localLastModification>1781331758797</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:cb76b5f3-750d-4701-856e-9e10ce2f7feb</guid>
+        <versionId>a41515f2-a7f5-4d38-af4d-25ce932a3629</versionId>
+    </managedAsset>
+</teamworks>

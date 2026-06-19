@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.541f6bb3-4c9c-4dd2-869c-daa80ed284e1" name="Stepper.svg">
+        <lastModified>1781331765871</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.541f6bb3-4c9c-4dd2-869c-daa80ed284e1</managedAssetId>
+        <assetUuid>58affa84-efcb-4f54-92a7-64caac441145</assetUuid>
+        <mimeType>image/svg+xml</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>1687</length>
+        <localLastModification>1781331765871</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:541f6bb3-4c9c-4dd2-869c-daa80ed284e1</guid>
+        <versionId>50e053b8-5e40-468c-a8f1-b51ba00cbeec</versionId>
+    </managedAsset>
+</teamworks>

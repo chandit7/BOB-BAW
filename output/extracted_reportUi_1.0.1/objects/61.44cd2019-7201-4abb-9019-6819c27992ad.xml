@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.44cd2019-7201-4abb-9019-6819c27992ad" name="FolderTree.html">
+        <lastModified>1781331758693</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.44cd2019-7201-4abb-9019-6819c27992ad</managedAssetId>
+        <assetUuid>e0d7cf2b-54db-4f25-8313-8ae7e67c4201</assetUuid>
+        <mimeType>text/html</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>3406</length>
+        <localLastModification>1781331758693</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:44cd2019-7201-4abb-9019-6819c27992ad</guid>
+        <versionId>b641bf52-4f0c-49ad-b4b0-4fe687ab0def</versionId>
+    </managedAsset>
+</teamworks>

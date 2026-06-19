@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <coachView id="64.2563bbd0-609b-47e7-8dd6-cffc53ace388" name="DateOutput">
+        <lastModified>1781331755696</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <coachViewId>64.2563bbd0-609b-47e7-8dd6-cffc53ace388</coachViewId>
+        <isTemplate>false</isTemplate>
+        <layout>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;ns2:layout xmlns:ns2=&quot;http://www.ibm.com/bpm/CoachDesignerNG&quot; xmlns:ns3=&quot;http://www.ibm.com/bpm/coachview&quot;&gt;&lt;ns2:layoutItem xsi:type=&quot;ns2:CustomHTML&quot; version=&quot;8550&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&lt;ns2:id&gt;57a9c813-5c7f-4484-88e1-2872a28e21f1&lt;/ns2:id&gt;&lt;ns2:layoutItemId&gt;CustomHTML1&lt;/ns2:layoutItemId&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;49ea365c-6e1c-484b-b975-80627486671e&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.contentType&lt;/ns2:optionName&gt;&lt;ns2:value&gt;TEXT&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;654fa6cd-33a3-4d74-9381-8240fcdeb348&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.textContent&lt;/ns2:optionName&gt;&lt;ns2:value&gt;&amp;lt;div name=&amp;quot;DateOutputContainer&amp;quot; class=&amp;quot;date-output-container&amp;quot;&amp;gt;
+    &amp;lt;span name=&amp;quot;DateOutputValue&amp;quot; class=&amp;quot;date-output-value&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;/ns2:layoutItem&gt;&lt;/ns2:layout&gt;</layout>
+        <paletteIcon>/61.7dfcac14-4eea-4a2a-a447-d2e6cfdedf21</paletteIcon>
+        <previewImage isNull="true" />
+        <hasLabel>false</hasLabel>
+        <labelPosition>0</labelPosition>
+        <nineSliceX1Coord>0</nineSliceX1Coord>
+        <nineSliceX2Coord>0</nineSliceX2Coord>
+        <nineSliceY1Coord>0</nineSliceY1Coord>
+        <nineSliceY2Coord>0</nineSliceY2Coord>
+        <emitBoundary>false</emitBoundary>
+        <isPrototypeFunc>false</isPrototypeFunc>
+        <enableDevMode>false</enableDevMode>
+        <isMobileReady>false</isMobileReady>
+        <loadJsFunction isNull="true" />
+        <unloadJsFunction isNull="true" />
+        <viewJsFunction isNull="true" />
+        <changeJsFunction>var container = this.context.element.getElementsByTagName(&quot;div&quot;).DateOutputContainer;
+var dateValueSpan = this.context.element.getElementsByTagName(&quot;span&quot;).DateOutputValue;
+
+// Get configuration options
+var format = this.getOption(&quot;format&quot;) || &quot;MM/DD/YYYY&quot;;
+var locale = this.getOption(&quot;locale&quot;) || &quot;en-US&quot;;
+var showTime = this.getOption(&quot;showTime&quot;) || false;
+var timeZone = this.getOption(&quot;timeZone&quot;) || undefined;
+
+// Get the date data
+var dateData = this.getData();
+
+// Function to format date based on format string
+function formatDate(date, formatString, locale, showTime, timeZone) {
+    if (!date) {
+        return &quot;&quot;;
+    }
+    
+    // Convert to Date object if it&#x27;s a string or timestamp
+    var dateObj;
+    if (typeof date === &#x27;string&#x27; || typeof date === &#x27;number&#x27;) {
+        dateObj = new Date(date);
+    } else if (date instanceof Date) {
+        dateObj = date;
+    } else {
+        return &quot;Invalid Date&quot;;
+    }
+    
+    // Check if date is valid
+    if (isNaN(dateObj.getTime())) {
+        return &quot;Invalid Date&quot;;
+    }
+    
+    // Handle custom format strings
+    var year = dateObj.getFullYear();
+    var month = dateObj.getMonth() + 1;
+    var day = dateObj.getDate();
+    var hours = dateObj.getHours();
+    var minutes = dateObj.getMinutes();
+    var seconds = dateObj.getSeconds();
+    
+    // Pad with zeros
+    var pad = function(num) {
+        return num &lt; 10 ? &#x27;0&#x27; + num : num;
+    };
+    
+    // Replace format tokens
+    var formatted = formatString
+        .replace(/YYYY/g, year)
+        .replace(/YY/g, String(year).slice(-2))
+        .replace(/MM/g, pad(month))
+        .replace(/M/g, month)
+        .replace(/DD/g, pad(day))
+        .replace(/D/g, day)
+        .replace(/HH/g, pad(hours))
+        .replace(/H/g, hours)
+        .replace(/mm/g, pad(minutes))
+        .replace(/m/g, minutes)
+        .replace(/ss/g, pad(seconds))
+        .replace(/s/g, seconds);
+    
+    // Add time if requested
+    if (showTime &amp;&amp; formatString.indexOf(&#x27;H&#x27;) === -1) {
+        formatted += &#x27; &#x27; + pad(hours) + &#x27;:&#x27; + pad(minutes);
+    }
+    
+    return formatted;
+}
+
+// Function to determine date class (past, today, future)
+function getDateClass(date) {
+    if (!date) return &quot;&quot;;
+    
+    var dateObj = new Date(date);
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
+    dateObj.setHours(0, 0, 0, 0);
+    
+    if (dateObj &lt; today) {
+        return &quot;date-past&quot;;
+    } else if (dateObj.getTime() === today.getTime()) {
+        return &quot;date-today&quot;;
+    } else {
+        return &quot;date-future&quot;;
+    }
+}
+
+// Format and display the date
+var formattedDate = formatDate(dateData, format, locale, showTime, timeZone);
+dateValueSpan.textContent = formattedDate;
+
+// Add date class for styling
+var dateClass = getDateClass(dateData);
+if (dateClass) {
+    container.className = &quot;date-output-container &quot; + dateClass;
+}</changeJsFunction>
+        <collaborationJsFunction isNull="true" />
+        <description>Date display widget with customizable formatting for IBM Business Automation Workflow</description>
+        <validateJsFunction isNull="true" />
+        <previewAdvHtml>/61.e19a4a10-6a40-4b0d-a2cd-62d27be07dc4</previewAdvHtml>
+        <previewAdvJs>/61.d5a0756f-2e0a-4744-98f9-aa3e84dfee26</previewAdvJs>
+        <useUrlBinding>false</useUrlBinding>
+        <guid>guid:2563bbd0-609b-47e7-8dd6-cffc53ace388</guid>
+        <versionId>83a5d84e-7cb5-40b1-a807-c6dc9f4ef60a</versionId>
+        <field1 isNull="true" />
+        <field2 isNull="true" />
+        <field3>0</field3>
+        <field4 isNull="true" />
+        <field5>false</field5>
+        <clobField1 isNull="true" />
+        <bindingType name="DateValue">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewBindingTypeId>65.06179e74-40a0-4bb0-801d-e0f2495cb82b</coachViewBindingTypeId>
+            <coachViewId>64.2563bbd0-609b-47e7-8dd6-cffc53ace388</coachViewId>
+            <isList>false</isList>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.68474ab0-d56f-47ee-b7e9-510b45a2a8be</classId>
+            <seq>0</seq>
+            <description isNull="true" />
+            <guid>guid:a3d924c7-bd99-49d8-8b0c-4aa69eb873e5</guid>
+            <versionId>e81fc80b-bc36-42b5-92e0-2d20479ad083</versionId>
+        </bindingType>
+        <configOption name="format">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.d7755450-213c-4d4a-b128-503c0ba6294c</coachViewConfigOptionId>
+            <coachViewId>64.2563bbd0-609b-47e7-8dd6-cffc53ace388</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Date Format</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>0</seq>
+            <description>Date format string using tokens (YYYY, MM, DD, HH, mm, ss). Examples: &#x27;MM/DD/YYYY&#x27;, &#x27;DD/MM/YYYY HH:mm&#x27;</description>
+            <groupName></groupName>
+            <guid>guid:2563bbd0-609b-47e7-8dd6-cffc53ace388-format</guid>
+            <versionId>22128aa5-c30c-4108-a276-0689917db88c</versionId>
+        </configOption>
+
+        <configOption name="locale">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.9e668c8f-88a6-45d2-960b-eb1e32214f9d</coachViewConfigOptionId>
+            <coachViewId>64.2563bbd0-609b-47e7-8dd6-cffc53ace388</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Locale</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>1</seq>
+            <description>Locale identifier for internationalization (future enhancement)</description>
+            <groupName></groupName>
+            <guid>guid:2563bbd0-609b-47e7-8dd6-cffc53ace388-locale</guid>
+            <versionId>0761b6a0-ee8e-46f9-bf79-97a344b62f06</versionId>
+        </configOption>
+
+        <configOption name="showTime">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.826e77df-6ef5-4b3a-8fd0-4de18c99ca6b</coachViewConfigOptionId>
+            <coachViewId>64.2563bbd0-609b-47e7-8dd6-cffc53ace388</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Show Time</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>2</seq>
+            <description>Append time to the date if not already in format string</description>
+            <groupName></groupName>
+            <guid>guid:2563bbd0-609b-47e7-8dd6-cffc53ace388-showtime</guid>
+            <versionId>7fc60e65-8fc3-442c-b3a3-bffd7fb29f93</versionId>
+        </configOption>
+
+        <configOption name="timeZone">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.1005768b-4940-4956-b19f-c33078ef35b1</coachViewConfigOptionId>
+            <coachViewId>64.2563bbd0-609b-47e7-8dd6-cffc53ace388</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Time Zone</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>3</seq>
+            <description>Time zone identifier (future enhancement, e.g., &#x27;America/New_York&#x27;)</description>
+            <groupName></groupName>
+            <guid>guid:2563bbd0-609b-47e7-8dd6-cffc53ace388-timezone</guid>
+            <versionId>a7d0ec51-2770-4f5f-8afa-f6043fccf891</versionId>
+        </configOption>
+        <inlineScript name="Inline Javascript">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.813c10e2-cca1-498b-b825-1c52d3e2260d</coachViewInlineScriptId>
+            <coachViewId>64.2563bbd0-609b-47e7-8dd6-cffc53ace388</coachViewId>
+            <scriptType>JS</scriptType>
+            <scriptBlock>// Get DOM elements
+var container = this.context.element.getElementsByTagName(&quot;div&quot;).DateOutputContainer;
+var dateValueSpan = this.context.element.getElementsByTagName(&quot;span&quot;).DateOutputValue;
+
+// Get configuration options
+var format = this.getOption(&quot;format&quot;) || &quot;MM/DD/YYYY&quot;;
+var locale = this.getOption(&quot;locale&quot;) || &quot;en-US&quot;;
+var showTime = this.getOption(&quot;showTime&quot;) || false;
+var timeZone = this.getOption(&quot;timeZone&quot;) || undefined;
+
+// Get the date data
+var dateData = this.getData();
+
+// Function to format date based on format string
+function formatDate(date, formatString, locale, showTime, timeZone) {
+    if (!date) {
+        return &quot;&quot;;
+    }
+    
+    // Convert to Date object if it&#x27;s a string or timestamp
+    var dateObj;
+    if (typeof date === &#x27;string&#x27; || typeof date === &#x27;number&#x27;) {
+        dateObj = new Date(date);
+    } else if (date instanceof Date) {
+        dateObj = date;
+    } else {
+        return &quot;Invalid Date&quot;;
+    }
+    
+    // Check if date is valid
+    if (isNaN(dateObj.getTime())) {
+        return &quot;Invalid Date&quot;;
+    }
+    
+    // Handle custom format strings
+    var year = dateObj.getFullYear();
+    var month = dateObj.getMonth() + 1;
+    var day = dateObj.getDate();
+    var hours = dateObj.getHours();
+    var minutes = dateObj.getMinutes();
+    var seconds = dateObj.getSeconds();
+    
+    // Pad with zeros
+    var pad = function(num) {
+        return num &lt; 10 ? &#x27;0&#x27; + num : num;
+    };
+    
+    // Replace format tokens
+    var formatted = formatString
+        .replace(/YYYY/g, year)
+        .replace(/YY/g, String(year).slice(-2))
+        .replace(/MM/g, pad(month))
+        .replace(/M/g, month)
+        .replace(/DD/g, pad(day))
+        .replace(/D/g, day)
+        .replace(/HH/g, pad(hours))
+        .replace(/H/g, hours)
+        .replace(/mm/g, pad(minutes))
+        .replace(/m/g, minutes)
+        .replace(/ss/g, pad(seconds))
+        .replace(/s/g, seconds);
+    
+    // Add time if requested
+    if (showTime &amp;&amp; formatString.indexOf(&#x27;H&#x27;) === -1) {
+        formatted += &#x27; &#x27; + pad(hours) + &#x27;:&#x27; + pad(minutes);
+    }
+    
+    return formatted;
+}
+
+// Function to determine date class (past, today, future)
+function getDateClass(date) {
+    if (!date) return &quot;&quot;;
+    
+    var dateObj = new Date(date);
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
+    dateObj.setHours(0, 0, 0, 0);
+    
+    if (dateObj &lt; today) {
+        return &quot;date-past&quot;;
+    } else if (dateObj.getTime() === today.getTime()) {
+        return &quot;date-today&quot;;
+    } else {
+        return &quot;date-future&quot;;
+    }
+}
+
+// Format and display the date
+var formattedDate = formatDate(dateData, format, locale, showTime, timeZone);
+dateValueSpan.textContent = formattedDate;
+
+// Add date class for styling
+var dateClass = getDateClass(dateData);
+if (dateClass) {
+    container.className = &quot;date-output-container &quot; + dateClass;
+}
+
+// Made with Bob
+</scriptBlock>
+            <seq>0</seq>
+            <description></description>
+            <guid>guid:2563bbd0-609b-47e7-8dd6-cffc53ace388-js</guid>
+            <versionId>1fe111b1-f22f-4503-ab46-550026540574</versionId>
+        </inlineScript>
+
+        <inlineScript name="Inline CSS">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.d9cd907f-bded-4661-bf69-a7971a5d21ac</coachViewInlineScriptId>
+            <coachViewId>64.2563bbd0-609b-47e7-8dd6-cffc53ace388</coachViewId>
+            <scriptType>CSS</scriptType>
+            <scriptBlock>/* DateOutput Widget Styles - Carbon Design System */
+/* Colors and typography aligned with themes/Carbon.less */
+
+.date-output-container {
+    display: inline-block;
+    font-family: &#x27;IBM Plex Sans&#x27;, &#x27;Helvetica Neue&#x27;, Helvetica, Arial, sans-serif; /* @bpm-font-family-sans-serif */
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background-color: #f4f4f4; /* Gray 10 */
+    border: 1px solid #e0e0e0; /* Gray 20 */
+}
+
+.date-output-value {
+    font-size: 14px; /* @bpm-font-size-base */
+    color: #161616; /* @bpm-text-color */
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Hover effect */
+.date-output-container:hover {
+    background-color: #e0e0e0; /* Gray 20 */
+    border-color: #c6c6c6; /* Gray 30 / @bpm-link-text-color-disabled */
+}
+
+/* Different styles for different date types */
+.date-output-container.date-past {
+    background-color: #fff3e0; /* Warning light background */
+    border-color: #fdd13a; /* @bpm-color-warning */
+}
+
+.date-output-container.date-today {
+    background-color: #defbe6; /* Success light background */
+    border-color: #24a148; /* Success green 50 */
+}
+
+.date-output-container.date-future {
+    background-color: #e5f6ff; /* Info light background */
+    border-color: #0f62fe; /* @bpm-color-primary */
+}
+
+/* Made with Bob */
+</scriptBlock>
+            <seq>1</seq>
+            <description></description>
+            <guid>guid:2563bbd0-609b-47e7-8dd6-cffc53ace388-css</guid>
+            <versionId>c59c03f1-5df9-454c-b25c-7171bd02a837</versionId>
+        </inlineScript>
+    </coachView>
+</teamworks>

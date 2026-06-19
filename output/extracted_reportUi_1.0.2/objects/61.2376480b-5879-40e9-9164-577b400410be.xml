@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.2376480b-5879-40e9-9164-577b400410be" name="MultiDocumentUploadSnippet.js">
+        <lastModified>1781333576327</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.2376480b-5879-40e9-9164-577b400410be</managedAssetId>
+        <assetUuid>11ddb33c-6eef-4fa3-8d74-7ad93af48888</assetUuid>
+        <mimeType>application/javascript</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>7904</length>
+        <localLastModification>1781333576327</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:2376480b-5879-40e9-9164-577b400410be</guid>
+        <versionId>eba6fb8a-013e-40f3-a5cd-f36d317af0f4</versionId>
+    </managedAsset>
+</teamworks>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.06c3b666-1903-41c9-93e5-6eb6cdd3c10c" name="task.js">
+        <lastModified>1781331766621</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.06c3b666-1903-41c9-93e5-6eb6cdd3c10c</managedAssetId>
+        <assetUuid>86dedf3b-01a8-4d41-a771-e863f90c8cb5</assetUuid>
+        <mimeType>application/javascript</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>5954</length>
+        <localLastModification>1781331766621</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:06c3b666-1903-41c9-93e5-6eb6cdd3c10c</guid>
+        <versionId>eb7dd509-495b-4382-b71e-08b961939043</versionId>
+    </managedAsset>
+</teamworks>

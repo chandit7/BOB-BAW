@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.a759aefa-f9fe-49fc-bfe4-a1b870767d36" name="FolderTree.svg">
+        <lastModified>1781330059450</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.a759aefa-f9fe-49fc-bfe4-a1b870767d36</managedAssetId>
+        <assetUuid>36fa12fd-f2f4-43b5-b2b9-cba81bad67bf</assetUuid>
+        <mimeType>image/svg+xml</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>3447</length>
+        <localLastModification>1781330059450</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:a759aefa-f9fe-49fc-bfe4-a1b870767d36</guid>
+        <versionId>19f7fc4f-5c99-4188-946f-a11a3ecc3f84</versionId>
+    </managedAsset>
+</teamworks>

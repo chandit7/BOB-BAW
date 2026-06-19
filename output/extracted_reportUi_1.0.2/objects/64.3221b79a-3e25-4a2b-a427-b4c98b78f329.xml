@@ -1,0 +1,1200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <coachView id="64.3221b79a-3e25-4a2b-a427-b4c98b78f329" name="MultiSelect">
+        <lastModified>1781333576432</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <coachViewId>64.3221b79a-3e25-4a2b-a427-b4c98b78f329</coachViewId>
+        <isTemplate>false</isTemplate>
+        <layout>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;ns2:layout xmlns:ns2=&quot;http://www.ibm.com/bpm/CoachDesignerNG&quot; xmlns:ns3=&quot;http://www.ibm.com/bpm/coachview&quot;&gt;&lt;ns2:layoutItem xsi:type=&quot;ns2:CustomHTML&quot; version=&quot;8550&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&lt;ns2:id&gt;1430bc17-031f-491b-b5f1-6ccf3bd28eec&lt;/ns2:id&gt;&lt;ns2:layoutItemId&gt;CustomHTML1&lt;/ns2:layoutItemId&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;6dc7342d-9901-4ea2-b24e-d7056618082e&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.contentType&lt;/ns2:optionName&gt;&lt;ns2:value&gt;TEXT&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;f4cdb000-e9a5-46e2-9524-4f93746990ee&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.textContent&lt;/ns2:optionName&gt;&lt;ns2:value&gt;&amp;lt;div class=&amp;quot;multiselect-container&amp;quot; role=&amp;quot;region&amp;quot; aria-label=&amp;quot;Multi-select dropdown&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;multiselect-wrapper&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;multiselect-input-wrapper&amp;quot; role=&amp;quot;combobox&amp;quot; aria-expanded=&amp;quot;false&amp;quot; aria-haspopup=&amp;quot;listbox&amp;quot;&amp;gt;
+      &amp;lt;div class=&amp;quot;multiselect-selected-items&amp;quot;&amp;gt;
+        &amp;lt;span class=&amp;quot;multiselect-placeholder&amp;quot;&amp;gt;Select items...&amp;lt;/span&amp;gt;
+      &amp;lt;/div&amp;gt;
+      &amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;multiselect-toggle&amp;quot; aria-label=&amp;quot;Toggle dropdown&amp;quot;&amp;gt;
+        &amp;lt;svg class=&amp;quot;multiselect-icon&amp;quot; width=&amp;quot;20&amp;quot; height=&amp;quot;20&amp;quot; viewBox=&amp;quot;0 0 16 16&amp;quot; fill=&amp;quot;currentColor&amp;quot;&amp;gt;
+          &amp;lt;path d=&amp;quot;M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z&amp;quot;/&amp;gt;
+        &amp;lt;/svg&amp;gt;
+      &amp;lt;/button&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;multiselect-dropdown&amp;quot; role=&amp;quot;listbox&amp;quot; aria-multiselectable=&amp;quot;true&amp;quot;&amp;gt;
+      &amp;lt;div class=&amp;quot;multiselect-search-wrapper&amp;quot;&amp;gt;
+        &amp;lt;input type=&amp;quot;text&amp;quot; class=&amp;quot;multiselect-search&amp;quot; placeholder=&amp;quot;Search...&amp;quot; aria-label=&amp;quot;Search items&amp;quot;&amp;gt;
+        &amp;lt;svg class=&amp;quot;multiselect-search-icon&amp;quot; width=&amp;quot;20&amp;quot; height=&amp;quot;20&amp;quot; viewBox=&amp;quot;0 0 16 16&amp;quot; fill=&amp;quot;currentColor&amp;quot;&amp;gt;
+          &amp;lt;path d=&amp;quot;M15 14.3L10.7 10c.9-1.2 1.5-2.7 1.5-4.2 0-3.7-3-6.8-6.7-6.8S-1.2 2.1-1.2 5.8s3 6.8 6.7 6.8c1.8 0 3.4-.7 4.6-1.8L14.3 15 15 14.3zM5.5 11.3c-3 0-5.5-2.5-5.5-5.5S2.5.3 5.5.3 11 2.8 11 5.8s-2.5 5.5-5.5 5.5z&amp;quot;/&amp;gt;
+        &amp;lt;/svg&amp;gt;
+      &amp;lt;/div&amp;gt;
+      &amp;lt;div class=&amp;quot;multiselect-options&amp;quot;&amp;gt;
+        &amp;lt;!-- Options will be dynamically generated --&amp;gt;
+      &amp;lt;/div&amp;gt;
+      &amp;lt;div class=&amp;quot;multiselect-actions&amp;quot;&amp;gt;
+        &amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;multiselect-action-btn multiselect-select-all&amp;quot;&amp;gt;Select All&amp;lt;/button&amp;gt;
+        &amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;multiselect-action-btn multiselect-clear-all&amp;quot;&amp;gt;Clear All&amp;lt;/button&amp;gt;
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;multiselect-helper-text&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;/ns2:layoutItem&gt;&lt;/ns2:layout&gt;</layout>
+        <paletteIcon>/61.db5ccea4-547a-4064-bd6a-ab41159bd9ee</paletteIcon>
+        <previewImage isNull="true" />
+        <hasLabel>false</hasLabel>
+        <labelPosition>0</labelPosition>
+        <nineSliceX1Coord>0</nineSliceX1Coord>
+        <nineSliceX2Coord>0</nineSliceX2Coord>
+        <nineSliceY1Coord>0</nineSliceY1Coord>
+        <nineSliceY2Coord>0</nineSliceY2Coord>
+        <emitBoundary>false</emitBoundary>
+        <isPrototypeFunc>false</isPrototypeFunc>
+        <enableDevMode>false</enableDevMode>
+        <isMobileReady>false</isMobileReady>
+        <loadJsFunction isNull="true" />
+        <unloadJsFunction isNull="true" />
+        <viewJsFunction isNull="true" />
+        <changeJsFunction>var container = this.context.element.querySelector(&quot;.multiselect-container&quot;);
+var selectedItemsDiv = container.querySelector(&quot;.multiselect-selected-items&quot;);
+var optionsContainer = container.querySelector(&quot;.multiselect-options&quot;);
+
+// Get updated selected values
+var selectedValues = this.getData() || [];
+if (!Array.isArray(selectedValues)) {
+  selectedValues = [];
+}
+
+// Get configuration
+var options = this.getOption(&quot;options&quot;) || [];
+var disabled = this.getOption(&quot;disabled&quot;);
+
+// Update internal state
+var state = {
+  selectedValues: selectedValues,
+  allOptions: options
+};
+
+// Re-render selected items
+function renderSelectedItems() {
+  // Clear existing tags
+  var existingTags = selectedItemsDiv.querySelectorAll(&quot;.multiselect-tag&quot;);
+  for (var i = 0; i &lt; existingTags.length; i++) {
+    selectedItemsDiv.removeChild(existingTags[i]);
+  }
+  
+  var placeholderEl = selectedItemsDiv.querySelector(&quot;.multiselect-placeholder&quot;);
+  
+  if (state.selectedValues.length === 0) {
+    if (placeholderEl) placeholderEl.style.display = &quot;inline&quot;;
+    return;
+  }
+  
+  if (placeholderEl) placeholderEl.style.display = &quot;none&quot;;
+  
+  state.selectedValues.forEach(function(value) {
+    var option = state.allOptions.find(function(opt) {
+      return opt.value === value;
+    });
+    
+    if (!option) return;
+    
+    var tag = document.createElement(&quot;div&quot;);
+    tag.className = &quot;multiselect-tag&quot;;
+    
+    var tagText = document.createElement(&quot;span&quot;);
+    tagText.className = &quot;multiselect-tag-text&quot;;
+    tagText.textContent = option.name;
+    tag.appendChild(tagText);
+    
+    var removeBtn = document.createElement(&quot;button&quot;);
+    removeBtn.type = &quot;button&quot;;
+    removeBtn.className = &quot;multiselect-tag-remove&quot;;
+    removeBtn.setAttribute(&quot;aria-label&quot;, &quot;Remove &quot; + option.name);
+    removeBtn.innerHTML = &#x27;&lt;svg viewBox=&quot;0 0 16 16&quot; fill=&quot;currentColor&quot;&gt;&lt;path d=&quot;M12 4.7L11.3 4 8 7.3 4.7 4 4 4.7 7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z&quot;/&gt;&lt;/svg&gt;&#x27;;
+    
+    removeBtn.addEventListener(&quot;click&quot;, function(e) {
+      e.stopPropagation();
+      toggleOption(value);
+    });
+    
+    tag.appendChild(removeBtn);
+    selectedItemsDiv.appendChild(tag);
+  });
+}
+
+// Toggle option selection
+function toggleOption(value) {
+  if (disabled) return;
+  
+  var index = state.selectedValues.indexOf(value);
+  
+  if (index !== -1) {
+    state.selectedValues.splice(index, 1);
+  } else {
+    state.selectedValues.push(value);
+  }
+  
+  this.setData(state.selectedValues);
+  renderSelectedItems();
+  updateOptions();
+}
+
+// Update options display
+function updateOptions() {
+  var optionElements = optionsContainer.querySelectorAll(&quot;.multiselect-option&quot;);
+  
+  optionElements.forEach(function(optionEl) {
+    var value = optionEl.getAttribute(&quot;data-value&quot;);
+    var isSelected = state.selectedValues.indexOf(value) !== -1;
+    
+    if (isSelected) {
+      optionEl.classList.add(&quot;selected&quot;);
+      optionEl.setAttribute(&quot;aria-selected&quot;, &quot;true&quot;);
+    } else {
+      optionEl.classList.remove(&quot;selected&quot;);
+      optionEl.setAttribute(&quot;aria-selected&quot;, &quot;false&quot;);
+    }
+  });
+}
+
+// Execute updates
+renderSelectedItems();
+updateOptions();
+
+// Update ARIA label
+var count = state.selectedValues.length;
+var label = count === 0 ? &quot;No items selected&quot; :
+            count === 1 ? &quot;1 item selected&quot; :
+            count + &quot; items selected&quot;;
+var inputWrapper = container.querySelector(&quot;.multiselect-input-wrapper&quot;);
+if (inputWrapper) {
+  inputWrapper.setAttribute(&quot;aria-label&quot;, label);
+}
+
+// Made with Bob</changeJsFunction>
+        <collaborationJsFunction isNull="true" />
+        <description>Multi-select dropdown widget with search and bulk selection capabilities for IBM Business Automation Workflow</description>
+        <validateJsFunction isNull="true" />
+        <previewAdvHtml>/61.5cc3aad8-49de-46c6-b44f-24ee9ce78ad9</previewAdvHtml>
+        <previewAdvJs>/61.5b31b52b-b136-4887-93d0-4be9219ef64e</previewAdvJs>
+        <useUrlBinding>false</useUrlBinding>
+        <guid>guid:3221b79a-3e25-4a2b-a427-b4c98b78f329</guid>
+        <versionId>c4a61a63-fc96-424c-bd05-18a7581d73a6</versionId>
+        <field1 isNull="true" />
+        <field2 isNull="true" />
+        <field3>0</field3>
+        <field4 isNull="true" />
+        <field5>false</field5>
+        <clobField1 isNull="true" />
+        <bindingType name="SelectedItems">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewBindingTypeId>65.419fe1d4-3fd6-4760-9858-f7b71dd03baf</coachViewBindingTypeId>
+            <coachViewId>64.3221b79a-3e25-4a2b-a427-b4c98b78f329</coachViewId>
+            <isList>true</isList>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <seq>0</seq>
+            <description isNull="true" />
+            <guid>guid:44cf2ca1-49d4-4f56-a2ce-3427115e031c</guid>
+            <versionId>30e25541-845e-446c-a16e-455b14f7531c</versionId>
+        </bindingType>
+        <configOption name="options">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.5397041d-109a-4ad4-8cec-b5b720841650</coachViewConfigOptionId>
+            <coachViewId>64.3221b79a-3e25-4a2b-a427-b4c98b78f329</coachViewId>
+            <isList>true</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Options</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.d2e5a15a-ea53-4793-9e93-29af5bd80b13</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>0</seq>
+            <description>Array of available options with value and name properties</description>
+            <groupName></groupName>
+            <guid>guid:3221b79a-3e25-4a2b-a427-b4c98b78f329-options</guid>
+            <versionId>e36bee95-d172-48b1-b04a-0719f12c4cc2</versionId>
+        </configOption>
+
+        <configOption name="placeholder">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.20d2154b-9161-400b-9189-9e59157ad75d</coachViewConfigOptionId>
+            <coachViewId>64.3221b79a-3e25-4a2b-a427-b4c98b78f329</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Placeholder</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>1</seq>
+            <description>Placeholder text when no items are selected</description>
+            <groupName></groupName>
+            <guid>guid:3221b79a-3e25-4a2b-a427-b4c98b78f329-placeholder</guid>
+            <versionId>3ba987a4-597c-49d2-ac4f-6a846131d301</versionId>
+        </configOption>
+
+        <configOption name="maxSelections">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.01a4bfc2-4d8b-4316-929c-749174cf338e</coachViewConfigOptionId>
+            <coachViewId>64.3221b79a-3e25-4a2b-a427-b4c98b78f329</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Max Selections</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.3fa0d7a0-828a-4d60-99cc-db5ed143fc2d</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>2</seq>
+            <description>Maximum number of items that can be selected (null = no limit)</description>
+            <groupName></groupName>
+            <guid>guid:3221b79a-3e25-4a2b-a427-b4c98b78f329-maxselections</guid>
+            <versionId>fe96c11b-2ee5-40d3-8714-a708be11342c</versionId>
+        </configOption>
+
+        <configOption name="showSearch">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.786ff445-7f2e-4199-a222-e4eb581100e9</coachViewConfigOptionId>
+            <coachViewId>64.3221b79a-3e25-4a2b-a427-b4c98b78f329</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Show Search</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>3</seq>
+            <description>Show/hide search input for filtering options</description>
+            <groupName></groupName>
+            <guid>guid:3221b79a-3e25-4a2b-a427-b4c98b78f329-showsearch</guid>
+            <versionId>d4dd4e8c-53b3-4e6a-a489-ab8865af87e4</versionId>
+        </configOption>
+
+        <configOption name="showActions">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.674d4901-edae-4945-96de-15ebeaa814ee</coachViewConfigOptionId>
+            <coachViewId>64.3221b79a-3e25-4a2b-a427-b4c98b78f329</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Show Actions</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>4</seq>
+            <description>Show/hide Select All and Clear All buttons</description>
+            <groupName></groupName>
+            <guid>guid:3221b79a-3e25-4a2b-a427-b4c98b78f329-showactions</guid>
+            <versionId>ed8dbd6d-2178-4db1-8dc0-c88c9e31d2b4</versionId>
+        </configOption>
+
+        <configOption name="disabled">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.c3f4286a-3026-44e6-ad96-c6b347634f06</coachViewConfigOptionId>
+            <coachViewId>64.3221b79a-3e25-4a2b-a427-b4c98b78f329</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Disabled</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>5</seq>
+            <description>Disable the entire widget</description>
+            <groupName></groupName>
+            <guid>guid:3221b79a-3e25-4a2b-a427-b4c98b78f329-disabled</guid>
+            <versionId>f580c5cf-6c5d-4067-803e-7f595402d331</versionId>
+        </configOption>
+
+        <configOption name="helperText">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.5e7a7400-f52f-43ed-b7ff-7d2227914013</coachViewConfigOptionId>
+            <coachViewId>64.3221b79a-3e25-4a2b-a427-b4c98b78f329</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Helper Text</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>6</seq>
+            <description>Helper text displayed below the widget</description>
+            <groupName></groupName>
+            <guid>guid:3221b79a-3e25-4a2b-a427-b4c98b78f329-helpertext</guid>
+            <versionId>52f4f5ce-f3ad-4721-bab5-fd1651e6bfcc</versionId>
+        </configOption>
+        <inlineScript name="Inline Javascript">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.8aedd1ed-051c-49e0-9719-8db64ef680b6</coachViewInlineScriptId>
+            <coachViewId>64.3221b79a-3e25-4a2b-a427-b4c98b78f329</coachViewId>
+            <scriptType>JS</scriptType>
+            <scriptBlock>
+  // Store widget context reference
+  var widget = this;
+
+  
+  var container = widget.context.element.querySelector(&quot;.multiselect-container&quot;);
+  var wrapper = container.querySelector(&quot;.multiselect-wrapper&quot;);
+  var inputWrapper = container.querySelector(&quot;.multiselect-input-wrapper&quot;);
+  var selectedItemsDiv = container.querySelector(&quot;.multiselect-selected-items&quot;);
+  var toggleBtn = container.querySelector(&quot;.multiselect-toggle&quot;);
+  var dropdown = container.querySelector(&quot;.multiselect-dropdown&quot;);
+  var searchInput = container.querySelector(&quot;.multiselect-search&quot;);
+  var optionsContainer = container.querySelector(&quot;.multiselect-options&quot;);
+  var selectAllBtn = container.querySelector(&quot;.multiselect-select-all&quot;);
+  var clearAllBtn = container.querySelector(&quot;.multiselect-clear-all&quot;);
+  var helperText = container.querySelector(&quot;.multiselect-helper-text&quot;);
+  
+  // Get configuration options
+  var options = widget.getOption(&quot;options&quot;).items;;
+  var placeholder = widget.getOption(&quot;placeholder&quot;) || &quot;Select items...&quot;;
+  var maxSelections = widget.getOption(&quot;maxSelections&quot;) || null;
+  var showSearch = widget.getOption(&quot;showSearch&quot;);
+  var showActions = widget.getOption(&quot;showActions&quot;);
+  var disabled = widget.getOption(&quot;disabled&quot;);
+  var helperTextValue = widget.getOption(&quot;helperText&quot;) || &quot;&quot;;
+  
+  // Validate and ensure options is an array
+  if (!options || !Array.isArray(options)) {
+    options = [];
+  }
+  
+  // Set default values
+  if (showSearch === undefined || showSearch === null) showSearch = true;
+  if (showActions === undefined || showActions === null) showActions = true;
+  if (disabled === undefined || disabled === null) disabled = false;
+  
+  // Get selected values from bound data
+  var selectedValues = widget.getData() || [];
+  if (!Array.isArray(selectedValues)) {
+    selectedValues = [];
+  }
+  
+  // State management
+  var state = {
+    isOpen: false,
+    selectedValues: selectedValues,
+    filteredOptions: options.slice(), // Create a copy
+    allOptions: options.slice() // Create a copy
+  };
+  
+  // Initialize widget
+  function init() {
+    // Set placeholder
+    var placeholderEl = selectedItemsDiv.querySelector(&quot;.multiselect-placeholder&quot;);
+    if (placeholderEl) {
+      placeholderEl.textContent = placeholder;
+    }
+    
+    // Set helper text
+    if (helperTextValue) {
+      helperText.textContent = helperTextValue;
+    }
+    
+    // Hide/show search
+    if (!showSearch) {
+      var searchWrapper = container.querySelector(&quot;.multiselect-search-wrapper&quot;);
+      if (searchWrapper) searchWrapper.style.display = &quot;none&quot;;
+    }
+    
+    // Hide/show actions
+    if (!showActions) {
+      var actionsDiv = container.querySelector(&quot;.multiselect-actions&quot;);
+      if (actionsDiv) actionsDiv.style.display = &quot;none&quot;;
+    }
+    
+    // Set disabled state
+    if (disabled) {
+      container.classList.add(&quot;disabled&quot;);
+      inputWrapper.setAttribute(&quot;aria-disabled&quot;, &quot;true&quot;);
+    }
+    
+    // Render options and selected items
+    renderOptions();
+    renderSelectedItems();
+    updateActionButtons();
+    
+    // Attach event listeners
+    attachEventListeners();
+  }
+  
+  // Render options in dropdown
+  function renderOptions() {
+    optionsContainer.innerHTML = &quot;&quot;;
+    
+    if (state.filteredOptions.length === 0) {
+      var noResults = document.createElement(&quot;div&quot;);
+      noResults.className = &quot;multiselect-no-results&quot;;
+      noResults.textContent = &quot;No results found&quot;;
+      optionsContainer.appendChild(noResults);
+      return;
+    }
+    
+    state.filteredOptions.forEach(function(option) {
+      var optionEl = document.createElement(&quot;div&quot;);
+      optionEl.className = &quot;multiselect-option&quot;;
+      optionEl.setAttribute(&quot;role&quot;, &quot;option&quot;);
+      optionEl.setAttribute(&quot;data-value&quot;, option.value);
+      optionEl.setAttribute(&quot;tabindex&quot;, &quot;0&quot;);
+      
+      var isSelected = state.selectedValues.indexOf(option.value) !== -1;
+      if (isSelected) {
+        optionEl.classList.add(&quot;selected&quot;);
+        optionEl.setAttribute(&quot;aria-selected&quot;, &quot;true&quot;);
+      } else {
+        optionEl.setAttribute(&quot;aria-selected&quot;, &quot;false&quot;);
+      }
+      
+      // Checkbox
+      var checkbox = document.createElement(&quot;div&quot;);
+      checkbox.className = &quot;multiselect-checkbox&quot;;
+      checkbox.innerHTML = &#x27;&lt;svg viewBox=&quot;0 0 16 16&quot; fill=&quot;currentColor&quot;&gt;&lt;path d=&quot;M6.5 11.7L3.3 8.5l.7-.7 2.5 2.5 5.2-5.2.7.7z&quot;/&gt;&lt;/svg&gt;&#x27;;
+      optionEl.appendChild(checkbox);
+      
+      // Text
+      var text = document.createElement(&quot;span&quot;);
+      text.className = &quot;multiselect-option-text&quot;;
+      text.textContent = option.name;
+      optionEl.appendChild(text);
+      
+      // Click handler
+      optionEl.addEventListener(&quot;click&quot;, function() {
+        toggleOption(option.value);
+      });
+      
+      // Keyboard handler
+      optionEl.addEventListener(&quot;keydown&quot;, function(e) {
+        if (e.key === &quot;Enter&quot; || e.key === &quot; &quot;) {
+          e.preventDefault();
+          toggleOption(option.value);
+        }
+      });
+      
+      optionsContainer.appendChild(optionEl);
+    });
+  }
+  
+  // Render selected items as tags
+  function renderSelectedItems() {
+    // Clear existing tags
+    var existingTags = selectedItemsDiv.querySelectorAll(&quot;.multiselect-tag&quot;);
+    for (var i = 0; i &lt; existingTags.length; i++) {
+      selectedItemsDiv.removeChild(existingTags[i]);
+    }
+    
+    var placeholderEl = selectedItemsDiv.querySelector(&quot;.multiselect-placeholder&quot;);
+    
+    if (state.selectedValues.length === 0) {
+      if (placeholderEl) placeholderEl.style.display = &quot;inline&quot;;
+      return;
+    }
+    
+    if (placeholderEl) placeholderEl.style.display = &quot;none&quot;;
+    
+    state.selectedValues.forEach(function(value) {
+      var option = state.allOptions.find(function(opt) {
+        return opt.value === value;
+      });
+      
+      if (!option) return;
+      
+      var tag = document.createElement(&quot;div&quot;);
+      tag.className = &quot;multiselect-tag&quot;;
+      
+      var tagText = document.createElement(&quot;span&quot;);
+      tagText.className = &quot;multiselect-tag-text&quot;;
+      tagText.textContent = option.name;
+      tag.appendChild(tagText);
+      
+      var removeBtn = document.createElement(&quot;button&quot;);
+      removeBtn.type = &quot;button&quot;;
+      removeBtn.className = &quot;multiselect-tag-remove&quot;;
+      removeBtn.setAttribute(&quot;aria-label&quot;, &quot;Remove &quot; + option.name);
+      removeBtn.innerHTML = &#x27;&lt;svg viewBox=&quot;0 0 16 16&quot; fill=&quot;currentColor&quot;&gt;&lt;path d=&quot;M12 4.7L11.3 4 8 7.3 4.7 4 4 4.7 7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z&quot;/&gt;&lt;/svg&gt;&#x27;;
+      
+      removeBtn.addEventListener(&quot;click&quot;, function(e) {
+        e.stopPropagation();
+        toggleOption(value);
+      });
+      
+      tag.appendChild(removeBtn);
+      selectedItemsDiv.appendChild(tag);
+    });
+  }
+  
+  // Toggle option selection
+  function toggleOption(value) {
+    if (disabled) return;
+    
+    var index = state.selectedValues.indexOf(value);
+    
+    if (index !== -1) {
+      // Deselect
+      state.selectedValues.splice(index, 1);
+    } else {
+      // Select
+      if (maxSelections &amp;&amp; state.selectedValues.length &gt;= maxSelections) {
+        showError(&quot;Maximum &quot; + maxSelections + &quot; items can be selected&quot;);
+        return;
+      }
+      state.selectedValues.push(value);
+    }
+    
+    // Update data binding
+    widget.setData(state.selectedValues);
+    
+    // Re-render
+    renderOptions();
+    renderSelectedItems();
+    updateActionButtons();
+    updateAriaLabel();
+  }
+  
+  // Toggle dropdown
+  function toggleDropdown() {
+    if (disabled) return;
+    
+    state.isOpen = !state.isOpen;
+    
+    if (state.isOpen) {
+      dropdown.classList.add(&quot;open&quot;);
+      inputWrapper.classList.add(&quot;active&quot;);
+      inputWrapper.setAttribute(&quot;aria-expanded&quot;, &quot;true&quot;);
+      if (showSearch) searchInput.focus();
+    } else {
+      dropdown.classList.remove(&quot;open&quot;);
+      inputWrapper.classList.remove(&quot;active&quot;);
+      inputWrapper.setAttribute(&quot;aria-expanded&quot;, &quot;false&quot;);
+      searchInput.value = &quot;&quot;;
+      state.filteredOptions = state.allOptions;
+      renderOptions();
+    }
+  }
+  
+  // Filter options based on search
+  function filterOptions(searchTerm) {
+    var term = searchTerm.toLowerCase().trim();
+    
+    if (!term) {
+      state.filteredOptions = state.allOptions;
+    } else {
+      state.filteredOptions = state.allOptions.filter(function(option) {
+        return option.name.toLowerCase().indexOf(term) !== -1 ||
+               option.value.toLowerCase().indexOf(term) !== -1;
+      });
+    }
+    
+    renderOptions();
+  }
+  
+  // Select all options
+  function selectAll() {
+    if (disabled) return;
+    
+    if (maxSelections) {
+      state.selectedValues = state.allOptions.slice(0, maxSelections).map(function(opt) {
+        return opt.value;
+      });
+      if (state.allOptions.length &gt; maxSelections) {
+        showError(&quot;Only first &quot; + maxSelections + &quot; items selected (limit reached)&quot;);
+      }
+    } else {
+      state.selectedValues = state.allOptions.map(function(opt) {
+        return opt.value;
+      });
+    }
+    
+    widget.setData(state.selectedValues);
+    renderOptions();
+    renderSelectedItems();
+    updateActionButtons();
+    updateAriaLabel();
+  }
+  
+  // Clear all selections
+  function clearAll() {
+    if (disabled) return;
+    
+    state.selectedValues = [];
+    widget.setData(state.selectedValues);
+    renderOptions();
+    renderSelectedItems();
+    updateActionButtons();
+    updateAriaLabel();
+  }
+  
+  // Update action buttons state
+  function updateActionButtons() {
+    if (!showActions) return;
+    
+    if (state.selectedValues.length === 0) {
+      clearAllBtn.disabled = true;
+    } else {
+      clearAllBtn.disabled = false;
+    }
+    
+    if (maxSelections &amp;&amp; state.selectedValues.length &gt;= maxSelections) {
+      selectAllBtn.disabled = true;
+    } else if (state.selectedValues.length === state.allOptions.length) {
+      selectAllBtn.disabled = true;
+    } else {
+      selectAllBtn.disabled = false;
+    }
+  }
+  
+  // Update ARIA label
+  function updateAriaLabel() {
+    var count = state.selectedValues.length;
+    var label = count === 0 ? &quot;No items selected&quot; :
+                count === 1 ? &quot;1 item selected&quot; :
+                count + &quot; items selected&quot;;
+    inputWrapper.setAttribute(&quot;aria-label&quot;, label);
+  }
+  
+  // Show error message
+  function showError(message) {
+    container.classList.add(&quot;error&quot;);
+    helperText.textContent = message;
+    helperText.classList.add(&quot;error&quot;);
+    
+    setTimeout(function() {
+      container.classList.remove(&quot;error&quot;);
+      helperText.textContent = helperTextValue;
+      helperText.classList.remove(&quot;error&quot;);
+    }, 3000);
+  }
+  
+  // Attach event listeners
+  function attachEventListeners() {
+    // Toggle dropdown
+    inputWrapper.addEventListener(&quot;click&quot;, toggleDropdown);
+    toggleBtn.addEventListener(&quot;click&quot;, function(e) {
+      e.stopPropagation();
+      toggleDropdown();
+    });
+    
+    // Search input
+    if (showSearch) {
+      searchInput.addEventListener(&quot;input&quot;, function(e) {
+        filterOptions(e.target.value);
+      });
+      
+      searchInput.addEventListener(&quot;click&quot;, function(e) {
+        e.stopPropagation();
+      });
+    }
+    
+    // Action buttons
+    if (showActions) {
+      selectAllBtn.addEventListener(&quot;click&quot;, selectAll);
+      clearAllBtn.addEventListener(&quot;click&quot;, clearAll);
+    }
+    
+    // Close dropdown when clicking outside
+    document.addEventListener(&quot;click&quot;, function(e) {
+      if (!container.contains(e.target) &amp;&amp; state.isOpen) {
+        toggleDropdown();
+      }
+    });
+    
+    // Keyboard navigation
+    inputWrapper.addEventListener(&quot;keydown&quot;, function(e) {
+      if (e.key === &quot;Enter&quot; || e.key === &quot; &quot;) {
+        e.preventDefault();
+        toggleDropdown();
+      } else if (e.key === &quot;Escape&quot; &amp;&amp; state.isOpen) {
+        toggleDropdown();
+      }
+    });
+  }
+  
+  // Initialize the widget
+  init();
+  updateAriaLabel();
+// Made with Bob</scriptBlock>
+            <seq>0</seq>
+            <description></description>
+            <guid>guid:3221b79a-3e25-4a2b-a427-b4c98b78f329-js</guid>
+            <versionId>bcec3426-decd-4cc6-8e72-d131cf803121</versionId>
+        </inlineScript>
+
+        <inlineScript name="Inline CSS">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.29573a5d-ce9a-49f5-98e4-a219ed355a26</coachViewInlineScriptId>
+            <coachViewId>64.3221b79a-3e25-4a2b-a427-b4c98b78f329</coachViewId>
+            <scriptType>CSS</scriptType>
+            <scriptBlock>/* MultiSelect Widget - Modern Carbon Design System v11 */
+
+.multiselect-container {
+  width: 100%;
+  font-family: &#x27;IBM Plex Sans&#x27;, &#x27;Helvetica Neue&#x27;, Arial, sans-serif; /* @bpm-font-family-sans-serif */
+  font-size: 14px; /* @bpm-font-size-base */
+  position: relative;
+}
+
+.multiselect-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Input Wrapper - Clean flat design */
+.multiselect-input-wrapper {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 12px;
+  background-color: #f4f4f4; /* Gray 10 */
+  border: none;
+  border-bottom: 1px solid #8d8d8d; /* Gray 50 */
+  cursor: pointer;
+  transition: all 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
+  position: relative;
+}
+
+.multiselect-input-wrapper:hover {
+  background-color: #e8e8e8; /* Gray 20 hover */
+}
+
+.multiselect-input-wrapper:focus-within,
+.multiselect-input-wrapper.active {
+  background-color: #ffffff; /* @bpm-body-bg */
+  border-bottom: 2px solid #0f62fe; /* @bpm-color-primary */
+  outline: 2px solid #0f62fe; /* @bpm-color-primary */
+  outline-offset: -2px;
+}
+
+/* Selected Items Display */
+.multiselect-selected-items {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0.25rem 0;
+  min-height: 32px;
+  align-items: center;
+}
+
+.multiselect-placeholder {
+  color: #6f6f6f;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Selected Item Tag - Modern pill design */
+.multiselect-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px;
+  height: 24px;
+  background-color: #e0e0e0; /* Gray 20 */
+  border-radius: 12px;
+  font-size: 12px; /* @bpm-font-size-small */
+  font-weight: 400; /* @bpm-font-weight-normal */
+  line-height: 1;
+  color: #161616; /* @bpm-text-color */
+  max-width: 200px;
+  transition: background-color 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
+  animation: tagSlideIn 0.2s ease-out;
+}
+
+.multiselect-tag:hover {
+  background-color: #c6c6c6; /* Gray 30 */
+}
+
+@keyframes tagSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.multiselect-tag-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.multiselect-tag-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #525252; /* Gray 70 */
+  transition: all 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+.multiselect-tag-remove:hover {
+  background-color: #8d8d8d; /* Gray 50 */
+  color: #ffffff; /* @bpm-body-bg */
+}
+
+.multiselect-tag-remove svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* Toggle Button - Minimal design */
+.multiselect-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #161616; /* @bpm-text-color */
+  transition: transform 110ms cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+.multiselect-toggle:hover {
+  background-color: #e0e0e0; /* Gray 20 */
+}
+
+.multiselect-input-wrapper.active .multiselect-toggle {
+  transform: rotate(180deg);
+}
+
+.multiselect-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Dropdown - Clean shadow */
+.multiselect-dropdown {
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+  right: 0;
+  background-color: #ffffff; /* @bpm-body-bg */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 9000;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: all 110ms cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+.multiselect-dropdown.open {
+  max-height: 400px;
+  opacity: 1;
+  transform: translateY(0);
+  overflow: visible;
+}
+
+/* Search Wrapper - Flat design */
+.multiselect-search-wrapper {
+  position: relative;
+  padding: 8px;
+  border-bottom: 1px solid #e0e0e0; /* Gray 20 */
+  background-color: #ffffff; /* @bpm-body-bg */
+}
+
+.multiselect-search {
+  width: 100%;
+  height: 40px;
+  padding: 0 40px 0 40px;
+  background-color: #f4f4f4; /* Gray 10 */
+  border: none;
+  border-bottom: 1px solid #8d8d8d; /* Gray 50 */
+  font-size: 14px; /* @bpm-font-size-base */
+  font-family: inherit;
+  line-height: 1.29;
+  color: #161616; /* @bpm-text-color */
+  transition: all 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+.multiselect-search:hover {
+  background-color: #e8e8e8; /* Gray 20 hover */
+}
+
+.multiselect-search:focus {
+  background-color: #ffffff; /* @bpm-body-bg */
+  border-bottom: 2px solid #0f62fe; /* @bpm-color-primary */
+  outline: 2px solid #0f62fe; /* @bpm-color-primary */
+  outline-offset: -2px;
+}
+
+.multiselect-search::placeholder {
+  color: #6f6f6f;
+}
+
+.multiselect-search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: #161616; /* @bpm-text-color */
+  pointer-events: none;
+}
+
+/* Options List */
+.multiselect-options {
+  max-height: 240px;
+  overflow-y: auto;
+  padding: 0.25rem 0;
+}
+
+.multiselect-options::-webkit-scrollbar {
+  width: 8px;
+}
+
+.multiselect-options::-webkit-scrollbar-track {
+  background: #f4f4f4;
+}
+
+.multiselect-options::-webkit-scrollbar-thumb {
+  background: #8d8d8d;
+  border-radius: 4px;
+}
+
+.multiselect-options::-webkit-scrollbar-thumb:hover {
+  background: #6f6f6f;
+}
+
+/* Option Item - Clean hover states */
+.multiselect-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 16px;
+  cursor: pointer;
+  font-size: 14px; /* @bpm-font-size-base */
+  line-height: 1.29;
+  color: #161616; /* @bpm-text-color */
+  transition: background-color 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
+  position: relative;
+}
+
+.multiselect-option:hover {
+  background-color: #e8e8e8; /* Gray 20 hover */
+}
+
+.multiselect-option.selected {
+  background-color: #e0e0e0; /* Gray 20 */
+}
+
+.multiselect-option.selected:hover {
+  background-color: #d0d0d0; /* Slightly darker on hover */
+}
+
+.multiselect-option.hidden {
+  display: none;
+}
+
+/* Checkbox - Carbon style */
+.multiselect-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #8d8d8d; /* Gray 50 */
+  background-color: transparent;
+  transition: all 110ms cubic-bezier(0.2, 0, 0.38, 0.9);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.multiselect-option:hover .multiselect-checkbox {
+  border-color: #0f62fe; /* @bpm-color-primary */
+}
+
+.multiselect-option.selected .multiselect-checkbox {
+  background-color: #0f62fe; /* @bpm-color-primary */
+  border-color: #0f62fe; /* @bpm-color-primary */
+}
+
+.multiselect-checkbox svg {
+  width: 12px;
+  height: 12px;
+  color: #ffffff; /* @bpm-body-bg */
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 110ms cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+.multiselect-option.selected .multiselect-checkbox svg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.multiselect-option-text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Actions - Carbon button style */
+.multiselect-actions {
+  display: flex;
+  gap: 1px;
+  padding: 8px;
+  border-top: 1px solid #e0e0e0; /* Gray 20 */
+  background-color: #ffffff; /* @bpm-body-bg */
+}
+
+.multiselect-action-btn {
+  flex: 1;
+  height: 48px;
+  padding: 0 16px;
+  background-color: #0f62fe; /* @bpm-color-primary */
+  border: none;
+  color: #ffffff; /* @bpm-body-bg */
+  font-size: 14px; /* @bpm-font-size-base */
+  font-weight: 400; /* @bpm-font-weight-normal */
+  cursor: pointer;
+  transition: background-color 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+.multiselect-action-btn:hover {
+  background-color: #0353e9; /* @bpm-color-primary-dark */
+}
+
+.multiselect-action-btn:active {
+  background-color: #002d9c; /* Darker blue */
+}
+
+.multiselect-action-btn:disabled {
+  background-color: #c6c6c6; /* Gray 30 - @bpm-link-text-color-disabled */
+  color: #8d8d8d; /* Gray 50 */
+  cursor: not-allowed;
+}
+
+/* Helper Text */
+.multiselect-helper-text {
+  margin-top: 0.375rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #6f6f6f;
+}
+
+.multiselect-helper-text.error {
+  color: #da1e28;
+}
+
+/* Error State */
+.multiselect-container.error .multiselect-input-wrapper {
+  border-bottom-color: #da1e28;
+}
+
+.multiselect-container.error .multiselect-input-wrapper:focus-within {
+  outline-color: #da1e28;
+  border-bottom-color: #da1e28;
+}
+
+/* Disabled State */
+.multiselect-container.disabled .multiselect-input-wrapper {
+  background-color: #f4f4f4;
+  border-bottom-color: transparent;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.multiselect-container.disabled .multiselect-toggle {
+  cursor: not-allowed;
+}
+
+/* No Results */
+.multiselect-no-results {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #6f6f6f;
+}
+
+/* Responsive Design */
+@media (max-width: 672px) {
+  .multiselect-dropdown {
+    max-height: 300px;
+  }
+  
+  .multiselect-options {
+    max-height: 180px;
+  }
+  
+  .multiselect-tag {
+    font-size: 0.875rem;
+    max-width: 180px;
+  }
+  
+  .multiselect-option {
+    font-size: 0.9375rem;
+  }
+}
+
+/* Accessibility */
+.multiselect-option:focus {
+  outline: 2px solid #0f62fe;
+  outline-offset: -2px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.multiselect-dropdown.open {
+  animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.multiselect-option:active {
+  animation: pulse 0.3s ease;
+}
+
+/* Made with Bob */</scriptBlock>
+            <seq>1</seq>
+            <description></description>
+            <guid>guid:3221b79a-3e25-4a2b-a427-b4c98b78f329-css</guid>
+            <versionId>4d7379a8-0239-4c9d-8c58-d2772deeb7d9</versionId>
+        </inlineScript>
+    </coachView>
+</teamworks>

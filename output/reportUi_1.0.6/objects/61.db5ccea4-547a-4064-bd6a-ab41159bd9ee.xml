@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.db5ccea4-547a-4064-bd6a-ab41159bd9ee" name="MultiSelect.svg">
+        <lastModified>1781330059499</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.db5ccea4-547a-4064-bd6a-ab41159bd9ee</managedAssetId>
+        <assetUuid>0365ff61-872c-4fee-ac5e-b2345b74679d</assetUuid>
+        <mimeType>image/svg+xml</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>2060</length>
+        <localLastModification>1781330059499</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:db5ccea4-547a-4064-bd6a-ab41159bd9ee</guid>
+        <versionId>dfc1e381-5945-4553-ba23-f9db92941216</versionId>
+    </managedAsset>
+</teamworks>

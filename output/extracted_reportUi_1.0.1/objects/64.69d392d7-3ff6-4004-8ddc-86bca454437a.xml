@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <coachView id="64.69d392d7-3ff6-4004-8ddc-86bca454437a" name="TasksList">
+        <lastModified>1781331766034</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <coachViewId>64.69d392d7-3ff6-4004-8ddc-86bca454437a</coachViewId>
+        <isTemplate>false</isTemplate>
+        <layout>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;ns2:layout xmlns:ns2=&quot;http://www.ibm.com/bpm/CoachDesignerNG&quot; xmlns:ns3=&quot;http://www.ibm.com/bpm/coachview&quot;&gt;&lt;ns2:layoutItem xsi:type=&quot;ns2:CustomHTML&quot; version=&quot;8550&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&lt;ns2:id&gt;50290f05-6f0b-487f-8bdf-b1f13e0d8f6d&lt;/ns2:id&gt;&lt;ns2:layoutItemId&gt;CustomHTML1&lt;/ns2:layoutItemId&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;0c8817ee-5a13-45f5-8e16-044fab5450b6&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.contentType&lt;/ns2:optionName&gt;&lt;ns2:value&gt;TEXT&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;4cd8073b-e581-483e-b7ab-6d8dcede0005&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.textContent&lt;/ns2:optionName&gt;&lt;ns2:value&gt;&amp;lt;div id=&amp;quot;taskContainer&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;/ns2:layoutItem&gt;&lt;/ns2:layout&gt;</layout>
+        <paletteIcon>/61.92bc7b54-cd2a-469e-a5ae-d9fadef2ac03</paletteIcon>
+        <previewImage isNull="true" />
+        <hasLabel>false</hasLabel>
+        <labelPosition>0</labelPosition>
+        <nineSliceX1Coord>0</nineSliceX1Coord>
+        <nineSliceX2Coord>0</nineSliceX2Coord>
+        <nineSliceY1Coord>0</nineSliceY1Coord>
+        <nineSliceY2Coord>0</nineSliceY2Coord>
+        <emitBoundary>false</emitBoundary>
+        <isPrototypeFunc>false</isPrototypeFunc>
+        <enableDevMode>false</enableDevMode>
+        <isMobileReady>false</isMobileReady>
+        <loadJsFunction>var _this = this;
+bpmext.ui.registerEventHandlingFunction(this,&quot;UpdateEvent&quot; , &quot;task&quot;);
+renderTasks(_this.getData().items);</loadJsFunction>
+        <unloadJsFunction isNull="true" />
+        <viewJsFunction isNull="true" />
+        <changeJsFunction>var _this = this;
+renderTasks(_this.getData().items);</changeJsFunction>
+        <collaborationJsFunction isNull="true" />
+        <description>A widget to display a list of tasks with status indicators for IBM Business Automation Workflow</description>
+        <validateJsFunction isNull="true" />
+        <previewAdvHtml>/61.4731ada5-586e-4b90-aaba-dc68b4c586e4</previewAdvHtml>
+        <previewAdvJs>/61.06c3b666-1903-41c9-93e5-6eb6cdd3c10c</previewAdvJs>
+        <useUrlBinding>false</useUrlBinding>
+        <guid>guid:69d392d7-3ff6-4004-8ddc-86bca454437a</guid>
+        <versionId>fcf93b41-b583-4b56-8a27-c845d9d0635f</versionId>
+        <field1 isNull="true" />
+        <field2 isNull="true" />
+        <field3>0</field3>
+        <field4 isNull="true" />
+        <field5>false</field5>
+        <clobField1 isNull="true" />
+        <bindingType name="TasksListData">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewBindingTypeId>65.bc728ccf-4aee-4545-b2fc-2065d1136c4f</coachViewBindingTypeId>
+            <coachViewId>64.69d392d7-3ff6-4004-8ddc-86bca454437a</coachViewId>
+            <isList>true</isList>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <seq>0</seq>
+            <description isNull="true" />
+            <guid>guid:08f917a6-d13f-41a5-b966-a43be7100415</guid>
+            <versionId>dbe172a3-8681-4135-b543-f253d6e4e748</versionId>
+        </bindingType>
+        <inlineScript name="Inline Javascript">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.1a3d0e6f-1899-45b0-af39-9b795091bbf8</coachViewInlineScriptId>
+            <coachViewId>64.69d392d7-3ff6-4004-8ddc-86bca454437a</coachViewId>
+            <scriptType>JS</scriptType>
+            <scriptBlock>var cv = this;
+
+function renderTasks(tasks) {
+    var container = document.getElementById(&quot;taskContainer&quot;);
+    container.innerHTML = &quot;&quot;;
+	
+    if (!tasks || tasks.length === 0) {
+        container.innerHTML = &quot;&lt;p style=&#x27;padding: 16px; text-align: center; color: #525252;&#x27;&gt;No tasks available.&lt;/p&gt;&quot;;
+        return;
+    }
+
+    // Create widget wrapper
+    var widgetDiv = document.createElement(&quot;div&quot;);
+    widgetDiv.className = &quot;task-widget&quot;;
+
+    // Create header
+    var headerDiv = document.createElement(&quot;div&quot;);
+    headerDiv.className = &quot;task-header&quot;;
+    var headerTitle = document.createElement(&quot;h3&quot;);
+    headerTitle.textContent = &quot;Tasks&quot;;
+    headerDiv.appendChild(headerTitle);
+    widgetDiv.appendChild(headerDiv);
+
+    // Create table
+    var table = document.createElement(&quot;table&quot;);
+    table.className = &quot;task-table&quot;;
+
+    // Create table header
+    var thead = document.createElement(&quot;thead&quot;);
+    var headerRow = document.createElement(&quot;tr&quot;);
+    
+    var thIcon = document.createElement(&quot;th&quot;);
+    thIcon.className = &quot;task-icon-cell&quot;;
+    thIcon.textContent = &quot;&quot;;
+    headerRow.appendChild(thIcon);
+    
+    var thLabel = document.createElement(&quot;th&quot;);
+    thLabel.className = &quot;task-label-cell&quot;;
+    thLabel.textContent = &quot;Task&quot;;
+    headerRow.appendChild(thLabel);
+    
+    var thStatus = document.createElement(&quot;th&quot;);
+    thStatus.className = &quot;task-status-cell&quot;;
+    thStatus.textContent = &quot;Status&quot;;
+    headerRow.appendChild(thStatus);
+    
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    // Create table body
+    var tbody = document.createElement(&quot;tbody&quot;);
+
+    tasks.forEach(function(task) {
+        var row = document.createElement(&quot;tr&quot;);
+
+        // Icon cell
+        var iconCell = document.createElement(&quot;td&quot;);
+        iconCell.className = &quot;task-icon-cell&quot;;
+        var iconSpan = document.createElement(&quot;span&quot;);
+        iconSpan.className = &quot;task-icon&quot;;
+        iconSpan.innerHTML = getStatusIcon(task.status);
+        iconCell.appendChild(iconSpan);
+        row.appendChild(iconCell);
+
+        // Label cell
+        var labelCell = document.createElement(&quot;td&quot;);
+        labelCell.className = &quot;task-label-cell&quot;;
+        labelCell.textContent = task.label;
+        row.appendChild(labelCell);
+
+        // Status cell
+        var statusCell = document.createElement(&quot;td&quot;);
+        statusCell.className = &quot;task-status-cell&quot;;
+        var statusBadge = document.createElement(&quot;span&quot;);
+        statusBadge.className = &quot;task-status-badge &quot; + task.status.toLowerCase();
+        statusBadge.textContent = task.status;
+        statusCell.appendChild(statusBadge);
+        row.appendChild(statusCell);
+
+        tbody.appendChild(row);
+    });
+
+    table.appendChild(tbody);
+    widgetDiv.appendChild(table);
+    container.appendChild(widgetDiv);
+}
+
+function getStatusIcon(status) {
+    if (status === &quot;Complete&quot;) {
+        return &#x27;&lt;svg width=&quot;20&quot; height=&quot;20&quot; viewBox=&quot;0 0 20 20&quot; fill=&quot;#198038&quot;&gt;&lt;path d=&quot;M8 13l-4-4 1.4-1.4L8 10.2l6.6-6.6L16 5z&quot;/&gt;&lt;/svg&gt;&#x27;;
+    }
+    else if (status === &quot;Pending&quot;) {
+        return &#x27;&lt;svg width=&quot;20&quot; height=&quot;20&quot; viewBox=&quot;0 0 20 20&quot; fill=&quot;#525252&quot;&gt;&lt;circle cx=&quot;10&quot; cy=&quot;10&quot; r=&quot;8&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;/&gt;&lt;/svg&gt;&#x27;;
+    }
+    else if (status === &quot;Processing&quot;) {
+        return &#x27;&lt;svg width=&quot;20&quot; height=&quot;20&quot; viewBox=&quot;0 0 20 20&quot; class=&quot;spinner&quot; fill=&quot;#0043ce&quot;&gt;&lt;path d=&quot;M10 2v3a5 5 0 110 10v3a8 8 0 000-16z&quot;/&gt;&lt;/svg&gt;&#x27;;
+    }
+    else if (status === &quot;Failed&quot;) {
+        return &#x27;&lt;svg width=&quot;20&quot; height=&quot;20&quot; viewBox=&quot;0 0 20 20&quot; fill=&quot;#da1e28&quot;&gt;&lt;path d=&quot;M10 2a8 8 0 100 16 8 8 0 000-16zm1 9H9V5h2v6zM9 13h2v2H9v-2z&quot;/&gt;&lt;/svg&gt;&#x27;;
+    }
+    return &#x27;&#x27;;
+}</scriptBlock>
+            <seq>0</seq>
+            <description></description>
+            <guid>guid:69d392d7-3ff6-4004-8ddc-86bca454437a-js</guid>
+            <versionId>f5800c77-6416-43df-acb0-0788f9f8bb12</versionId>
+        </inlineScript>
+
+        <inlineScript name="Inline CSS">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.e6279af6-47a2-449c-8258-68b16bdffc54</coachViewInlineScriptId>
+            <coachViewId>64.69d392d7-3ff6-4004-8ddc-86bca454437a</coachViewId>
+            <scriptType>CSS</scriptType>
+            <scriptBlock>/* TasksList Widget - Carbon Design System */
+/* Colors and typography aligned with themes/Carbon.less */
+
+#taskContainer {
+    width: 100%;
+    font-family: &#x27;IBM Plex Sans&#x27;, &#x27;Helvetica Neue&#x27;, Helvetica, Arial, sans-serif; /* @bpm-font-family-sans-serif */
+}
+
+.task-widget {
+    background: #ffffff; /* @bpm-body-bg */
+    border: 1px solid #e0e0e0; /* Gray 20 */
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.task-header {
+    background: #f4f4f4; /* Gray 10 */
+    border-bottom: 1px solid #e0e0e0; /* Gray 20 */
+    padding: 12px 16px;
+}
+
+.task-header h3 {
+    margin: 0;
+    font-size: 14px; /* @bpm-font-size-base */
+    font-weight: 600; /* @bpm-font-weight-semibold */
+    color: #161616; /* @bpm-text-color */
+}
+
+/* Table structure */
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff; /* @bpm-body-bg */
+}
+
+.task-table thead {
+    background: #f4f4f4; /* Gray 10 */
+    border-bottom: 1px solid #e0e0e0; /* Gray 20 */
+}
+
+.task-table th {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 12px; /* @bpm-font-size-small */
+    font-weight: 600; /* @bpm-font-weight-semibold */
+    color: #525252; /* Gray 70 */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.task-table tbody tr {
+    border-bottom: 1px solid #e0e0e0; /* Gray 20 */
+    transition: background-color 0.15s ease;
+}
+
+.task-table tbody tr:hover {
+    background: #f4f4f4; /* Gray 10 */
+}
+
+.task-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.task-table td {
+    padding: 12px 16px;
+    font-size: 14px; /* @bpm-font-size-base */
+    color: #161616; /* @bpm-text-color */
+    vertical-align: middle;
+}
+
+/* Icon column */
+.task-icon-cell {
+    width: 40px;
+    text-align: center;
+}
+
+.task-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.task-icon svg {
+    display: block;
+}
+
+/* Label column */
+.task-label-cell {
+    font-weight: 400; /* @bpm-font-weight-normal */
+}
+
+/* Status column */
+.task-status-cell {
+    width: 120px;
+    text-align: right;
+}
+
+.task-status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px; /* @bpm-font-size-small */
+    font-weight: 600; /* @bpm-font-weight-semibold */
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* Status colors */
+.task-status-badge.complete {
+    background: #d4edda;
+    color: #198038; /* @bpm-color-success */
+}
+
+.task-status-badge.pending {
+    background: #e0e0e0; /* Gray 20 */
+    color: #525252; /* Gray 70 */
+}
+
+.task-status-badge.processing {
+    background: #d0e2ff;
+    color: #0043ce; /* @bpm-link-text-color-hover */
+}
+
+.task-status-badge.failed {
+    background: #ffd7d9;
+    color: #da1e28; /* @bpm-color-alert */
+}
+
+/* Spinner animation for processing status */
+.spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Made with Bob */
+</scriptBlock>
+            <seq>1</seq>
+            <description></description>
+            <guid>guid:69d392d7-3ff6-4004-8ddc-86bca454437a-css</guid>
+            <versionId>5db19079-7c17-4946-b3f0-3d938d2fd765</versionId>
+        </inlineScript>
+    </coachView>
+</teamworks>

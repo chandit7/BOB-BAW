@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <coachView id="64.311518a4-3d13-4ec7-929f-892065639ac5" name="MarkdownViewer">
+        <lastModified>1781331758908</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <coachViewId>64.311518a4-3d13-4ec7-929f-892065639ac5</coachViewId>
+        <isTemplate>false</isTemplate>
+        <layout>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;ns2:layout xmlns:ns2=&quot;http://www.ibm.com/bpm/CoachDesignerNG&quot; xmlns:ns3=&quot;http://www.ibm.com/bpm/coachview&quot;&gt;&lt;ns2:layoutItem xsi:type=&quot;ns2:CustomHTML&quot; version=&quot;8550&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&lt;ns2:id&gt;d6ef10fb-cc82-4ac3-b5b2-59ec360b30d0&lt;/ns2:id&gt;&lt;ns2:layoutItemId&gt;CustomHTML1&lt;/ns2:layoutItemId&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;80417ccd-aa81-4212-9840-d57c9fb5d315&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.contentType&lt;/ns2:optionName&gt;&lt;ns2:value&gt;TEXT&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;4afaea88-54a9-4fdc-a3f0-439a7414f54a&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.textContent&lt;/ns2:optionName&gt;&lt;ns2:value&gt;&amp;lt;div class=&amp;quot;markdown-viewer-container&amp;quot; role=&amp;quot;article&amp;quot; aria-label=&amp;quot;Markdown content viewer&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;markdown-content&amp;quot; id=&amp;quot;markdown-output&amp;quot;&amp;gt;
+    &amp;lt;!-- Rendered markdown content will be inserted here --&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;/ns2:layoutItem&gt;&lt;/ns2:layout&gt;</layout>
+        <paletteIcon>/61.f942a183-33c0-4357-9b72-70db077391d5</paletteIcon>
+        <previewImage isNull="true" />
+        <hasLabel>false</hasLabel>
+        <labelPosition>0</labelPosition>
+        <nineSliceX1Coord>0</nineSliceX1Coord>
+        <nineSliceX2Coord>0</nineSliceX2Coord>
+        <nineSliceY1Coord>0</nineSliceY1Coord>
+        <nineSliceY2Coord>0</nineSliceY2Coord>
+        <emitBoundary>false</emitBoundary>
+        <isPrototypeFunc>false</isPrototypeFunc>
+        <enableDevMode>false</enableDevMode>
+        <isMobileReady>false</isMobileReady>
+        <loadJsFunction isNull="true" />
+        <unloadJsFunction isNull="true" />
+        <viewJsFunction isNull="true" />
+        <changeJsFunction>// Get the markdown container element
+var markdownContainer = this.context.element.querySelector(&quot;.markdown-content&quot;);
+
+// Get the updated markdown text data
+var markdownText = this.getData() || &quot;&quot;;
+
+// Get configuration options
+var enableSanitization = this.getOption(&quot;enableSanitization&quot;) !== false; // Default true
+var showLineNumbers = this.getOption(&quot;showLineNumbers&quot;) || false;
+var theme = this.getOption(&quot;theme&quot;) || &quot;default&quot;; // default, dark, light
+
+// Apply theme class
+var container = this.context.element.querySelector(&quot;.markdown-viewer-container&quot;);
+container.className = &quot;markdown-viewer-container markdown-theme-&quot; + theme;
+
+// Simple markdown parser function
+function parseMarkdown(text) {
+  if (!text) return &quot;&quot;;
+  
+  var html = text;
+  
+  // Escape HTML if sanitization is enabled
+  if (enableSanitization) {
+    var ampRegex = /&amp;/g;
+    var ltRegex = /&lt;/g;
+    var gtRegex = /&gt;/g;
+    var quotRegex = /&quot;/g;
+    var aposRegex = /&#x27;/g;
+    
+    html = html
+      .replace(ampRegex, String.fromCharCode(38) + &quot;amp;&quot;)
+      .replace(ltRegex, String.fromCharCode(38) + &quot;lt;&quot;)
+      .replace(gtRegex, String.fromCharCode(38) + &quot;gt;&quot;)
+      .replace(quotRegex, String.fromCharCode(38) + &quot;quot;&quot;)
+      .replace(aposRegex, String.fromCharCode(38) + &quot;#039;&quot;);
+  }
+  
+  // Headers (h1-h6)
+  html = html.replace(/^######\s+(.+)$/gm, &#x27;&lt;h6&gt;$1&lt;/h6&gt;&#x27;);
+  html = html.replace(/^#####\s+(.+)$/gm, &#x27;&lt;h5&gt;$1&lt;/h5&gt;&#x27;);
+  html = html.replace(/^####\s+(.+)$/gm, &#x27;&lt;h4&gt;$1&lt;/h4&gt;&#x27;);
+  html = html.replace(/^###\s+(.+)$/gm, &#x27;&lt;h3&gt;$1&lt;/h3&gt;&#x27;);
+  html = html.replace(/^##\s+(.+)$/gm, &#x27;&lt;h2&gt;$1&lt;/h2&gt;&#x27;);
+  html = html.replace(/^#\s+(.+)$/gm, &#x27;&lt;h1&gt;$1&lt;/h1&gt;&#x27;);
+  
+  // Horizontal rules
+  html = html.replace(/^---$/gm, &#x27;&lt;hr&gt;&#x27;);
+  html = html.replace(/^\*\*\*$/gm, &#x27;&lt;hr&gt;&#x27;);
+  html = html.replace(/^___$/gm, &#x27;&lt;hr&gt;&#x27;);
+  
+  // Code blocks (fenced with ```)
+  html = html.replace(/```(\w+)?\n([\s\S]*?)```/g, function(match, lang, code) {
+    var langClass = lang ? &#x27; class=&quot;language-&#x27; + lang + &#x27;&quot;&#x27; : &#x27;&#x27;;
+    return &#x27;&lt;pre&gt;&lt;code&#x27; + langClass + &#x27;&gt;&#x27; + code.trim() + &#x27;&lt;/code&gt;&lt;/pre&gt;&#x27;;
+  });
+  
+  // Inline code
+  html = html.replace(/`([^`]+)`/g, &#x27;&lt;code&gt;$1&lt;/code&gt;&#x27;);
+  
+  // Bold
+  html = html.replace(/\*\*([^*]+)\*\*/g, &#x27;&lt;strong&gt;$1&lt;/strong&gt;&#x27;);
+  html = html.replace(/__([^_]+)__/g, &#x27;&lt;strong&gt;$1&lt;/strong&gt;&#x27;);
+  
+  // Italic
+  html = html.replace(/\*([^*]+)\*/g, &#x27;&lt;em&gt;$1&lt;/em&gt;&#x27;);
+  html = html.replace(/_([^_]+)_/g, &#x27;&lt;em&gt;$1&lt;/em&gt;&#x27;);
+  
+  // Strikethrough
+  html = html.replace(/~~([^~]+)~~/g, &#x27;&lt;del&gt;$1&lt;/del&gt;&#x27;);
+  
+  // Links
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, &#x27;&lt;a href=&quot;$2&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;$1&lt;/a&gt;&#x27;);
+  
+  // Images
+  html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, &#x27;&lt;img src=&quot;$2&quot; alt=&quot;$1&quot; loading=&quot;lazy&quot;&gt;&#x27;);
+  
+  // Blockquotes
+  html = html.replace(/^&gt;\s+(.+)$/gm, &#x27;&lt;blockquote&gt;$1&lt;/blockquote&gt;&#x27;);
+  
+  // Unordered lists
+  html = html.replace(/^\*\s+(.+)$/gm, &#x27;&lt;li&gt;$1&lt;/li&gt;&#x27;);
+  html = html.replace(/^-\s+(.+)$/gm, &#x27;&lt;li&gt;$1&lt;/li&gt;&#x27;);
+  html = html.replace(/^(\+)\s+(.+)$/gm, &#x27;&lt;li&gt;$2&lt;/li&gt;&#x27;);
+  
+  // Ordered lists
+  html = html.replace(/^\d+\.\s+(.+)$/gm, &#x27;&lt;li&gt;$1&lt;/li&gt;&#x27;);
+  
+  // Wrap consecutive list items in ul/ol tags
+  html = html.replace(/(&lt;li&gt;.*&lt;\/li&gt;\n?)+/g, function(match) {
+    return &#x27;&lt;ul&gt;&#x27; + match + &#x27;&lt;/ul&gt;&#x27;;
+  });
+  
+  // Tables
+  html = html.replace(/\|(.+)\|\n\|[-:\s|]+\|\n((?:\|.+\|\n?)+)/g, function(match, header, rows) {
+    var headerCells = header.split(&#x27;|&#x27;).filter(function(cell) { return cell.trim(); });
+    var headerHtml = &#x27;&lt;thead&gt;&lt;tr&gt;&#x27; + headerCells.map(function(cell) {
+      return &#x27;&lt;th&gt;&#x27; + cell.trim() + &#x27;&lt;/th&gt;&#x27;;
+    }).join(&#x27;&#x27;) + &#x27;&lt;/tr&gt;&lt;/thead&gt;&#x27;;
+    
+    var rowsHtml = rows.trim().split(&#x27;\n&#x27;).map(function(row) {
+      var cells = row.split(&#x27;|&#x27;).filter(function(cell) { return cell.trim(); });
+      return &#x27;&lt;tr&gt;&#x27; + cells.map(function(cell) {
+        return &#x27;&lt;td&gt;&#x27; + cell.trim() + &#x27;&lt;/td&gt;&#x27;;
+      }).join(&#x27;&#x27;) + &#x27;&lt;/tr&gt;&#x27;;
+    }).join(&#x27;&#x27;);
+    
+    return &#x27;&lt;table&gt;&lt;tbody&gt;&#x27; + headerHtml + rowsHtml + &#x27;&lt;/tbody&gt;&lt;/table&gt;&#x27;;
+  });
+  
+  // Paragraphs (wrap text not already in tags)
+  html = html.replace(/^(?!&lt;[^&gt;]+&gt;)(.+)$/gm, function(match) {
+    if (match.trim() === &#x27;&#x27;) return &#x27;&#x27;;
+    if (match.match(/^&lt;(h[1-6]|hr|pre|blockquote|ul|ol|table)/)) return match;
+    return &#x27;&lt;p&gt;&#x27; + match + &#x27;&lt;/p&gt;&#x27;;
+  });
+  
+  // Clean up extra newlines
+  html = html.replace(/\n\n+/g, &#x27;\n&#x27;);
+  
+  return html;
+}
+
+// Parse and render the markdown
+var renderedHtml = parseMarkdown(markdownText);
+
+// Add line numbers if enabled
+if (showLineNumbers) {
+  var lines = renderedHtml.split(&#x27;\n&#x27;);
+  renderedHtml = &#x27;&lt;div class=&quot;markdown-with-lines&quot;&gt;&#x27; +
+    lines.map(function(line, index) {
+      return &#x27;&lt;div class=&quot;markdown-line&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;&#x27; + (index + 1) + &#x27;&lt;/span&gt;&#x27; +
+        &#x27;&lt;span class=&quot;line-content&quot;&gt;&#x27; + line + &#x27;&lt;/span&gt;&lt;/div&gt;&#x27;;
+    }).join(&#x27;&#x27;) +
+    &#x27;&lt;/div&gt;&#x27;;
+}
+
+// Set the rendered HTML
+markdownContainer.innerHTML = renderedHtml;
+
+// Trigger custom event for content change
+this.executeEventHandlingFunction(this, &quot;onContentChange&quot;, {
+  originalText: markdownText,
+  renderedHtml: renderedHtml
+});
+
+// Made with Bob</changeJsFunction>
+        <collaborationJsFunction isNull="true" />
+        <description>A widget for rendering markdown-formatted text into styled HTML content with support for headers, lists, code blocks, tables, and more</description>
+        <validateJsFunction isNull="true" />
+        <previewAdvHtml>/61.2ff83b97-7a61-4855-81c8-3fc432cc5f85</previewAdvHtml>
+        <previewAdvJs>/61.91edec84-44eb-4e46-a872-78c73a6b117e</previewAdvJs>
+        <useUrlBinding>false</useUrlBinding>
+        <guid>guid:311518a4-3d13-4ec7-929f-892065639ac5</guid>
+        <versionId>7896417b-8453-47c8-a957-624e68424eb4</versionId>
+        <field1 isNull="true" />
+        <field2 isNull="true" />
+        <field3>0</field3>
+        <field4 isNull="true" />
+        <field5>false</field5>
+        <clobField1 isNull="true" />
+        <bindingType name="MarkdownText">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewBindingTypeId>65.8e9ccc30-6ad2-4adc-8019-473b6a6a1695</coachViewBindingTypeId>
+            <coachViewId>64.311518a4-3d13-4ec7-929f-892065639ac5</coachViewId>
+            <isList>false</isList>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <seq>0</seq>
+            <description isNull="true" />
+            <guid>guid:ea40a7b8-847e-490e-a00a-7d126fd408ab</guid>
+            <versionId>df9143f5-adfb-4eff-8d1f-ea74a097f4ab</versionId>
+        </bindingType>
+        <configOption name="enableSanitization">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.5c31e9d7-6cb3-40eb-9869-81a7766d66f3</coachViewConfigOptionId>
+            <coachViewId>64.311518a4-3d13-4ec7-929f-892065639ac5</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Enable HTML Sanitization</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>0</seq>
+            <description>Enable HTML sanitization to prevent XSS attacks. When enabled, HTML tags in the markdown will be escaped</description>
+            <groupName></groupName>
+            <guid>guid:311518a4-3d13-4ec7-929f-892065639ac5-enablesanitization</guid>
+            <versionId>222da006-48c3-4368-822f-158abacdd4fe</versionId>
+        </configOption>
+
+        <configOption name="showLineNumbers">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.7056116b-9241-4d13-8d09-0f98ba1d39f6</coachViewConfigOptionId>
+            <coachViewId>64.311518a4-3d13-4ec7-929f-892065639ac5</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Show Line Numbers</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>1</seq>
+            <description>Display line numbers alongside the rendered content. Useful for code documentation or technical content</description>
+            <groupName></groupName>
+            <guid>guid:311518a4-3d13-4ec7-929f-892065639ac5-showlinenumbers</guid>
+            <versionId>9640f297-ad17-4c66-a49b-efab157b99c7</versionId>
+        </configOption>
+
+        <configOption name="theme">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.a4158be8-9304-4c4e-b8bc-db5a9f7b62e9</coachViewConfigOptionId>
+            <coachViewId>64.311518a4-3d13-4ec7-929f-892065639ac5</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Theme</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>2</seq>
+            <description>Visual theme for the markdown viewer (default, light, or dark)</description>
+            <groupName></groupName>
+            <guid>guid:311518a4-3d13-4ec7-929f-892065639ac5-theme</guid>
+            <versionId>71186b15-6cb5-4365-940e-d9270a4c7a9b</versionId>
+        </configOption>
+
+        <configOption name="onContentChange">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.777c1ce8-2581-4dad-a4d6-abe2f3091b78</coachViewConfigOptionId>
+            <coachViewId>64.311518a4-3d13-4ec7-929f-892065639ac5</coachViewId>
+            <isList>false</isList>
+            <propertyType>EVENT</propertyType>
+            <label>On Content Change</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>3</seq>
+            <description>Triggered when the markdown content is rendered or updated</description>
+            <groupName></groupName>
+            <guid>guid:311518a4-3d13-4ec7-929f-892065639ac5-oncontentchange</guid>
+            <versionId>c66a89ef-2a65-4097-8112-3cb3afa9716d</versionId>
+        </configOption>
+        <inlineScript name="Inline Javascript">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.f6792ed6-2d9f-4007-9b28-edbfd61af299</coachViewInlineScriptId>
+            <coachViewId>64.311518a4-3d13-4ec7-929f-892065639ac5</coachViewId>
+            <scriptType>JS</scriptType>
+            <scriptBlock>// Get the markdown container element
+var markdownContainer = this.context.element.querySelector(&quot;.markdown-content&quot;);
+
+// Get the markdown text data
+var markdownText = this.getData() || &quot;&quot;;
+
+// Get configuration options
+var enableSanitization = this.getOption(&quot;enableSanitization&quot;) !== false; // Default true
+var showLineNumbers = this.getOption(&quot;showLineNumbers&quot;) || false;
+var theme = this.getOption(&quot;theme&quot;) || &quot;default&quot;; // default, dark, light
+
+// Apply theme class
+var container = this.context.element.querySelector(&quot;.markdown-viewer-container&quot;);
+container.className = &quot;markdown-viewer-container markdown-theme-&quot; + theme;
+
+// Simple markdown parser function
+function parseMarkdown(text) {
+  if (!text) return &quot;&quot;;
+  
+  var html = text;
+  
+  // Escape HTML if sanitization is enabled
+  if (enableSanitization) {
+    var ampRegex = /&amp;/g;
+    var ltRegex = /&lt;/g;
+    var gtRegex = /&gt;/g;
+    var quotRegex = /&quot;/g;
+    var aposRegex = /&#x27;/g;
+    
+    html = html
+      .replace(ampRegex, String.fromCharCode(38) + &quot;amp;&quot;)
+      .replace(ltRegex, String.fromCharCode(38) + &quot;lt;&quot;)
+      .replace(gtRegex, String.fromCharCode(38) + &quot;gt;&quot;)
+      .replace(quotRegex, String.fromCharCode(38) + &quot;quot;&quot;)
+      .replace(aposRegex, String.fromCharCode(38) + &quot;#039;&quot;);
+  }
+  
+  // Headers (h1-h6)
+  html = html.replace(/^######\s+(.+)$/gm, &#x27;&lt;h6&gt;$1&lt;/h6&gt;&#x27;);
+  html = html.replace(/^#####\s+(.+)$/gm, &#x27;&lt;h5&gt;$1&lt;/h5&gt;&#x27;);
+  html = html.replace(/^####\s+(.+)$/gm, &#x27;&lt;h4&gt;$1&lt;/h4&gt;&#x27;);
+  html = html.replace(/^###\s+(.+)$/gm, &#x27;&lt;h3&gt;$1&lt;/h3&gt;&#x27;);
+  html = html.replace(/^##\s+(.+)$/gm, &#x27;&lt;h2&gt;$1&lt;/h2&gt;&#x27;);
+  html = html.replace(/^#\s+(.+)$/gm, &#x27;&lt;h1&gt;$1&lt;/h1&gt;&#x27;);
+  
+  // Horizontal rules
+  html = html.replace(/^---$/gm, &#x27;&lt;hr&gt;&#x27;);
+  html = html.replace(/^\*\*\*$/gm, &#x27;&lt;hr&gt;&#x27;);
+  html = html.replace(/^___$/gm, &#x27;&lt;hr&gt;&#x27;);
+  
+  // Code blocks (fenced with ```)
+  html = html.replace(/```(\w+)?\n([\s\S]*?)```/g, function(match, lang, code) {
+    var langClass = lang ? &#x27; class=&quot;language-&#x27; + lang + &#x27;&quot;&#x27; : &#x27;&#x27;;
+    return &#x27;&lt;pre&gt;&lt;code&#x27; + langClass + &#x27;&gt;&#x27; + code.trim() + &#x27;&lt;/code&gt;&lt;/pre&gt;&#x27;;
+  });
+  
+  // Inline code
+  html = html.replace(/`([^`]+)`/g, &#x27;&lt;code&gt;$1&lt;/code&gt;&#x27;);
+  
+  // Bold
+  html = html.replace(/\*\*([^*]+)\*\*/g, &#x27;&lt;strong&gt;$1&lt;/strong&gt;&#x27;);
+  html = html.replace(/__([^_]+)__/g, &#x27;&lt;strong&gt;$1&lt;/strong&gt;&#x27;);
+  
+  // Italic
+  html = html.replace(/\*([^*]+)\*/g, &#x27;&lt;em&gt;$1&lt;/em&gt;&#x27;);
+  html = html.replace(/_([^_]+)_/g, &#x27;&lt;em&gt;$1&lt;/em&gt;&#x27;);
+  
+  // Strikethrough
+  html = html.replace(/~~([^~]+)~~/g, &#x27;&lt;del&gt;$1&lt;/del&gt;&#x27;);
+  
+  // Links
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, &#x27;&lt;a href=&quot;$2&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;$1&lt;/a&gt;&#x27;);
+  
+  // Images
+  html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, &#x27;&lt;img src=&quot;$2&quot; alt=&quot;$1&quot; loading=&quot;lazy&quot;&gt;&#x27;);
+  
+  // Blockquotes
+  html = html.replace(/^&gt;\s+(.+)$/gm, &#x27;&lt;blockquote&gt;$1&lt;/blockquote&gt;&#x27;);
+  
+  // Unordered lists
+  html = html.replace(/^\*\s+(.+)$/gm, &#x27;&lt;li&gt;$1&lt;/li&gt;&#x27;);
+  html = html.replace(/^-\s+(.+)$/gm, &#x27;&lt;li&gt;$1&lt;/li&gt;&#x27;);
+  html = html.replace(/^(\+)\s+(.+)$/gm, &#x27;&lt;li&gt;$2&lt;/li&gt;&#x27;);
+  
+  // Ordered lists
+  html = html.replace(/^\d+\.\s+(.+)$/gm, &#x27;&lt;li&gt;$1&lt;/li&gt;&#x27;);
+  
+  // Wrap consecutive list items in ul/ol tags
+  html = html.replace(/(&lt;li&gt;.*&lt;\/li&gt;\n?)+/g, function(match) {
+    // Check if it&#x27;s an ordered list (starts with number)
+    if (/^\d+\./.test(text.match(new RegExp(match.replace(/&lt;[^&gt;]+&gt;/g, &#x27;&#x27;))))) {
+      return &#x27;&lt;ol&gt;&#x27; + match + &#x27;&lt;/ol&gt;&#x27;;
+    }
+    return &#x27;&lt;ul&gt;&#x27; + match + &#x27;&lt;/ul&gt;&#x27;;
+  });
+  
+  // Tables
+  html = html.replace(/\|(.+)\|\n\|[-:\s|]+\|\n((?:\|.+\|\n?)+)/g, function(match, header, rows) {
+    var headerCells = header.split(&#x27;|&#x27;).filter(function(cell) { return cell.trim(); });
+    var headerHtml = &#x27;&lt;thead&gt;&lt;tr&gt;&#x27; + headerCells.map(function(cell) {
+      return &#x27;&lt;th&gt;&#x27; + cell.trim() + &#x27;&lt;/th&gt;&#x27;;
+    }).join(&#x27;&#x27;) + &#x27;&lt;/tr&gt;&lt;/thead&gt;&#x27;;
+    
+    var rowsHtml = rows.trim().split(&#x27;\n&#x27;).map(function(row) {
+      var cells = row.split(&#x27;|&#x27;).filter(function(cell) { return cell.trim(); });
+      return &#x27;&lt;tr&gt;&#x27; + cells.map(function(cell) {
+        return &#x27;&lt;td&gt;&#x27; + cell.trim() + &#x27;&lt;/td&gt;&#x27;;
+      }).join(&#x27;&#x27;) + &#x27;&lt;/tr&gt;&#x27;;
+    }).join(&#x27;&#x27;);
+    
+    return &#x27;&lt;table&gt;&lt;tbody&gt;&#x27; + headerHtml + rowsHtml + &#x27;&lt;/tbody&gt;&lt;/table&gt;&#x27;;
+  });
+  
+  // Paragraphs (wrap text not already in tags)
+  html = html.replace(/^(?!&lt;[^&gt;]+&gt;)(.+)$/gm, function(match) {
+    if (match.trim() === &#x27;&#x27;) return &#x27;&#x27;;
+    if (match.match(/^&lt;(h[1-6]|hr|pre|blockquote|ul|ol|table)/)) return match;
+    return &#x27;&lt;p&gt;&#x27; + match + &#x27;&lt;/p&gt;&#x27;;
+  });
+  
+  // Clean up extra newlines
+  html = html.replace(/\n\n+/g, &#x27;\n&#x27;);
+  
+  return html;
+}
+
+// Parse and render the markdown
+var renderedHtml = parseMarkdown(markdownText);
+
+// Add line numbers if enabled
+if (showLineNumbers) {
+  var lines = renderedHtml.split(&#x27;\n&#x27;);
+  renderedHtml = &#x27;&lt;div class=&quot;markdown-with-lines&quot;&gt;&#x27; +
+    lines.map(function(line, index) {
+      return &#x27;&lt;div class=&quot;markdown-line&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;&#x27; + (index + 1) + &#x27;&lt;/span&gt;&#x27; +
+        &#x27;&lt;span class=&quot;line-content&quot;&gt;&#x27; + line + &#x27;&lt;/span&gt;&lt;/div&gt;&#x27;;
+    }).join(&#x27;&#x27;) +
+    &#x27;&lt;/div&gt;&#x27;;
+}
+
+// Set the rendered HTML
+markdownContainer.innerHTML = renderedHtml;
+
+// Register event handling function for content changes
+this.registerEventHandlingFunction = function(context, eventName, args) {
+  if (eventName === &quot;onContentChange&quot;) {
+    // Trigger custom event when markdown content changes
+    var event = new CustomEvent(&quot;markdownContentChanged&quot;, {
+      detail: {
+        originalText: markdownText,
+        renderedHtml: renderedHtml
+      }
+    });
+    context.element.dispatchEvent(event);
+  }
+};
+
+// Made with Bob</scriptBlock>
+            <seq>0</seq>
+            <description></description>
+            <guid>guid:311518a4-3d13-4ec7-929f-892065639ac5-js</guid>
+            <versionId>8d09c5ab-d192-4c22-8dbd-374f103fe3ec</versionId>
+        </inlineScript>
+
+        <inlineScript name="Inline CSS">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.4bdee46f-70a7-4718-85b1-0669e9b5570a</coachViewInlineScriptId>
+            <coachViewId>64.311518a4-3d13-4ec7-929f-892065639ac5</coachViewId>
+            <scriptType>CSS</scriptType>
+            <scriptBlock>/* Markdown Viewer Widget Styles */
+
+.markdown-viewer-container {
+  width: 100%;
+  min-height: 50px;
+  padding: 16px;
+  background-color: var(--markdown-bg, #ffffff);
+  color: var(--markdown-text, #161616);
+  font-family: &#x27;IBM Plex Sans&#x27;, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.markdown-content {
+  max-width: 100%;
+}
+
+/* Theme: Default */
+.markdown-theme-default {
+  --markdown-bg: #ffffff;
+  --markdown-text: #161616;
+  --markdown-heading: #161616;
+  --markdown-link: #0f62fe;
+  --markdown-link-hover: #0043ce;
+  --markdown-code-bg: #f4f4f4;
+  --markdown-code-text: #c6c6c6;
+  --markdown-border: #e0e0e0;
+  --markdown-blockquote-bg: #f4f4f4;
+  --markdown-blockquote-border: #0f62fe;
+}
+
+/* Theme: Light */
+.markdown-theme-light {
+  --markdown-bg: #f4f4f4;
+  --markdown-text: #161616;
+  --markdown-heading: #161616;
+  --markdown-link: #0f62fe;
+  --markdown-link-hover: #0043ce;
+  --markdown-code-bg: #e0e0e0;
+  --markdown-code-text: #525252;
+  --markdown-border: #c6c6c6;
+  --markdown-blockquote-bg: #ffffff;
+  --markdown-blockquote-border: #0f62fe;
+}
+
+/* Theme: Dark */
+.markdown-theme-dark {
+  --markdown-bg: #161616;
+  --markdown-text: #f4f4f4;
+  --markdown-heading: #ffffff;
+  --markdown-link: #78a9ff;
+  --markdown-link-hover: #a6c8ff;
+  --markdown-code-bg: #262626;
+  --markdown-code-text: #c6c6c6;
+  --markdown-border: #393939;
+  --markdown-blockquote-bg: #262626;
+  --markdown-blockquote-border: #78a9ff;
+}
+
+/* Headers */
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  color: var(--markdown-heading);
+  font-weight: 600;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+
+.markdown-content h1 {
+  font-size: 32px;
+  border-bottom: 1px solid var(--markdown-border);
+  padding-bottom: 8px;
+}
+
+.markdown-content h2 {
+  font-size: 24px;
+  border-bottom: 1px solid var(--markdown-border);
+  padding-bottom: 8px;
+}
+
+.markdown-content h3 {
+  font-size: 20px;
+}
+
+.markdown-content h4 {
+  font-size: 16px;
+}
+
+.markdown-content h5 {
+  font-size: 14px;
+}
+
+.markdown-content h6 {
+  font-size: 12px;
+  color: #6f6f6f;
+}
+
+/* Paragraphs */
+.markdown-content p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+/* Links */
+.markdown-content a {
+  color: var(--markdown-link);
+  text-decoration: none;
+  transition: color 110ms cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+.markdown-content a:hover {
+  color: var(--markdown-link-hover);
+  text-decoration: underline;
+}
+
+.markdown-content a:focus {
+  outline: 2px solid var(--markdown-link);
+  outline-offset: 2px;
+}
+
+/* Code */
+.markdown-content code {
+  background-color: var(--markdown-code-bg);
+  color: var(--markdown-code-text);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: &#x27;IBM Plex Mono&#x27;, &#x27;Menlo&#x27;, &#x27;DejaVu Sans Mono&#x27;, &#x27;Bitstream Vera Sans Mono&#x27;, Courier, monospace;
+  font-size: 85%;
+}
+
+.markdown-content pre {
+  background-color: var(--markdown-code-bg);
+  border: 1px solid var(--markdown-border);
+  border-radius: 4px;
+  padding: 16px;
+  overflow-x: auto;
+  margin-bottom: 16px;
+}
+
+.markdown-content pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Lists */
+.markdown-content ul,
+.markdown-content ol {
+  margin-top: 0;
+  margin-bottom: 16px;
+  padding-left: 32px;
+}
+
+.markdown-content li {
+  margin-bottom: 4px;
+}
+
+.markdown-content ul ul,
+.markdown-content ul ol,
+.markdown-content ol ul,
+.markdown-content ol ol {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+/* Blockquotes */
+.markdown-content blockquote {
+  background-color: var(--markdown-blockquote-bg);
+  border-left: 4px solid var(--markdown-blockquote-border);
+  padding: 8px 16px;
+  margin: 0 0 16px 0;
+  color: var(--markdown-text);
+}
+
+.markdown-content blockquote p {
+  margin-bottom: 0;
+}
+
+/* Horizontal Rules */
+.markdown-content hr {
+  border: 0;
+  border-top: 1px solid var(--markdown-border);
+  margin: 24px 0;
+}
+
+/* Images */
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+/* Tables */
+.markdown-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  display: block;
+}
+
+.markdown-content table thead {
+  background-color: var(--markdown-code-bg);
+}
+
+.markdown-content table th,
+.markdown-content table td {
+  border: 1px solid var(--markdown-border);
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.markdown-content table th {
+  font-weight: 600;
+}
+
+.markdown-content table tr:nth-child(even) {
+  background-color: var(--markdown-code-bg);
+}
+
+/* Text Formatting */
+.markdown-content strong {
+  font-weight: 600;
+}
+
+.markdown-content em {
+  font-style: italic;
+}
+
+.markdown-content del {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+/* Line Numbers (optional feature) */
+.markdown-with-lines {
+  display: table;
+  width: 100%;
+}
+
+.markdown-line {
+  display: table-row;
+}
+
+.line-number {
+  display: table-cell;
+  text-align: right;
+  padding-right: 16px;
+  color: #8d8d8d;
+  user-select: none;
+  width: 40px;
+  font-family: &#x27;IBM Plex Mono&#x27;, monospace;
+  font-size: 12px;
+}
+
+.line-content {
+  display: table-cell;
+  padding-left: 8px;
+}
+
+/* Accessibility */
+.markdown-viewer-container:focus {
+  outline: 2px solid var(--markdown-link);
+  outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .markdown-viewer-container {
+    padding: 12px;
+  }
+  
+  .markdown-content h1 {
+    font-size: 28px;
+  }
+  
+  .markdown-content h2 {
+    font-size: 22px;
+  }
+  
+  .markdown-content h3 {
+    font-size: 18px;
+  }
+  
+  .markdown-content pre {
+    padding: 12px;
+  }
+}
+
+/* Made with Bob */</scriptBlock>
+            <seq>1</seq>
+            <description></description>
+            <guid>guid:311518a4-3d13-4ec7-929f-892065639ac5-css</guid>
+            <versionId>f5b94c2d-2ea5-4ce0-86a7-3ba50c39cfde</versionId>
+        </inlineScript>
+    </coachView>
+</teamworks>

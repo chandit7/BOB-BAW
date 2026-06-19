@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.39cde311-1acc-4228-8771-bcbefb699bee" name="RiskFactor.svg">
+        <lastModified>1781331764967</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.39cde311-1acc-4228-8771-bcbefb699bee</managedAssetId>
+        <assetUuid>15accca4-2d7c-42d3-bb04-56a31ed3eb17</assetUuid>
+        <mimeType>image/svg+xml</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>1345</length>
+        <localLastModification>1781331764967</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:39cde311-1acc-4228-8771-bcbefb699bee</guid>
+        <versionId>3319b35a-dac8-4570-ba5e-b618f7e8d780</versionId>
+    </managedAsset>
+</teamworks>

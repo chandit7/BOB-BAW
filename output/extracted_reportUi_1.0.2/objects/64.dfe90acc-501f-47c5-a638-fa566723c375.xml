@@ -1,0 +1,3187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <coachView id="64.dfe90acc-501f-47c5-a638-fa566723c375" name="FolderTree">
+        <lastModified>1781333573556</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+        <isTemplate>false</isTemplate>
+        <layout>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;ns2:layout xmlns:ns2=&quot;http://www.ibm.com/bpm/CoachDesignerNG&quot; xmlns:ns3=&quot;http://www.ibm.com/bpm/coachview&quot;&gt;&lt;ns2:layoutItem xsi:type=&quot;ns2:CustomHTML&quot; version=&quot;8550&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&lt;ns2:id&gt;d9c7c900-2728-4948-8a42-3498a29b9d66&lt;/ns2:id&gt;&lt;ns2:layoutItemId&gt;CustomHTML1&lt;/ns2:layoutItemId&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;d3179cb3-392e-4919-ae29-929b71c1f164&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.contentType&lt;/ns2:optionName&gt;&lt;ns2:value&gt;TEXT&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;1d079754-21d7-4c26-9f02-03bb9c20c701&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.textContent&lt;/ns2:optionName&gt;&lt;ns2:value&gt;&amp;lt;div class=&amp;quot;ufm-widget&amp;quot; role=&amp;quot;region&amp;quot; aria-label=&amp;quot;Uploaded Files Manager&amp;quot;&amp;gt;
+  
+  &amp;lt;!-- Main Container with Two Panels --&amp;gt;
+  &amp;lt;div class=&amp;quot;ufm-container&amp;quot;&amp;gt;
+    
+    &amp;lt;!-- Left Panel: Uploaded Files List --&amp;gt;
+    &amp;lt;div class=&amp;quot;ufm-files-panel&amp;quot; role=&amp;quot;main&amp;quot; aria-label=&amp;quot;Uploaded files&amp;quot;&amp;gt;
+      
+      &amp;lt;!-- Header --&amp;gt;
+      &amp;lt;div class=&amp;quot;ufm-files-header&amp;quot;&amp;gt;
+        &amp;lt;h2 class=&amp;quot;ufm-files-title&amp;quot;&amp;gt;Uploaded files&amp;lt;/h2&amp;gt;
+        &amp;lt;button class=&amp;quot;ufm-refresh-btn&amp;quot; type=&amp;quot;button&amp;quot; aria-label=&amp;quot;Refresh file list&amp;quot; title=&amp;quot;Refresh&amp;quot;&amp;gt;
+          &amp;lt;span class=&amp;quot;ufm-refresh-icon&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;↻&amp;lt;/span&amp;gt;
+        &amp;lt;/button&amp;gt;
+      &amp;lt;/div&amp;gt;
+      
+      &amp;lt;!-- Selection Controls --&amp;gt;
+      &amp;lt;div class=&amp;quot;ufm-selection-controls&amp;quot;&amp;gt;
+        &amp;lt;button class=&amp;quot;ufm-select-all-btn&amp;quot; type=&amp;quot;button&amp;quot; aria-label=&amp;quot;Select all files&amp;quot;&amp;gt;
+          Select all
+        &amp;lt;/button&amp;gt;
+        &amp;lt;span class=&amp;quot;ufm-separator&amp;quot;&amp;gt;/&amp;lt;/span&amp;gt;
+        &amp;lt;button class=&amp;quot;ufm-unselect-all-btn&amp;quot; type=&amp;quot;button&amp;quot; aria-label=&amp;quot;Unselect all files&amp;quot;&amp;gt;
+          Unselect all
+        &amp;lt;/button&amp;gt;
+        &amp;lt;span class=&amp;quot;ufm-file-count&amp;quot; role=&amp;quot;status&amp;quot; aria-live=&amp;quot;polite&amp;quot;&amp;gt;25 files&amp;lt;/span&amp;gt;
+      &amp;lt;/div&amp;gt;
+      
+      &amp;lt;!-- Files List Container --&amp;gt;
+      &amp;lt;div class=&amp;quot;ufm-files-list&amp;quot; role=&amp;quot;list&amp;quot; aria-label=&amp;quot;Files and folders&amp;quot;&amp;gt;
+        &amp;lt;!-- File/Folder items will be injected here by JavaScript --&amp;gt;
+      &amp;lt;/div&amp;gt;
+      
+    &amp;lt;/div&amp;gt;
+    
+    &amp;lt;!-- Right Panel: Details --&amp;gt;
+    &amp;lt;aside class=&amp;quot;ufm-details-panel&amp;quot; role=&amp;quot;complementary&amp;quot; aria-label=&amp;quot;File details&amp;quot;&amp;gt;
+      
+      &amp;lt;!-- Header with Save Button --&amp;gt;
+      &amp;lt;div class=&amp;quot;ufm-details-header&amp;quot;&amp;gt;
+        &amp;lt;h2 class=&amp;quot;ufm-details-title&amp;quot;&amp;gt;Details&amp;lt;/h2&amp;gt;
+        &amp;lt;button class=&amp;quot;ufm-save-btn&amp;quot; type=&amp;quot;button&amp;quot; aria-label=&amp;quot;Save changes&amp;quot;&amp;gt;
+          &amp;lt;span class=&amp;quot;ufm-save-icon&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;
+          Save
+        &amp;lt;/button&amp;gt;
+      &amp;lt;/div&amp;gt;
+      
+      &amp;lt;!-- Selection Status --&amp;gt;
+      &amp;lt;div class=&amp;quot;ufm-selection-status&amp;quot; role=&amp;quot;status&amp;quot; aria-live=&amp;quot;polite&amp;quot;&amp;gt;
+        &amp;lt;span class=&amp;quot;ufm-selection-text&amp;quot;&amp;gt;No files selected&amp;lt;/span&amp;gt;
+      &amp;lt;/div&amp;gt;
+      
+      &amp;lt;!-- Details Form --&amp;gt;
+      &amp;lt;div class=&amp;quot;ufm-details-form&amp;quot;&amp;gt;
+        
+        &amp;lt;!-- Dynamic Updateable Fields Container --&amp;gt;
+        &amp;lt;div class=&amp;quot;ufm-updateable-fields&amp;quot;&amp;gt;
+          &amp;lt;!-- Updateable fields will be dynamically generated here by JavaScript --&amp;gt;
+        &amp;lt;/div&amp;gt;
+        
+      &amp;lt;/div&amp;gt;
+      
+      &amp;lt;!-- Empty State --&amp;gt;
+      &amp;lt;div class=&amp;quot;ufm-details-empty&amp;quot;&amp;gt;
+        &amp;lt;div class=&amp;quot;ufm-empty-icon&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;📄&amp;lt;/div&amp;gt;
+        &amp;lt;p class=&amp;quot;ufm-empty-text&amp;quot;&amp;gt;Select files to view and edit their details&amp;lt;/p&amp;gt;
+      &amp;lt;/div&amp;gt;
+      
+    &amp;lt;/aside&amp;gt;
+    
+  &amp;lt;/div&amp;gt;
+  
+  &amp;lt;!-- Delete Confirmation Modal --&amp;gt;
+  &amp;lt;div class=&amp;quot;ufm-modal&amp;quot; id=&amp;quot;ufm-delete-modal&amp;quot; role=&amp;quot;dialog&amp;quot; aria-labelledby=&amp;quot;ufm-modal-title&amp;quot; aria-modal=&amp;quot;true&amp;quot; style=&amp;quot;display: none;&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;ufm-modal-overlay&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;ufm-modal-content&amp;quot;&amp;gt;
+      &amp;lt;div class=&amp;quot;ufm-modal-header&amp;quot;&amp;gt;
+        &amp;lt;h3 class=&amp;quot;ufm-modal-title&amp;quot; id=&amp;quot;ufm-modal-title&amp;quot;&amp;gt;Confirm Deletion&amp;lt;/h3&amp;gt;
+        &amp;lt;button class=&amp;quot;ufm-modal-close&amp;quot; type=&amp;quot;button&amp;quot; aria-label=&amp;quot;Close dialog&amp;quot;&amp;gt;×&amp;lt;/button&amp;gt;
+      &amp;lt;/div&amp;gt;
+      &amp;lt;div class=&amp;quot;ufm-modal-body&amp;quot;&amp;gt;
+        &amp;lt;div class=&amp;quot;ufm-modal-icon&amp;quot;&amp;gt;⚠️&amp;lt;/div&amp;gt;
+        &amp;lt;p class=&amp;quot;ufm-modal-message&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;
+      &amp;lt;/div&amp;gt;
+      &amp;lt;div class=&amp;quot;ufm-modal-footer&amp;quot;&amp;gt;
+        &amp;lt;button class=&amp;quot;ufm-modal-btn ufm-modal-cancel&amp;quot; type=&amp;quot;button&amp;quot;&amp;gt;Cancel&amp;lt;/button&amp;gt;
+        &amp;lt;button class=&amp;quot;ufm-modal-btn ufm-modal-confirm&amp;quot; type=&amp;quot;button&amp;quot;&amp;gt;Delete&amp;lt;/button&amp;gt;
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+  
+&amp;lt;/div&amp;gt;&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;/ns2:layoutItem&gt;&lt;/ns2:layout&gt;</layout>
+        <paletteIcon>/61.a759aefa-f9fe-49fc-bfe4-a1b870767d36</paletteIcon>
+        <previewImage isNull="true" />
+        <hasLabel>false</hasLabel>
+        <labelPosition>0</labelPosition>
+        <nineSliceX1Coord>0</nineSliceX1Coord>
+        <nineSliceX2Coord>0</nineSliceX2Coord>
+        <nineSliceY1Coord>0</nineSliceY1Coord>
+        <nineSliceY2Coord>0</nineSliceY2Coord>
+        <emitBoundary>false</emitBoundary>
+        <isPrototypeFunc>false</isPrototypeFunc>
+        <enableDevMode>false</enableDevMode>
+        <isMobileReady>false</isMobileReady>
+        <loadJsFunction isNull="true" />
+        <unloadJsFunction isNull="true" />
+        <viewJsFunction isNull="true" />
+        <changeJsFunction isNull="true" />
+        <collaborationJsFunction isNull="true" />
+        <description>File and folder manager widget with hierarchical structure and bulk metadata editing for IBM Business Automation Workflow</description>
+        <validateJsFunction isNull="true" />
+        <previewAdvHtml>/61.44cd2019-7201-4abb-9019-6819c27992ad</previewAdvHtml>
+        <previewAdvJs>/61.cb76b5f3-750d-4701-856e-9e10ce2f7feb</previewAdvJs>
+        <useUrlBinding>false</useUrlBinding>
+        <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375</guid>
+        <versionId>d991b104-2c3d-4726-9c09-d758709ab7b8</versionId>
+        <field1 isNull="true" />
+        <field2 isNull="true" />
+        <field3>0</field3>
+        <field4 isNull="true" />
+        <field5>false</field5>
+        <clobField1 isNull="true" />
+        <bindingType name="FilesData">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewBindingTypeId>65.f37ca5ae-df1f-4a68-995e-c7e8fc551d62</coachViewBindingTypeId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <isList>false</isList>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <seq>0</seq>
+            <description isNull="true" />
+            <guid>guid:2df9114b-5a26-4e3b-af5f-8917bf2cbc2b</guid>
+            <versionId>459f94c5-6975-4f7f-a9c9-f49bf19cf560</versionId>
+        </bindingType>
+        <configOption name="graphqlEndpoint">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.c427b28c-3f4b-4688-b106-a1fba0b21d2a</coachViewConfigOptionId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>GraphQL Endpoint</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>0</seq>
+            <description>Full URL of the FileNet Content Engine GraphQL API endpoint</description>
+            <groupName></groupName>
+            <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375-graphqlendpoint</guid>
+            <versionId>af3f5b9d-b7d0-4a68-872e-dec391875472</versionId>
+        </configOption>
+
+        <configOption name="repositoryIdentifier">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.7af74d96-e4ab-41d3-b12f-cae77bb39671</coachViewConfigOptionId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Repository Identifier</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>1</seq>
+            <description>FileNet repository identifier (e.g., &#x27;OS1&#x27;)</description>
+            <groupName></groupName>
+            <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375-repositoryidentifier</guid>
+            <versionId>e31d8d0b-b825-4718-8cf0-a4bafa3d2fe1</versionId>
+        </configOption>
+
+        <configOption name="rootFolderPath">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.642097f9-c2d4-4a08-abf5-dff32c2ff81f</coachViewConfigOptionId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Root Folder Path</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>2</seq>
+            <description>FileNet folder path to start browsing from</description>
+            <groupName></groupName>
+            <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375-rootfolderpath</guid>
+            <versionId>ec5c5949-ca82-4433-8377-ebf05c4a607f</versionId>
+        </configOption>
+
+        <configOption name="showDocumentDetails">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.a53275cf-de63-483a-b835-0163039b3da0</coachViewConfigOptionId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Show Document Details</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>3</seq>
+            <description>Show document version and file size details in the list</description>
+            <groupName></groupName>
+            <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375-showdocumentdetails</guid>
+            <versionId>17f7d86a-3146-4b3f-a155-d9c8328fc6d7</versionId>
+        </configOption>
+
+        <configOption name="allowMultiSelect">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.d0e829d3-0db4-4050-ae03-e9c871a4f896</coachViewConfigOptionId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Allow Multi-Select</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>4</seq>
+            <description>Allow multiple files to be selected simultaneously for bulk operations</description>
+            <groupName></groupName>
+            <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375-allowmultiselect</guid>
+            <versionId>2e522861-ca91-4b32-8407-f019fef9d69d</versionId>
+        </configOption>
+
+        <configOption name="showFileActions">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.c103dc83-53fb-4c80-8fd4-bb1c6eaf980e</coachViewConfigOptionId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Show File Actions</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>5</seq>
+            <description>Show copy and delete action buttons for individual files</description>
+            <groupName></groupName>
+            <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375-showfileactions</guid>
+            <versionId>52a82599-14d6-47b5-8e84-aba086f6fd9e</versionId>
+        </configOption>
+
+        <configOption name="updateAbleFields">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.d225072a-0994-4a50-89ab-efc197c29fcf</coachViewConfigOptionId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Updateable Fields</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>6</seq>
+            <description>Comma-separated list of updateable field names (e.g., &#x27;author,department,status&#x27;)</description>
+            <groupName></groupName>
+            <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375-updateablefields</guid>
+            <versionId>fc81805a-b1bd-4061-b958-92fae272745a</versionId>
+        </configOption>
+
+        <configOption name="enableFolderExpansion">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.f456f0d9-747d-43d3-89e0-10ca5efdb6d3</coachViewConfigOptionId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Enable Folder Expansion</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>7</seq>
+            <description>Allow folders to be expanded/collapsed to show nested contents</description>
+            <groupName></groupName>
+            <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375-enablefolderexpansion</guid>
+            <versionId>46ae96b7-8530-42c0-bd73-55c082051b9a</versionId>
+        </configOption>
+
+        <configOption name="showSelectionControls">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.93fdc9e4-4f66-4dbb-bf00-d9532e5bd2ed</coachViewConfigOptionId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Show Selection Controls</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>8</seq>
+            <description>Show &#x27;Select all / Unselect all&#x27; controls at the top</description>
+            <groupName></groupName>
+            <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375-showselectioncontrols</guid>
+            <versionId>98f2a39b-a5f3-4efa-8f68-38bed9b981ef</versionId>
+        </configOption>
+
+        <configOption name="showFileCount">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.0b460bad-4d67-414f-bf66-2da17d97d9b5</coachViewConfigOptionId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Show File Count</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>9</seq>
+            <description>Display the total number of files in the list</description>
+            <groupName></groupName>
+            <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375-showfilecount</guid>
+            <versionId>22df6cd6-a3ad-4afc-896d-bb466f1b0b41</versionId>
+        </configOption>
+
+        <configOption name="autoSave">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.87e4d94c-a56a-4a0f-a2ac-1e28cfe48637</coachViewConfigOptionId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Auto Save</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>10</seq>
+            <description>Automatically save changes when metadata is modified</description>
+            <groupName></groupName>
+            <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375-autosave</guid>
+            <versionId>8ece3ca5-5e34-47e4-859d-cf3de5a502aa</versionId>
+        </configOption>
+
+        <configOption name="PropertyOne">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.3f6ac242-b8f1-4ddc-bb1e-256629333f54</coachViewConfigOptionId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Property One</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>11</seq>
+            <description>Custom property name for Label One (e.g., &#x27;DocumentLanguage&#x27;)</description>
+            <groupName></groupName>
+            <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375-propertyone</guid>
+            <versionId>359265d5-86d1-45d3-95f1-45b34b0c4622</versionId>
+        </configOption>
+
+        <configOption name="PropertyTwo">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.36b7e34d-9e3a-4545-8d8d-9f436009e007</coachViewConfigOptionId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Property Two</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>12</seq>
+            <description>Custom property name for Label Two (e.g., &#x27;DocumentType&#x27;)</description>
+            <groupName></groupName>
+            <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375-propertytwo</guid>
+            <versionId>1e366534-e451-4906-96c7-d28e7814d2e6</versionId>
+        </configOption>
+
+        <configOption name="enableDebugLogging">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.c3ca53b9-968c-418d-a1a3-5f6db37601c4</coachViewConfigOptionId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Enable Debug Logging</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>13</seq>
+            <description>Enable console logging for debugging</description>
+            <groupName></groupName>
+            <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375-enabledebuglogging</guid>
+            <versionId>871da52c-5587-4af3-b1a2-a7c0c49b78ee</versionId>
+        </configOption>
+
+        <configOption name="dateFormat">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.1882703c-aacb-4bd9-888c-8a60ab7ba1ac</coachViewConfigOptionId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Date Format</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>14</seq>
+            <description>Date format string (e.g., &#x27;YYYY-MM-DD&#x27;, &#x27;DD/MM/YYYY&#x27;)</description>
+            <groupName></groupName>
+            <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375-dateformat</guid>
+            <versionId>90418298-8a19-4535-be73-1c0373bf8c9f</versionId>
+        </configOption>
+
+        <configOption name="showDetailsPanel">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.66a7796b-b89c-4e1d-9857-a481eac2d7d6</coachViewConfigOptionId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Show Details Panel</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>15</seq>
+            <description>Show or hide the details/update panel on the right side</description>
+            <groupName></groupName>
+            <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375-showdetailspanel</guid>
+            <versionId>c56e47e0-8903-42a6-bf5a-7b63396f8aee</versionId>
+        </configOption>
+
+        <configOption name="onSelectionChange">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.1cdaf51a-4aa3-4664-b3c8-14a0ec522ea5</coachViewConfigOptionId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <isList>false</isList>
+            <propertyType>EVENT</propertyType>
+            <label>On Selection Change</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>16</seq>
+            <description>Event fired when file selection changes</description>
+            <groupName></groupName>
+            <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375-onselectionchange</guid>
+            <versionId>e4152245-1ef2-4a80-a3a0-4f90200490a9</versionId>
+        </configOption>
+
+        <configOption name="onSave">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.d132156f-6499-47ac-9657-48377fbed0bb</coachViewConfigOptionId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <isList>false</isList>
+            <propertyType>EVENT</propertyType>
+            <label>On Save</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>17</seq>
+            <description>Event fired when Save button is clicked</description>
+            <groupName></groupName>
+            <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375-onsave</guid>
+            <versionId>0a401104-9abc-4cf6-8986-8c458a57548d</versionId>
+        </configOption>
+
+        <configOption name="onCopyFile">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.8ae802f8-c312-4993-b434-bb9ce0821f07</coachViewConfigOptionId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <isList>false</isList>
+            <propertyType>EVENT</propertyType>
+            <label>On Copy File</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>18</seq>
+            <description>Event fired when copy button is clicked</description>
+            <groupName></groupName>
+            <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375-oncopyfile</guid>
+            <versionId>a179ef54-1ce0-4d8a-a3a8-7f4fb75afeba</versionId>
+        </configOption>
+
+        <configOption name="onDeleteFile">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.469d7205-9501-4b38-a52c-521cf9f16994</coachViewConfigOptionId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <isList>false</isList>
+            <propertyType>EVENT</propertyType>
+            <label>On Delete File</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>19</seq>
+            <description>Event fired when delete button is clicked</description>
+            <groupName></groupName>
+            <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375-ondeletefile</guid>
+            <versionId>2460a579-173c-483f-a9d7-ab726d66f9b7</versionId>
+        </configOption>
+        <inlineScript name="Inline Javascript">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.131bf320-84ce-4a07-912d-0e3ad1aa3608</coachViewInlineScriptId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <scriptType>JS</scriptType>
+            <scriptBlock>// ============================================================
+// FolderTree Widget — Inline JavaScript
+// IBM BAW Coach View Widget
+// Manages uploaded files with hierarchical structure and bulk metadata editing
+// ============================================================
+
+// ── Configuration from options ──────────────────────────────
+var _this = this;
+var graphqlEndpoint       = this.getOption(&quot;graphqlEndpoint&quot;) || &quot;&quot;;
+var repositoryId          = this.getOption(&quot;repositoryIdentifier&quot;) || &quot;&quot;;
+var rootFolderPath        = this.getOption(&quot;rootFolderPath&quot;) || &quot;/&quot;;
+var allowMultiSelect      = this.getOption(&quot;allowMultiSelect&quot;) !== false;
+var showFileActions       = this.getOption(&quot;showFileActions&quot;) !== false;
+var updateAbleFields      = this.getOption(&quot;updateAbleFields&quot;) || &quot;&quot;; // Comma-separated list
+var enableFolderExpansion = this.getOption(&quot;enableFolderExpansion&quot;) !== false;
+var showSelectionControls = this.getOption(&quot;showSelectionControls&quot;) !== false;
+var showFileCount         = this.getOption(&quot;showFileCount&quot;) !== false;
+var autoSave              = this.getOption(&quot;autoSave&quot;) || false;
+var showDocumentDetails   = this.getOption(&quot;showDocumentDetails&quot;) !== false;
+var PropertyOne           = this.getOption(&quot;PropertyOne&quot;) || &quot;language&quot;;
+var PropertyTwo           = this.getOption(&quot;PropertyTwo&quot;) || &quot;documentType&quot;;
+var enableDebugLogging    = this.getOption(&quot;enableDebugLogging&quot;) || false;
+var dateFormat            = this.getOption(&quot;dateFormat&quot;) || &quot;YYYY-MM-DD HH:mm:ss&quot;;
+var showDetailsPanel      = this.getOption(&quot;showDetailsPanel&quot;) !== false;
+
+// ── Debug logging helper ─────────────────────────────────────
+function debugLog() {
+  if (enableDebugLogging &amp;&amp; console &amp;&amp; console.log) {
+    console.log.apply(console, arguments);
+  }
+}
+
+// ── Format property value based on type ──────────────────────
+function formatPropertyValue(propertyName, value, type) {
+  if (!value) return value;
+  
+  // Handle ContentSize - convert bytes to human readable format
+  if (propertyName === &quot;ContentSize&quot; || propertyName === &quot;contentSize&quot;) {
+    var numValue = parseFloat(value);
+    if (!isNaN(numValue)) {
+      return formatBytes(numValue);
+    }
+  }
+  
+  // Handle date/time properties
+  if (type === &quot;date&quot; || type === &quot;datetime&quot; || type === &quot;timestamp&quot;) {
+    return formatDate(value, dateFormat);
+  }
+  
+  return value;
+}
+
+// ── Format date using simple pattern matching ────────────────
+function formatDate(dateValue, format) {
+  if (!dateValue) return dateValue;
+  
+  var date;
+  // Try to parse the date
+  if (typeof dateValue === &quot;string&quot;) {
+    date = new Date(dateValue);
+  } else if (typeof dateValue === &quot;number&quot;) {
+    date = new Date(dateValue);
+  } else if (dateValue instanceof Date) {
+    date = dateValue;
+  } else {
+    return dateValue; // Can&#x27;t parse, return as-is
+  }
+  
+  // Check if date is valid
+  if (isNaN(date.getTime())) {
+    return dateValue; // Invalid date, return as-is
+  }
+  
+  // Simple format replacement (supports common patterns)
+  var formatted = format;
+  
+  // Year
+  formatted = formatted.replace(&quot;YYYY&quot;, date.getFullYear());
+  formatted = formatted.replace(&quot;YY&quot;, String(date.getFullYear()).slice(-2));
+  
+  // Month
+  var month = date.getMonth() + 1;
+  formatted = formatted.replace(&quot;MM&quot;, String(month).padStart(2, &quot;0&quot;));
+  formatted = formatted.replace(&quot;M&quot;, month);
+  
+  // Day
+  var day = date.getDate();
+  formatted = formatted.replace(&quot;DD&quot;, String(day).padStart(2, &quot;0&quot;));
+  formatted = formatted.replace(&quot;D&quot;, day);
+  
+  // Hours
+  var hours = date.getHours();
+  formatted = formatted.replace(&quot;HH&quot;, String(hours).padStart(2, &quot;0&quot;));
+  formatted = formatted.replace(&quot;H&quot;, hours);
+  
+  // Minutes
+  var minutes = date.getMinutes();
+  formatted = formatted.replace(&quot;mm&quot;, String(minutes).padStart(2, &quot;0&quot;));
+  formatted = formatted.replace(&quot;m&quot;, minutes);
+  
+  // Seconds
+  var seconds = date.getSeconds();
+  formatted = formatted.replace(&quot;ss&quot;, String(seconds).padStart(2, &quot;0&quot;));
+  formatted = formatted.replace(&quot;s&quot;, seconds);
+  
+  return formatted;
+}
+
+// ── Show delete confirmation modal ───────────────────────────
+function showDeleteModal(message) {
+  return new Promise(function(resolve) {
+    // Get modal elements dynamically
+    var deleteModal = root ? root.querySelector(&quot;#ufm-delete-modal&quot;) : null;
+    var modalMessage = deleteModal ? deleteModal.querySelector(&quot;.ufm-modal-message&quot;) : null;
+    var modalConfirmBtn = deleteModal ? deleteModal.querySelector(&quot;.ufm-modal-confirm&quot;) : null;
+    var modalCancelBtn = deleteModal ? deleteModal.querySelector(&quot;.ufm-modal-cancel&quot;) : null;
+    var modalCloseBtn = deleteModal ? deleteModal.querySelector(&quot;.ufm-modal-close&quot;) : null;
+    var modalOverlay = deleteModal ? deleteModal.querySelector(&quot;.ufm-modal-overlay&quot;) : null;
+    
+    if (!deleteModal || !modalMessage || !modalConfirmBtn || !modalCancelBtn) {
+      // Fallback to browser confirm if modal not available
+      resolve(confirm(message));
+      return;
+    }
+    
+    // Set message
+    modalMessage.textContent = message;
+    
+    // Show modal
+    deleteModal.style.display = &quot;flex&quot;;
+    
+    // Focus confirm button
+    setTimeout(function() {
+      if (modalConfirmBtn) modalConfirmBtn.focus();
+    }, 100);
+    
+    // Handle confirm
+    function handleConfirm() {
+      cleanup();
+      resolve(true);
+    }
+    
+    // Handle cancel
+    function handleCancel() {
+      cleanup();
+      resolve(false);
+    }
+    
+    // Cleanup function
+    function cleanup() {
+      deleteModal.style.display = &quot;none&quot;;
+      if (modalConfirmBtn) modalConfirmBtn.removeEventListener(&quot;click&quot;, handleConfirm);
+      if (modalCancelBtn) modalCancelBtn.removeEventListener(&quot;click&quot;, handleCancel);
+      if (modalCloseBtn) modalCloseBtn.removeEventListener(&quot;click&quot;, handleCancel);
+      if (modalOverlay) modalOverlay.removeEventListener(&quot;click&quot;, handleCancel);
+      document.removeEventListener(&quot;keydown&quot;, handleEscape);
+    }
+    
+    // Handle escape key
+    function handleEscape(e) {
+      if (e.key === &quot;Escape&quot;) {
+        handleCancel();
+      }
+    }
+    
+    // Attach event listeners
+    if (modalConfirmBtn) modalConfirmBtn.addEventListener(&quot;click&quot;, handleConfirm);
+    if (modalCancelBtn) modalCancelBtn.addEventListener(&quot;click&quot;, handleCancel);
+    if (modalCloseBtn) modalCloseBtn.addEventListener(&quot;click&quot;, handleCancel);
+    if (modalOverlay) modalOverlay.addEventListener(&quot;click&quot;, handleCancel);
+    document.addEventListener(&quot;keydown&quot;, handleEscape);
+  });
+}
+
+// ── DOM references ───────────────────────────────────────────
+var root              = this.context.element.querySelector(&quot;.ufm-widget&quot;);
+var filesPanel        = root.querySelector(&quot;.ufm-files-panel&quot;);
+var filesHeader       = root.querySelector(&quot;.ufm-files-header&quot;);
+var refreshBtn        = root.querySelector(&quot;.ufm-refresh-btn&quot;);
+var selectionControls = root.querySelector(&quot;.ufm-selection-controls&quot;);
+var selectAllBtn      = root.querySelector(&quot;.ufm-select-all-btn&quot;);
+var unselectAllBtn    = root.querySelector(&quot;.ufm-unselect-all-btn&quot;);
+var fileCountEl       = root.querySelector(&quot;.ufm-file-count&quot;);
+var filesList         = root.querySelector(&quot;.ufm-files-list&quot;);
+var detailsPanel      = root.querySelector(&quot;.ufm-details-panel&quot;);
+var detailsHeader     = root.querySelector(&quot;.ufm-details-header&quot;);
+var saveBtn           = root.querySelector(&quot;.ufm-save-btn&quot;);
+var selectionStatus   = root.querySelector(&quot;.ufm-selection-status&quot;);
+var selectionText     = root.querySelector(&quot;.ufm-selection-text&quot;);
+var detailsForm       = root.querySelector(&quot;.ufm-details-form&quot;);
+var detailsEmpty      = root.querySelector(&quot;.ufm-details-empty&quot;);
+var updateableFieldsContainer = root.querySelector(&quot;.ufm-updateable-fields&quot;);
+
+// ── Widget state ─────────────────────────────────────────────
+var currentPath       = rootFolderPath;
+var currentFolderId   = null;
+var filesData         = [];
+var selectedFiles     = [];
+var expandedFolders   = [];
+var totalFileCount    = 0;
+var folderCache       = {}; // Cache folder contents: path -&gt; { folders: [], documents: [], folderId: &quot;&quot; }
+var propertyDefinitions = {}; // Cache property metadata: propertyName -&gt; { label, type, dataType }
+var fieldsGeneratedWithLabels = false; // Track if fields have been generated with proper labels from GraphQL
+
+// ── Register BAW event handlers ──────────────────────────────
+this.registerEventHandlingFunction(this, &quot;onSelectionChange&quot;, &quot;data&quot;);
+this.registerEventHandlingFunction(this, &quot;onSave&quot;, &quot;data&quot;);
+this.registerEventHandlingFunction(this, &quot;onCopyFile&quot;, &quot;data&quot;);
+this.registerEventHandlingFunction(this, &quot;onDeleteFile&quot;, &quot;data&quot;);
+
+// ── Apply configuration ──────────────────────────────────────
+if (!showSelectionControls) {
+  selectionControls.style.display = &quot;none&quot;;
+}
+
+if (!showFileCount) {
+  fileCountEl.style.display = &quot;none&quot;;
+}
+
+// ── Generate dynamic form fields ─────────────────────────────
+function generateUpdateableFields() {
+  if (!updateableFieldsContainer) return;
+  
+  // Clear existing fields
+  updateableFieldsContainer.innerHTML = &quot;&quot;;
+  
+  if (!updateAbleFields) return;
+  
+  // Parse the updateAbleFields string
+  var fieldsArray = updateAbleFields.split(&quot;,&quot;).map(function(field) {
+    return field.trim();
+  }).filter(function(field) {
+    return field.length &gt; 0;
+  });
+  
+  // Generate a form group for each field
+  fieldsArray.forEach(function(fieldName) {
+    var propDef = propertyDefinitions[fieldName] || {};
+    var fieldLabel = propDef.label || fieldName;
+    var fieldType = propDef.type || &quot;string&quot;;
+    
+    var formGroup = document.createElement(&quot;div&quot;);
+    formGroup.className = &quot;ufm-form-group&quot;;
+    
+    var label = document.createElement(&quot;label&quot;);
+    label.className = &quot;ufm-form-label&quot;;
+    label.setAttribute(&quot;for&quot;, &quot;ufm-field-&quot; + fieldName);
+    label.textContent = fieldLabel;
+    
+    var infoIcon = document.createElement(&quot;span&quot;);
+    infoIcon.className = &quot;ufm-info-icon&quot;;
+    infoIcon.setAttribute(&quot;aria-label&quot;, &quot;Information&quot;);
+    infoIcon.setAttribute(&quot;title&quot;, &quot;Update &quot; + fieldLabel + &quot; for selected files&quot;);
+    label.appendChild(infoIcon);
+    
+    // Create appropriate input based on type
+    var input = createInputForType(fieldName, fieldType, fieldLabel);
+    
+    formGroup.appendChild(label);
+    formGroup.appendChild(input);
+    updateableFieldsContainer.appendChild(formGroup);
+  });
+}
+
+// ── Create input element based on property type ──────────────
+function createInputForType(fieldName, fieldType, fieldLabel) {
+  var input;
+  
+  // Normalize type string
+  var normalizedType = (fieldType || &quot;&quot;).toLowerCase();
+  
+  if (normalizedType.indexOf(&quot;date&quot;) !== -1 || normalizedType.indexOf(&quot;time&quot;) !== -1) {
+    // Date/DateTime input
+    input = document.createElement(&quot;input&quot;);
+    input.type = &quot;datetime-local&quot;;
+    input.className = &quot;ufm-form-select&quot;;
+  } else if (normalizedType.indexOf(&quot;int&quot;) !== -1 || normalizedType.indexOf(&quot;long&quot;) !== -1 || normalizedType.indexOf(&quot;double&quot;) !== -1 || normalizedType.indexOf(&quot;float&quot;) !== -1) {
+    // Numeric input
+    input = document.createElement(&quot;input&quot;);
+    input.type = &quot;number&quot;;
+    input.className = &quot;ufm-form-select&quot;;
+  } else if (normalizedType.indexOf(&quot;bool&quot;) !== -1) {
+    // Boolean checkbox
+    input = document.createElement(&quot;input&quot;);
+    input.type = &quot;checkbox&quot;;
+    input.className = &quot;ufm-form-checkbox&quot;;
+  } else {
+    // Default text input
+    input = document.createElement(&quot;input&quot;);
+    input.type = &quot;text&quot;;
+    input.className = &quot;ufm-form-select&quot;;
+    input.placeholder = &quot;Enter &quot; + fieldLabel;
+  }
+  
+  input.id = &quot;ufm-field-&quot; + fieldName;
+  input.setAttribute(&quot;data-field-name&quot;, fieldName);
+  input.setAttribute(&quot;data-field-type&quot;, fieldType);
+  input.setAttribute(&quot;aria-label&quot;, fieldLabel);
+  
+  return input;
+}
+
+// Fetch property definitions and then generate fields
+function initializeUpdateableFields() {
+  if (!updateAbleFields) {
+    return;
+  }
+  
+  var fieldsArray = updateAbleFields.split(&quot;,&quot;).map(function(field) {
+    return field.trim();
+  }).filter(function(field) {
+    return field.length &gt; 0;
+  });
+  
+  if (fieldsArray.length === 0) {
+    return;
+  }
+  
+  // Fetch property definitions from a sample document
+  // For now, we&#x27;ll generate fields without metadata and update them when we load documents
+  generateUpdateableFields();
+}
+
+// Initialize fields on load
+initializeUpdateableFields();
+
+// ── Utility: format bytes ────────────────────────────────────
+function formatBytes(bytes) {
+  if (!bytes || bytes === 0) return &quot;0 B&quot;;
+  var k = 1024;
+  var sizes = [&quot;B&quot;, &quot;KB&quot;, &quot;MB&quot;, &quot;GB&quot;];
+  var i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + &quot; &quot; + sizes[i];
+}
+
+// ── Utility: format version ──────────────────────────────────
+function formatVersion(major, minor) {
+  return &quot;v&quot; + (major || 0) + &quot;.&quot; + (minor || 0);
+}
+
+// ── GraphQL: Query folder contents ──────────────────────────
+function queryFolderContents(folderPath) {
+  // Build properties list for the query
+  var propertiesToFetch = [];
+  if (PropertyOne) {
+    propertiesToFetch.push(&#x27;&quot;&#x27; + PropertyOne + &#x27;&quot;&#x27;);
+  }
+  if (PropertyTwo) {
+    propertiesToFetch.push(&#x27;&quot;&#x27; + PropertyTwo + &#x27;&quot;&#x27;);
+  }
+  
+  // Add updateAbleFields to the query
+  if (updateAbleFields) {
+    var fieldsArray = updateAbleFields.split(&quot;,&quot;).map(function(field) {
+      return field.trim();
+    }).filter(function(field) {
+      return field.length &gt; 0;
+    });
+    
+    fieldsArray.forEach(function(fieldName) {
+      var quotedField = &#x27;&quot;&#x27; + fieldName + &#x27;&quot;&#x27;;
+      if (propertiesToFetch.indexOf(quotedField) === -1) {
+        propertiesToFetch.push(quotedField);
+      }
+    });
+  }
+  
+  var propertiesQuery = &quot;&quot;;
+  if (propertiesToFetch.length &gt; 0) {
+    propertiesQuery = [
+      &quot;        properties(includes: [&quot; + propertiesToFetch.join(&quot;, &quot;) + &quot;]) {&quot;,
+      &quot;          id&quot;,
+      &quot;          label&quot;,
+      &quot;          type&quot;,
+      &quot;          value&quot;,
+      &quot;        }&quot;
+    ].join(&quot;\n&quot;);
+  }
+  
+  var query = [
+    &quot;query GetFolderContents($repoId: String!, $path: String!) {&quot;,
+    &quot;  folder(repositoryIdentifier: $repoId, identifier: $path) {&quot;,
+    &quot;    id&quot;,
+    &quot;    name&quot;,
+    &quot;    pathName&quot;,
+    &quot;    subFolders {&quot;,
+    &quot;      folders {&quot;,
+    &quot;        id&quot;,
+    &quot;        name&quot;,
+    &quot;        pathName&quot;,
+    &quot;      }&quot;,
+    &quot;    }&quot;,
+    &quot;    containedDocuments {&quot;,
+    &quot;      documents {&quot;,
+    &quot;        id&quot;,
+    &quot;        name&quot;,
+    &quot;        majorVersionNumber&quot;,
+    &quot;        minorVersionNumber&quot;,
+    &quot;        mimeType&quot;,
+    &quot;        contentSize&quot;,
+    propertiesQuery,
+    &quot;      }&quot;,
+    &quot;      pageInfo {&quot;,
+    &quot;        totalCount&quot;,
+    &quot;      }&quot;,
+    &quot;    }&quot;,
+    &quot;  }&quot;,
+    &quot;}&quot;
+  ].join(&quot;\n&quot;);
+
+  debugLog(&quot;GraphQL Query:&quot;, query);
+  debugLog(&quot;Variables:&quot;, { repoId: repositoryId, path: folderPath });
+  
+  return fetch(graphqlEndpoint, {
+    method: &quot;POST&quot;,
+    credentials: &quot;include&quot;,
+    headers: { &quot;Content-Type&quot;: &quot;application/json&quot; },
+    body: JSON.stringify({
+      query: query,
+      variables: {
+        repoId: repositoryId,
+        path: folderPath
+      }
+    })
+  })
+  .then(function(res) { return res.json(); })
+  .then(function(json) {
+    debugLog(&quot;GraphQL Response:&quot;, json);
+    if (json.errors &amp;&amp; json.errors.length &gt; 0) {
+      throw new Error(json.errors[0].message);
+    }
+    if (!json.data || !json.data.folder) {
+      throw new Error(&quot;Folder not found: &quot; + folderPath);
+    }
+    var result = {
+      folderId: json.data.folder.id,
+      folders: (json.data.folder.subFolders &amp;&amp; json.data.folder.subFolders.folders) || [],
+      documents: (json.data.folder.containedDocuments &amp;&amp; json.data.folder.containedDocuments.documents) || []
+    };
+    debugLog(&quot;Parsed documents:&quot;, result.documents);
+    return result;
+  });
+}
+
+// ── GraphQL: Query document properties ──────────────────────
+function queryDocumentProperties(documentId) {
+  var customPropsArray = [];
+  if (updateAbleFields) {
+    customPropsArray = updateAbleFields.split(&quot;,&quot;).map(function(prop) {
+      return prop.trim();
+    }).filter(function(prop) {
+      return prop.length &gt; 0;
+    });
+  }
+  
+  var queryFields = [
+    &quot;    id&quot;,
+    &quot;    name&quot;,
+    &quot;    majorVersionNumber&quot;,
+    &quot;    minorVersionNumber&quot;,
+    &quot;    mimeType&quot;,
+    &quot;    contentSize&quot;,
+    &quot;    dateCreated&quot;,
+    &quot;    creator&quot;
+  ];
+  
+  if (customPropsArray.length &gt; 0) {
+    var propsIncludes = customPropsArray.map(function(prop) {
+      return &#x27;&quot;&#x27; + prop + &#x27;&quot;&#x27;;
+    }).join(&quot;, &quot;);
+    
+    queryFields.push(&quot;    properties(includes: [&quot; + propsIncludes + &quot;]) {&quot;);
+    queryFields.push(&quot;      id&quot;);
+    queryFields.push(&quot;      label&quot;);
+    queryFields.push(&quot;      type&quot;);
+    queryFields.push(&quot;      value&quot;);
+    queryFields.push(&quot;    }&quot;);
+  }
+  
+  var query = [
+    &quot;query GetDocumentProperties($repoId: String!, $docId: String!) {&quot;,
+    &quot;  document(repositoryIdentifier: $repoId, identifier: $docId) {&quot;,
+    queryFields.join(&quot;\n&quot;),
+    &quot;  }&quot;,
+    &quot;}&quot;
+  ].join(&quot;\n&quot;);
+
+  return fetch(graphqlEndpoint, {
+    method: &quot;POST&quot;,
+    credentials: &quot;include&quot;,
+    headers: { &quot;Content-Type&quot;: &quot;application/json&quot; },
+    body: JSON.stringify({
+      query: query,
+      variables: {
+        repoId: repositoryId,
+        docId: documentId
+      }
+    })
+  })
+  .then(function(res) { return res.json(); })
+  .then(function(json) {
+    if (json.errors &amp;&amp; json.errors.length &gt; 0) {
+      throw new Error(json.errors[0].message);
+    }
+    if (!json.data || !json.data.document) {
+      throw new Error(&quot;Document not found: &quot; + documentId);
+    }
+    return json.data.document;
+  });
+}
+
+// ── Initialize widget ────────────────────────────────────────
+function initialize() {
+  // Check if GraphQL endpoint is configured
+  if (!graphqlEndpoint || !repositoryId) {
+    showError(&quot;GraphQL endpoint and repository identifier must be configured&quot;);
+    return;
+  }
+  
+  // Apply showDetailsPanel configuration
+  if (!showDetailsPanel) {
+    if (detailsPanel) {
+      detailsPanel.style.display = &quot;none&quot;;
+    }
+    // Make files panel full width
+    if (filesPanel) {
+      filesPanel.classList.add(&quot;full-width&quot;);
+    }
+  }
+  
+  loadFolderContents(currentPath);
+  attachEventListeners();
+  
+  // ── Public API ──────────────────────────────────────────────
+  // Expose methods for external widget access
+  if (_this.context) {
+    _this.context.refresh = function() {
+      if (enableDebugLogging) {
+        console.log(&quot;[FolderTree] External refresh called&quot;);
+      }
+      handleRefresh();
+    };
+    
+    _this.context.getSelectedFiles = function() {
+      if (enableDebugLogging) {
+        console.log(&quot;[FolderTree] getSelectedFiles called, returning:&quot;, selectedFiles.length, &quot;files&quot;);
+      }
+      return selectedFiles.slice(); // Return copy of array
+    };
+    
+    _this.context.clearSelection = function() {
+      if (enableDebugLogging) {
+        console.log(&quot;[FolderTree] clearSelection called&quot;);
+      }
+      handleUnselectAll();
+    };
+    
+    if (enableDebugLogging) {
+      console.log(&quot;[FolderTree] Public API methods exposed: refresh, getSelectedFiles, clearSelection&quot;);
+    }
+  } else if (enableDebugLogging) {
+    console.warn(&quot;[FolderTree] Context not available, public API methods not exposed&quot;);
+  }
+}
+
+// ── Load folder contents from FileNet ────────────────────────
+function loadFolderContents(folderPath) {
+  // Check cache first
+  if (folderCache[folderPath]) {
+    var cached = folderCache[folderPath];
+    currentFolderId = cached.folderId;
+    buildFilesData(cached.folders, cached.documents);
+    renderFilesList();
+    updateSelectionStatus();
+    updateFileCount();
+    return;
+  }
+  
+  // Show loading state
+  showLoading();
+  
+  queryFolderContents(folderPath)
+    .then(function(result) {
+      // Cache the result
+      folderCache[folderPath] = result;
+      currentFolderId = result.folderId;
+      
+      // Build files data structure
+      buildFilesData(result.folders, result.documents);
+      
+      // Render
+      hideLoading();
+      renderFilesList();
+      updateSelectionStatus();
+      updateFileCount();
+    })
+    .catch(function(error) {
+      hideLoading();
+      showError(error.message || &quot;Failed to load folder contents&quot;);
+    });
+}
+
+// ── Build files data structure from GraphQL results ──────────
+function buildFilesData(folders, documents) {
+  filesData = [];
+  
+  // Add folders first
+  folders.forEach(function(folder) {
+    filesData.push({
+      id: folder.id,
+      name: folder.name,
+      type: &quot;folder&quot;,
+      pathName: folder.pathName,
+      children: [],
+      metadata: {}
+    });
+  });
+  
+  // Add documents
+  documents.forEach(function(doc) {
+    // Extract property values from the properties array
+    var labelOne = &quot;&quot;;
+    var labelTwo = &quot;&quot;;
+    
+    debugLog(&quot;Processing document:&quot;, doc.name);
+    debugLog(&quot;Document properties:&quot;, doc.properties);
+    debugLog(&quot;Looking for PropertyOne:&quot;, PropertyOne);
+    debugLog(&quot;Looking for PropertyTwo:&quot;, PropertyTwo);
+    
+    if (doc.properties &amp;&amp; doc.properties.length &gt; 0) {
+      doc.properties.forEach(function(prop) {
+        debugLog(&quot;Checking property:&quot;, prop.id, &quot;=&quot;, prop.value, &quot;type:&quot;, prop.type);
+        
+        // Cache property definition
+        if (prop.id &amp;&amp; !propertyDefinitions[prop.id]) {
+          propertyDefinitions[prop.id] = {
+            label: prop.label || prop.id,
+            type: prop.type || &quot;string&quot;
+          };
+        }
+        
+        if (prop.id === PropertyOne) {
+          labelOne = formatPropertyValue(prop.id, prop.value, prop.type);
+          debugLog(&quot;Found labelOne:&quot;, labelOne);
+        }
+        if (prop.id === PropertyTwo) {
+          labelTwo = formatPropertyValue(prop.id, prop.value, prop.type);
+          debugLog(&quot;Found labelTwo:&quot;, labelTwo);
+        }
+      });
+    }
+    
+    debugLog(&quot;Final values - labelOne:&quot;, labelOne, &quot;labelTwo:&quot;, labelTwo);
+    
+    filesData.push({
+      id: doc.id,
+      name: doc.name,
+      type: &quot;file&quot;,
+      labelOne: labelOne,
+      labelTwo: labelTwo,
+      version: formatVersion(doc.majorVersionNumber, doc.minorVersionNumber),
+      mimeType: doc.mimeType,
+      size: doc.contentSize,
+      properties: doc.properties || [],
+      metadata: {
+        labelOne: labelOne || &quot;Unknown&quot;,
+        labelTwo: labelTwo || &quot;Unknown&quot;,
+        version: formatVersion(doc.majorVersionNumber, doc.minorVersionNumber),
+        size: formatBytes(doc.contentSize)
+      }
+    });
+  });
+  
+  // Regenerate fields once after processing all documents if we have property definitions and haven&#x27;t done so yet
+  if (!fieldsGeneratedWithLabels &amp;&amp; Object.keys(propertyDefinitions).length &gt; 0 &amp;&amp; updateableFieldsContainer) {
+    debugLog(&quot;Regenerating fields with proper labels from GraphQL&quot;);
+    generateUpdateableFields();
+    fieldsGeneratedWithLabels = true;
+  }
+}
+
+// ── Show loading state ───────────────────────────────────────
+function showLoading() {
+  if (filesList) {
+    filesList.innerHTML = &#x27;&lt;div style=&quot;padding: 32px; text-align: center; color: #6f6f6f;&quot;&gt;Loading files...&lt;/div&gt;&#x27;;
+  }
+}
+
+// ── Hide loading state ───────────────────────────────────────
+function hideLoading() {
+  // Loading is hidden when renderFilesList is called
+}
+
+// ── Show error message ───────────────────────────────────────
+function showError(message) {
+  if (filesList) {
+    filesList.innerHTML = &#x27;&lt;div style=&quot;padding: 32px; text-align: center; color: #da1e28;&quot;&gt;Error: &#x27; + message + &#x27;&lt;/div&gt;&#x27;;
+  }
+}
+
+// ── Render files list ────────────────────────────────────────
+function renderFilesList() {
+  if (!filesList) return;
+  
+  filesList.innerHTML = &quot;&quot;;
+  
+  if (filesData.length === 0) {
+    var emptyMsg = document.createElement(&quot;div&quot;);
+    emptyMsg.style.padding = &quot;32px&quot;;
+    emptyMsg.style.textAlign = &quot;center&quot;;
+    emptyMsg.style.color = &quot;#6f6f6f&quot;;
+    emptyMsg.textContent = &quot;No files uploaded&quot;;
+    filesList.appendChild(emptyMsg);
+    return;
+  }
+  
+  filesData.forEach(function(item) {
+    var itemElement = createFileItem(item, 0);
+    filesList.appendChild(itemElement);
+  });
+}
+
+// ── Create file/folder item element ──────────────────────────
+function createFileItem(item, level) {
+  var isFolder = item.type === &quot;folder&quot;;
+  var isExpanded = expandedFolders.indexOf(item.id) !== -1;
+  var isSelected = selectedFiles.indexOf(item.id) !== -1;
+  
+  // Main item wrapper
+  var wrapper = document.createElement(&quot;div&quot;);
+  wrapper.className = &quot;ufm-file-item-wrapper&quot;;
+  wrapper.setAttribute(&quot;data-item-id&quot;, item.id);
+  wrapper.setAttribute(&quot;data-item-type&quot;, item.type);
+  
+  // File item
+  var fileItem = document.createElement(&quot;div&quot;);
+  fileItem.className = &quot;ufm-file-item&quot; + (isSelected ? &quot; selected&quot; : &quot;&quot;);
+  fileItem.setAttribute(&quot;role&quot;, &quot;listitem&quot;);
+  fileItem.setAttribute(&quot;tabindex&quot;, &quot;0&quot;);
+  fileItem.style.paddingLeft = (24 + (level * 44)) + &quot;px&quot;;
+  
+  // Folder toggle or spacer
+  if (isFolder) {
+    var toggle = document.createElement(&quot;div&quot;);
+    toggle.className = &quot;ufm-folder-toggle&quot; + (isExpanded ? &quot; expanded&quot; : &quot;&quot;);
+    toggle.innerHTML = &#x27;&lt;div class=&quot;ufm-folder-toggle-icon&quot;&gt;&lt;/div&gt;&#x27;;
+    toggle.addEventListener(&quot;click&quot;, function(e) {
+      e.stopPropagation();
+      toggleFolder(item.id);
+    });
+    fileItem.appendChild(toggle);
+  } else {
+    var spacer = document.createElement(&quot;div&quot;);
+    spacer.style.width = &quot;20px&quot;;
+    spacer.style.flexShrink = &quot;0&quot;;
+    fileItem.appendChild(spacer);
+  }
+  
+  // Checkbox
+  var checkbox = document.createElement(&quot;input&quot;);
+  checkbox.type = &quot;checkbox&quot;;
+  checkbox.className = &quot;ufm-file-checkbox&quot;;
+  checkbox.checked = isSelected;
+  checkbox.setAttribute(&quot;aria-label&quot;, &quot;Select &quot; + item.name);
+  checkbox.addEventListener(&quot;change&quot;, function(e) {
+    e.stopPropagation();
+    handleCheckboxChange(item.id, checkbox.checked);
+  });
+  fileItem.appendChild(checkbox);
+  
+  // Icon
+  var icon = document.createElement(&quot;div&quot;);
+  icon.className = &quot;ufm-file-icon &quot; + (isFolder ? &quot;folder&quot; : &quot;document&quot;);
+  icon.setAttribute(&quot;aria-hidden&quot;, &quot;true&quot;);
+  fileItem.appendChild(icon);
+  
+  // Info
+  var info = document.createElement(&quot;div&quot;);
+  info.className = &quot;ufm-file-info&quot;;
+  
+  var name = document.createElement(&quot;div&quot;);
+  name.className = &quot;ufm-file-name&quot;;
+  name.textContent = item.name;
+  info.appendChild(name);
+  
+  if (!isFolder &amp;&amp; item.metadata) {
+    var meta = document.createElement(&quot;div&quot;);
+    meta.className = &quot;ufm-file-meta&quot;;
+    
+    var labelOne = document.createElement(&quot;span&quot;);
+    labelOne.textContent = item.metadata.labelOne || &quot;Unknown&quot;;
+    if (!item.metadata.labelOne) {
+      labelOne.className = &quot;unknown&quot;;
+    }
+    meta.appendChild(labelOne);
+    
+    var separator = document.createElement(&quot;span&quot;);
+    separator.className = &quot;separator&quot;;
+    separator.textContent = &quot; · &quot;;
+    meta.appendChild(separator);
+    
+    var labelTwo = document.createElement(&quot;span&quot;);
+    labelTwo.textContent = item.metadata.labelTwo || &quot;Unknown&quot;;
+    if (!item.metadata.labelTwo) {
+      labelTwo.className = &quot;unknown&quot;;
+    }
+    meta.appendChild(labelTwo);
+    
+    info.appendChild(meta);
+  }
+  
+  fileItem.appendChild(info);
+  
+  // Actions (for files only)
+  if (showFileActions &amp;&amp; !isFolder) {
+    var actions = document.createElement(&quot;div&quot;);
+    actions.className = &quot;ufm-file-actions&quot;;
+    
+    var copyBtn = document.createElement(&quot;button&quot;);
+    copyBtn.className = &quot;ufm-action-btn&quot;;
+    copyBtn.type = &quot;button&quot;;
+    copyBtn.setAttribute(&quot;aria-label&quot;, &quot;Copy file&quot;);
+    copyBtn.innerHTML = &#x27;&lt;div class=&quot;ufm-action-icon copy&quot;&gt;&lt;/div&gt;&#x27;;
+    copyBtn.addEventListener(&quot;click&quot;, function(e) {
+      e.stopPropagation();
+      handleCopyFile(item.id);
+    });
+    actions.appendChild(copyBtn);
+    
+    var deleteBtn = document.createElement(&quot;button&quot;);
+    deleteBtn.className = &quot;ufm-action-btn&quot;;
+    deleteBtn.type = &quot;button&quot;;
+    deleteBtn.setAttribute(&quot;aria-label&quot;, &quot;Delete file&quot;);
+    deleteBtn.innerHTML = &#x27;&lt;div class=&quot;ufm-action-icon delete&quot;&gt;&lt;/div&gt;&#x27;;
+    deleteBtn.addEventListener(&quot;click&quot;, function(e) {
+      e.stopPropagation();
+      handleDeleteFile(item.id);
+    });
+    actions.appendChild(deleteBtn);
+    
+    fileItem.appendChild(actions);
+  }
+  
+  // Click handler
+  fileItem.addEventListener(&quot;click&quot;, function() {
+    handleItemClick(item.id);
+  });
+  
+  wrapper.appendChild(fileItem);
+  
+  // Nested children (if folder)
+  if (isFolder &amp;&amp; item.children &amp;&amp; item.children.length &gt; 0) {
+    var nestedContainer = document.createElement(&quot;div&quot;);
+    nestedContainer.className = &quot;ufm-nested-files&quot; + (isExpanded ? &quot; expanded&quot; : &quot;&quot;);
+    nestedContainer.setAttribute(&quot;data-parent-id&quot;, item.id);
+    
+    item.children.forEach(function(child) {
+      var childElement = createFileItem(child, level + 1);
+      nestedContainer.appendChild(childElement);
+    });
+    
+    wrapper.appendChild(nestedContainer);
+  }
+  
+  return wrapper;
+}
+
+// ── Toggle folder expansion ──────────────────────────────────
+function toggleFolder(folderId) {
+  var index = expandedFolders.indexOf(folderId);
+  var isExpanding = index === -1;
+  
+  if (isExpanding) {
+    expandedFolders.push(folderId);
+    // Load folder contents if not already loaded
+    var folder = findItemById(filesData, folderId);
+    if (folder &amp;&amp; folder.type === &quot;folder&quot; &amp;&amp; (!folder.children || folder.children.length === 0)) {
+      loadSubfolderContents(folder);
+      return; // Will re-render after loading
+    }
+  } else {
+    expandedFolders.splice(index, 1);
+  }
+  
+  var wrapper = root.querySelector(&#x27;[data-item-id=&quot;&#x27; + folderId + &#x27;&quot;]&#x27;);
+  if (!wrapper) return;
+  
+  var toggle = wrapper.querySelector(&quot;.ufm-folder-toggle&quot;);
+  var nested = wrapper.querySelector(&quot;.ufm-nested-files&quot;);
+  
+  if (toggle) {
+    if (expandedFolders.indexOf(folderId) !== -1) {
+      toggle.classList.add(&quot;expanded&quot;);
+    } else {
+      toggle.classList.remove(&quot;expanded&quot;);
+    }
+  }
+  
+  if (nested) {
+    if (expandedFolders.indexOf(folderId) !== -1) {
+      nested.classList.add(&quot;expanded&quot;);
+    } else {
+      nested.classList.remove(&quot;expanded&quot;);
+    }
+  }
+}
+
+// ── Load subfolder contents ──────────────────────────────────
+function loadSubfolderContents(folder) {
+  var folderPath = folder.pathName;
+  
+  // Check cache first
+  if (folderCache[folderPath]) {
+    var cached = folderCache[folderPath];
+    folder.children = [];
+    
+    // Add subfolders
+    cached.folders.forEach(function(subFolder) {
+      folder.children.push({
+        id: subFolder.id,
+        name: subFolder.name,
+        type: &quot;folder&quot;,
+        pathName: subFolder.pathName,
+        children: [],
+        metadata: {}
+      });
+    });
+    
+    // Add documents
+    cached.documents.forEach(function(doc) {
+      // Extract property values from the properties array
+      var labelOne = &quot;&quot;;
+      var labelTwo = &quot;&quot;;
+      
+      if (doc.properties &amp;&amp; doc.properties.length &gt; 0) {
+        doc.properties.forEach(function(prop) {
+          if (prop.id === PropertyOne) {
+            labelOne = formatPropertyValue(prop.id, prop.value, prop.type);
+          }
+          if (prop.id === PropertyTwo) {
+            labelTwo = formatPropertyValue(prop.id, prop.value, prop.type);
+          }
+        });
+      }
+      
+      folder.children.push({
+        id: doc.id,
+        name: doc.name,
+        type: &quot;file&quot;,
+        labelOne: labelOne,
+        labelTwo: labelTwo,
+        version: formatVersion(doc.majorVersionNumber, doc.minorVersionNumber),
+        mimeType: doc.mimeType,
+        size: doc.contentSize,
+        metadata: {
+          labelOne: labelOne || &quot;Unknown&quot;,
+          labelTwo: labelTwo || &quot;Unknown&quot;,
+          version: formatVersion(doc.majorVersionNumber, doc.minorVersionNumber),
+          size: formatBytes(doc.contentSize)
+        }
+      });
+    });
+    
+    renderFilesList();
+    updateSelectionStatus();
+    return;
+  }
+  
+  // Show loading indicator for this folder
+  var wrapper = root.querySelector(&#x27;[data-item-id=&quot;&#x27; + folder.id + &#x27;&quot;]&#x27;);
+  if (wrapper) {
+    var toggle = wrapper.querySelector(&quot;.ufm-folder-toggle&quot;);
+    if (toggle) {
+      toggle.style.opacity = &quot;0.5&quot;;
+    }
+  }
+  
+  queryFolderContents(folderPath)
+    .then(function(result) {
+      // Cache the result
+      folderCache[folderPath] = result;
+      
+      // Build children array
+      folder.children = [];
+      
+      // Add subfolders
+      result.folders.forEach(function(subFolder) {
+        folder.children.push({
+          id: subFolder.id,
+          name: subFolder.name,
+          type: &quot;folder&quot;,
+          pathName: subFolder.pathName,
+          children: [],
+          metadata: {}
+        });
+      });
+      
+      // Add documents
+      result.documents.forEach(function(doc) {
+        // Extract property values from the properties array
+        var labelOne = &quot;&quot;;
+        var labelTwo = &quot;&quot;;
+        
+        if (doc.properties &amp;&amp; doc.properties.length &gt; 0) {
+          doc.properties.forEach(function(prop) {
+            if (prop.id === PropertyOne) {
+              labelOne = formatPropertyValue(prop.id, prop.value, prop.type);
+            }
+            if (prop.id === PropertyTwo) {
+              labelTwo = formatPropertyValue(prop.id, prop.value, prop.type);
+            }
+          });
+        }
+        
+        folder.children.push({
+          id: doc.id,
+          name: doc.name,
+          type: &quot;file&quot;,
+          labelOne: labelOne,
+          labelTwo: labelTwo,
+          version: formatVersion(doc.majorVersionNumber, doc.minorVersionNumber),
+          mimeType: doc.mimeType,
+          size: doc.contentSize,
+          metadata: {
+            labelOne: labelOne || &quot;Unknown&quot;,
+            labelTwo: labelTwo || &quot;Unknown&quot;,
+            version: formatVersion(doc.majorVersionNumber, doc.minorVersionNumber),
+            size: formatBytes(doc.contentSize)
+          }
+        });
+      });
+      
+      // Re-render the list
+      renderFilesList();
+      updateSelectionStatus();
+      updateFileCount();
+    })
+    .catch(function(error) {
+      // Remove from expanded folders on error
+      var idx = expandedFolders.indexOf(folder.id);
+      if (idx !== -1) {
+        expandedFolders.splice(idx, 1);
+      }
+      
+      // Restore toggle opacity
+      if (wrapper) {
+        var toggle = wrapper.querySelector(&quot;.ufm-folder-toggle&quot;);
+        if (toggle) {
+          toggle.style.opacity = &quot;1&quot;;
+        }
+      }
+      
+      showError(&quot;Failed to load folder: &quot; + error.message);
+    });
+}
+
+// ── Handle checkbox change ───────────────────────────────────
+function handleCheckboxChange(itemId, checked) {
+  var item = findItemById(filesData, itemId);
+  if (!item) return;
+  
+  if (checked) {
+    // If it&#x27;s a folder, select all documents inside it (but not the folder itself)
+    if (item.type === &quot;folder&quot;) {
+      var folderDocIds = collectAllFileIds([item]);
+      if (allowMultiSelect) {
+        folderDocIds.forEach(function(docId) {
+          if (selectedFiles.indexOf(docId) === -1) {
+            selectedFiles.push(docId);
+          }
+        });
+      } else {
+        selectedFiles = folderDocIds;
+      }
+    } else {
+      // It&#x27;s a file, add it to selection
+      if (allowMultiSelect) {
+        if (selectedFiles.indexOf(itemId) === -1) {
+          selectedFiles.push(itemId);
+        }
+      } else {
+        selectedFiles = [itemId];
+      }
+    }
+  } else {
+    // Unchecking: remove the item or all documents in folder
+    if (item.type === &quot;folder&quot;) {
+      var folderDocIds = collectAllFileIds([item]);
+      folderDocIds.forEach(function(docId) {
+        var index = selectedFiles.indexOf(docId);
+        if (index !== -1) {
+          selectedFiles.splice(index, 1);
+        }
+      });
+    } else {
+      var index = selectedFiles.indexOf(itemId);
+      if (index !== -1) {
+        selectedFiles.splice(index, 1);
+      }
+    }
+  }
+  
+  updateSelectionStatus();
+  updateCheckboxStates();
+  fireSelectionEvent();
+}
+
+// ── Handle item click ────────────────────────────────────────
+function handleItemClick(itemId) {
+  var item = findItemById(filesData, itemId);
+  if (!item || item.type === &quot;folder&quot;) return;
+  
+  var index = selectedFiles.indexOf(itemId);
+  if (index !== -1) {
+    selectedFiles.splice(index, 1);
+  } else {
+    if (!allowMultiSelect) {
+      selectedFiles = [];
+    }
+    selectedFiles.push(itemId);
+  }
+  
+  updateSelectionStatus();
+  updateCheckboxStates();
+  fireSelectionEvent();
+}
+
+// ── Handle select all ────────────────────────────────────────
+function handleSelectAll() {
+  selectedFiles = [];
+  collectAllFileIds(filesData).forEach(function(id) {
+    selectedFiles.push(id);
+  });
+  updateSelectionStatus();
+  updateCheckboxStates();
+  fireSelectionEvent();
+}
+
+// ── Handle unselect all ──────────────────────────────────────
+function handleUnselectAll() {
+  selectedFiles = [];
+  updateSelectionStatus();
+  updateCheckboxStates();
+  fireSelectionEvent();
+}
+
+// ── GraphQL: Update document properties ──────────────────────
+function updateDocumentProperties(documentId, properties) {
+  // Build properties array for mutation
+  var propertiesArray = [];
+  
+  for (var propName in properties) {
+    if (properties.hasOwnProperty(propName)) {
+      var propValue = properties[propName];
+      var propObj = {};
+      propObj[propName] = propValue;
+      propertiesArray.push(propObj);
+    }
+  }
+  
+  var mutation = [
+    &quot;mutation UpdateDocument($repoId: String!, $docId: String!, $props: DocumentPropertiesInput!) {&quot;,
+    &quot;  updateDocument(&quot;,
+    &quot;    repositoryIdentifier: $repoId&quot;,
+    &quot;    identifier: $docId&quot;,
+    &quot;    documentProperties: $props&quot;,
+    &quot;  ) {&quot;,
+    &quot;    id&quot;,
+    &quot;    name&quot;,
+    &quot;  }&quot;,
+    &quot;}&quot;
+  ].join(&quot;\n&quot;);
+  
+  var variables = {
+    repoId: repositoryId,
+    docId: documentId,
+    props: {
+      properties: propertiesArray
+    }
+  };
+  
+  debugLog(&quot;GraphQL Mutation:&quot;, mutation);
+  debugLog(&quot;Variables:&quot;, variables);
+  
+  return fetch(graphqlEndpoint, {
+    method: &quot;POST&quot;,
+    credentials: &quot;include&quot;,
+    headers: { &quot;Content-Type&quot;: &quot;application/json&quot; },
+    body: JSON.stringify({
+      query: mutation,
+      variables: variables
+    })
+  })
+  .then(function(res) { return res.json(); })
+  .then(function(json) {
+    if (json.errors &amp;&amp; json.errors.length &gt; 0) {
+      throw new Error(json.errors[0].message);
+    }
+    if (!json.data || !json.data.updateDocument) {
+      throw new Error(&quot;Failed to update document: &quot; + documentId);
+    }
+    debugLog(&quot;Document updated:&quot;, json.data.updateDocument);
+    return json.data.updateDocument;
+  });
+}
+
+// ── Handle save ──────────────────────────────────────────────
+function handleSave() {
+  // Capture widget context for use in Promise callbacks
+  var widget = _this;
+  
+  if (selectedFiles.length === 0) {
+    showError(&quot;No files selected&quot;);
+    return;
+  }
+  
+  var updates = {};
+  
+  // Collect values from all dynamic fields
+  if (updateableFieldsContainer) {
+    var inputs = updateableFieldsContainer.querySelectorAll(&quot;input[data-field-name]&quot;);
+    inputs.forEach(function(input) {
+      var fieldName = input.getAttribute(&quot;data-field-name&quot;);
+      var fieldType = input.getAttribute(&quot;data-field-type&quot;) || &quot;string&quot;;
+      var value;
+      
+      // Get value based on input type
+      if (input.type === &quot;checkbox&quot;) {
+        value = input.checked;
+      } else if (input.type === &quot;datetime-local&quot;) {
+        // Convert to ISO string if value exists
+        value = input.value ? new Date(input.value).toISOString() : null;
+      } else if (input.type === &quot;number&quot;) {
+        // Parse number value
+        value = input.value ? parseFloat(input.value) : null;
+      } else {
+        value = input.value || null;
+      }
+      
+      if (value !== null &amp;&amp; value !== &quot;&quot;) {
+        updates[fieldName] = value;
+      }
+    });
+  }
+  
+  if (Object.keys(updates).length === 0) {
+    showError(&quot;No changes to save&quot;);
+    return;
+  }
+  
+  debugLog(&quot;Saving updates:&quot;, updates);
+  debugLog(&quot;Selected files:&quot;, selectedFiles);
+  
+  // Disable save button during update
+  if (saveBtn) {
+    saveBtn.disabled = true;
+    saveBtn.textContent = &quot;Saving...&quot;;
+  }
+  
+  // Update each selected document via GraphQL mutation
+  var updatePromises = selectedFiles.map(function(itemId) {
+    var item = findItemById(filesData, itemId);
+    if (!item || item.type !== &quot;file&quot;) {
+      return Promise.resolve();
+    }
+    
+    return updateDocumentProperties(item.id, updates);
+  });
+  
+  Promise.all(updatePromises)
+    .then(function(results) {
+      debugLog(&quot;All documents updated successfully&quot;);
+      
+      // Update local data
+      selectedFiles.forEach(function(itemId) {
+        var item = findItemById(filesData, itemId);
+        if (item &amp;&amp; item.type === &quot;file&quot;) {
+          if (!item.properties) {
+            item.properties = [];
+          }
+          
+          // Update each field in local data
+          for (var fieldName in updates) {
+            if (updates.hasOwnProperty(fieldName)) {
+              var existingProp = null;
+              for (var i = 0; i &lt; item.properties.length; i++) {
+                if (item.properties[i].id === fieldName) {
+                  existingProp = item.properties[i];
+                  break;
+                }
+              }
+              
+              if (existingProp) {
+                existingProp.value = updates[fieldName];
+              } else {
+                item.properties.push({
+                  id: fieldName,
+                  value: updates[fieldName]
+                });
+              }
+            }
+          }
+        }
+      });
+      
+      // Re-render
+      renderFilesList();
+      updateCheckboxStates();
+      
+      // Re-enable save button
+      if (saveBtn) {
+        saveBtn.disabled = false;
+        saveBtn.textContent = &quot;Save&quot;;
+      }
+      
+      // Fire save event
+      widget.executeEventHandlingFunction(widget, &quot;onSave&quot;, {
+        selectedFiles: selectedFiles.slice(),
+        updates: updates,
+        success: true
+      });
+      
+      // Show success message (optional)
+      debugLog(&quot;Documents updated successfully&quot;);
+    })
+    .catch(function(error) {
+      debugLog(&quot;Error updating documents:&quot;, error);
+      showError(&quot;Failed to update documents: &quot; + error.message);
+      
+      // Re-enable save button
+      if (saveBtn) {
+        saveBtn.disabled = false;
+        saveBtn.textContent = &quot;Save&quot;;
+      }
+      
+      // Fire save event with error
+      widget.executeEventHandlingFunction(widget, &quot;onSave&quot;, {
+        selectedFiles: selectedFiles.slice(),
+        updates: updates,
+        success: false,
+        error: error.message
+      });
+    });
+}
+
+// ── Handle copy file ─────────────────────────────────────────
+function handleCopyFile(fileId) {
+  _this.executeEventHandlingFunction(_this, &quot;onCopyFile&quot;, { fileId: fileId });
+}
+
+// ── Handle delete file ───────────────────────────────────────
+// ── GraphQL: Delete document ─────────────────────────────────
+function deleteDocument(documentId) {
+  var mutation = [
+    &quot;mutation DeleteDocument($repoId: String!, $docId: String!) {&quot;,
+    &quot;  deleteDocument(&quot;,
+    &quot;    repositoryIdentifier: $repoId&quot;,
+    &quot;    identifier: $docId&quot;,
+    &quot;  ) {&quot;,
+    &quot;    id&quot;,
+    &quot;  }&quot;,
+    &quot;}&quot;
+  ].join(&quot;\n&quot;);
+  
+  var variables = {
+    repoId: repositoryId,
+    docId: documentId
+  };
+  
+  debugLog(&quot;GraphQL Delete Document Mutation:&quot;, mutation);
+  debugLog(&quot;Variables:&quot;, variables);
+  
+  return fetch(graphqlEndpoint, {
+    method: &quot;POST&quot;,
+    credentials: &quot;include&quot;,
+    headers: { &quot;Content-Type&quot;: &quot;application/json&quot; },
+    body: JSON.stringify({
+      query: mutation,
+      variables: variables
+    })
+  })
+  .then(function(res) { return res.json(); })
+  .then(function(json) {
+    if (json.errors &amp;&amp; json.errors.length &gt; 0) {
+      throw new Error(json.errors[0].message);
+    }
+    if (!json.data || !json.data.deleteDocument) {
+      throw new Error(&quot;Failed to delete document: &quot; + documentId);
+    }
+    debugLog(&quot;Document deleted:&quot;, json.data.deleteDocument);
+    return json.data.deleteDocument;
+  });
+}
+
+// ── GraphQL: Delete folder ───────────────────────────────────
+function deleteFolder(folderId) {
+  var mutation = [
+    &quot;mutation DeleteFolder($repoId: String!, $folderId: String!) {&quot;,
+    &quot;  deleteFolder(&quot;,
+    &quot;    repositoryIdentifier: $repoId&quot;,
+    &quot;    identifier: $folderId&quot;,
+    &quot;  ) {&quot;,
+    &quot;    id&quot;,
+    &quot;  }&quot;,
+    &quot;}&quot;
+  ].join(&quot;\n&quot;);
+  
+  var variables = {
+    repoId: repositoryId,
+    folderId: folderId
+  };
+  
+  debugLog(&quot;GraphQL Delete Folder Mutation:&quot;, mutation);
+  debugLog(&quot;Variables:&quot;, variables);
+  
+  return fetch(graphqlEndpoint, {
+    method: &quot;POST&quot;,
+    credentials: &quot;include&quot;,
+    headers: { &quot;Content-Type&quot;: &quot;application/json&quot; },
+    body: JSON.stringify({
+      query: mutation,
+      variables: variables
+    })
+  })
+  .then(function(res) { return res.json(); })
+  .then(function(json) {
+    if (json.errors &amp;&amp; json.errors.length &gt; 0) {
+      throw new Error(json.errors[0].message);
+    }
+    if (!json.data || !json.data.deleteFolder) {
+      throw new Error(&quot;Failed to delete folder: &quot; + folderId);
+    }
+    debugLog(&quot;Folder deleted:&quot;, json.data.deleteFolder);
+    return json.data.deleteFolder;
+  });
+}
+
+// ── Get all documents in folder recursively ──────────────────
+function getAllDocumentsInFolder(folder) {
+  var documents = [];
+  
+  // Add documents in this folder
+  if (folder.children) {
+    folder.children.forEach(function(child) {
+      if (child.type === &quot;file&quot;) {
+        documents.push(child);
+      } else if (child.type === &quot;folder&quot;) {
+        // Recursively get documents from subfolders
+        var subDocs = getAllDocumentsInFolder(child);
+        documents = documents.concat(subDocs);
+      }
+    });
+  }
+  
+  return documents;
+}
+
+// ── Handle delete file/folder ────────────────────────────────
+function handleDeleteFile(itemId) {
+  var item = findItemById(filesData, itemId);
+  if (!item) {
+    showError(&quot;Item not found&quot;);
+    return;
+  }
+  
+  var itemType = item.type === &quot;folder&quot; ? &quot;folder&quot; : &quot;document&quot;;
+  var itemName = item.name;
+  
+  // Show confirmation modal
+  var message = &quot;Are you sure you want to delete this &quot; + itemType + &quot;?\n\n&quot; + itemName;
+  
+  showDeleteModal(message).then(function(confirmed) {
+    if (!confirmed) {
+      return;
+    }
+    
+    debugLog(&quot;Deleting &quot; + itemType + &quot;:&quot;, itemId, itemName);
+    
+    var deletePromise;
+    
+    if (item.type === &quot;folder&quot;) {
+      // For folders: delete all documents first, then delete the folder
+      var documents = getAllDocumentsInFolder(item);
+      
+      if (documents.length &gt; 0) {
+        debugLog(&quot;Deleting &quot; + documents.length + &quot; documents in folder first&quot;);
+        
+        // Delete all documents in the folder
+        var deleteDocPromises = documents.map(function(doc) {
+          return deleteDocument(doc.id);
+        });
+        
+        deletePromise = Promise.all(deleteDocPromises)
+          .then(function() {
+            debugLog(&quot;All documents deleted, now deleting folder&quot;);
+            return deleteFolder(item.id);
+          });
+      } else {
+        // Empty folder, delete directly
+        deletePromise = deleteFolder(item.id);
+      }
+    } else {
+      // Delete document directly
+      deletePromise = deleteDocument(item.id);
+    }
+    
+    deletePromise
+      .then(function() {
+        debugLog(itemType + &quot; deleted successfully:&quot;, itemId);
+        
+        // Remove from local data
+        removeItemFromData(filesData, itemId);
+        
+        // Remove from selected files if it was selected
+        var selectedIndex = selectedFiles.indexOf(itemId);
+        if (selectedIndex !== -1) {
+          selectedFiles.splice(selectedIndex, 1);
+        }
+        
+        // Re-render
+        renderFilesList();
+        updateSelectionStatus();
+        updateCheckboxStates();
+        updateFileCount();
+        
+        // Fire delete event
+        _this.executeEventHandlingFunction(_this, &quot;onDeleteFile&quot;, {
+          itemId: itemId,
+          itemType: itemType,
+          itemName: itemName,
+          success: true
+        });
+      })
+      .catch(function(error) {
+        debugLog(&quot;Error deleting &quot; + itemType + &quot;:&quot;, error);
+        showError(&quot;Failed to delete &quot; + itemType + &quot;: &quot; + error.message);
+        
+        // Fire delete event with error
+        _this.executeEventHandlingFunction(_this, &quot;onDeleteFile&quot;, {
+          itemId: itemId,
+          itemType: itemType,
+          itemName: itemName,
+          success: false,
+          error: error.message
+        });
+      });
+  });
+}
+
+// ── Remove item from data structure ──────────────────────────
+function removeItemFromData(dataArray, itemId) {
+  for (var i = 0; i &lt; dataArray.length; i++) {
+    if (dataArray[i].id === itemId) {
+      dataArray.splice(i, 1);
+      return true;
+    }
+    if (dataArray[i].children &amp;&amp; dataArray[i].children.length &gt; 0) {
+      if (removeItemFromData(dataArray[i].children, itemId)) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+// ── Update selection status ──────────────────────────────────
+function updateSelectionStatus() {
+  if (!selectionText || !detailsForm || !detailsEmpty || !saveBtn) return;
+  
+  var selectedCount = selectedFiles.length;
+  
+  if (selectedCount === 0) {
+    selectionText.textContent = &quot;No files selected&quot;;
+    detailsForm.classList.remove(&quot;visible&quot;);
+    detailsEmpty.classList.remove(&quot;hidden&quot;);
+    saveBtn.disabled = true;
+  } else if (selectedCount === 1) {
+    selectionText.textContent = &quot;1 File selected&quot;;
+    detailsForm.classList.add(&quot;visible&quot;);
+    detailsEmpty.classList.add(&quot;hidden&quot;);
+    saveBtn.disabled = false;
+    populateDetailsForm();
+  } else {
+    selectionText.textContent = selectedCount + &quot; Files selected&quot;;
+    detailsForm.classList.add(&quot;visible&quot;);
+    detailsEmpty.classList.add(&quot;hidden&quot;);
+    saveBtn.disabled = false;
+    populateDetailsFormMultiple();
+  }
+}
+
+// ── Populate details form (single selection) ─────────────────
+function populateDetailsForm() {
+  var selectedId = selectedFiles[0];
+  var item = findItemById(filesData, selectedId);
+  
+  if (!item || !updateableFieldsContainer) return;
+  
+  // Populate all dynamic fields
+  var inputs = updateableFieldsContainer.querySelectorAll(&quot;input[data-field-name]&quot;);
+  inputs.forEach(function(input) {
+    var fieldName = input.getAttribute(&quot;data-field-name&quot;);
+    var value = &quot;&quot;;
+    
+    // Find the property value in the item
+    if (item.properties &amp;&amp; item.properties.length &gt; 0) {
+      for (var i = 0; i &lt; item.properties.length; i++) {
+        if (item.properties[i].id === fieldName) {
+          value = item.properties[i].value || &quot;&quot;;
+          break;
+        }
+      }
+    }
+    
+    // Set value based on input type
+    if (input.type === &quot;checkbox&quot;) {
+      input.checked = (value === &quot;true&quot; || value === true);
+    } else if (input.type === &quot;datetime-local&quot; &amp;&amp; value) {
+      // Convert ISO string to datetime-local format
+      try {
+        var date = new Date(value);
+        var localDateTime = date.getFullYear() + &quot;-&quot; +
+          String(date.getMonth() + 1).padStart(2, &quot;0&quot;) + &quot;-&quot; +
+          String(date.getDate()).padStart(2, &quot;0&quot;) + &quot;T&quot; +
+          String(date.getHours()).padStart(2, &quot;0&quot;) + &quot;:&quot; +
+          String(date.getMinutes()).padStart(2, &quot;0&quot;);
+        input.value = localDateTime;
+      } catch (e) {
+        input.value = value;
+      }
+    } else {
+      input.value = value;
+    }
+  });
+}
+
+// ── Populate details form (multiple selection) ───────────────
+function populateDetailsFormMultiple() {
+  var selectedItems = selectedFiles.map(function(id) {
+    return findItemById(filesData, id);
+  }).filter(function(item) {
+    return item !== null;
+  });
+  
+  if (!updateableFieldsContainer) return;
+  
+  // For each field, check if all selected items have the same value
+  var inputs = updateableFieldsContainer.querySelectorAll(&quot;input[data-field-name]&quot;);
+  inputs.forEach(function(input) {
+    var fieldName = input.getAttribute(&quot;data-field-name&quot;);
+    var values = [];
+    
+    // Collect values from all selected items
+    selectedItems.forEach(function(item) {
+      var value = &quot;&quot;;
+      if (item.properties &amp;&amp; item.properties.length &gt; 0) {
+        for (var i = 0; i &lt; item.properties.length; i++) {
+          if (item.properties[i].id === fieldName) {
+            value = item.properties[i].value || &quot;&quot;;
+            break;
+          }
+        }
+      }
+      values.push(value);
+    });
+    
+    // Get unique values
+    var uniqueValues = values.filter(function(value, index, self) {
+      return self.indexOf(value) === index;
+    });
+    
+    // If all items have the same value, show it; otherwise leave empty or unchecked
+    if (input.type === &quot;checkbox&quot;) {
+      if (uniqueValues.length === 1) {
+        input.checked = (uniqueValues[0] === &quot;true&quot; || uniqueValues[0] === true);
+      } else {
+        input.checked = false;
+        input.indeterminate = true; // Show indeterminate state for mixed values
+      }
+    } else if (input.type === &quot;datetime-local&quot;) {
+      if (uniqueValues.length === 1 &amp;&amp; uniqueValues[0]) {
+        try {
+          var date = new Date(uniqueValues[0]);
+          var localDateTime = date.getFullYear() + &quot;-&quot; +
+            String(date.getMonth() + 1).padStart(2, &quot;0&quot;) + &quot;-&quot; +
+            String(date.getDate()).padStart(2, &quot;0&quot;) + &quot;T&quot; +
+            String(date.getHours()).padStart(2, &quot;0&quot;) + &quot;:&quot; +
+            String(date.getMinutes()).padStart(2, &quot;0&quot;);
+          input.value = localDateTime;
+        } catch (e) {
+          input.value = &quot;&quot;;
+        }
+      } else {
+        input.value = &quot;&quot;;
+      }
+    } else {
+      input.value = uniqueValues.length === 1 ? uniqueValues[0] : &quot;&quot;;
+    }
+  });
+}
+
+// ── Update checkbox states ───────────────────────────────────
+function updateCheckboxStates() {
+  var checkboxes = root.querySelectorAll(&quot;.ufm-file-checkbox&quot;);
+  checkboxes.forEach(function(checkbox) {
+    var wrapper = checkbox.closest(&quot;.ufm-file-item-wrapper&quot;);
+    var itemId = wrapper ? wrapper.getAttribute(&quot;data-item-id&quot;) : null;
+    if (itemId) {
+      checkbox.checked = selectedFiles.indexOf(itemId) !== -1;
+      var fileItem = checkbox.closest(&quot;.ufm-file-item&quot;);
+      if (fileItem) {
+        if (selectedFiles.indexOf(itemId) !== -1) {
+          fileItem.classList.add(&quot;selected&quot;);
+        } else {
+          fileItem.classList.remove(&quot;selected&quot;);
+        }
+      }
+    }
+  });
+}
+
+// ── Update file count ────────────────────────────────────────
+function updateFileCount() {
+  if (!fileCountEl) return;
+  
+  totalFileCount = countAllFiles(filesData);
+  fileCountEl.textContent = totalFileCount + &quot; file&quot; + (totalFileCount !== 1 ? &quot;s&quot; : &quot;&quot;);
+}
+
+// ── Fire selection event ─────────────────────────────────────
+function fireSelectionEvent() {
+  var selectedItems = selectedFiles.map(function(id) {
+    var item = findItemById(filesData, id);
+    return item ? {
+      id: item.id,
+      name: item.name,
+      type: item.type,
+      labelOne: item.labelOne,
+      labelTwo: item.labelTwo
+    } : null;
+  }).filter(function(item) {
+    return item !== null;
+  });
+  
+  _this.executeEventHandlingFunction(_this, &quot;onSelectionChange&quot;, {
+    selectedFiles: selectedItems,
+    count: selectedItems.length
+  });
+}
+
+// ── Handle refresh ───────────────────────────────────────────
+function handleRefresh() {
+  if (enableDebugLogging) {
+    console.log(&quot;[FolderTree] Refreshing file list&quot;);
+  }
+  
+  // Add refreshing animation class
+  if (refreshBtn) {
+    refreshBtn.classList.add(&quot;refreshing&quot;);
+    setTimeout(function() {
+      refreshBtn.classList.remove(&quot;refreshing&quot;);
+    }, 600);
+  }
+  
+  // Clear folder cache to force reload
+  folderCache = {};
+  
+  // Clear selection
+  selectedFiles = [];
+  updateSelectionStatus();
+  updateCheckboxStates();
+  
+  // Reload current folder contents
+  loadFolderContents(currentPath);
+  
+  if (enableDebugLogging) {
+    console.log(&quot;[FolderTree] File list refreshed&quot;);
+  }
+}
+
+// ── Attach event listeners ───────────────────────────────────
+function attachEventListeners() {
+  if (selectAllBtn) {
+    selectAllBtn.addEventListener(&quot;click&quot;, handleSelectAll);
+  }
+  
+  if (unselectAllBtn) {
+    unselectAllBtn.addEventListener(&quot;click&quot;, handleUnselectAll);
+  }
+  
+  if (saveBtn) {
+    saveBtn.addEventListener(&quot;click&quot;, handleSave);
+  }
+  
+  if (refreshBtn) {
+    refreshBtn.addEventListener(&quot;click&quot;, handleRefresh);
+  }
+}
+
+// ── Utility: Find item by ID ─────────────────────────────────
+function findItemById(items, id) {
+  for (var i = 0; i &lt; items.length; i++) {
+    if (items[i].id === id) return items[i];
+    if (items[i].children) {
+      var found = findItemById(items[i].children, id);
+      if (found) return found;
+    }
+  }
+  return null;
+}
+
+// ── Utility: Collect all file IDs ────────────────────────────
+function collectAllFileIds(items) {
+  var ids = [];
+  items.forEach(function(item) {
+    if (item.type === &quot;file&quot;) {
+      ids.push(item.id);
+    }
+    if (item.children) {
+      ids = ids.concat(collectAllFileIds(item.children));
+    }
+  });
+  return ids;
+}
+
+// ── Utility: Count all files ─────────────────────────────────
+function countAllFiles(items) {
+  var count = 0;
+  items.forEach(function(item) {
+    if (item.type === &quot;file&quot;) {
+      count++;
+    }
+    if (item.children) {
+      count += countAllFiles(item.children);
+    }
+  });
+  return count;
+}
+
+
+// ── Initialize widget on load ────────────────────────────────
+initialize();
+
+// Made with Bob
+</scriptBlock>
+            <seq>0</seq>
+            <description></description>
+            <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375-js</guid>
+            <versionId>92a5f4d6-5648-48d9-9a0a-9d764bf57686</versionId>
+        </inlineScript>
+
+        <inlineScript name="Inline CSS">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.0c0fef8f-c9b0-41f7-9c95-19f5a28179b2</coachViewInlineScriptId>
+            <coachViewId>64.dfe90acc-501f-47c5-a638-fa566723c375</coachViewId>
+            <scriptType>CSS</scriptType>
+            <scriptBlock>/* ============================================================
+   FolderTree Widget — Inline CSS
+   IBM BAW Coach View Widget
+   ============================================================ */
+
+/* ── Root container ─────────────────────────────────────── */
+.ufm-widget {
+  --ufm-blue:        #0f62fe;
+  --ufm-blue-hover:  #0043ce;
+  --ufm-blue-light:  #edf5ff;
+  --ufm-green:       #24a148;
+  --ufm-red:         #da1e28;
+  --ufm-orange:      #f1620a;
+  --ufm-gray-10:     #f4f4f4;
+  --ufm-gray-20:     #e0e0e0;
+  --ufm-gray-30:     #c6c6c6;
+  --ufm-gray-40:     #a8a8a8;
+  --ufm-gray-50:     #8d8d8d;
+  --ufm-gray-60:     #6f6f6f;
+  --ufm-gray-80:     #393939;
+  --ufm-gray-100:    #161616;
+  --ufm-border-r:    4px;
+  --ufm-transition:  110ms cubic-bezier(0.2, 0, 0.38, 0.9);
+
+  font-family: &#x27;IBM Plex Sans&#x27;, &#x27;Helvetica Neue&#x27;, Arial, sans-serif;
+  font-size: 14px;
+  color: var(--ufm-gray-100);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ufm-widget *,
+.ufm-widget *::before,
+.ufm-widget *::after {
+  box-sizing: border-box;
+}
+
+/* ── Main Container ─────────────────────────────────────── */
+.ufm-container {
+  display: flex;
+  gap: 0;
+  min-height: 500px;
+  max-height: 700px;
+  background-color: #ffffff;
+  border: 1px solid var(--ufm-gray-20);
+  border-radius: var(--ufm-border-r);
+  overflow: hidden;
+}
+
+/* ── Files Panel (Left) ─────────────────────────────────── */
+.ufm-files-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--ufm-gray-20);
+  background-color: #ffffff;
+  min-width: 0;
+}
+
+/* Full width when details panel is hidden */
+.ufm-files-panel.full-width {
+  border-right: none;
+}
+
+.ufm-files-header {
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--ufm-gray-20);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ufm-files-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--ufm-gray-100);
+  letter-spacing: -0.2px;
+}
+
+/* Refresh Button */
+.ufm-refresh-btn {
+  background: none;
+  border: 1px solid var(--ufm-gray-30);
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  color: var(--ufm-gray-70);
+  min-width: 36px;
+  height: 36px;
+}
+
+.ufm-refresh-btn:hover {
+  background-color: var(--ufm-gray-10);
+  border-color: var(--ufm-gray-40);
+  color: var(--ufm-gray-90);
+}
+
+.ufm-refresh-btn:active {
+  background-color: var(--ufm-gray-20);
+  transform: scale(0.98);
+}
+
+.ufm-refresh-btn:focus {
+  outline: 2px solid var(--ufm-primary);
+  outline-offset: 2px;
+}
+
+.ufm-refresh-icon {
+  font-size: 20px;
+  line-height: 1;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.ufm-refresh-btn:hover .ufm-refresh-icon {
+  transform: rotate(-45deg);
+}
+
+.ufm-refresh-btn:active .ufm-refresh-icon {
+  transform: rotate(-180deg);
+}
+
+/* Refresh animation when clicked */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ufm-refresh-btn.refreshing .ufm-refresh-icon {
+  animation: spin 0.6s ease-in-out;
+}
+
+/* Selection Controls */
+.ufm-selection-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--ufm-gray-20);
+  background-color: #ffffff;
+}
+
+.ufm-select-all-btn,
+.ufm-unselect-all-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 13px;
+  color: var(--ufm-gray-50);
+  cursor: pointer;
+  transition: color var(--ufm-transition);
+  font-family: inherit;
+}
+
+.ufm-select-all-btn:hover,
+.ufm-unselect-all-btn:hover {
+  color: var(--ufm-blue);
+  text-decoration: underline;
+}
+
+.ufm-select-all-btn:focus,
+.ufm-unselect-all-btn:focus {
+  outline: 2px solid var(--ufm-blue);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.ufm-separator {
+  color: var(--ufm-gray-40);
+  user-select: none;
+}
+
+.ufm-file-count {
+  margin-left: auto;
+  font-size: 13px;
+  color: var(--ufm-gray-50);
+}
+
+/* Files List */
+.ufm-files-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0;
+}
+
+/* File/Folder Item */
+.ufm-file-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--ufm-gray-20);
+  cursor: pointer;
+  transition: background-color var(--ufm-transition);
+  position: relative;
+}
+
+.ufm-file-item:hover {
+  background-color: var(--ufm-gray-10);
+}
+
+.ufm-file-item.selected {
+  background-color: var(--ufm-blue-light);
+}
+
+/* Checkbox */
+.ufm-file-checkbox {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: var(--ufm-blue);
+}
+
+/* File Icon */
+.ufm-file-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ufm-file-icon.folder {
+  background-image: url(&quot;data:image/svg+xml;utf8,%3Csvg xmlns%3D&#x27;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#x27; viewBox%3D&#x27;0 0 32 32&#x27;%3E%3Cpath d%3D&#x27;M11.17 6l3.42 3.41.58.59H28v16H4V6h7.17m0-2H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2H16L12.59 4.59A2 2 0 0 0 11.17 4z&#x27; fill%3D&#x27;%23393939&#x27;%2F%3E%3C%2Fsvg%3E&quot;);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.ufm-file-icon.document {
+  background-image: url(&quot;data:image/svg+xml;utf8,%3Csvg xmlns%3D&#x27;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#x27; viewBox%3D&#x27;0 0 32 32&#x27;%3E%3Cpath d%3D&#x27;M25.7 9.3l-7-7A1 1 0 0 0 18 2H8a2 2 0 0 0-2 2v24a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V10a1 1 0 0 0-.3-.7zM18 4.4l5.6 5.6H18zM24 28H8V4h8v6a2 2 0 0 0 2 2h6z&#x27; fill%3D&#x27;%23393939&#x27;%2F%3E%3C%2Fsvg%3E&quot;);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* File Info */
+.ufm-file-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.ufm-file-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ufm-gray-100);
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ufm-file-meta {
+  font-size: 13px;
+  color: var(--ufm-gray-50);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ufm-file-meta .separator {
+  color: var(--ufm-gray-40);
+}
+
+.ufm-file-meta .unknown {
+  color: var(--ufm-orange);
+}
+
+/* File Actions */
+.ufm-file-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity var(--ufm-transition);
+}
+
+.ufm-file-item:hover .ufm-file-actions {
+  opacity: 1;
+}
+
+.ufm-action-btn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color var(--ufm-transition);
+}
+
+.ufm-action-btn:hover {
+  background-color: var(--ufm-gray-20);
+}
+
+.ufm-action-btn:focus {
+  outline: 2px solid var(--ufm-blue);
+  outline-offset: 2px;
+}
+
+.ufm-action-icon {
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.ufm-action-icon.copy {
+  background-image: url(&quot;data:image/svg+xml;utf8,%3Csvg xmlns%3D&#x27;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#x27; viewBox%3D&#x27;0 0 32 32&#x27;%3E%3Cpath d%3D&#x27;M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2z&#x27;%2F%3E%3Cpath d%3D&#x27;M4 18H2V4a2 2 0 0 1 2-2h14v2H4z&#x27; fill%3D&#x27;%23393939&#x27;%2F%3E%3C%2Fsvg%3E&quot;);
+}
+
+.ufm-action-icon.delete {
+  background-image: url(&quot;data:image/svg+xml;utf8,%3Csvg xmlns%3D&#x27;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#x27; viewBox%3D&#x27;0 0 32 32&#x27;%3E%3Cpath d%3D&#x27;M12 12h2v12h-2zm6 0h2v12h-2z&#x27;%2F%3E%3Cpath d%3D&#x27;M4 6v2h2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h2V6zm4 22V8h16v20zm4-26h8v2h-8z&#x27; fill%3D&#x27;%23393939&#x27;%2F%3E%3C%2Fsvg%3E&quot;);
+}
+
+/* Folder Toggle */
+.ufm-folder-toggle {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--ufm-transition);
+  cursor: pointer;
+}
+
+.ufm-folder-toggle.expanded {
+  transform: rotate(90deg);
+}
+
+.ufm-folder-toggle-icon {
+  width: 16px;
+  height: 16px;
+  background-image: url(&quot;data:image/svg+xml;utf8,%3Csvg xmlns%3D&#x27;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#x27; viewBox%3D&#x27;0 0 32 32&#x27;%3E%3Cpath d%3D&#x27;M12 8l10 8-10 8z&#x27; fill%3D&#x27;%23393939&#x27;%2F%3E%3C%2Fsvg%3E&quot;);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Nested Files */
+.ufm-nested-files {
+  display: none;
+  background-color: var(--ufm-gray-10);
+}
+
+.ufm-nested-files.expanded {
+  display: block;
+}
+
+.ufm-nested-files .ufm-file-item {
+  padding-left: 68px;
+}
+
+/* ── Details Panel (Right) ──────────────────────────────── */
+.ufm-details-panel {
+  width: 480px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--ufm-gray-10);
+  overflow: hidden;
+}
+
+.ufm-details-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+  background-color: var(--ufm-gray-10);
+}
+
+.ufm-details-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--ufm-gray-100);
+  letter-spacing: -0.2px;
+}
+
+/* Save Button */
+.ufm-save-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: var(--ufm-blue);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--ufm-border-r);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--ufm-transition);
+  font-family: inherit;
+}
+
+.ufm-save-btn:hover {
+  background-color: var(--ufm-blue-hover);
+}
+
+.ufm-save-btn:focus {
+  outline: 2px solid var(--ufm-blue);
+  outline-offset: 2px;
+}
+
+.ufm-save-btn:disabled {
+  background-color: var(--ufm-gray-30);
+  cursor: not-allowed;
+}
+
+.ufm-save-icon {
+  width: 20px;
+  height: 20px;
+  background-image: url(&quot;data:image/svg+xml;utf8,%3Csvg xmlns%3D&#x27;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#x27; viewBox%3D&#x27;0 0 32 32&#x27;%3E%3Cpath d%3D&#x27;M27.71 9.29l-5-5A1 1 0 0 0 22 4H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V10a1 1 0 0 0-.29-.71zM12 6h8v4h-8zm8 20h-8v-8h8zm2 0v-8a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v8H6V6h4v4a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6.41l4 4V26z&#x27; fill%3D&#x27;%23ffffff&#x27;%2F%3E%3C%2Fsvg%3E&quot;);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Selection Status */
+.ufm-selection-status {
+  padding: 16px 24px;
+  background-color: var(--ufm-gray-10);
+  border-bottom: 1px solid var(--ufm-gray-20);
+}
+
+.ufm-selection-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ufm-gray-100);
+}
+
+/* Details Form */
+.ufm-details-form {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  display: none;
+}
+
+.ufm-details-form.visible {
+  display: block;
+}
+
+.ufm-form-group {
+  margin-bottom: 24px;
+}
+
+.ufm-form-group:last-child {
+  margin-bottom: 0;
+}
+
+.ufm-form-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ufm-gray-80);
+  margin-bottom: 8px;
+}
+
+.ufm-info-icon {
+  width: 16px;
+  height: 16px;
+  background-image: url(&quot;data:image/svg+xml;utf8,%3Csvg xmlns%3D&#x27;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#x27; viewBox%3D&#x27;0 0 32 32&#x27;%3E%3Cpath d%3D&#x27;M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 26a12 12 0 1 1 12-12 12 12 0 0 1-12 12z&#x27;%2F%3E%3Cpath d%3D&#x27;M17 8h-2v2h2zm-2 4h2v10h-2z&#x27; fill%3D&#x27;%23a8a8a8&#x27;%2F%3E%3C%2Fsvg%3E&quot;);
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: help;
+  flex-shrink: 0;
+}
+
+.ufm-form-select,
+.ufm-form-input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--ufm-gray-100);
+  background-color: #ffffff;
+  border: 1px solid var(--ufm-gray-30);
+  border-radius: var(--ufm-border-r);
+  transition: border-color var(--ufm-transition), box-shadow var(--ufm-transition);
+  appearance: none;
+  cursor: pointer;
+}
+
+.ufm-form-select {
+  background-image: url(&quot;data:image/svg+xml;utf8,%3Csvg xmlns%3D&#x27;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#x27; viewBox%3D&#x27;0 0 32 32&#x27;%3E%3Cpath d%3D&#x27;M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z&#x27; fill%3D&#x27;%23161616&#x27;%2F%3E%3C%2Fsvg%3E&quot;);
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.ufm-form-select:hover,
+.ufm-form-input:hover {
+  border-color: var(--ufm-gray-60);
+}
+
+.ufm-form-select:focus,
+.ufm-form-input:focus {
+  outline: none;
+  border-color: var(--ufm-blue);
+  box-shadow: 0 0 0 2px var(--ufm-blue-light);
+}
+
+.ufm-form-select:disabled,
+.ufm-form-input:disabled {
+  background-color: var(--ufm-gray-10);
+  color: var(--ufm-gray-40);
+  cursor: not-allowed;
+}
+
+.ufm-form-select option {
+  color: var(--ufm-gray-100);
+}
+
+.ufm-form-select option[value=&quot;&quot;] {
+  color: var(--ufm-gray-50);
+}
+
+/* Empty State */
+.ufm-details-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.ufm-details-empty.hidden {
+  display: none;
+}
+
+.ufm-empty-icon {
+  font-size: 48px;
+  opacity: 0.3;
+}
+
+.ufm-empty-text {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ufm-gray-60);
+  max-width: 280px;
+}
+
+/* ── Scrollbar Styling ──────────────────────────────────── */
+.ufm-files-list::-webkit-scrollbar,
+.ufm-details-form::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ufm-files-list::-webkit-scrollbar-track,
+.ufm-details-form::-webkit-scrollbar-track {
+  background: var(--ufm-gray-10);
+}
+
+.ufm-files-list::-webkit-scrollbar-thumb,
+.ufm-details-form::-webkit-scrollbar-thumb {
+  background: var(--ufm-gray-40);
+  border-radius: 4px;
+}
+
+.ufm-files-list::-webkit-scrollbar-thumb:hover,
+.ufm-details-form::-webkit-scrollbar-thumb:hover {
+  background: var(--ufm-gray-60);
+}
+
+/* ── Animations ─────────────────────────────────────────── */
+@keyframes ufm-fadein {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ufm-file-item {
+  animation: ufm-fadein 150ms ease forwards;
+}
+
+/* ── Responsive Design ──────────────────────────────────── */
+@media (max-width: 1024px) {
+  .ufm-container {
+    flex-direction: column;
+  }
+
+  .ufm-files-panel {
+    border-right: none;
+    border-bottom: 1px solid var(--ufm-gray-20);
+  }
+
+  .ufm-details-panel {
+    width: 100%;
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ufm-files-title,
+  .ufm-details-title {
+    font-size: 18px;
+  }
+
+  .ufm-details-panel {
+    width: 100%;
+  }
+
+  .ufm-file-actions {
+    opacity: 1;
+  }
+}
+
+/* Made with Bob */
+/* ── Delete Confirmation Modal ──────────────────────────── */
+.ufm-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ufm-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+.ufm-modal-content {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  max-width: 480px;
+  width: 90%;
+  z-index: 1;
+  animation: ufm-modal-slide-in 0.2s ease-out;
+}
+
+@keyframes ufm-modal-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ufm-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--ufm-gray-20);
+}
+
+.ufm-modal-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ufm-gray-100);
+}
+
+.ufm-modal-close {
+  background: none;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--ufm-gray-60);
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color var(--ufm-transition), color var(--ufm-transition);
+}
+
+.ufm-modal-close:hover {
+  background-color: var(--ufm-gray-10);
+  color: var(--ufm-gray-100);
+}
+
+.ufm-modal-body {
+  padding: 24px;
+  text-align: center;
+}
+
+.ufm-modal-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.ufm-modal-message {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ufm-gray-80);
+}
+
+.ufm-modal-footer {
+  display: flex;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--ufm-gray-20);
+  justify-content: flex-end;
+}
+
+.ufm-modal-btn {
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--ufm-transition), color var(--ufm-transition);
+}
+
+.ufm-modal-cancel {
+  background-color: transparent;
+  color: var(--ufm-gray-80);
+  border: 1px solid var(--ufm-gray-30);
+}
+
+.ufm-modal-cancel:hover {
+  background-color: var(--ufm-gray-10);
+}
+
+.ufm-modal-confirm {
+  background-color: var(--ufm-red);
+  color: #ffffff;
+}
+
+.ufm-modal-confirm:hover {
+  background-color: #ba1b23;
+}
+
+.ufm-modal-confirm:active {
+  background-color: #a21920;
+}
+</scriptBlock>
+            <seq>1</seq>
+            <description></description>
+            <guid>guid:dfe90acc-501f-47c5-a638-fa566723c375-css</guid>
+            <versionId>3847c2fb-34ab-4c63-8ee5-6f5ab00815c7</versionId>
+        </inlineScript>
+    </coachView>
+</teamworks>

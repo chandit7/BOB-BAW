@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.957166b5-be19-429d-80f4-9ec6b6a1e5ba" name="ProcessCircle.svg">
+        <lastModified>1781330260381</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.957166b5-be19-429d-80f4-9ec6b6a1e5ba</managedAssetId>
+        <assetUuid>d8601089-58a3-4c68-9750-2da93d4c9fce</assetUuid>
+        <mimeType>image/svg+xml</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>1250</length>
+        <localLastModification>1781330260381</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:957166b5-be19-429d-80f4-9ec6b6a1e5ba</guid>
+        <versionId>d187cda2-586f-43ad-be70-6ad610657046</versionId>
+    </managedAsset>
+</teamworks>

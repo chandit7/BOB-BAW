@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.171fe72e-bc0b-4408-a368-9573bc6a8a24" name="FileNetBrowser.svg">
+        <lastModified>1781330059433</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.171fe72e-bc0b-4408-a368-9573bc6a8a24</managedAssetId>
+        <assetUuid>4763d5b5-0fb7-4238-9a28-09b78db71852</assetUuid>
+        <mimeType>image/svg+xml</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>2813</length>
+        <localLastModification>1781330059433</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:171fe72e-bc0b-4408-a368-9573bc6a8a24</guid>
+        <versionId>b13af2b8-e556-47eb-84cb-e4764bbd2cde</versionId>
+    </managedAsset>
+</teamworks>

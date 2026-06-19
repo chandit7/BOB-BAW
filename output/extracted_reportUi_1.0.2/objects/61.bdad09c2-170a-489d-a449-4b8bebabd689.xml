@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.bdad09c2-170a-489d-a449-4b8bebabd689" name="ProgressBar.html">
+        <lastModified>1781333579178</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.bdad09c2-170a-489d-a449-4b8bebabd689</managedAssetId>
+        <assetUuid>6e3372b0-0434-47f6-94a7-dfa14b09cc6f</assetUuid>
+        <mimeType>text/html</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>2461</length>
+        <localLastModification>1781333579178</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:bdad09c2-170a-489d-a449-4b8bebabd689</guid>
+        <versionId>f31c880a-7b7e-4541-84e3-c6031e0d6798</versionId>
+    </managedAsset>
+</teamworks>

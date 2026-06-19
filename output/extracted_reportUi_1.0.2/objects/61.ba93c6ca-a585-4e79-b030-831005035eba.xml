@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.ba93c6ca-a585-4e79-b030-831005035eba" name="DynamicReportGrid.html">
+        <lastModified>1781333572178</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.ba93c6ca-a585-4e79-b030-831005035eba</managedAssetId>
+        <assetUuid>8fcc6012-4356-414e-97ac-6e47941cbace</assetUuid>
+        <mimeType>text/html</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>8040</length>
+        <localLastModification>1781333572178</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:ba93c6ca-a585-4e79-b030-831005035eba</guid>
+        <versionId>bbc5650b-1c1c-42e4-93c8-b728769ba55b</versionId>
+    </managedAsset>
+</teamworks>

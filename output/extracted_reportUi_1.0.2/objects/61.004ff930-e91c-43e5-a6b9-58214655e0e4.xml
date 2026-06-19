@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.004ff930-e91c-43e5-a6b9-58214655e0e4" name="ProcessCircleSnippet.js">
+        <lastModified>1781333578634</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.004ff930-e91c-43e5-a6b9-58214655e0e4</managedAssetId>
+        <assetUuid>52e66941-6f1c-4b6e-8442-066c5bfee8bf</assetUuid>
+        <mimeType>application/javascript</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>4822</length>
+        <localLastModification>1781333578634</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:004ff930-e91c-43e5-a6b9-58214655e0e4</guid>
+        <versionId>cdcc11b7-c2ae-46ac-96db-777c2219872a</versionId>
+    </managedAsset>
+</teamworks>

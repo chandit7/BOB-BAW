@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.427b1767-292f-4895-8985-6287f5665f8e" name="Breadcrumb.svg">
+        <lastModified>1781333571149</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.427b1767-292f-4895-8985-6287f5665f8e</managedAssetId>
+        <assetUuid>b92d8a20-01f2-4b29-b741-3cb12fdd91a8</assetUuid>
+        <mimeType>image/svg+xml</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>1316</length>
+        <localLastModification>1781333571149</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:427b1767-292f-4895-8985-6287f5665f8e</guid>
+        <versionId>1a61086b-754a-415f-b29f-f675680fbcfd</versionId>
+    </managedAsset>
+</teamworks>

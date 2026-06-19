@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.2ff83b97-7a61-4855-81c8-3fc432cc5f85" name="MarkdownViewer.html">
+        <lastModified>1781330059454</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.2ff83b97-7a61-4855-81c8-3fc432cc5f85</managedAssetId>
+        <assetUuid>0d8c1fda-5ba1-4c43-8d1c-1330a9dc290b</assetUuid>
+        <mimeType>text/html</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>4645</length>
+        <localLastModification>1781330059454</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:2ff83b97-7a61-4855-81c8-3fc432cc5f85</guid>
+        <versionId>472accec-6408-4b96-a792-f353da30b2ff</versionId>
+    </managedAsset>
+</teamworks>

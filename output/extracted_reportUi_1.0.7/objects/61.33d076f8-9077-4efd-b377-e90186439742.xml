@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.33d076f8-9077-4efd-b377-e90186439742" name="ProcessActivityTimeline.svg">
+        <lastModified>1781330260375</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.33d076f8-9077-4efd-b377-e90186439742</managedAssetId>
+        <assetUuid>65b4ac7c-6814-4bea-89a7-f60f6c42c91c</assetUuid>
+        <mimeType>image/svg+xml</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>2020</length>
+        <localLastModification>1781330260375</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:33d076f8-9077-4efd-b377-e90186439742</guid>
+        <versionId>a05ac9b5-41fc-4d49-b939-3928ab9ce23d</versionId>
+    </managedAsset>
+</teamworks>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DynamicReportGrid - Preview</title>
+  <style>
+    body {
+      font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    
+    .preview-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #161616;
+    }
+    
+    .subtitle {
+      font-size: 14px;
+      color: #525252;
+      margin-bottom: 24px;
+    }
+    
+    .widget-wrapper {
+      margin-bottom: 32px;
+    }
+    
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      color: #161616;
+    }
+    
+    .info-box {
+      background-color: #e5f6ff;
+      border-left: 3px solid #0f62fe;
+      padding: 16px;
+      margin-bottom: 16px;
+      border-radius: 0 4px 4px 0;
+    }
+    
+    .info-box h3 {
+      margin: 0 0 8px 0;
+      font-size: 14px;
+      font-weight: 600;
+      color: #0f62fe;
+    }
+    
+    .info-box p {
+      margin: 0;
+      font-size: 14px;
+      color: #161616;
+      line-height: 1.5;
+    }
+    
+    .code-block {
+      background-color: #f4f4f4;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 16px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      overflow-x: auto;
+      margin-bottom: 16px;
+    }
+    
+    .event-log {
+      background-color: #f4f4f4;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 16px;
+      max-height: 300px;
+      overflow-y: auto;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+    }
+    
+    .event-entry {
+      margin-bottom: 8px;
+      padding: 8px;
+      background-color: white;
+      border-radius: 2px;
+    }
+    
+    .event-type {
+      font-weight: 600;
+      color: #0f62fe;
+    }
+    
+    .event-time {
+      color: #8d8d8d;
+      font-size: 11px;
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-container">
+    <h1>DynamicReportGrid Widget Preview</h1>
+    <p class="subtitle">Server-side paginated data grid with dynamic configuration</p>
+    
+    <div class="info-box">
+      <h3>Preview Mode</h3>
+      <p>This preview demonstrates the widget with mock data. In production, the widget connects to a BAW service that executes SQL queries and returns paginated results.</p>
+    </div>
+    
+    <div class="widget-wrapper">
+      <div id="grid-container"></div>
+    </div>
+    
+    <div class="section-title">Configuration Example</div>
+    <div class="code-block">
+<pre>{
+  columns: [
+    { field: "order_id", label: "Order ID", dataType: "number", sortable: true },
+    { field: "customer", label: "Customer", dataType: "string", sortable: true },
+    { field: "date", label: "Date", dataType: "date", sortable: true },
+    { field: "amount", label: "Amount", dataType: "currency", sortable: true },
+    { field: "status", label: "Status", dataType: "string", sortable: false }
+  ],
+  sqlTemplate: "SELECT * FROM orders ORDER BY {{sortColumn}} {{sortDirection}} LIMIT {{limit}} OFFSET {{offset}}",
+  connectionString: "jdbc/OrdersDB",
+  pageSize: 25,
+  showStatusColumn: true
+}</pre>
+    </div>
+    
+    <div class="section-title">Event Log</div>
+    <div class="event-log" id="event-log">
+      <div class="event-entry">
+        <span class="event-type">Widget Initialized</span>
+        <span class="event-time">Ready to receive events</span>
+      </div>
+    </div>
+    
+    <div class="section-title">Key Features</div>
+    <ul>
+      <li><strong>True Server-Side Pagination:</strong> Every interaction triggers a fresh SQL execution</li>
+      <li><strong>Zero Client Caching:</strong> Only current page data in memory</li>
+      <li><strong>Dynamic Configuration:</strong> Accept any column structure without code changes</li>
+      <li><strong>SQL Template Support:</strong> Parameterized queries with runtime substitution</li>
+      <li><strong>Carbon Design System:</strong> Full IBM Carbon styling and accessibility</li>
+      <li><strong>Status Indicators:</strong> Color-coded badges for success, warning, error, info</li>
+      <li><strong>Keyboard Navigation:</strong> Full accessibility with ARIA attributes</li>
+    </ul>
+  </div>
+  
+  <script src="DynamicReportGridSnippet.js"></script>
+  <script>
+    // Initialize widget with mock data
+    window.addEventListener('DOMContentLoaded', function() {
+      const container = document.getElementById('grid-container');
+      const eventLog = document.getElementById('event-log');
+      
+      // Mock configuration
+      const config = {
+        columns: [
+          { field: "order_id", label: "Order ID", dataType: "number", width: "100px", sortable: true, align: "right" },
+          { field: "customer", label: "Customer", dataType: "string", width: "200px", sortable: true, align: "left" },
+          { field: "date", label: "Order Date", dataType: "date", width: "150px", sortable: true, align: "center" },
+          { field: "amount", label: "Amount", dataType: "currency", width: "120px", sortable: true, align: "right" },
+          { field: "status", label: "Status", dataType: "string", width: "100px", sortable: false, align: "center" }
+        ],
+        pageSize: 10,
+        showStatusColumn: true,
+        statusColumnField: "status"
+      };
+      
+      // Mock data generator
+      function generateMockData(page, pageSize, sortColumn, sortDirection) {
+        const statuses = ['success', 'warning', 'error', 'info'];
+        const customers = ['Acme Corp', 'TechStart Inc', 'Global Solutions', 'Innovation Labs', 'Digital Dynamics'];
+        const totalRows = 95;
+        const rows = [];
+        
+        const start = (page - 1) * pageSize;
+        const end = Math.min(start + pageSize, totalRows);
+        
+        for (let i = start; i < end; i++) {
+          rows.push({
+            order_id: 1000 + i,
+            customer: customers[i % customers.length],
+            date: new Date(2024, 0, 1 + i).toISOString().split('T')[0],
+            amount: (Math.random() * 50000 + 1000).toFixed(2),
+            status: statuses[i % statuses.length]
+          });
+        }
+        
+        return {
+          rows: rows,
+          totalRows: totalRows,
+          currentPage: page,
+          pageSize: pageSize,
+          sortColumn: sortColumn,
+          sortDirection: sortDirection,
+          executionTime: Math.floor(Math.random() * 100) + 20
+        };
+      }
+      
+      // Log events
+      function logEvent(eventType, data) {
+        const entry = document.createElement('div');
+        entry.className = 'event-entry';
+        entry.innerHTML = `
+          <span class="event-type">${eventType}</span>
+          <span class="event-time">${new Date().toLocaleTimeString()}</span>
+          <div style="margin-top: 4px; color: #525252;">${JSON.stringify(data, null, 2)}</div>
+        `;
+        eventLog.insertBefore(entry, eventLog.firstChild);
+        
+        // Keep only last 10 events
+        while (eventLog.children.length > 10) {
+          eventLog.removeChild(eventLog.lastChild);
+        }
+      }
+      
+      // Initialize widget (this would be done by BAW in production)
+      if (typeof initializeDynamicReportGrid === 'function') {
+        const mockData = generateMockData(1, config.pageSize, 'order_id', 'DESC');
+        initializeDynamicReportGrid(container, config, mockData, {
+          onPageChange: (data) => logEvent('pageChange', data),
+          onSortChange: (data) => logEvent('sortChange', data),
+          onPageSizeChange: (data) => logEvent('pageSizeChange', data),
+          onDataLoaded: (data) => logEvent('dataLoaded', data),
+          onDataError: (data) => logEvent('dataError', data)
+        });
+      }
+    });
+  </script>
+</body>
+</html>

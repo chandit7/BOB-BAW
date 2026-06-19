@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.6d24807e-1059-4633-b415-21e28baf6509" name="ProcessActivityTimeline.html">
+        <lastModified>1781331762514</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.6d24807e-1059-4633-b415-21e28baf6509</managedAssetId>
+        <assetUuid>4623a9c7-1968-44cc-b890-2fa012027341</assetUuid>
+        <mimeType>text/html</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>4830</length>
+        <localLastModification>1781331762514</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:6d24807e-1059-4633-b415-21e28baf6509</guid>
+        <versionId>605930af-3a8e-4fdd-a967-819a904b2315</versionId>
+    </managedAsset>
+</teamworks>

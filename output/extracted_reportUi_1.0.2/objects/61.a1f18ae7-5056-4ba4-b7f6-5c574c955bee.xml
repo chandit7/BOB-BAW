@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.a1f18ae7-5056-4ba4-b7f6-5c574c955bee" name="Stepper.html">
+        <lastModified>1781333580625</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.a1f18ae7-5056-4ba4-b7f6-5c574c955bee</managedAssetId>
+        <assetUuid>490bb69d-1d5d-423d-b317-8e12abd93083</assetUuid>
+        <mimeType>text/html</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>5878</length>
+        <localLastModification>1781333580625</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:a1f18ae7-5056-4ba4-b7f6-5c574c955bee</guid>
+        <versionId>ff3ac16b-dbfc-40f0-ad30-72f3c3a7911c</versionId>
+    </managedAsset>
+</teamworks>

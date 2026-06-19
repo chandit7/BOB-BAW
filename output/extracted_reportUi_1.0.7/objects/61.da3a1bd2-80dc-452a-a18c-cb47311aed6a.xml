@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.da3a1bd2-80dc-452a-a18c-cb47311aed6a" name="MultiDocumentUpload.html">
+        <lastModified>1781330260352</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.da3a1bd2-80dc-452a-a18c-cb47311aed6a</managedAssetId>
+        <assetUuid>f09c70dc-96aa-46b6-8dc9-4ea316df7610</assetUuid>
+        <mimeType>text/html</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>3927</length>
+        <localLastModification>1781330260352</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:da3a1bd2-80dc-452a-a18c-cb47311aed6a</guid>
+        <versionId>fb8ea0ce-8396-4792-9459-3043c0c3794e</versionId>
+    </managedAsset>
+</teamworks>

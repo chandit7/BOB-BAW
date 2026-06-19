@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.d892dd08-cd82-4128-b96d-2c48d3c0b954" name="Timeline.svg">
+        <lastModified>1781331767338</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.d892dd08-cd82-4128-b96d-2c48d3c0b954</managedAssetId>
+        <assetUuid>ebc13e58-4c32-4812-8dc4-a24b36c97c34</assetUuid>
+        <mimeType>image/svg+xml</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>1583</length>
+        <localLastModification>1781331767338</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:d892dd08-cd82-4128-b96d-2c48d3c0b954</guid>
+        <versionId>86d72548-08bd-45c5-92a3-6af36563f15e</versionId>
+    </managedAsset>
+</teamworks>

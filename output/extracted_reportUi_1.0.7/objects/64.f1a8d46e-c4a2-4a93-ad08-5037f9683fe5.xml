@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <coachView id="64.f1a8d46e-c4a2-4a93-ad08-5037f9683fe5" name="Stepper">
+        <lastModified>1781330260396</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <coachViewId>64.f1a8d46e-c4a2-4a93-ad08-5037f9683fe5</coachViewId>
+        <isTemplate>false</isTemplate>
+        <layout>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;ns2:layout xmlns:ns2=&quot;http://www.ibm.com/bpm/CoachDesignerNG&quot; xmlns:ns3=&quot;http://www.ibm.com/bpm/coachview&quot;&gt;&lt;ns2:layoutItem xsi:type=&quot;ns2:CustomHTML&quot; version=&quot;8550&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&lt;ns2:id&gt;9a83ed8a-c996-46d2-b0cb-505d92e71ada&lt;/ns2:id&gt;&lt;ns2:layoutItemId&gt;CustomHTML1&lt;/ns2:layoutItemId&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;8cb3267f-3f0d-4f04-b92b-60ccf8e4d282&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.contentType&lt;/ns2:optionName&gt;&lt;ns2:value&gt;TEXT&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;302a617a-ac3d-4aa3-b5d1-84d78138c6ff&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.textContent&lt;/ns2:optionName&gt;&lt;ns2:value&gt;&amp;lt;div class=&amp;quot;stepper_maincontentbox&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;stepper-container&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;stepper-list&amp;quot;&amp;gt;
+      &amp;lt;!-- Stepper items will be dynamically generated here --&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;/ns2:layoutItem&gt;&lt;/ns2:layout&gt;</layout>
+        <paletteIcon>/61.541f6bb3-4c9c-4dd2-869c-daa80ed284e1</paletteIcon>
+        <previewImage isNull="true" />
+        <hasLabel>false</hasLabel>
+        <labelPosition>0</labelPosition>
+        <nineSliceX1Coord>0</nineSliceX1Coord>
+        <nineSliceX2Coord>0</nineSliceX2Coord>
+        <nineSliceY1Coord>0</nineSliceY1Coord>
+        <nineSliceY2Coord>0</nineSliceY2Coord>
+        <emitBoundary>false</emitBoundary>
+        <isPrototypeFunc>false</isPrototypeFunc>
+        <enableDevMode>false</enableDevMode>
+        <isMobileReady>false</isMobileReady>
+        <loadJsFunction isNull="true" />
+        <unloadJsFunction isNull="true" />
+        <viewJsFunction isNull="true" />
+        <changeJsFunction>// Get the stepper container elements
+var stepperContainer = this.context.element.querySelector(&quot;.stepper_maincontentbox&quot;);
+var stepperList = stepperContainer.querySelector(&quot;.stepper-list&quot;);
+
+// Get the stepper data (array of step items)
+var stepperData = this.getData().items;
+
+// Get configuration options
+var showNumbers = this.getOption(&quot;showNumbers&quot;) !== false; // Default true
+var showIcons = this.getOption(&quot;showIcons&quot;) !== false; // Default true
+var clickable = this.getOption(&quot;clickable&quot;) || false; // Default false
+var currentStep = this.getOption(&quot;currentStep&quot;) || 0; // Default 0 (first step)
+
+// Clear existing stepper items
+stepperList.innerHTML = &quot;&quot;;
+
+// Render stepper items
+if (stepperData &amp;&amp; Array.isArray(stepperData) &amp;&amp; stepperData.length &gt; 0) {
+  stepperData.forEach(function(item, index) {
+    var stepperItem = createStepperItem(item, index, stepperData.length);
+    stepperList.appendChild(stepperItem);
+  });
+} else {
+  // If no data, show default steps
+  var defaultSteps = [
+    { label: &quot;Step 1&quot;, status: &quot;completed&quot; },
+    { label: &quot;Step 2&quot;, status: &quot;current&quot; },
+    { label: &quot;Step 3&quot;, status: &quot;pending&quot; }
+  ];
+  
+  defaultSteps.forEach(function(item, index) {
+    var stepperItem = createStepperItem(item, index, defaultSteps.length);
+    stepperList.appendChild(stepperItem);
+  });
+}
+
+// Made with Bob</changeJsFunction>
+        <collaborationJsFunction isNull="true" />
+        <description>Vertical multi-step process indicator widget for IBM Business Automation Workflow</description>
+        <validateJsFunction isNull="true" />
+        <previewAdvHtml>/61.a1f18ae7-5056-4ba4-b7f6-5c574c955bee</previewAdvHtml>
+        <previewAdvJs>/61.ecaa31ed-eec0-48b1-98b9-3c0b123f2228</previewAdvJs>
+        <useUrlBinding>false</useUrlBinding>
+        <guid>guid:f1a8d46e-c4a2-4a93-ad08-5037f9683fe5</guid>
+        <versionId>34e5e219-bfcc-4183-bb10-440e612bf82a</versionId>
+        <field1 isNull="true" />
+        <field2 isNull="true" />
+        <field3>0</field3>
+        <field4 isNull="true" />
+        <field5>false</field5>
+        <clobField1 isNull="true" />
+        <bindingType name="StepperData">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewBindingTypeId>65.66db65de-cafa-41e9-ba95-ab7683bb5d71</coachViewBindingTypeId>
+            <coachViewId>64.f1a8d46e-c4a2-4a93-ad08-5037f9683fe5</coachViewId>
+            <isList>true</isList>
+            <classId>/12.cc351e20-a6a4-45e2-bab8-698faaf34d85</classId>
+            <seq>0</seq>
+            <description isNull="true" />
+            <guid>guid:7c402740-7812-4714-98fe-c56140e710d2</guid>
+            <versionId>f2149676-007d-40ad-8918-ed1c7247c92f</versionId>
+        </bindingType>
+        <configOption name="showNumbers">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.07756f39-0dd9-4d67-ad8c-055e34da92b9</coachViewConfigOptionId>
+            <coachViewId>64.f1a8d46e-c4a2-4a93-ad08-5037f9683fe5</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Show Numbers</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>0</seq>
+            <description>Display step numbers in circles (hidden when status icons are shown)</description>
+            <groupName></groupName>
+            <guid>guid:f1a8d46e-c4a2-4a93-ad08-5037f9683fe5-shownumbers</guid>
+            <versionId>4acb34aa-3989-4ce7-97a5-e6ab0eb9f803</versionId>
+        </configOption>
+
+        <configOption name="showIcons">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.9eb912d5-1a0b-4b37-9524-b22839b54246</coachViewConfigOptionId>
+            <coachViewId>64.f1a8d46e-c4a2-4a93-ad08-5037f9683fe5</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Show Icons</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>1</seq>
+            <description>Display status icons (checkmark for completed, error/warning icons)</description>
+            <groupName></groupName>
+            <guid>guid:f1a8d46e-c4a2-4a93-ad08-5037f9683fe5-showicons</guid>
+            <versionId>f148b83b-ad84-46ac-bbbc-3714b400ff22</versionId>
+        </configOption>
+
+        <configOption name="clickable">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.8085235a-f622-4939-9f17-b6b0438ecf65</coachViewConfigOptionId>
+            <coachViewId>64.f1a8d46e-c4a2-4a93-ad08-5037f9683fe5</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Clickable</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>2</seq>
+            <description>Enable click interaction on steps (disabled steps are never clickable)</description>
+            <groupName></groupName>
+            <guid>guid:f1a8d46e-c4a2-4a93-ad08-5037f9683fe5-clickable</guid>
+            <versionId>be62dd54-9c50-4ebc-9af8-920b5fba22cd</versionId>
+        </configOption>
+
+        <configOption name="currentStep">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.b089a168-dbf9-4317-88dc-c64ea9bf37f2</coachViewConfigOptionId>
+            <coachViewId>64.f1a8d46e-c4a2-4a93-ad08-5037f9683fe5</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Current Step</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.3fa0d7a0-828a-4d60-99cc-db5ed143fc2d</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>3</seq>
+            <description>Index of the current step (0-based). Used for auto-determining status when status is not provided</description>
+            <groupName></groupName>
+            <guid>guid:f1a8d46e-c4a2-4a93-ad08-5037f9683fe5-currentstep</guid>
+            <versionId>aa82ad98-bb70-4489-9ce7-16d98d61a783</versionId>
+        </configOption>
+
+        <configOption name="stepClicked">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.c1534fa2-d5df-45c8-8c3a-9190127f3c65</coachViewConfigOptionId>
+            <coachViewId>64.f1a8d46e-c4a2-4a93-ad08-5037f9683fe5</coachViewId>
+            <isList>false</isList>
+            <propertyType>EVENT</propertyType>
+            <label>Step Clicked</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>4</seq>
+            <description>Event fired when a step is clicked</description>
+            <groupName></groupName>
+            <guid>guid:f1a8d46e-c4a2-4a93-ad08-5037f9683fe5-stepclicked</guid>
+            <versionId>4065b3da-86a7-414d-b8b9-e5501c870e56</versionId>
+        </configOption>
+        <inlineScript name="Inline Javascript">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.18cd8f03-2a90-432b-b409-753c96eaacd4</coachViewInlineScriptId>
+            <coachViewId>64.f1a8d46e-c4a2-4a93-ad08-5037f9683fe5</coachViewId>
+            <scriptType>JS</scriptType>
+            <scriptBlock>
+
+// Get the stepper data (array of step items)
+var stepperData = this.getData().items;
+
+// Get configuration options
+var showNumbers = this.getOption(&quot;showNumbers&quot;) !== false; // Default true
+var showIcons = this.getOption(&quot;showIcons&quot;) !== false; // Default true
+var clickable = this.getOption(&quot;clickable&quot;) || false; // Default false
+var currentStep = this.getOption(&quot;currentStep&quot;) || 0; // Default 0 (first step)
+
+this.registerEventHandlingFunction(this, &quot;stepClicked&quot;, &quot;index&quot;); 
+
+
+// Get the stepper container elements
+var stepperContainer = this.context.element.querySelector(&quot;.stepper_maincontentbox&quot;);
+var stepperList = stepperContainer.querySelector(&quot;.stepper-list&quot;);
+
+// Clear existing stepper items
+stepperList.innerHTML = &quot;&quot;;
+
+// Function to create a stepper item
+function createStepperItem(item, index, totalItems) {
+  var div = document.createElement(&quot;div&quot;);
+  div.className = &quot;stepper-item&quot;;
+  
+  // Determine step status
+  var status = item.status;
+  if (!status) {
+    // Auto-determine status based on currentStep
+    if (index &lt; currentStep) {
+      status = &quot;completed&quot;;
+    } else if (index === currentStep) {
+      status = &quot;current&quot;;
+    } else {
+      status = &quot;pending&quot;;
+    }
+  }
+  
+  // Add status class
+  div.classList.add(status);
+  
+  // Add clickable class if enabled and not disabled
+  if (clickable &amp;&amp; status !== &quot;disabled&quot;) {
+    div.classList.add(&quot;clickable&quot;);
+  }
+  
+  // Create step circle
+  var circle = document.createElement(&quot;div&quot;);
+  circle.className = &quot;step-circle&quot;;
+  
+  // Add icon or number to circle
+  if (showIcons &amp;&amp; status === &quot;completed&quot;) {
+    var iconDiv = document.createElement(&quot;div&quot;);
+    iconDiv.className = &quot;stepper_icon_completed&quot;;
+    circle.appendChild(iconDiv);
+  } else if (showIcons &amp;&amp; status === &quot;error&quot;) {
+    var iconDiv = document.createElement(&quot;div&quot;);
+    iconDiv.className = &quot;stepper_icon_error&quot;;
+    circle.appendChild(iconDiv);
+  } else if (showIcons &amp;&amp; status === &quot;warning&quot;) {
+    var iconDiv = document.createElement(&quot;div&quot;);
+    iconDiv.className = &quot;stepper_icon_warning&quot;;
+    circle.appendChild(iconDiv);
+  } else if (showNumbers) {
+    var numberSpan = document.createElement(&quot;span&quot;);
+    numberSpan.textContent = index + 1;
+    circle.appendChild(numberSpan);
+  }
+  
+  div.appendChild(circle);
+  
+  // Create step content container (for vertical layout)
+  var contentDiv = document.createElement(&quot;div&quot;);
+  contentDiv.className = &quot;step-content&quot;;
+  
+  // Create step label
+  var label = document.createElement(&quot;div&quot;);
+  label.className = &quot;step-label&quot;;
+  label.textContent = item.label || item.text || &quot;Step &quot; + (index + 1);
+  contentDiv.appendChild(label);
+  
+  // Create step description if provided
+  if (item.description) {
+    var description = document.createElement(&quot;div&quot;);
+    description.className = &quot;step-description&quot;;
+    description.textContent = item.description;
+    contentDiv.appendChild(description);
+  }
+  
+  div.appendChild(contentDiv);
+  
+  // Add click event handler if clickable
+  if (clickable &amp;&amp; status !== &quot;disabled&quot;) {
+    div.addEventListener(&quot;click&quot;, function(e) {
+      e.preventDefault();
+      
+      // Call custom onClick handler if provided
+      if (item.onClick &amp;&amp; typeof item.onClick === &quot;function&quot;) {
+        item.onClick(item, index);
+      }
+      
+      // Fire boundary event for step change
+      if (typeof me !== &quot;undefined&quot; &amp;&amp; me.ui &amp;&amp; me.ui.fireEvent) {
+        me.ui.fireEvent(&quot;stepClicked&quot;, {
+          step: index,
+          item: item
+        });
+      }
+    });
+  }
+  
+  return div;
+}
+
+// Render stepper items
+if (stepperData &amp;&amp; Array.isArray(stepperData) &amp;&amp; stepperData.length &gt; 0) {
+  stepperData.forEach(function(item, index) {
+    var stepperItem = createStepperItem(item, index, stepperData.length);
+    stepperList.appendChild(stepperItem);
+  });
+} else {
+  // If no data, show default steps
+  var defaultSteps = [
+    { label: &quot;Step 1&quot;, status: &quot;completed&quot; },
+    { label: &quot;Step 2&quot;, status: &quot;current&quot; },
+    { label: &quot;Step 3&quot;, status: &quot;pending&quot; }
+  ];
+  
+  defaultSteps.forEach(function(item, index) {
+    var stepperItem = createStepperItem(item, index, defaultSteps.length);
+    stepperList.appendChild(stepperItem);
+  });
+}
+
+// Made with Bob</scriptBlock>
+            <seq>0</seq>
+            <description></description>
+            <guid>guid:f1a8d46e-c4a2-4a93-ad08-5037f9683fe5-js</guid>
+            <versionId>a08103bf-96fc-4788-998b-2fc4a9322470</versionId>
+        </inlineScript>
+
+        <inlineScript name="Inline CSS">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.60e7b8e9-d6f9-4d33-abdc-30378f6e641b</coachViewInlineScriptId>
+            <coachViewId>64.f1a8d46e-c4a2-4a93-ad08-5037f9683fe5</coachViewId>
+            <scriptType>CSS</scriptType>
+            <scriptBlock>/* Stepper Widget Styles - Carbon Design System - Vertical Layout Only */
+/* Colors and typography aligned with themes/Carbon.less */
+
+.stepper_maincontentbox {
+	width: 100%;
+	min-height: 80px;
+	overflow: hidden;
+	padding: 1rem 0;
+	font-family: &#x27;IBM Plex Sans&#x27;, &#x27;Helvetica Neue&#x27;, Helvetica, Arial, sans-serif; /* @bpm-font-family-sans-serif */
+}
+
+.stepper_maincontentbox .stepper-container {
+	display: table;
+	width: 100%;
+}
+
+.stepper_maincontentbox .stepper-container .stepper-list {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	position: relative;
+}
+
+/* Stepper Item */
+.stepper_maincontentbox .stepper-container .stepper-list .stepper-item {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	position: relative;
+	width: 100%;
+	min-height: 60px;
+	padding-bottom: 1rem;
+}
+
+/* Connector Line - Vertical */
+.stepper_maincontentbox .stepper-container .stepper-list .stepper-item:not(:last-child)::after {
+	content: &#x27;&#x27;;
+	position: absolute;
+	top: 32px;
+	left: 16px;
+	width: 2px;
+	height: calc(100% - 32px);
+	background-color: #e0e0e0; /* Gray 20 */
+	z-index: 0;
+}
+
+.stepper_maincontentbox .stepper-container .stepper-list .stepper-item.completed:not(:last-child)::after {
+	background-color: #0f62fe; /* @bpm-color-primary */
+}
+
+/* Step Circle Container */
+.stepper_maincontentbox .stepper-container .stepper-list .stepper-item .step-circle {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #ffffff; /* @bpm-body-bg */
+	border: 2px solid #e0e0e0; /* Gray 20 */
+	position: relative;
+	z-index: 1;
+	transition: all 0.3s ease;
+	font-size: 12px; /* @bpm-font-size-small */
+	font-weight: 600; /* @bpm-font-weight-semibold */
+	color: #525252; /* Gray 70 */
+}
+
+/* Step Circle - Completed */
+.stepper_maincontentbox .stepper-container .stepper-list .stepper-item.completed .step-circle {
+	background-color: #0f62fe; /* @bpm-color-primary */
+	border-color: #0f62fe; /* @bpm-color-primary */
+	color: #ffffff; /* @bpm-text-alternate-color */
+}
+
+/* Step Circle - Current/Active */
+.stepper_maincontentbox .stepper-container .stepper-list .stepper-item.current .step-circle {
+	border-color: #0f62fe; /* @bpm-color-primary */
+	border-width: 3px;
+	color: #0f62fe; /* @bpm-color-primary */
+	box-shadow: 0 0 0 4px rgba(15, 98, 254, 0.1);
+}
+
+/* Step Circle - Error */
+.stepper_maincontentbox .stepper-container .stepper-list .stepper-item.error .step-circle {
+	background-color: #da1e28; /* @bpm-color-alert */
+	border-color: #da1e28; /* @bpm-color-alert */
+	color: #ffffff; /* @bpm-text-alternate-color */
+}
+
+/* Step Circle - Warning */
+.stepper_maincontentbox .stepper-container .stepper-list .stepper-item.warning .step-circle {
+	background-color: #f1c21b; /* Warning yellow 50 */
+	border-color: #f1c21b;
+	color: #161616; /* @bpm-text-color */
+}
+
+/* Step Circle - Disabled */
+.stepper_maincontentbox .stepper-container .stepper-list .stepper-item.disabled .step-circle {
+	background-color: #f4f4f4; /* Gray 10 */
+	border-color: #c6c6c6; /* @bpm-link-text-color-disabled */
+	color: #c6c6c6; /* @bpm-link-text-color-disabled */
+	cursor: not-allowed;
+}
+
+/* Step Content Container */
+.stepper_maincontentbox .stepper-container .stepper-list .stepper-item .step-content {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+/* Step Label */
+.stepper_maincontentbox .stepper-container .stepper-list .stepper-item .step-label {
+	margin-top: 0;
+	margin-left: 1rem;
+	text-align: left;
+	font-size: 12px; /* @bpm-font-size-small */
+	color: #525252; /* Gray 70 */
+	font-weight: 400; /* @bpm-font-weight-normal */
+	max-width: none;
+	word-wrap: break-word;
+}
+
+.stepper_maincontentbox .stepper-container .stepper-list .stepper-item.current .step-label {
+	color: #161616; /* @bpm-text-color */
+	font-weight: 600; /* @bpm-font-weight-semibold */
+}
+
+.stepper_maincontentbox .stepper-container .stepper-list .stepper-item.completed .step-label {
+	color: #161616; /* @bpm-text-color */
+}
+
+.stepper_maincontentbox .stepper-container .stepper-list .stepper-item.disabled .step-label {
+	color: #c6c6c6; /* @bpm-link-text-color-disabled */
+}
+
+/* Step Description */
+.stepper_maincontentbox .stepper-container .stepper-list .stepper-item .step-description {
+	margin-top: 0.25rem;
+	margin-left: 1rem;
+	text-align: left;
+	font-size: 10px; /* @bpm-font-size-xsmall */
+	color: #8d8d8d; /* Gray 50 */
+	max-width: none;
+	word-wrap: break-word;
+}
+
+/* Clickable Steps */
+.stepper_maincontentbox .stepper-container .stepper-list .stepper-item.clickable {
+	cursor: pointer;
+}
+
+.stepper_maincontentbox .stepper-container .stepper-list .stepper-item.clickable:hover .step-circle {
+	transform: scale(1.1);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.stepper_maincontentbox .stepper-container .stepper-list .stepper-item.clickable:hover .step-label {
+	color: #0f62fe; /* @bpm-color-primary */
+}
+
+/* Status Icons */
+.stepper_icon_completed {
+	background-image: url(&quot;data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M6.5%2011.5l-3-3%201-1%202%202%205-5%201%201z%22%2F%3E%3C%2Fsvg%3E&quot;);
+	width: 16px;
+	height: 16px;
+	background-size: 16px 16px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.stepper_icon_error {
+	background-image: url(&quot;data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M8%201C4.1%201%201%204.1%201%208s3.1%207%207%207%207-3.1%207-7-3.1-7-7-7zm3.3%209.7L8%207.4l-3.3%203.3-1.4-1.4L6.6%206%203.3%202.7l1.4-1.4L8%204.6l3.3-3.3%201.4%201.4L9.4%206l3.3%203.3-1.4%201.4z%22%2F%3E%3C%2Fsvg%3E&quot;);
+	width: 16px;
+	height: 16px;
+	background-size: 16px 16px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.stepper_icon_warning {
+	background-image: url(&quot;data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20fill%3D%22%23161616%22%20d%3D%22M8%201L1%2015h14L8%201zm0%2010.5c-.4%200-.8-.3-.8-.8s.3-.8.8-.8.8.3.8.8-.4.8-.8.8zm.8-2.3h-1.5V5.5h1.5v3.7z%22%2F%3E%3C%2Fsvg%3E&quot;);
+	width: 16px;
+	height: 16px;
+	background-size: 16px 16px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/* Responsive Design */
+@media (max-width: 672px) {
+	.stepper_maincontentbox .stepper-container .stepper-list .stepper-item .step-label {
+		font-size: 10px; /* @bpm-font-size-xsmall */
+	}
+	
+	.stepper_maincontentbox .stepper-container .stepper-list .stepper-item .step-description {
+		font-size: 10px; /* @bpm-font-size-xsmall */
+	}
+	
+	.stepper_maincontentbox .stepper-container .stepper-list .stepper-item .step-circle {
+		width: 28px;
+		height: 28px;
+		font-size: 10px; /* @bpm-font-size-xsmall */
+	}
+}
+
+/* Animation for step transitions */
+@keyframes stepPulse {
+	0%, 100% {
+		box-shadow: 0 0 0 4px rgba(15, 98, 254, 0.1);
+	}
+	50% {
+		box-shadow: 0 0 0 8px rgba(15, 98, 254, 0.05);
+	}
+}
+
+.stepper_maincontentbox .stepper-container .stepper-list .stepper-item.current .step-circle {
+	animation: stepPulse 2s ease-in-out infinite;
+}
+
+/* Made with Bob */</scriptBlock>
+            <seq>1</seq>
+            <description></description>
+            <guid>guid:f1a8d46e-c4a2-4a93-ad08-5037f9683fe5-css</guid>
+            <versionId>f86f01e4-d150-4596-8ea6-ab9f33b975d6</versionId>
+        </inlineScript>
+    </coachView>
+</teamworks>

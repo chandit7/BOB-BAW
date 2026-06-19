@@ -1,0 +1,1580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <coachView id="64.0474f273-cd07-4fc0-999b-04e980aac6a8" name="DynamicReportGrid">
+        <lastModified>1781333571666</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <coachViewId>64.0474f273-cd07-4fc0-999b-04e980aac6a8</coachViewId>
+        <isTemplate>false</isTemplate>
+        <layout>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;ns2:layout xmlns:ns2=&quot;http://www.ibm.com/bpm/CoachDesignerNG&quot; xmlns:ns3=&quot;http://www.ibm.com/bpm/coachview&quot;&gt;&lt;ns2:layoutItem xsi:type=&quot;ns2:CustomHTML&quot; version=&quot;8550&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&lt;ns2:id&gt;64308017-1c27-49dd-99de-1435c3ea3641&lt;/ns2:id&gt;&lt;ns2:layoutItemId&gt;CustomHTML1&lt;/ns2:layoutItemId&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;27c58d91-a246-46e1-997c-e771108e3e0d&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.contentType&lt;/ns2:optionName&gt;&lt;ns2:value&gt;TEXT&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;4cb41d79-79fd-4762-94f7-90010a05539d&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.textContent&lt;/ns2:optionName&gt;&lt;ns2:value&gt;&amp;lt;div class=&amp;quot;dynamic-report-grid&amp;quot; role=&amp;quot;region&amp;quot; aria-label=&amp;quot;Dynamic data grid&amp;quot;&amp;gt;
+  &amp;lt;!-- Loading Overlay --&amp;gt;
+  &amp;lt;div class=&amp;quot;grid-loading-overlay&amp;quot; role=&amp;quot;status&amp;quot; aria-live=&amp;quot;polite&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;grid-loading-spinner&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;grid-loading-text&amp;quot;&amp;gt;Loading data...&amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+
+  &amp;lt;!-- Error Message --&amp;gt;
+  &amp;lt;div class=&amp;quot;grid-error-message&amp;quot; role=&amp;quot;alert&amp;quot; aria-live=&amp;quot;assertive&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;
+    &amp;lt;svg class=&amp;quot;grid-error-icon&amp;quot; width=&amp;quot;20&amp;quot; height=&amp;quot;20&amp;quot; viewBox=&amp;quot;0 0 16 16&amp;quot; fill=&amp;quot;currentColor&amp;quot;&amp;gt;
+      &amp;lt;path d=&amp;quot;M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm-.5 3h1v5h-1V4zm.5 7.5c-.4 0-.8-.3-.8-.8s.3-.8.8-.8.8.3.8.8-.4.8-.8.8z&amp;quot;/&amp;gt;
+    &amp;lt;/svg&amp;gt;
+    &amp;lt;span class=&amp;quot;grid-error-text&amp;quot;&amp;gt;Error loading data&amp;lt;/span&amp;gt;
+  &amp;lt;/div&amp;gt;
+
+  &amp;lt;!-- Grid Controls --&amp;gt;
+  &amp;lt;div class=&amp;quot;grid-controls&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;grid-info&amp;quot; aria-live=&amp;quot;polite&amp;quot;&amp;gt;
+      &amp;lt;span class=&amp;quot;grid-showing-text&amp;quot;&amp;gt;Showing 0-0 of 0 rows&amp;lt;/span&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;grid-page-size-selector&amp;quot;&amp;gt;
+      &amp;lt;label for=&amp;quot;grid-page-size&amp;quot; class=&amp;quot;grid-label&amp;quot;&amp;gt;Rows per page:&amp;lt;/label&amp;gt;
+      &amp;lt;select id=&amp;quot;grid-page-size&amp;quot; class=&amp;quot;grid-page-size-select&amp;quot; aria-label=&amp;quot;Select rows per page&amp;quot;&amp;gt;
+        &amp;lt;option value=&amp;quot;10&amp;quot;&amp;gt;10&amp;lt;/option&amp;gt;
+        &amp;lt;option value=&amp;quot;25&amp;quot; selected&amp;gt;25&amp;lt;/option&amp;gt;
+        &amp;lt;option value=&amp;quot;50&amp;quot;&amp;gt;50&amp;lt;/option&amp;gt;
+        &amp;lt;option value=&amp;quot;100&amp;quot;&amp;gt;100&amp;lt;/option&amp;gt;
+      &amp;lt;/select&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+
+  &amp;lt;!-- Data Grid Table --&amp;gt;
+  &amp;lt;div class=&amp;quot;grid-table-wrapper&amp;quot; role=&amp;quot;region&amp;quot; aria-label=&amp;quot;Data table&amp;quot; tabindex=&amp;quot;0&amp;quot;&amp;gt;
+    &amp;lt;table class=&amp;quot;grid-table&amp;quot; role=&amp;quot;table&amp;quot;&amp;gt;
+      &amp;lt;thead role=&amp;quot;rowgroup&amp;quot;&amp;gt;
+        &amp;lt;tr role=&amp;quot;row&amp;quot; class=&amp;quot;grid-header-row&amp;quot;&amp;gt;
+          &amp;lt;!-- Column headers will be dynamically generated --&amp;gt;
+        &amp;lt;/tr&amp;gt;
+      &amp;lt;/thead&amp;gt;
+      &amp;lt;tbody role=&amp;quot;rowgroup&amp;quot; class=&amp;quot;grid-body&amp;quot;&amp;gt;
+        &amp;lt;!-- Data rows will be dynamically generated --&amp;gt;
+      &amp;lt;/tbody&amp;gt;
+    &amp;lt;/table&amp;gt;
+  &amp;lt;/div&amp;gt;
+
+  &amp;lt;!-- No Data Message --&amp;gt;
+  &amp;lt;div class=&amp;quot;grid-no-data&amp;quot; role=&amp;quot;status&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;
+    &amp;lt;svg class=&amp;quot;grid-no-data-icon&amp;quot; width=&amp;quot;48&amp;quot; height=&amp;quot;48&amp;quot; viewBox=&amp;quot;0 0 32 32&amp;quot; fill=&amp;quot;currentColor&amp;quot;&amp;gt;
+      &amp;lt;path d=&amp;quot;M16 2C8.3 2 2 8.3 2 16s6.3 14 14 14 14-6.3 14-14S23.7 2 16 2zm0 26C9.4 28 4 22.6 4 16S9.4 4 16 4s12 5.4 12 12-5.4 12-12 12z&amp;quot;/&amp;gt;
+      &amp;lt;path d=&amp;quot;M16 8c-.6 0-1 .4-1 1v8c0 .6.4 1 1 1s1-.4 1-1V9c0-.6-.4-1-1-1z&amp;quot;/&amp;gt;
+    &amp;lt;/svg&amp;gt;
+    &amp;lt;div class=&amp;quot;grid-no-data-text&amp;quot;&amp;gt;No data available&amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+
+  &amp;lt;!-- Pagination Controls --&amp;gt;
+  &amp;lt;div class=&amp;quot;grid-pagination&amp;quot; role=&amp;quot;navigation&amp;quot; aria-label=&amp;quot;Pagination&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;grid-page-info&amp;quot; aria-live=&amp;quot;polite&amp;quot;&amp;gt;
+      &amp;lt;span class=&amp;quot;grid-page-text&amp;quot;&amp;gt;Page 1 of 1&amp;lt;/span&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;grid-pagination-buttons&amp;quot;&amp;gt;
+      &amp;lt;button 
+        type=&amp;quot;button&amp;quot; 
+        class=&amp;quot;grid-btn grid-btn-first&amp;quot; 
+        aria-label=&amp;quot;Go to first page&amp;quot;
+        disabled&amp;gt;
+        &amp;lt;svg width=&amp;quot;16&amp;quot; height=&amp;quot;16&amp;quot; viewBox=&amp;quot;0 0 16 16&amp;quot; fill=&amp;quot;currentColor&amp;quot;&amp;gt;
+          &amp;lt;path d=&amp;quot;M11 8L6 3v10l5-5zM5 3H4v10h1V3z&amp;quot;/&amp;gt;
+        &amp;lt;/svg&amp;gt;
+      &amp;lt;/button&amp;gt;
+      &amp;lt;button 
+        type=&amp;quot;button&amp;quot; 
+        class=&amp;quot;grid-btn grid-btn-prev&amp;quot; 
+        aria-label=&amp;quot;Go to previous page&amp;quot;
+        disabled&amp;gt;
+        &amp;lt;svg width=&amp;quot;16&amp;quot; height=&amp;quot;16&amp;quot; viewBox=&amp;quot;0 0 16 16&amp;quot; fill=&amp;quot;currentColor&amp;quot;&amp;gt;
+          &amp;lt;path d=&amp;quot;M10 13L5 8l5-5v10z&amp;quot;/&amp;gt;
+        &amp;lt;/svg&amp;gt;
+      &amp;lt;/button&amp;gt;
+      &amp;lt;button 
+        type=&amp;quot;button&amp;quot; 
+        class=&amp;quot;grid-btn grid-btn-next&amp;quot; 
+        aria-label=&amp;quot;Go to next page&amp;quot;
+        disabled&amp;gt;
+        &amp;lt;svg width=&amp;quot;16&amp;quot; height=&amp;quot;16&amp;quot; viewBox=&amp;quot;0 0 16 16&amp;quot; fill=&amp;quot;currentColor&amp;quot;&amp;gt;
+          &amp;lt;path d=&amp;quot;M6 3l5 5-5 5V3z&amp;quot;/&amp;gt;
+        &amp;lt;/svg&amp;gt;
+      &amp;lt;/button&amp;gt;
+      &amp;lt;button 
+        type=&amp;quot;button&amp;quot; 
+        class=&amp;quot;grid-btn grid-btn-last&amp;quot; 
+        aria-label=&amp;quot;Go to last page&amp;quot;
+        disabled&amp;gt;
+        &amp;lt;svg width=&amp;quot;16&amp;quot; height=&amp;quot;16&amp;quot; viewBox=&amp;quot;0 0 16 16&amp;quot; fill=&amp;quot;currentColor&amp;quot;&amp;gt;
+          &amp;lt;path d=&amp;quot;M5 8l5 5V3L5 8zM11 3h1v10h-1V3z&amp;quot;/&amp;gt;
+        &amp;lt;/svg&amp;gt;
+      &amp;lt;/button&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;/ns2:layoutItem&gt;&lt;/ns2:layout&gt;</layout>
+        <paletteIcon>/61.588f79f4-9991-4e42-b1ec-e07099a7f679</paletteIcon>
+        <previewImage isNull="true" />
+        <hasLabel>false</hasLabel>
+        <labelPosition>0</labelPosition>
+        <nineSliceX1Coord>0</nineSliceX1Coord>
+        <nineSliceX2Coord>0</nineSliceX2Coord>
+        <nineSliceY1Coord>0</nineSliceY1Coord>
+        <nineSliceY2Coord>0</nineSliceY2Coord>
+        <emitBoundary>false</emitBoundary>
+        <isPrototypeFunc>false</isPrototypeFunc>
+        <enableDevMode>false</enableDevMode>
+        <isMobileReady>false</isMobileReady>
+        <loadJsFunction isNull="true" />
+        <unloadJsFunction isNull="true" />
+        <viewJsFunction isNull="true" />
+        <changeJsFunction>/**
+ * Change Event Handler for DynamicReportGrid
+ * 
+ * This event is fired whenever the grid data changes (page navigation, sorting, etc.)
+ * It provides the current grid state to parent components.
+ */
+
+// Get the current grid state from the widget
+var gridData = this.getData();
+
+// Fire the change event with current state
+this.context.trigger(&quot;change&quot;, {
+  currentPage: gridData ? gridData.currentPage : 1,
+  pageSize: gridData ? gridData.pageSize : 25,
+  sortColumn: gridData ? gridData.sortColumn : &quot;&quot;,
+  sortDirection: gridData ? gridData.sortDirection : &quot;ASC&quot;,
+  totalRows: gridData ? gridData.totalRows : 0,
+  rowCount: gridData &amp;&amp; gridData.rows ? gridData.rows.length : 0,
+  hasError: gridData ? !!gridData.error : false,
+  timestamp: new Date().getTime()
+});
+
+// Made with Bob</changeJsFunction>
+        <collaborationJsFunction isNull="true" />
+        <description>Production-ready server-side paginated data grid with dynamic configuration, SQL template support, and zero client-side data caching for IBM Business Automation Workflow</description>
+        <validateJsFunction isNull="true" />
+        <previewAdvHtml>/61.ba93c6ca-a585-4e79-b030-831005035eba</previewAdvHtml>
+        <previewAdvJs>/61.53356255-f130-4848-87d7-60c51b317e7f</previewAdvJs>
+        <useUrlBinding>false</useUrlBinding>
+        <guid>guid:0474f273-cd07-4fc0-999b-04e980aac6a8</guid>
+        <versionId>db4a0d47-509b-408d-868b-f334d1f8ae6c</versionId>
+        <field1 isNull="true" />
+        <field2 isNull="true" />
+        <field3>0</field3>
+        <field4 isNull="true" />
+        <field5>false</field5>
+        <clobField1 isNull="true" />
+        <bindingType name="GridData">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewBindingTypeId>65.b4e4d5e4-d3db-4642-bf8c-ce4d8b7a647b</coachViewBindingTypeId>
+            <coachViewId>64.0474f273-cd07-4fc0-999b-04e980aac6a8</coachViewId>
+            <isList>false</isList>
+            <classId>/12.54e08c82-599b-462e-9105-a5becbfea67e</classId>
+            <seq>0</seq>
+            <description isNull="true" />
+            <guid>guid:1b89a431-0f49-4aaa-9041-d0f7af6a387f</guid>
+            <versionId>18ca560a-9c20-4d44-9afe-6f9af8b6e0fd</versionId>
+        </bindingType>
+        <configOption name="columns">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.3a540c0b-614a-4f45-80a0-84a01c4ebc58</coachViewConfigOptionId>
+            <coachViewId>64.0474f273-cd07-4fc0-999b-04e980aac6a8</coachViewId>
+            <isList>true</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Column Definitions</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>0</seq>
+            <description>Array of column definitions with field names, labels, types, and formatters</description>
+            <groupName></groupName>
+            <guid>guid:0474f273-cd07-4fc0-999b-04e980aac6a8-columns</guid>
+            <versionId>6f6eacf0-04eb-41a6-b564-86b84a3c2f5b</versionId>
+        </configOption>
+
+        <configOption name="pageSize">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.4e1e7792-2d91-451f-a846-0a82a6c4ac2e</coachViewConfigOptionId>
+            <coachViewId>64.0474f273-cd07-4fc0-999b-04e980aac6a8</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Initial Page Size</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.3fa0d7a0-828a-4d60-99cc-db5ed143fc2d</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>1</seq>
+            <description>Initial number of rows per page (10, 25, 50, or 100)</description>
+            <groupName></groupName>
+            <guid>guid:0474f273-cd07-4fc0-999b-04e980aac6a8-pagesize</guid>
+            <versionId>3b548e37-1785-4214-8fce-2446078164af</versionId>
+        </configOption>
+
+        <configOption name="pageSizeOptions">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.37cdbb8b-9a34-431e-90cf-b4ba99ab64d1</coachViewConfigOptionId>
+            <coachViewId>64.0474f273-cd07-4fc0-999b-04e980aac6a8</coachViewId>
+            <isList>true</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Page Size Options</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.3fa0d7a0-828a-4d60-99cc-db5ed143fc2d</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>2</seq>
+            <description>Available page size options for user selection</description>
+            <groupName></groupName>
+            <guid>guid:0474f273-cd07-4fc0-999b-04e980aac6a8-pagesizeoptions</guid>
+            <versionId>53659350-5dad-4c23-829a-8dac8d06bb02</versionId>
+        </configOption>
+
+        <configOption name="defaultSortColumn">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.c876f9eb-f7b7-4e50-894a-6bbe4ca70e77</coachViewConfigOptionId>
+            <coachViewId>64.0474f273-cd07-4fc0-999b-04e980aac6a8</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Default Sort Column</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>3</seq>
+            <description>Column field name to sort by default</description>
+            <groupName></groupName>
+            <guid>guid:0474f273-cd07-4fc0-999b-04e980aac6a8-defaultsortcolumn</guid>
+            <versionId>cdb1d384-e2e8-433e-a6bf-ac2d4ae5355c</versionId>
+        </configOption>
+
+        <configOption name="defaultSortDirection">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.a00f7a34-28b9-4f9c-9717-02fc8b790b88</coachViewConfigOptionId>
+            <coachViewId>64.0474f273-cd07-4fc0-999b-04e980aac6a8</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Default Sort Direction</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>4</seq>
+            <description>Default sort direction: ASC or DESC</description>
+            <groupName></groupName>
+            <guid>guid:0474f273-cd07-4fc0-999b-04e980aac6a8-defaultsortdirection</guid>
+            <versionId>a19b1d5b-877c-4152-b09f-a057765f2cb1</versionId>
+        </configOption>
+
+        <configOption name="size">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.20382f59-1617-4fa2-a102-62eb87652553</coachViewConfigOptionId>
+            <coachViewId>64.0474f273-cd07-4fc0-999b-04e980aac6a8</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Grid Size</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>5</seq>
+            <description>Grid sizing mode: small, medium, or large</description>
+            <groupName></groupName>
+            <guid>guid:0474f273-cd07-4fc0-999b-04e980aac6a8-size</guid>
+            <versionId>8c96c7f1-c4af-440d-9c03-bb6984e947b5</versionId>
+        </configOption>
+
+        <configOption name="showStatusColumn">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.6c682a6e-18bd-4705-ab7b-853ed4d1e08a</coachViewConfigOptionId>
+            <coachViewId>64.0474f273-cd07-4fc0-999b-04e980aac6a8</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Show Status Column</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>6</seq>
+            <description>Display status indicators with color-coded badges</description>
+            <groupName></groupName>
+            <guid>guid:0474f273-cd07-4fc0-999b-04e980aac6a8-showstatuscolumn</guid>
+            <versionId>227c8725-38ec-4dd7-b3fc-369fc2b13533</versionId>
+        </configOption>
+
+        <configOption name="statusColumnField">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.5a8a9148-6247-4106-92c4-432793840e23</coachViewConfigOptionId>
+            <coachViewId>64.0474f273-cd07-4fc0-999b-04e980aac6a8</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Status Column Field</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>7</seq>
+            <description>Field name containing status values (success, warning, error, info)</description>
+            <groupName></groupName>
+            <guid>guid:0474f273-cd07-4fc0-999b-04e980aac6a8-statuscolumnfield</guid>
+            <versionId>ed647147-b6e6-4e54-bd14-30d9e0beb9d7</versionId>
+        </configOption>
+
+        <configOption name="enableKeyboardNav">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.4dfcde18-9d84-4e40-8b01-9b24370076ff</coachViewConfigOptionId>
+            <coachViewId>64.0474f273-cd07-4fc0-999b-04e980aac6a8</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Enable Keyboard Navigation</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>8</seq>
+            <description>Enable full keyboard navigation support</description>
+            <groupName></groupName>
+            <guid>guid:0474f273-cd07-4fc0-999b-04e980aac6a8-enablekeyboardnav</guid>
+            <versionId>84c3552f-979c-42db-b001-0f755d35dea2</versionId>
+        </configOption>
+
+        <configOption name="labels">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.65459582-3a86-4850-9eec-1b96c5913877</coachViewConfigOptionId>
+            <coachViewId>64.0474f273-cd07-4fc0-999b-04e980aac6a8</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>UI Labels</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>9</seq>
+            <description>Configurable text labels for internationalization</description>
+            <groupName></groupName>
+            <guid>guid:0474f273-cd07-4fc0-999b-04e980aac6a8-labels</guid>
+            <versionId>a4c89a4e-593a-49a7-b11c-03776577cc3d</versionId>
+        </configOption>
+
+        <configOption name="loadingText">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.2cd1f22e-ec8e-4d5c-9515-e3efddfcb59d</coachViewConfigOptionId>
+            <coachViewId>64.0474f273-cd07-4fc0-999b-04e980aac6a8</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Loading Text</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>10</seq>
+            <description>Text displayed during data fetch operations</description>
+            <groupName></groupName>
+            <guid>guid:0474f273-cd07-4fc0-999b-04e980aac6a8-loadingtext</guid>
+            <versionId>4bab7b31-f359-4809-8211-828bcc333da0</versionId>
+        </configOption>
+
+        <configOption name="errorText">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.4ac05ba5-c15c-4570-9632-2d791d4e9340</coachViewConfigOptionId>
+            <coachViewId>64.0474f273-cd07-4fc0-999b-04e980aac6a8</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Error Text</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>11</seq>
+            <description>Text displayed when query fails</description>
+            <groupName></groupName>
+            <guid>guid:0474f273-cd07-4fc0-999b-04e980aac6a8-errortext</guid>
+            <versionId>60bddac9-184a-4ae6-8b45-64c87c7ef6f4</versionId>
+        </configOption>
+
+        <configOption name="noDataText">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.70f3a3d5-445f-4546-9a70-d7d2c8ba7721</coachViewConfigOptionId>
+            <coachViewId>64.0474f273-cd07-4fc0-999b-04e980aac6a8</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>No Data Text</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>12</seq>
+            <description>Text displayed when no results are found</description>
+            <groupName></groupName>
+            <guid>guid:0474f273-cd07-4fc0-999b-04e980aac6a8-nodatatext</guid>
+            <versionId>d663fd41-6178-4f30-be33-daf4b5892a49</versionId>
+        </configOption>
+
+        <configOption name="autoRefresh">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.df1f29ef-ed02-4ab3-8c29-dc196b947c5f</coachViewConfigOptionId>
+            <coachViewId>64.0474f273-cd07-4fc0-999b-04e980aac6a8</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Auto Refresh on Events</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>13</seq>
+            <description>Automatically trigger data refresh when pagination/sort events fire</description>
+            <groupName></groupName>
+            <guid>guid:0474f273-cd07-4fc0-999b-04e980aac6a8-autorefresh</guid>
+            <versionId>03ba1217-4e5d-47d4-907e-3de1fe4729c8</versionId>
+        </configOption>
+        <inlineScript name="Inline Javascript">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.b11d112a-a484-4878-b7ed-ce178e3d3fcf</coachViewInlineScriptId>
+            <coachViewId>64.0474f273-cd07-4fc0-999b-04e980aac6a8</coachViewId>
+            <scriptType>JS</scriptType>
+            <scriptBlock>/**
+ * DynamicReportGrid - Server-Side Paginated Data Grid
+ * Zero client-side data caching - every interaction triggers fresh SQL execution
+ */
+
+(function() {
+  var widget = this;
+  var context = widget.context;
+  
+  // DOM Elements
+  var container = context.element.querySelector(&quot;.dynamic-report-grid&quot;);
+  var loadingOverlay = container.querySelector(&quot;.grid-loading-overlay&quot;);
+  var loadingText = container.querySelector(&quot;.grid-loading-text&quot;);
+  var errorMessage = container.querySelector(&quot;.grid-error-message&quot;);
+  var errorText = container.querySelector(&quot;.grid-error-text&quot;);
+  var tableWrapper = container.querySelector(&quot;.grid-table-wrapper&quot;);
+  var table = container.querySelector(&quot;.grid-table&quot;);
+  var thead = table.querySelector(&quot;thead tr&quot;);
+  var tbody = table.querySelector(&quot;tbody&quot;);
+  var noDataDiv = container.querySelector(&quot;.grid-no-data&quot;);
+  var noDataText = container.querySelector(&quot;.grid-no-data-text&quot;);
+  var showingText = container.querySelector(&quot;.grid-showing-text&quot;);
+  var pageText = container.querySelector(&quot;.grid-page-text&quot;);
+  var pageSizeSelect = container.querySelector(&quot;.grid-page-size-select&quot;);
+  var btnFirst = container.querySelector(&quot;.grid-btn-first&quot;);
+  var btnPrev = container.querySelector(&quot;.grid-btn-prev&quot;);
+  var btnNext = container.querySelector(&quot;.grid-btn-next&quot;);
+  var btnLast = container.querySelector(&quot;.grid-btn-last&quot;);
+  
+  // Configuration
+  var columns = widget.context.options.columns || [];
+  var pageSize = widget.context.options.pageSize || 25;
+  var pageSizeOptions = widget.context.options.pageSizeOptions || [10, 25, 50, 100];
+  var defaultSortColumn = widget.context.options.defaultSortColumn || &quot;&quot;;
+  var defaultSortDirection = widget.context.options.defaultSortDirection || &quot;ASC&quot;;
+  var size = widget.context.options.size || &quot;medium&quot;;
+  var showStatusColumn = widget.context.options.showStatusColumn || false;
+  var statusColumnField = widget.context.options.statusColumnField || &quot;status&quot;;
+  var enableKeyboardNav = widget.context.options.enableKeyboardNav !== false;
+  var labels = widget.context.options.labels || {};
+  var loadingTextConfig = widget.context.options.loadingText || &quot;Loading data...&quot;;
+  var errorTextConfig = widget.context.options.errorText || &quot;Error loading data. Please try again.&quot;;
+  var noDataTextConfig = widget.context.options.noDataText || &quot;No data available&quot;;
+  var autoRefresh = widget.context.options.autoRefresh || false;
+  
+  // State - ONLY current page data, no full dataset caching
+  var state = {
+    currentPage: 1,
+    pageSize: pageSize,
+    sortColumn: defaultSortColumn,
+    sortDirection: defaultSortDirection,
+    totalRows: 0,
+    totalPages: 0,
+    isLoading: false,
+    hasError: false
+  };
+  
+  // Default labels
+  var defaultLabels = {
+    firstPage: &quot;First&quot;,
+    previousPage: &quot;Previous&quot;,
+    nextPage: &quot;Next&quot;,
+    lastPage: &quot;Last&quot;,
+    pageInfo: &quot;Page {current} of {total}&quot;,
+    rowsPerPage: &quot;Rows per page:&quot;,
+    showing: &quot;Showing {start}-{end} of {total} rows&quot;
+  };
+  
+  // Merge labels
+  labels = Object.assign({}, defaultLabels, labels);
+  
+  /**
+   * Initialize widget
+   */
+  function init() {
+    // Validate required configuration
+    if (!columns || columns.length === 0) {
+      showError(&quot;No columns configured. Please provide column definitions.&quot;);
+      return;
+    }
+    
+    // Apply size class
+    container.classList.add(&quot;size-&quot; + size);
+    
+    // Set UI text
+    loadingText.textContent = loadingTextConfig;
+    errorText.textContent = errorTextConfig;
+    noDataText.textContent = noDataTextConfig;
+    
+    // Initialize page size selector
+    initPageSizeSelector();
+    
+    // Render column headers
+    renderHeaders();
+    
+    // Attach event listeners
+    attachEventListeners();
+    
+    // Check if data is already bound
+    var initialData = widget.getData();
+    if (initialData &amp;&amp; initialData.rows) {
+      handleDataSuccess(initialData);
+    } else {
+      // Request initial data fetch via event
+      requestDataFetch();
+    }
+  }
+  
+  /**
+   * Initialize page size selector with configured options
+   */
+  function initPageSizeSelector() {
+    pageSizeSelect.innerHTML = &quot;&quot;;
+    pageSizeOptions.forEach(function(option) {
+      var optionEl = document.createElement(&quot;option&quot;);
+      optionEl.value = option;
+      optionEl.textContent = option;
+      if (option === state.pageSize) {
+        optionEl.selected = true;
+      }
+      pageSizeSelect.appendChild(optionEl);
+    });
+  }
+  
+  /**
+   * Render table column headers
+   */
+  function renderHeaders() {
+    thead.innerHTML = &quot;&quot;;
+    
+    columns.forEach(function(column) {
+      var th = document.createElement(&quot;th&quot;);
+      th.className = &quot;grid-header-cell&quot;;
+      th.setAttribute(&quot;role&quot;, &quot;columnheader&quot;);
+      th.setAttribute(&quot;scope&quot;, &quot;col&quot;);
+      
+      var isSortable = column.sortable !== false;
+      if (isSortable) {
+        th.classList.add(&quot;sortable&quot;);
+        th.setAttribute(&quot;tabindex&quot;, &quot;0&quot;);
+        th.setAttribute(&quot;aria-sort&quot;, &quot;none&quot;);
+        th.dataset.field = column.field;
+        
+        // Check if this is the current sort column
+        if (column.field === state.sortColumn) {
+          th.classList.add(&quot;sorted&quot;);
+          th.classList.add(&quot;sorted-&quot; + state.sortDirection.toLowerCase());
+          th.setAttribute(&quot;aria-sort&quot;, state.sortDirection === &quot;ASC&quot; ? &quot;ascending&quot; : &quot;descending&quot;);
+        }
+      }
+      
+      // Set column width if specified
+      if (column.width) {
+        th.style.width = column.width;
+      }
+      
+      // Set text alignment
+      if (column.align) {
+        th.style.textAlign = column.align;
+      }
+      
+      // Create header content
+      var headerContent = document.createElement(&quot;div&quot;);
+      headerContent.className = &quot;grid-header-content&quot;;
+      
+      var label = document.createElement(&quot;span&quot;);
+      label.textContent = column.label;
+      headerContent.appendChild(label);
+      
+      // Add sort icon if sortable
+      if (isSortable) {
+        var sortIcon = document.createElementNS(&quot;http://www.w3.org/2000/svg&quot;, &quot;svg&quot;);
+        sortIcon.setAttribute(&quot;class&quot;, &quot;grid-sort-icon&quot;);
+        sortIcon.setAttribute(&quot;width&quot;, &quot;16&quot;);
+        sortIcon.setAttribute(&quot;height&quot;, &quot;16&quot;);
+        sortIcon.setAttribute(&quot;viewBox&quot;, &quot;0 0 16 16&quot;);
+        sortIcon.setAttribute(&quot;fill&quot;, &quot;currentColor&quot;);
+        
+        var path = document.createElementNS(&quot;http://www.w3.org/2000/svg&quot;, &quot;path&quot;);
+        path.setAttribute(&quot;d&quot;, &quot;M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z&quot;);
+        sortIcon.appendChild(path);
+        
+        headerContent.appendChild(sortIcon);
+      }
+      
+      th.appendChild(headerContent);
+      thead.appendChild(th);
+    });
+  }
+  
+  /**
+   * Render table rows
+   */
+  function renderRows(rows) {
+    tbody.innerHTML = &quot;&quot;;
+    
+    if (!rows || rows.length === 0) {
+      showNoData();
+      return;
+    }
+    
+    hideNoData();
+    
+    rows.forEach(function(row, index) {
+      var tr = document.createElement(&quot;tr&quot;);
+      tr.className = &quot;grid-row&quot;;
+      tr.setAttribute(&quot;role&quot;, &quot;row&quot;);
+      
+      if (enableKeyboardNav) {
+        tr.setAttribute(&quot;tabindex&quot;, &quot;0&quot;);
+      }
+      
+      columns.forEach(function(column) {
+        var td = document.createElement(&quot;td&quot;);
+        td.className = &quot;grid-cell&quot;;
+        td.setAttribute(&quot;role&quot;, &quot;cell&quot;);
+        
+        // Set text alignment
+        if (column.align) {
+          td.classList.add(&quot;align-&quot; + column.align);
+        }
+        
+        var value = row[column.field];
+        
+        // Format value based on data type
+        var formattedValue = formatValue(value, column.dataType, column.formatter);
+        
+        // Handle status column
+        if (showStatusColumn &amp;&amp; column.field === statusColumnField) {
+          var badge = createStatusBadge(value);
+          td.appendChild(badge);
+        } else {
+          td.textContent = formattedValue;
+        }
+        
+        tr.appendChild(td);
+      });
+      
+      tbody.appendChild(tr);
+    });
+  }
+  
+  /**
+   * Format value based on data type and formatter
+   */
+  function formatValue(value, dataType, formatter) {
+    if (value === null || value === undefined) {
+      return &quot;&quot;;
+    }
+    
+    switch (dataType) {
+      case &quot;date&quot;:
+        if (formatter === &quot;date&quot;) {
+          return formatDate(value);
+        }
+        return value;
+        
+      case &quot;currency&quot;:
+        if (formatter === &quot;currency&quot;) {
+          return formatCurrency(value);
+        }
+        return value;
+        
+      case &quot;number&quot;:
+        if (formatter === &quot;percentage&quot;) {
+          return formatPercentage(value);
+        }
+        return formatNumber(value);
+        
+      default:
+        return String(value);
+    }
+  }
+  
+  /**
+   * Format date value
+   */
+  function formatDate(value) {
+    try {
+      var date = new Date(value);
+      return date.toLocaleDateString(&quot;en-US&quot;, {
+        year: &quot;numeric&quot;,
+        month: &quot;short&quot;,
+        day: &quot;numeric&quot;
+      });
+    } catch (e) {
+      return value;
+    }
+  }
+  
+  /**
+   * Format currency value
+   */
+  function formatCurrency(value) {
+    try {
+      var num = parseFloat(value);
+      return &quot;$&quot; + num.toLocaleString(&quot;en-US&quot;, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+    } catch (e) {
+      return value;
+    }
+  }
+  
+  /**
+   * Format percentage value
+   */
+  function formatPercentage(value) {
+    try {
+      var num = parseFloat(value) * 100;
+      return num.toFixed(1) + &quot;%&quot;;
+    } catch (e) {
+      return value;
+    }
+  }
+  
+  /**
+   * Format number value
+   */
+  function formatNumber(value) {
+    try {
+      var num = parseFloat(value);
+      return num.toLocaleString(&quot;en-US&quot;);
+    } catch (e) {
+      return value;
+    }
+  }
+  
+  /**
+   * Create status badge element
+   */
+  function createStatusBadge(status) {
+    var badge = document.createElement(&quot;span&quot;);
+    badge.className = &quot;grid-status-badge&quot;;
+    
+    var statusLower = String(status).toLowerCase();
+    
+    if (statusLower.includes(&quot;success&quot;) || statusLower.includes(&quot;completed&quot;) || statusLower.includes(&quot;approved&quot;)) {
+      badge.classList.add(&quot;status-success&quot;);
+    } else if (statusLower.includes(&quot;warning&quot;) || statusLower.includes(&quot;pending&quot;) || statusLower.includes(&quot;review&quot;)) {
+      badge.classList.add(&quot;status-warning&quot;);
+    } else if (statusLower.includes(&quot;error&quot;) || statusLower.includes(&quot;failed&quot;) || statusLower.includes(&quot;rejected&quot;)) {
+      badge.classList.add(&quot;status-error&quot;);
+    } else {
+      badge.classList.add(&quot;status-info&quot;);
+    }
+    
+    badge.textContent = status;
+    return badge;
+  }
+  
+  /**
+   * Fetch data from server
+   * CRITICAL: This is where server-side pagination happens
+   */
+  function fetchData() {
+    if (state.isLoading) {
+      return;
+    }
+    
+    state.isLoading = true;
+    showLoading();
+    hideError();
+    
+    // Calculate offset
+    var offset = (state.currentPage - 1) * state.pageSize;
+    
+    // Parameterize SQL template
+    var parameterizedSQL = sqlTemplate
+      .replace(/\{\{offset\}\}/g, offset)
+      .replace(/\{\{limit\}\}/g, state.pageSize)
+      .replace(/\{\{sortColumn\}\}/g, state.sortColumn || columns[0].field)
+      .replace(/\{\{sortDirection\}\}/g, state.sortDirection);
+    
+    // In production, this would call a BAW service
+    // For now, we&#x27;ll simulate with the bound data
+    var gridData = widget.getData();
+    
+    if (gridData &amp;&amp; gridData.rows) {
+      handleDataSuccess(gridData);
+    } else {
+      // Simulate error if no data bound
+      handleDataError({
+        error: &quot;No data bound to widget. Please bind GridDataResult from service.&quot;,
+        retryable: false
+      });
+    }
+  }
+  
+  /**
+   * Handle successful data fetch
+   */
+  function handleDataSuccess(data) {
+    state.isLoading = false;
+    state.hasError = false;
+    hideLoading();
+    hideError();
+    
+    // Update state from server response
+    state.totalRows = data.totalRows || 0;
+    state.totalPages = Math.ceil(state.totalRows / state.pageSize);
+    state.currentPage = data.currentPage || state.currentPage;
+    
+    // Render rows (ONLY current page data)
+    renderRows(data.rows);
+    
+    // Update UI
+    updatePaginationControls();
+    updateInfoText();
+    
+    // Fire dataLoaded event
+    context.trigger(&quot;dataLoaded&quot;, {
+      rowCount: data.rows ? data.rows.length : 0,
+      totalRows: state.totalRows,
+      currentPage: state.currentPage,
+      pageSize: state.pageSize,
+      sortColumn: state.sortColumn,
+      sortDirection: state.sortDirection,
+      executionTime: data.executionTime || 0,
+      timestamp: new Date().getTime()
+    });
+  }
+  
+  /**
+   * Handle data fetch error
+   */
+  function handleDataError(error) {
+    state.isLoading = false;
+    state.hasError = true;
+    hideLoading();
+    showError(error.error || errorTextConfig);
+    
+    // Clear table
+    tbody.innerHTML = &quot;&quot;;
+    showNoData();
+    
+    // Disable pagination
+    updatePaginationControls();
+    
+    // Fire dataError event
+    context.trigger(&quot;dataError&quot;, {
+      error: error.error || &quot;Unknown error&quot;,
+      errorCode: error.errorCode || &quot;UNKNOWN&quot;,
+      sqlTemplate: sqlTemplate,
+      parameters: {
+        offset: (state.currentPage - 1) * state.pageSize,
+        limit: state.pageSize,
+        sortColumn: state.sortColumn,
+        sortDirection: state.sortDirection
+      },
+      currentPage: state.currentPage,
+      pageSize: state.pageSize,
+      timestamp: new Date().getTime(),
+      retryable: error.retryable !== false
+    });
+  }
+  
+  /**
+   * Update pagination controls
+   */
+  function updatePaginationControls() {
+    var isFirstPage = state.currentPage === 1;
+    var isLastPage = state.currentPage &gt;= state.totalPages;
+    var hasData = state.totalRows &gt; 0 &amp;&amp; !state.hasError;
+    
+    btnFirst.disabled = isFirstPage || !hasData;
+    btnPrev.disabled = isFirstPage || !hasData;
+    btnNext.disabled = isLastPage || !hasData;
+    btnLast.disabled = isLastPage || !hasData;
+    
+    pageSizeSelect.disabled = !hasData;
+  }
+  
+  /**
+   * Update info text
+   */
+  function updateInfoText() {
+    if (state.totalRows === 0) {
+      showingText.textContent = &quot;Showing 0 rows&quot;;
+      pageText.textContent = &quot;Page 0 of 0&quot;;
+      return;
+    }
+    
+    var start = (state.currentPage - 1) * state.pageSize + 1;
+    var end = Math.min(state.currentPage * state.pageSize, state.totalRows);
+    
+    var showingLabel = labels.showing
+      .replace(&quot;{start}&quot;, start)
+      .replace(&quot;{end}&quot;, end)
+      .replace(&quot;{total}&quot;, state.totalRows);
+    
+    var pageLabel = labels.pageInfo
+      .replace(&quot;{current}&quot;, state.currentPage)
+      .replace(&quot;{total}&quot;, state.totalPages);
+    
+    showingText.textContent = showingLabel;
+    pageText.textContent = pageLabel;
+  }
+  
+  /**
+   * Attach event listeners
+   */
+  function attachEventListeners() {
+    // Pagination buttons
+    btnFirst.addEventListener(&quot;click&quot;, function() {
+      goToPage(1);
+    });
+    
+    btnPrev.addEventListener(&quot;click&quot;, function() {
+      goToPage(state.currentPage - 1);
+    });
+    
+    btnNext.addEventListener(&quot;click&quot;, function() {
+      goToPage(state.currentPage + 1);
+    });
+    
+    btnLast.addEventListener(&quot;click&quot;, function() {
+      goToPage(state.totalPages);
+    });
+    
+    // Page size selector
+    pageSizeSelect.addEventListener(&quot;change&quot;, function() {
+      changePageSize(parseInt(this.value, 10));
+    });
+    
+    // Column header sorting
+    thead.addEventListener(&quot;click&quot;, function(e) {
+      var th = e.target.closest(&quot;.grid-header-cell.sortable&quot;);
+      if (th) {
+        var field = th.dataset.field;
+        changeSorting(field);
+      }
+    });
+    
+    // Keyboard navigation for headers
+    if (enableKeyboardNav) {
+      thead.addEventListener(&quot;keydown&quot;, function(e) {
+        var th = e.target.closest(&quot;.grid-header-cell.sortable&quot;);
+        if (th &amp;&amp; (e.key === &quot;Enter&quot; || e.key === &quot; &quot;)) {
+          e.preventDefault();
+          var field = th.dataset.field;
+          changeSorting(field);
+        }
+      });
+    }
+  }
+  
+  /**
+   * Navigate to specific page
+   */
+  function goToPage(page) {
+    if (page &lt; 1 || page &gt; state.totalPages || page === state.currentPage) {
+      return;
+    }
+    
+    var previousPage = state.currentPage;
+    state.currentPage = page;
+    
+    // Fire pageChange event
+    context.trigger(&quot;pageChange&quot;, {
+      currentPage: state.currentPage,
+      previousPage: previousPage,
+      pageSize: state.pageSize,
+      sortColumn: state.sortColumn,
+      sortDirection: state.sortDirection,
+      totalPages: state.totalPages,
+      totalRows: state.totalRows
+    });
+    
+    // Fetch new page data
+    fetchData();
+  }
+  
+  /**
+   * Change page size
+   */
+  function changePageSize(newSize) {
+    if (newSize === state.pageSize) {
+      return;
+    }
+    
+    var previousSize = state.pageSize;
+    state.pageSize = newSize;
+    state.currentPage = 1; // Reset to first page
+    state.totalPages = Math.ceil(state.totalRows / state.pageSize);
+    
+    // Fire pageSizeChange event
+    context.trigger(&quot;pageSizeChange&quot;, {
+      newPageSize: newSize,
+      previousPageSize: previousSize,
+      resetToPage: 1,
+      totalPages: state.totalPages,
+      totalRows: state.totalRows,
+      sortColumn: state.sortColumn,
+      sortDirection: state.sortDirection
+    });
+    
+    // Request new page data
+    requestDataFetch();
+  }
+  
+  /**
+   * Change sorting
+   */
+  function changeSorting(field) {
+    var previousColumn = state.sortColumn;
+    var previousDirection = state.sortDirection;
+    
+    // Toggle direction if same column, otherwise default to ASC
+    if (field === state.sortColumn) {
+      state.sortDirection = state.sortDirection === &quot;ASC&quot; ? &quot;DESC&quot; : &quot;ASC&quot;;
+    } else {
+      state.sortColumn = field;
+      state.sortDirection = &quot;ASC&quot;;
+    }
+    
+    state.currentPage = 1; // Reset to first page
+    
+    // Update header UI
+    renderHeaders();
+    
+    // Fire sortChange event
+    context.trigger(&quot;sortChange&quot;, {
+      sortColumn: state.sortColumn,
+      sortDirection: state.sortDirection,
+      previousColumn: previousColumn,
+      previousDirection: previousDirection,
+      currentPage: 1,
+      pageSize: state.pageSize
+    });
+    
+    // Request new sorted data
+    requestDataFetch();
+  }
+  
+  /**
+   * Show loading overlay
+   */
+  function showLoading() {
+    loadingOverlay.setAttribute(&quot;aria-hidden&quot;, &quot;false&quot;);
+  }
+  
+  /**
+   * Hide loading overlay
+   */
+  function hideLoading() {
+    loadingOverlay.setAttribute(&quot;aria-hidden&quot;, &quot;true&quot;);
+  }
+  
+  /**
+   * Show error message
+   */
+  function showError(message) {
+    errorText.textContent = message || errorTextConfig;
+    errorMessage.setAttribute(&quot;aria-hidden&quot;, &quot;false&quot;);
+  }
+  
+  /**
+   * Hide error message
+   */
+  function hideError() {
+    errorMessage.setAttribute(&quot;aria-hidden&quot;, &quot;true&quot;);
+  }
+  
+  /**
+   * Show no data message
+   */
+  function showNoData() {
+    noDataDiv.setAttribute(&quot;aria-hidden&quot;, &quot;false&quot;);
+    tableWrapper.style.display = &quot;none&quot;;
+  }
+  
+  /**
+   * Hide no data message
+   */
+  function hideNoData() {
+    noDataDiv.setAttribute(&quot;aria-hidden&quot;, &quot;true&quot;);
+    tableWrapper.style.display = &quot;block&quot;;
+  }
+  
+  // Initialize widget
+  init();
+  
+})();
+
+// Made with Bob
+</scriptBlock>
+            <seq>0</seq>
+            <description></description>
+            <guid>guid:0474f273-cd07-4fc0-999b-04e980aac6a8-js</guid>
+            <versionId>24c1763c-9208-4085-b0f6-fda10d5fb56a</versionId>
+        </inlineScript>
+
+        <inlineScript name="Inline CSS">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.06ad9276-2f08-400e-93c0-06180fb23942</coachViewInlineScriptId>
+            <coachViewId>64.0474f273-cd07-4fc0-999b-04e980aac6a8</coachViewId>
+            <scriptType>CSS</scriptType>
+            <scriptBlock>/* Dynamic Report Grid - Carbon Design System Styling */
+
+.dynamic-report-grid {
+  position: relative;
+  width: 100%;
+  font-family: &#x27;IBM Plex Sans&#x27;, &#x27;Helvetica Neue&#x27;, Arial, sans-serif;
+  background-color: var(--cds-ui-background, #ffffff);
+  color: var(--cds-text-primary, #161616);
+}
+
+/* Loading Overlay */
+.grid-loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.grid-loading-overlay[aria-hidden=&quot;false&quot;] {
+  display: flex;
+}
+
+.grid-loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--cds-ui-03, #e0e0e0);
+  border-top-color: var(--cds-interactive-01, #0f62fe);
+  border-radius: 50%;
+  animation: grid-spin 0.8s linear infinite;
+}
+
+@keyframes grid-spin {
+  to { transform: rotate(360deg); }
+}
+
+.grid-loading-text {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: var(--cds-text-secondary, #525252);
+}
+
+/* Error Message */
+.grid-error-message {
+  display: none;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--cds-danger-01, #fff1f1);
+  border-left: 3px solid var(--cds-danger, #da1e28);
+  border-radius: 0 4px 4px 0;
+}
+
+.grid-error-message[aria-hidden=&quot;false&quot;] {
+  display: flex;
+}
+
+.grid-error-icon {
+  flex-shrink: 0;
+  margin-right: 0.5rem;
+  color: var(--cds-danger, #da1e28);
+}
+
+.grid-error-text {
+  font-size: 0.875rem;
+  color: var(--cds-text-error, #da1e28);
+}
+
+/* Grid Controls */
+.grid-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: var(--cds-ui-01, #f4f4f4);
+  border-bottom: 1px solid var(--cds-ui-03, #e0e0e0);
+}
+
+.grid-info {
+  font-size: 0.875rem;
+  color: var(--cds-text-secondary, #525252);
+}
+
+.grid-page-size-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.grid-label {
+  font-size: 0.875rem;
+  color: var(--cds-text-secondary, #525252);
+  margin: 0;
+}
+
+.grid-page-size-select {
+  padding: 0.375rem 2rem 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  border: 1px solid var(--cds-ui-04, #8d8d8d);
+  border-radius: 0;
+  background-color: var(--cds-field-01, #f4f4f4);
+  color: var(--cds-text-primary, #161616);
+  cursor: pointer;
+  appearance: none;
+  background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; width=&#x27;16&#x27; height=&#x27;16&#x27; viewBox=&#x27;0 0 16 16&#x27;%3E%3Cpath fill=&#x27;%23161616&#x27; d=&#x27;M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z&#x27;/%3E%3C/svg%3E&quot;);
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+}
+
+.grid-page-size-select:hover {
+  background-color: var(--cds-hover-ui, #e5e5e5);
+}
+
+.grid-page-size-select:focus {
+  outline: 2px solid var(--cds-focus, #0f62fe);
+  outline-offset: -2px;
+}
+
+/* Table Wrapper */
+.grid-table-wrapper {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 600px;
+  border: 1px solid var(--cds-ui-03, #e0e0e0);
+}
+
+.grid-table-wrapper:focus {
+  outline: 2px solid var(--cds-focus, #0f62fe);
+  outline-offset: -2px;
+}
+
+/* Table */
+.grid-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+/* Table Header */
+.grid-header-row {
+  background-color: var(--cds-ui-01, #f4f4f4);
+  border-bottom: 1px solid var(--cds-ui-03, #e0e0e0);
+}
+
+.grid-header-cell {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--cds-text-primary, #161616);
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  background-color: var(--cds-ui-01, #f4f4f4);
+  z-index: 10;
+  border-bottom: 1px solid var(--cds-ui-03, #e0e0e0);
+}
+
+.grid-header-cell.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.grid-header-cell.sortable:hover {
+  background-color: var(--cds-hover-ui, #e5e5e5);
+}
+
+.grid-header-cell.sortable:focus {
+  outline: 2px solid var(--cds-focus, #0f62fe);
+  outline-offset: -2px;
+}
+
+.grid-header-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.grid-sort-icon {
+  flex-shrink: 0;
+  opacity: 0.3;
+  transition: opacity 0.2s;
+}
+
+.grid-header-cell.sortable:hover .grid-sort-icon,
+.grid-header-cell.sorted .grid-sort-icon {
+  opacity: 1;
+}
+
+.grid-header-cell.sorted-asc .grid-sort-icon {
+  transform: rotate(0deg);
+}
+
+.grid-header-cell.sorted-desc .grid-sort-icon {
+  transform: rotate(180deg);
+}
+
+/* Table Body */
+.grid-body {
+  background-color: var(--cds-ui-background, #ffffff);
+}
+
+.grid-row {
+  border-bottom: 1px solid var(--cds-ui-03, #e0e0e0);
+  transition: background-color 0.11s;
+}
+
+.grid-row:hover {
+  background-color: var(--cds-hover-row, #e5e5e5);
+}
+
+.grid-row:focus-within {
+  outline: 2px solid var(--cds-focus, #0f62fe);
+  outline-offset: -2px;
+}
+
+.grid-cell {
+  padding: 0.75rem 1rem;
+  color: var(--cds-text-primary, #161616);
+  vertical-align: middle;
+}
+
+.grid-cell.align-left {
+  text-align: left;
+}
+
+.grid-cell.align-center {
+  text-align: center;
+}
+
+.grid-cell.align-right {
+  text-align: right;
+}
+
+/* Status Badges */
+.grid-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.grid-status-badge.status-success {
+  background-color: var(--cds-support-success-inverse, #24a148);
+  color: var(--cds-text-on-color, #ffffff);
+}
+
+.grid-status-badge.status-warning {
+  background-color: var(--cds-support-warning-inverse, #f1c21b);
+  color: var(--cds-text-primary, #161616);
+}
+
+.grid-status-badge.status-error {
+  background-color: var(--cds-support-error-inverse, #da1e28);
+  color: var(--cds-text-on-color, #ffffff);
+}
+
+.grid-status-badge.status-info {
+  background-color: var(--cds-support-info-inverse, #0f62fe);
+  color: var(--cds-text-on-color, #ffffff);
+}
+
+/* No Data Message */
+.grid-no-data {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.grid-no-data[aria-hidden=&quot;false&quot;] {
+  display: flex;
+}
+
+.grid-no-data-icon {
+  margin-bottom: 1rem;
+  color: var(--cds-icon-disabled, #c6c6c6);
+}
+
+.grid-no-data-text {
+  font-size: 0.875rem;
+  color: var(--cds-text-secondary, #525252);
+}
+
+/* Pagination */
+.grid-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: var(--cds-ui-01, #f4f4f4);
+  border-top: 1px solid var(--cds-ui-03, #e0e0e0);
+}
+
+.grid-page-info {
+  font-size: 0.875rem;
+  color: var(--cds-text-secondary, #525252);
+}
+
+.grid-pagination-buttons {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.grid-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid var(--cds-ui-04, #8d8d8d);
+  background-color: var(--cds-ui-background, #ffffff);
+  color: var(--cds-icon-primary, #161616);
+  cursor: pointer;
+  transition: all 0.11s;
+}
+
+.grid-btn:hover:not(:disabled) {
+  background-color: var(--cds-hover-ui, #e5e5e5);
+}
+
+.grid-btn:focus {
+  outline: 2px solid var(--cds-focus, #0f62fe);
+  outline-offset: -2px;
+}
+
+.grid-btn:disabled {
+  border-color: var(--cds-disabled-02, #c6c6c6);
+  background-color: var(--cds-disabled-01, #f4f4f4);
+  color: var(--cds-disabled-03, #8d8d8d);
+  cursor: not-allowed;
+}
+
+/* Size Variants */
+.dynamic-report-grid.size-small .grid-table {
+  font-size: 0.75rem;
+}
+
+.dynamic-report-grid.size-small .grid-header-cell,
+.dynamic-report-grid.size-small .grid-cell {
+  padding: 0.5rem 0.75rem;
+}
+
+.dynamic-report-grid.size-large .grid-table {
+  font-size: 1rem;
+}
+
+.dynamic-report-grid.size-large .grid-header-cell,
+.dynamic-report-grid.size-large .grid-cell {
+  padding: 1rem 1.25rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grid-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .grid-pagination {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .grid-table-wrapper {
+    max-height: 400px;
+  }
+}
+
+/* Accessibility - High Contrast Mode */
+@media (prefers-contrast: high) {
+  .grid-table {
+    border: 2px solid currentColor;
+  }
+  
+  .grid-header-cell,
+  .grid-cell {
+    border: 1px solid currentColor;
+  }
+  
+  .grid-btn:focus {
+    outline-width: 3px;
+  }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .grid-loading-spinner {
+    animation: none;
+    border-top-color: transparent;
+  }
+  
+  .grid-row,
+  .grid-btn {
+    transition: none;
+  }
+}
+
+/* Made with Bob */
+</scriptBlock>
+            <seq>1</seq>
+            <description></description>
+            <guid>guid:0474f273-cd07-4fc0-999b-04e980aac6a8-css</guid>
+            <versionId>beb031ad-a635-424d-a5ae-ef9c34d2eebb</versionId>
+        </inlineScript>
+    </coachView>
+</teamworks>

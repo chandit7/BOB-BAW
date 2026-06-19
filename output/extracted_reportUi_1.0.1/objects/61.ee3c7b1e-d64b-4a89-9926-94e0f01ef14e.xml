@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.ee3c7b1e-d64b-4a89-9926-94e0f01ef14e" name="ProcessCircle.html">
+        <lastModified>1781331763322</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.ee3c7b1e-d64b-4a89-9926-94e0f01ef14e</managedAssetId>
+        <assetUuid>af8c2a42-16f6-42b2-8959-5c31d03f7584</assetUuid>
+        <mimeType>text/html</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>2636</length>
+        <localLastModification>1781331763322</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:ee3c7b1e-d64b-4a89-9926-94e0f01ef14e</guid>
+        <versionId>625c56b9-b8bb-44f1-8fa8-f6b3dec1af6e</versionId>
+    </managedAsset>
+</teamworks>

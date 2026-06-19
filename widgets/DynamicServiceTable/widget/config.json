@@ -85,6 +85,13 @@
       "default": true
     },
     {
+      "name": "showPageSizeSelector",
+      "type": "Boolean",
+      "label": "Show Page Size Selector",
+      "description": "Display the rows per page dropdown selector",
+      "default": true
+    },
+    {
       "name": "onSort",
       "type": "Event",
       "label": "On Sort",

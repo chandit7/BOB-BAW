@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.446a7cc8-aeda-4105-81ae-9d672398c3bd" name="ProgressBarSnippet.js">
+        <lastModified>1781333579284</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.446a7cc8-aeda-4105-81ae-9d672398c3bd</managedAssetId>
+        <assetUuid>8ff50344-23c9-46d1-ba18-3690035261bf</assetUuid>
+        <mimeType>application/javascript</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>5283</length>
+        <localLastModification>1781333579284</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:446a7cc8-aeda-4105-81ae-9d672398c3bd</guid>
+        <versionId>03648f14-53b8-491f-9919-cdc9458593f5</versionId>
+    </managedAsset>
+</teamworks>

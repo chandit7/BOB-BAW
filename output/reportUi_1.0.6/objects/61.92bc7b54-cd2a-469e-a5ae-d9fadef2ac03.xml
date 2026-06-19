@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.92bc7b54-cd2a-469e-a5ae-d9fadef2ac03" name="TasksList.svg">
+        <lastModified>1781330059642</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.92bc7b54-cd2a-469e-a5ae-d9fadef2ac03</managedAssetId>
+        <assetUuid>5b8917cd-de5f-41a1-819d-80effa4fd7a8</assetUuid>
+        <mimeType>image/svg+xml</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>2215</length>
+        <localLastModification>1781330059642</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:92bc7b54-cd2a-469e-a5ae-d9fadef2ac03</guid>
+        <versionId>aa12b2cd-8d38-48ab-b2f9-4b30cfe6be85</versionId>
+    </managedAsset>
+</teamworks>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.7a61bd0d-5853-46e8-8a8b-5c27980c13a2" name="ProcessActivityTimelineSnippet.js">
+        <lastModified>1781330260374</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.7a61bd0d-5853-46e8-8a8b-5c27980c13a2</managedAssetId>
+        <assetUuid>4e5d6a32-5232-4490-92c2-dee2c33e47cf</assetUuid>
+        <mimeType>application/javascript</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>8857</length>
+        <localLastModification>1781330260374</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:7a61bd0d-5853-46e8-8a8b-5c27980c13a2</guid>
+        <versionId>4567d4d1-b74c-402e-8f58-9c64e8c99713</versionId>
+    </managedAsset>
+</teamworks>

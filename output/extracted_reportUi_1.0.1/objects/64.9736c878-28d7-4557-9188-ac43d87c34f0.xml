@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <coachView id="64.9736c878-28d7-4557-9188-ac43d87c34f0" name="ProcessCircle">
+        <lastModified>1781331762799</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <coachViewId>64.9736c878-28d7-4557-9188-ac43d87c34f0</coachViewId>
+        <isTemplate>false</isTemplate>
+        <layout>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;ns2:layout xmlns:ns2=&quot;http://www.ibm.com/bpm/CoachDesignerNG&quot; xmlns:ns3=&quot;http://www.ibm.com/bpm/coachview&quot;&gt;&lt;ns2:layoutItem xsi:type=&quot;ns2:CustomHTML&quot; version=&quot;8550&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&lt;ns2:id&gt;9542eb94-2978-414b-8848-c41224c840aa&lt;/ns2:id&gt;&lt;ns2:layoutItemId&gt;CustomHTML1&lt;/ns2:layoutItemId&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;ccafb3d5-dab0-4bb6-ab1f-30eaf3c2333c&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.contentType&lt;/ns2:optionName&gt;&lt;ns2:value&gt;TEXT&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;0466547a-ac0d-4812-a914-109b2a21f6b1&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.textContent&lt;/ns2:optionName&gt;&lt;ns2:value&gt;&amp;lt;div class=&amp;quot;process-circle-container&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;process-circle&amp;quot;
+         role=&amp;quot;progressbar&amp;quot;
+         aria-label=&amp;quot;Progress indicator&amp;quot;
+         aria-valuenow=&amp;quot;0&amp;quot;
+         aria-valuemin=&amp;quot;0&amp;quot;
+         aria-valuemax=&amp;quot;100&amp;quot;
+         data-post=&amp;quot;%&amp;quot;&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;/ns2:layoutItem&gt;&lt;/ns2:layout&gt;</layout>
+        <paletteIcon>/61.957166b5-be19-429d-80f4-9ec6b6a1e5ba</paletteIcon>
+        <previewImage isNull="true" />
+        <hasLabel>false</hasLabel>
+        <labelPosition>0</labelPosition>
+        <nineSliceX1Coord>0</nineSliceX1Coord>
+        <nineSliceX2Coord>0</nineSliceX2Coord>
+        <nineSliceY1Coord>0</nineSliceY1Coord>
+        <nineSliceY2Coord>0</nineSliceY2Coord>
+        <emitBoundary>false</emitBoundary>
+        <isPrototypeFunc>false</isPrototypeFunc>
+        <enableDevMode>false</enableDevMode>
+        <isMobileReady>false</isMobileReady>
+        <loadJsFunction isNull="true" />
+        <unloadJsFunction isNull="true" />
+        <viewJsFunction isNull="true" />
+        <changeJsFunction>// ProcessCircle Widget - Change Event Handler
+// Executed when the widget data changes
+var _this = this;
+
+try {
+    // Get the progress circle element
+    var processCircle = _this.context.element.querySelector(&#x27;.process-circle&#x27;);
+    
+    if (!processCircle) {
+        console.error(&#x27;ProcessCircle: Widget element not found in change event&#x27;);
+        return;
+    }
+    
+    // Get configuration options with defaults
+    var maxValue = _this.getOption(&quot;MaxValue&quot;) || 100;
+    var minValue = _this.getOption(&quot;MinValue&quot;) || 0;
+    var postParameter = _this.getOption(&quot;postParameter&quot;) || &quot;%&quot;;
+    var circleSize = _this.getOption(&quot;CircleSize&quot;) || &quot;12rem&quot;;
+    var ringThickness = _this.getOption(&quot;RingThickness&quot;) || &quot;0.5rem&quot;;
+    
+    // Get updated value
+    var currentValue = _this.getData() || 0;
+    
+    // Validate value range
+    if (currentValue &lt; minValue) currentValue = minValue;
+    if (currentValue &gt; maxValue) currentValue = maxValue;
+    
+    // Update ARIA attributes for accessibility
+    processCircle.setAttribute(&quot;aria-valuenow&quot;, currentValue);
+    processCircle.setAttribute(&quot;aria-valuemin&quot;, minValue);
+    processCircle.setAttribute(&quot;aria-valuemax&quot;, maxValue);
+    processCircle.setAttribute(&quot;data-post&quot;, postParameter);
+    
+    // Update CSS custom properties for visual display
+    processCircle.style.setProperty(&quot;--value&quot;, currentValue);
+    processCircle.style.setProperty(&quot;--min&quot;, minValue);
+    processCircle.style.setProperty(&quot;--max&quot;, maxValue);
+    processCircle.style.setProperty(&quot;--circle-size&quot;, circleSize);
+    processCircle.style.setProperty(&quot;--size&quot;, ringThickness);
+    
+    console.log(&#x27;ProcessCircle: Value updated to&#x27;, currentValue);
+    
+} catch (error) {
+    console.error(&#x27;ProcessCircle: Change event error&#x27;, error);
+}
+
+// Made with Bob</changeJsFunction>
+        <collaborationJsFunction isNull="true" />
+        <description>Circular progress indicator widget for displaying percentage or value progress in IBM Business Automation Workflow with Carbon Design System styling</description>
+        <validateJsFunction isNull="true" />
+        <previewAdvHtml>/61.ee3c7b1e-d64b-4a89-9926-94e0f01ef14e</previewAdvHtml>
+        <previewAdvJs>/61.004ff930-e91c-43e5-a6b9-58214655e0e4</previewAdvJs>
+        <useUrlBinding>false</useUrlBinding>
+        <guid>guid:9736c878-28d7-4557-9188-ac43d87c34f0</guid>
+        <versionId>4fb5ded3-f871-4795-9745-992a0c061906</versionId>
+        <field1 isNull="true" />
+        <field2 isNull="true" />
+        <field3>0</field3>
+        <field4 isNull="true" />
+        <field5>false</field5>
+        <clobField1 isNull="true" />
+        <bindingType name="ProgressValue">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewBindingTypeId>65.cfdb9767-d62d-4911-9d02-3ae38f757970</coachViewBindingTypeId>
+            <coachViewId>64.9736c878-28d7-4557-9188-ac43d87c34f0</coachViewId>
+            <isList>false</isList>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.3fa0d7a0-828a-4d60-99cc-db5ed143fc2d</classId>
+            <seq>0</seq>
+            <description isNull="true" />
+            <guid>guid:ae2d9edd-5399-467a-bf55-34c4ee5dc94e</guid>
+            <versionId>ea471df4-14d6-4b4c-a311-6d0da1b1163e</versionId>
+        </bindingType>
+        <configOption name="MinValue">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.d6615f0b-779e-495c-a196-a69a37e9a7b8</coachViewConfigOptionId>
+            <coachViewId>64.9736c878-28d7-4557-9188-ac43d87c34f0</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Minimum Value</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.3fa0d7a0-828a-4d60-99cc-db5ed143fc2d</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>0</seq>
+            <description>Minimum value for the progress range</description>
+            <groupName></groupName>
+            <guid>guid:9736c878-28d7-4557-9188-ac43d87c34f0-minvalue</guid>
+            <versionId>a3d75937-ce4f-41c7-ba63-111925ab93b1</versionId>
+        </configOption>
+
+        <configOption name="MaxValue">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.699729ca-f74a-4380-85f1-70860590cd31</coachViewConfigOptionId>
+            <coachViewId>64.9736c878-28d7-4557-9188-ac43d87c34f0</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Maximum Value</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.3fa0d7a0-828a-4d60-99cc-db5ed143fc2d</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>1</seq>
+            <description>Maximum value for the progress range</description>
+            <groupName></groupName>
+            <guid>guid:9736c878-28d7-4557-9188-ac43d87c34f0-maxvalue</guid>
+            <versionId>de8627c2-5595-468f-bac8-950fc1d04b66</versionId>
+        </configOption>
+
+        <configOption name="postParameter">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.7a5585cd-9f8d-4bcb-91da-9409f2b51f5c</coachViewConfigOptionId>
+            <coachViewId>64.9736c878-28d7-4557-9188-ac43d87c34f0</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Display Suffix</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>2</seq>
+            <description>Text suffix displayed after the value (e.g., &#x27;%&#x27;, &#x27;pts&#x27;, &#x27;items&#x27;, &#x27;tasks&#x27;)</description>
+            <groupName></groupName>
+            <guid>guid:9736c878-28d7-4557-9188-ac43d87c34f0-postparameter</guid>
+            <versionId>88c9a0b5-3603-48a1-9683-b706519795a8</versionId>
+        </configOption>
+
+        <configOption name="CircleSize">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.3c57c75d-2839-4d02-8660-4e42470fb6f0</coachViewConfigOptionId>
+            <coachViewId>64.9736c878-28d7-4557-9188-ac43d87c34f0</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Circle Size</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>3</seq>
+            <description>Size of the progress circle (CSS value, e.g., &#x27;12rem&#x27;, &#x27;200px&#x27;)</description>
+            <groupName></groupName>
+            <guid>guid:9736c878-28d7-4557-9188-ac43d87c34f0-circlesize</guid>
+            <versionId>fb4702a8-f7a1-42e5-a25e-0fdec81ddf8e</versionId>
+        </configOption>
+
+        <configOption name="RingThickness">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.f1cacfa5-dc45-4e85-be25-18a74bdfaf07</coachViewConfigOptionId>
+            <coachViewId>64.9736c878-28d7-4557-9188-ac43d87c34f0</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Ring Thickness</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>4</seq>
+            <description>Thickness of the progress ring (CSS value, e.g., &#x27;0.5rem&#x27;, &#x27;8px&#x27;)</description>
+            <groupName></groupName>
+            <guid>guid:9736c878-28d7-4557-9188-ac43d87c34f0-ringthickness</guid>
+            <versionId>2b6ef24c-2100-4b6d-a7cb-d3fe3b94bcd8</versionId>
+        </configOption>
+        <inlineScript name="Inline Javascript">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.4d5fb528-3678-4e88-928e-26ea3c2f6f30</coachViewInlineScriptId>
+            <coachViewId>64.9736c878-28d7-4557-9188-ac43d87c34f0</coachViewId>
+            <scriptType>JS</scriptType>
+            <scriptBlock>// ProcessCircle Widget - Initialization
+var _this = this;
+
+try {
+    // Get the progress circle element
+    var processCircle = _this.context.element.querySelector(&#x27;.process-circle&#x27;);
+    
+    if (!processCircle) {
+        console.error(&#x27;ProcessCircle: Widget element not found&#x27;);
+        return;
+    }
+    
+    // Get configuration options with defaults
+    var maxValue = _this.getOption(&quot;MaxValue&quot;) || 100;
+    var minValue = _this.getOption(&quot;MinValue&quot;) || 0;
+    var postParameter = _this.getOption(&quot;postParameter&quot;) || &quot;%&quot;;
+    var circleSize = _this.getOption(&quot;CircleSize&quot;) || &quot;12rem&quot;;
+    var ringThickness = _this.getOption(&quot;RingThickness&quot;) || &quot;0.5rem&quot;;
+    
+    // Get current value
+    var currentValue = _this.getData() || 0;
+    
+    // Validate value range
+    if (currentValue &lt; minValue) currentValue = minValue;
+    if (currentValue &gt; maxValue) currentValue = maxValue;
+    
+    // Update ARIA attributes for accessibility
+    processCircle.setAttribute(&quot;aria-valuenow&quot;, currentValue);
+    processCircle.setAttribute(&quot;aria-valuemin&quot;, minValue);
+    processCircle.setAttribute(&quot;aria-valuemax&quot;, maxValue);
+    processCircle.setAttribute(&quot;data-post&quot;, postParameter);
+    
+    // Update CSS custom properties for visual display
+    processCircle.style.setProperty(&quot;--value&quot;, currentValue);
+    processCircle.style.setProperty(&quot;--min&quot;, minValue);
+    processCircle.style.setProperty(&quot;--max&quot;, maxValue);
+    processCircle.style.setProperty(&quot;--circle-size&quot;, circleSize);
+    processCircle.style.setProperty(&quot;--size&quot;, ringThickness);
+    
+} catch (error) {
+    console.error(&#x27;ProcessCircle: Initialization error&#x27;, error);
+}</scriptBlock>
+            <seq>0</seq>
+            <description></description>
+            <guid>guid:9736c878-28d7-4557-9188-ac43d87c34f0-js</guid>
+            <versionId>25c60f15-7730-4b02-914d-a69d575f2a3f</versionId>
+        </inlineScript>
+
+        <inlineScript name="Inline CSS">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.6a547416-d40a-44b5-8083-7da40cb00802</coachViewInlineScriptId>
+            <coachViewId>64.9736c878-28d7-4557-9188-ac43d87c34f0</coachViewId>
+            <scriptType>CSS</scriptType>
+            <scriptBlock>/* ProcessCircle Widget Styles - Carbon Design System */
+/* Colors and typography aligned with themes/Carbon.less */
+
+@keyframes growProgressBar {
+    0%, 33% {
+        --pgPercentage: 0;
+    }
+    100% {
+        --pgPercentage: calc((var(--value) - var(--min)) / (var(--max) - var(--min)) * 100);
+    }
+}
+
+@property --pgPercentage {
+    syntax: &#x27;&lt;number&gt;&#x27;;
+    inherits: true;
+    initial-value: 0;
+}
+
+.process-circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.process-circle {
+    /* CSS Custom Properties */
+    --size: 0.5rem; /* Ring thickness */
+    --circle-size: 12rem; /* Overall circle size */
+    --min: 0;
+    --max: 100;
+    --value: 0;
+    --pgPercentage: 0;
+    
+    /* Carbon Design System Colors */
+    --color-success: #198038; /* @bpm-color-success - Green for 0-50% */
+    --color-warning: #f1c21b; /* @bpm-color-warning - Yellow for 50-70% */
+    --color-error: #da1e28; /* @bpm-color-alert - Red for 70-100% */
+    --color-bg: #e0e0e0; /* Gray 20 - Background ring */
+    --color-text: #161616; /* @bpm-text-color - Gray 100 */
+    
+    /* Layout */
+    width: var(--circle-size);
+    height: var(--circle-size);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    position: relative;
+    
+    /* Background ring */
+    background: radial-gradient(
+        farthest-side,
+        transparent calc(100% - var(--size)),
+        var(--color-bg) 0
+    );
+    
+    /* Typography - Carbon Design System */
+    font-family: &#x27;IBM Plex Sans&#x27;, &#x27;Helvetica Neue&#x27;, Helvetica, Arial, sans-serif; /* @bpm-font-family-sans-serif */
+    font-size: 24px; /* @bpm-font-size-xlarge */
+    font-weight: 600; /* @bpm-font-weight-semibold */
+    color: var(--color-text);
+    
+    /* Animation */
+    animation: growProgressBar 2s ease-out forwards;
+}
+
+/* Progress ring */
+.process-circle::after {
+    content: &quot;&quot;;
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    padding: var(--size);
+    
+    /* Dynamic color based on percentage thresholds */
+    background:
+        /* Red for &gt;= 70% */
+        linear-gradient(var(--color-error) 0 0) 0/calc((var(--pgPercentage) - 70) * 1px) 100%,
+        /* Yellow for &gt;= 50% */
+        linear-gradient(var(--color-warning) 0 0) 0/calc((var(--pgPercentage) - 50) * 1px) 100%,
+        /* Green for &lt; 50% */
+        var(--color-success);
+    
+    /* Conic gradient mask for circular progress */
+    --_mask:
+        conic-gradient(#000 calc(var(--pgPercentage) * 1%), transparent 0),
+        linear-gradient(#000 0 0) content-box;
+    -webkit-mask: var(--_mask);
+    mask: var(--_mask);
+    -webkit-mask-composite: source-out;
+    mask-composite: subtract;
+}
+
+/* Center text display */
+.process-circle::before {
+    content: attr(aria-valuenow) attr(data-post);
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+/* Responsive sizing for smaller screens */
+@media (max-width: 768px) {
+    .process-circle {
+        --circle-size: 10rem;
+        font-size: 20px; /* @bpm-font-size-large */
+    }
+}
+
+@media (max-width: 480px) {
+    .process-circle {
+        --circle-size: 8rem;
+        font-size: 18px; /* @bpm-font-size-large */
+    }
+}</scriptBlock>
+            <seq>1</seq>
+            <description></description>
+            <guid>guid:9736c878-28d7-4557-9188-ac43d87c34f0-css</guid>
+            <versionId>f694cd4c-89d2-47f2-bc6f-3466f5db273d</versionId>
+        </inlineScript>
+    </coachView>
+</teamworks>

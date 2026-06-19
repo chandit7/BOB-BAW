@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.f942a183-33c0-4357-9b72-70db077391d5" name="MarkdownViewer.svg">
+        <lastModified>1781333574921</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.f942a183-33c0-4357-9b72-70db077391d5</managedAssetId>
+        <assetUuid>b6b7daf5-e4a2-4301-bba4-397cb4fcde8a</assetUuid>
+        <mimeType>image/svg+xml</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>2238</length>
+        <localLastModification>1781333574921</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:f942a183-33c0-4357-9b72-70db077391d5</guid>
+        <versionId>9a34e5f4-66cf-432e-b4ea-4f55b0150950</versionId>
+    </managedAsset>
+</teamworks>

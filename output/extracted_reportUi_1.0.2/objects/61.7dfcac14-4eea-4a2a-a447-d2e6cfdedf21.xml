@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.7dfcac14-4eea-4a2a-a447-d2e6cfdedf21" name="DateOutput.svg">
+        <lastModified>1781333571660</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.7dfcac14-4eea-4a2a-a447-d2e6cfdedf21</managedAssetId>
+        <assetUuid>64675aef-12ed-49cb-88e4-bed5205faab8</assetUuid>
+        <mimeType>image/svg+xml</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>1328</length>
+        <localLastModification>1781333571660</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:7dfcac14-4eea-4a2a-a447-d2e6cfdedf21</guid>
+        <versionId>0e4ddf39-68b1-4f56-86ec-c055234ab776</versionId>
+    </managedAsset>
+</teamworks>

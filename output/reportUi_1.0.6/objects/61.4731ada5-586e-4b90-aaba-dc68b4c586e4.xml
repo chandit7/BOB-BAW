@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.4731ada5-586e-4b90-aaba-dc68b4c586e4" name="task-Preview.html">
+        <lastModified>1781330059632</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.4731ada5-586e-4b90-aaba-dc68b4c586e4</managedAssetId>
+        <assetUuid>15b7044f-8162-4832-8948-0c8707e1cd61</assetUuid>
+        <mimeType>text/html</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>3394</length>
+        <localLastModification>1781330059632</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:4731ada5-586e-4b90-aaba-dc68b4c586e4</guid>
+        <versionId>ec9084f8-66a6-463c-8b0c-65882c7a7724</versionId>
+    </managedAsset>
+</teamworks>

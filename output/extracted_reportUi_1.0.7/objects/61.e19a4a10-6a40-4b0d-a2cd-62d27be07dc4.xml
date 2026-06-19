@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.e19a4a10-6a40-4b0d-a2cd-62d27be07dc4" name="DateOutput.html">
+        <lastModified>1781330259468</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.e19a4a10-6a40-4b0d-a2cd-62d27be07dc4</managedAssetId>
+        <assetUuid>1c36f5d3-18bb-45b1-9a40-4eeb952c792a</assetUuid>
+        <mimeType>text/html</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>56</length>
+        <localLastModification>1781330259468</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:e19a4a10-6a40-4b0d-a2cd-62d27be07dc4</guid>
+        <versionId>58779306-aaa5-4000-94fc-d56bceb43f53</versionId>
+    </managedAsset>
+</teamworks>

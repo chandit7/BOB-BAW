@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.21ad01a5-7a8a-47ce-98c0-6a49a7c1c0c4" name="RiskFactor.js">
+        <lastModified>1781333579944</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.21ad01a5-7a8a-47ce-98c0-6a49a7c1c0c4</managedAssetId>
+        <assetUuid>e9072927-b6cd-4135-9ecb-dfdb8a931058</assetUuid>
+        <mimeType>application/javascript</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>653</length>
+        <localLastModification>1781333579944</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:21ad01a5-7a8a-47ce-98c0-6a49a7c1c0c4</guid>
+        <versionId>5aec6c85-31fd-4e8b-989b-d528ce3aa3a0</versionId>
+    </managedAsset>
+</teamworks>

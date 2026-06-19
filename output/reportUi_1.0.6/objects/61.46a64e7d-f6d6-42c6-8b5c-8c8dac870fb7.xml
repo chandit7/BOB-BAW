@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.46a64e7d-f6d6-42c6-8b5c-8c8dac870fb7" name="FileNetBrowser.html">
+        <lastModified>1781330059432</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.46a64e7d-f6d6-42c6-8b5c-8c8dac870fb7</managedAssetId>
+        <assetUuid>38ce7792-2376-4311-b526-2a6c8d3e42a2</assetUuid>
+        <mimeType>text/html</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>8038</length>
+        <localLastModification>1781330059432</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:46a64e7d-f6d6-42c6-8b5c-8c8dac870fb7</guid>
+        <versionId>e5334f8b-5f23-4a32-8732-688581d1fd01</versionId>
+    </managedAsset>
+</teamworks>

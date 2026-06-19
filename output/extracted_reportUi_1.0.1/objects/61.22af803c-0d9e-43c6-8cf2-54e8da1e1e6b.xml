@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.22af803c-0d9e-43c6-8cf2-54e8da1e1e6b" name="TimelineSnippet.js">
+        <lastModified>1781331767300</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.22af803c-0d9e-43c6-8cf2-54e8da1e1e6b</managedAssetId>
+        <assetUuid>8a05583c-cb48-4dbc-8841-5dd35028f346</assetUuid>
+        <mimeType>application/javascript</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>6767</length>
+        <localLastModification>1781331767300</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:22af803c-0d9e-43c6-8cf2-54e8da1e1e6b</guid>
+        <versionId>05eadefe-dfd6-4725-a78a-8ccd60dbd9cd</versionId>
+    </managedAsset>
+</teamworks>

@@ -4,7 +4,6 @@ MJ_UI_extracted
 Breadcrumb/.DS_Store
 DateOutput/.DS_Store
 FileNetImport/.DS_Store
-output/
 .env
 .bob/mcp.json
 sample/

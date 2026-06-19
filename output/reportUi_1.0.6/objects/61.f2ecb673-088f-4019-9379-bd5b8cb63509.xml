@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.f2ecb673-088f-4019-9379-bd5b8cb63509" name="Breadcrumb.html">
+        <lastModified>1781330059412</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.f2ecb673-088f-4019-9379-bd5b8cb63509</managedAssetId>
+        <assetUuid>24ff3a3e-7bac-4c24-86c8-c56f60b1e57d</assetUuid>
+        <mimeType>text/html</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>8074</length>
+        <localLastModification>1781330059412</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:f2ecb673-088f-4019-9379-bd5b8cb63509</guid>
+        <versionId>1945d215-df9a-43a2-a3af-709cdfb0a946</versionId>
+    </managedAsset>
+</teamworks>

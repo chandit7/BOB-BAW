@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <coachView id="64.db824ed3-93e7-4eb6-a583-56a0a2bf25c0" name="ProgressBar">
+        <lastModified>1781330059530</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <coachViewId>64.db824ed3-93e7-4eb6-a583-56a0a2bf25c0</coachViewId>
+        <isTemplate>false</isTemplate>
+        <layout>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;ns2:layout xmlns:ns2=&quot;http://www.ibm.com/bpm/CoachDesignerNG&quot; xmlns:ns3=&quot;http://www.ibm.com/bpm/coachview&quot;&gt;&lt;ns2:layoutItem xsi:type=&quot;ns2:CustomHTML&quot; version=&quot;8550&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&lt;ns2:id&gt;8b0d341a-39d6-49eb-ba68-462b9aac5be4&lt;/ns2:id&gt;&lt;ns2:layoutItemId&gt;CustomHTML1&lt;/ns2:layoutItemId&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;62168181-6e62-4963-ad4e-9ed947dd70ac&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.contentType&lt;/ns2:optionName&gt;&lt;ns2:value&gt;TEXT&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;dc2394e5-faae-4393-b5ef-779484326069&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.textContent&lt;/ns2:optionName&gt;&lt;ns2:value&gt;&amp;lt;div class=&amp;quot;progressbar_maincontentbox&amp;quot; role=&amp;quot;region&amp;quot; aria-label=&amp;quot;Progress indicator&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;progressbar-container&amp;quot;&amp;gt;
+    &amp;lt;!-- Progress bar track --&amp;gt;
+    &amp;lt;div class=&amp;quot;progressbar-track&amp;quot; role=&amp;quot;progressbar&amp;quot; aria-valuemin=&amp;quot;0&amp;quot; aria-valuemax=&amp;quot;100&amp;quot; aria-valuenow=&amp;quot;0&amp;quot;&amp;gt;
+      &amp;lt;div class=&amp;quot;progressbar-fill&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+    
+    &amp;lt;!-- Percentage display --&amp;gt;
+    &amp;lt;div class=&amp;quot;progressbar-percentage&amp;quot; aria-live=&amp;quot;polite&amp;quot;&amp;gt;
+      &amp;lt;span class=&amp;quot;percentage-value&amp;quot;&amp;gt;0%&amp;lt;/span&amp;gt;
+    &amp;lt;/div&amp;gt;
+    
+    &amp;lt;!-- Status message --&amp;gt;
+    &amp;lt;div class=&amp;quot;progressbar-status&amp;quot; aria-live=&amp;quot;polite&amp;quot;&amp;gt;
+      &amp;lt;span class=&amp;quot;status-message&amp;quot;&amp;gt;Not started&amp;lt;/span&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;/ns2:layoutItem&gt;&lt;/ns2:layout&gt;</layout>
+        <paletteIcon>/61.19d8bd43-d600-41db-a9ca-5a6ee876a762</paletteIcon>
+        <previewImage isNull="true" />
+        <hasLabel>false</hasLabel>
+        <labelPosition>0</labelPosition>
+        <nineSliceX1Coord>0</nineSliceX1Coord>
+        <nineSliceX2Coord>0</nineSliceX2Coord>
+        <nineSliceY1Coord>0</nineSliceY1Coord>
+        <nineSliceY2Coord>0</nineSliceY2Coord>
+        <emitBoundary>false</emitBoundary>
+        <isPrototypeFunc>false</isPrototypeFunc>
+        <enableDevMode>false</enableDevMode>
+        <isMobileReady>false</isMobileReady>
+        <loadJsFunction isNull="true" />
+        <unloadJsFunction isNull="true" />
+        <viewJsFunction isNull="true" />
+        <changeJsFunction isNull="true" />
+        <collaborationJsFunction isNull="true" />
+        <description>Animated horizontal progress bar with color-coded states and real-time percentage display for IBM Business Automation Workflow</description>
+        <validateJsFunction isNull="true" />
+        <previewAdvHtml>/61.bdad09c2-170a-489d-a449-4b8bebabd689</previewAdvHtml>
+        <previewAdvJs>/61.446a7cc8-aeda-4105-81ae-9d672398c3bd</previewAdvJs>
+        <useUrlBinding>false</useUrlBinding>
+        <guid>guid:db824ed3-93e7-4eb6-a583-56a0a2bf25c0</guid>
+        <versionId>df13c557-a4e4-4a2a-b2ca-7952044cdb07</versionId>
+        <field1 isNull="true" />
+        <field2 isNull="true" />
+        <field3>0</field3>
+        <field4 isNull="true" />
+        <field5>false</field5>
+        <clobField1 isNull="true" />
+        <bindingType name="ProgressData">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewBindingTypeId>65.45b6f4be-bafc-4434-803a-0c21dbdddff9</coachViewBindingTypeId>
+            <coachViewId>64.db824ed3-93e7-4eb6-a583-56a0a2bf25c0</coachViewId>
+            <isList>false</isList>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <seq>0</seq>
+            <description isNull="true" />
+            <guid>guid:97605325-1534-44e1-91bc-430dae9cb249</guid>
+            <versionId>d5d47f2c-8770-4866-9dc5-36d87de62725</versionId>
+        </bindingType>
+        <configOption name="showPercentage">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.2a7dfead-aa05-4fa5-9b5b-caa1b5dd0b05</coachViewConfigOptionId>
+            <coachViewId>64.db824ed3-93e7-4eb6-a583-56a0a2bf25c0</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Show Percentage</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>0</seq>
+            <description>Display the percentage value above the progress bar</description>
+            <groupName></groupName>
+            <guid>guid:db824ed3-93e7-4eb6-a583-56a0a2bf25c0-showpercentage</guid>
+            <versionId>f13323cf-b888-433e-97b4-1051d1cca820</versionId>
+        </configOption>
+
+        <configOption name="showStatus">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.c6256f40-24a6-4ba7-8fc2-170a7876040f</coachViewConfigOptionId>
+            <coachViewId>64.db824ed3-93e7-4eb6-a583-56a0a2bf25c0</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Show Status</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>1</seq>
+            <description>Display status message below the progress bar</description>
+            <groupName></groupName>
+            <guid>guid:db824ed3-93e7-4eb6-a583-56a0a2bf25c0-showstatus</guid>
+            <versionId>24d59c83-34d7-454e-9c56-5ec7baf83cea</versionId>
+        </configOption>
+
+        <configOption name="animated">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.421d23f0-33fc-41a7-95b3-58c998099512</coachViewConfigOptionId>
+            <coachViewId>64.db824ed3-93e7-4eb6-a583-56a0a2bf25c0</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Animated</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>2</seq>
+            <description>Enable smooth transition animations for progress changes</description>
+            <groupName></groupName>
+            <guid>guid:db824ed3-93e7-4eb6-a583-56a0a2bf25c0-animated</guid>
+            <versionId>efe58631-450b-4bb1-8512-273f04dc980c</versionId>
+        </configOption>
+
+        <configOption name="customMessages">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.420eceda-6a5d-48d4-920f-ce329f140674</coachViewConfigOptionId>
+            <coachViewId>64.db824ed3-93e7-4eb6-a583-56a0a2bf25c0</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Custom Messages</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>3</seq>
+            <description>Custom status messages (object with notStarted, inProgress, complete properties)</description>
+            <groupName></groupName>
+            <guid>guid:db824ed3-93e7-4eb6-a583-56a0a2bf25c0-custommessages</guid>
+            <versionId>233707ce-99a3-4cbf-aa13-616c377fabaa</versionId>
+        </configOption>
+
+        <configOption name="progressChanged">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.4dfd2243-21b4-416a-875f-dfcbb0e85984</coachViewConfigOptionId>
+            <coachViewId>64.db824ed3-93e7-4eb6-a583-56a0a2bf25c0</coachViewId>
+            <isList>false</isList>
+            <propertyType>EVENT</propertyType>
+            <label>Progress Changed</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>4</seq>
+            <description>Event fired when progress value changes</description>
+            <groupName></groupName>
+            <guid>guid:db824ed3-93e7-4eb6-a583-56a0a2bf25c0-progresschanged</guid>
+            <versionId>53d745b1-466b-4f2d-9ef9-a87d8625c4c8</versionId>
+        </configOption>
+        <inlineScript name="Inline Javascript">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.bcdd10da-bc1b-44f3-9aaa-f1e06db71be0</coachViewInlineScriptId>
+            <coachViewId>64.db824ed3-93e7-4eb6-a583-56a0a2bf25c0</coachViewId>
+            <scriptType>JS</scriptType>
+            <scriptBlock>// ProgressBar Widget - BAW Implementation
+
+// Get the progress data from BAW binding
+var progressData = this.getData();
+
+// Get configuration options
+var showPercentage = this.getOption(&quot;showPercentage&quot;) !== false; // Default true
+var showStatus = this.getOption(&quot;showStatus&quot;) !== false; // Default true
+var animated = this.getOption(&quot;animated&quot;) !== false; // Default true
+var customMessages = this.getOption(&quot;customMessages&quot;) || null;
+
+// Register event handling for progress updates
+this.registerEventHandlingFunction(this, &quot;progressChanged&quot;, &quot;value&quot;);
+
+// Get DOM elements
+var container = this.context.element.querySelector(&quot;.progressbar_maincontentbox&quot;);
+var track = container.querySelector(&quot;.progressbar-track&quot;);
+var fill = container.querySelector(&quot;.progressbar-fill&quot;);
+var percentageElement = container.querySelector(&quot;.percentage-value&quot;);
+var statusElement = container.querySelector(&quot;.status-message&quot;);
+
+// Extract progress value (0-100)
+var progressValue = 0;
+if (progressData) {
+  if (typeof progressData === &quot;number&quot;) {
+    progressValue = progressData;
+  } else if (progressData.value !== undefined) {
+    progressValue = progressData.value;
+  } else if (progressData.percentage !== undefined) {
+    progressValue = progressData.percentage;
+  }
+}
+
+// Ensure progress is within valid range
+progressValue = Math.max(0, Math.min(100, progressValue));
+
+// Function to determine color state based on progress
+function getColorState(value) {
+  if (value &lt; 50) {
+    return &quot;state-low&quot;; // Red
+  } else if (value &lt; 75) {
+    return &quot;state-moderate&quot;; // Yellow
+  } else {
+    return &quot;state-high&quot;; // Green
+  }
+}
+
+// Function to get status message
+function getStatusMessage(value) {
+  // Use custom messages if provided
+  if (customMessages) {
+    if (value === 0 &amp;&amp; customMessages.notStarted) {
+      return customMessages.notStarted;
+    } else if (value &gt; 0 &amp;&amp; value &lt; 100 &amp;&amp; customMessages.inProgress) {
+      return customMessages.inProgress;
+    } else if (value === 100 &amp;&amp; customMessages.complete) {
+      return customMessages.complete;
+    }
+  }
+  
+  // Default messages
+  if (value === 0) {
+    return &quot;Not started&quot;;
+  } else if (value &lt; 100) {
+    return &quot;In progress...&quot;;
+  } else {
+    return &quot;Complete&quot;;
+  }
+}
+
+// Function to get status state class
+function getStatusState(value) {
+  if (value === 0) {
+    return &quot;state-not-started&quot;;
+  } else if (value &lt; 100) {
+    return &quot;state-in-progress&quot;;
+  } else {
+    return &quot;state-complete&quot;;
+  }
+}
+
+// Update progress bar
+function updateProgress(value) {
+  var colorState = getColorState(value);
+  var statusMessage = getStatusMessage(value);
+  var statusState = getStatusState(value);
+  
+  // Update progress bar fill
+  fill.style.width = value + &quot;%&quot;;
+  
+  // Remove all state classes
+  fill.classList.remove(&quot;state-low&quot;, &quot;state-moderate&quot;, &quot;state-high&quot;);
+  percentageElement.classList.remove(&quot;state-low&quot;, &quot;state-moderate&quot;, &quot;state-high&quot;);
+  statusElement.classList.remove(&quot;state-not-started&quot;, &quot;state-in-progress&quot;, &quot;state-complete&quot;);
+  
+  // Add current state class
+  fill.classList.add(colorState);
+  percentageElement.classList.add(colorState);
+  statusElement.classList.add(statusState);
+  
+  // Update percentage display
+  if (showPercentage) {
+    percentageElement.textContent = Math.round(value) + &quot;%&quot;;
+    percentageElement.parentElement.style.display = &quot;flex&quot;;
+  } else {
+    percentageElement.parentElement.style.display = &quot;none&quot;;
+  }
+  
+  // Update status message
+  if (showStatus) {
+    statusElement.textContent = statusMessage;
+    statusElement.parentElement.style.display = &quot;flex&quot;;
+  } else {
+    statusElement.parentElement.style.display = &quot;none&quot;;
+  }
+  
+  // Update ARIA attributes
+  track.setAttribute(&quot;aria-valuenow&quot;, Math.round(value));
+  track.setAttribute(&quot;aria-valuetext&quot;, Math.round(value) + &quot;% - &quot; + statusMessage);
+  
+  // Disable animation if configured
+  if (!animated) {
+    fill.style.transition = &quot;none&quot;;
+  }
+}
+
+// Initial render
+updateProgress(progressValue);
+
+// Store reference to widget instance for event handling
+var me = this;
+
+// Listen for data changes (BAW automatic updates)
+if (this.context &amp;&amp; this.context.binding) {
+  var binding = this.context.binding;
+  
+  // Watch for changes to the bound data
+  if (binding.addDataChangeListener) {
+    binding.addDataChangeListener(function(newValue) {
+      var newProgress = 0;
+      
+      if (typeof newValue === &quot;number&quot;) {
+        newProgress = newValue;
+      } else if (newValue &amp;&amp; newValue.value !== undefined) {
+        newProgress = newValue.value;
+      } else if (newValue &amp;&amp; newValue.percentage !== undefined) {
+        newProgress = newValue.percentage;
+      }
+      
+      newProgress = Math.max(0, Math.min(100, newProgress));
+      updateProgress(newProgress);
+      
+      // Fire boundary event for progress change
+      if (me.ui &amp;&amp; me.ui.fireEvent) {
+        me.ui.fireEvent(&quot;progressChanged&quot;, {
+          value: newProgress,
+          state: getColorState(newProgress),
+          status: getStatusMessage(newProgress)
+        });
+      }
+    });
+  }
+}
+
+// Public method to manually update progress (for programmatic control)
+this.updateProgress = function(newValue) {
+  var value = Math.max(0, Math.min(100, newValue));
+  updateProgress(value);
+  
+  // Update the bound data if possible
+  if (this.context &amp;&amp; this.context.binding &amp;&amp; this.context.binding.set) {
+    if (typeof progressData === &quot;number&quot;) {
+      this.context.binding.set(value);
+    } else if (progressData &amp;&amp; typeof progressData === &quot;object&quot;) {
+      progressData.value = value;
+      this.context.binding.set(progressData);
+    }
+  }
+  
+  // Fire boundary event
+  if (this.ui &amp;&amp; this.ui.fireEvent) {
+    this.ui.fireEvent(&quot;progressChanged&quot;, {
+      value: value,
+      state: getColorState(value),
+      status: getStatusMessage(value)
+    });
+  }
+};
+
+// Made with Bob</scriptBlock>
+            <seq>0</seq>
+            <description></description>
+            <guid>guid:db824ed3-93e7-4eb6-a583-56a0a2bf25c0-js</guid>
+            <versionId>3f879af3-fdbe-4b72-8b13-d03c9b2148ac</versionId>
+        </inlineScript>
+
+        <inlineScript name="Inline CSS">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.61ecaffe-6eeb-41a6-a3dd-7e850b6a8de1</coachViewInlineScriptId>
+            <coachViewId>64.db824ed3-93e7-4eb6-a583-56a0a2bf25c0</coachViewId>
+            <scriptType>CSS</scriptType>
+            <scriptBlock>/* ProgressBar Widget Styles - Carbon Design System */
+/* Colors and typography aligned with themes/Carbon.less */
+
+.progressbar_maincontentbox {
+	width: 100%;
+	min-height: 120px;
+	padding: 1rem;
+	font-family: &#x27;IBM Plex Sans&#x27;, &#x27;Helvetica Neue&#x27;, Arial, sans-serif; /* @bpm-font-family-sans-serif */
+}
+
+.progressbar_maincontentbox .progressbar-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	width: 100%;
+}
+
+/* Progress Bar Track */
+.progressbar_maincontentbox .progressbar-track {
+	width: 100%;
+	height: 8px;
+	background-color: #e0e0e0; /* Gray 20 */
+	border-radius: 4px;
+	overflow: hidden;
+	position: relative;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Progress Bar Fill */
+.progressbar_maincontentbox .progressbar-fill {
+	height: 100%;
+	width: 0%;
+	background-color: #da1e28; /* @bpm-color-alert - Red for 0-49% */
+	border-radius: 4px;
+	transition: width 0.5s ease-in-out, background-color 0.3s ease;
+	position: relative;
+	overflow: hidden;
+}
+
+/* Animated shimmer effect */
+.progressbar_maincontentbox .progressbar-fill::after {
+	content: &#x27;&#x27;;
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.3),
+		transparent
+	);
+	animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+	0% {
+		left: -100%;
+	}
+	100% {
+		left: 100%;
+	}
+}
+
+/* Color states based on progress */
+.progressbar_maincontentbox .progressbar-fill.state-low {
+	background-color: #da1e28; /* @bpm-color-alert - Red: 0-49% */
+}
+
+.progressbar_maincontentbox .progressbar-fill.state-moderate {
+	background-color: #f1c21b; /* Warning yellow 50 - Yellow: 50-74% */
+}
+
+.progressbar_maincontentbox .progressbar-fill.state-high {
+	background-color: #24a148; /* Success green 50 - Green: 75-100% */
+}
+
+/* Percentage Display */
+.progressbar_maincontentbox .progressbar-percentage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.progressbar_maincontentbox .percentage-value {
+	font-size: 32px; /* @bpm-font-size-xxlarge */
+	font-weight: 600; /* @bpm-font-weight-semibold */
+	color: #161616; /* @bpm-text-color */
+	transition: color 0.3s ease;
+}
+
+/* Color-coded percentage text */
+.progressbar_maincontentbox .percentage-value.state-low {
+	color: #da1e28; /* @bpm-color-alert */
+}
+
+.progressbar_maincontentbox .percentage-value.state-moderate {
+	color: #f1c21b; /* Warning yellow 50 */
+}
+
+.progressbar_maincontentbox .percentage-value.state-high {
+	color: #24a148; /* Success green 50 */
+}
+
+/* Status Message */
+.progressbar_maincontentbox .progressbar-status {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.progressbar_maincontentbox .status-message {
+	font-size: 14px; /* @bpm-font-size-base */
+	font-weight: 400; /* @bpm-font-weight-normal */
+	color: #525252; /* Gray 70 */
+	text-align: center;
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	background-color: #f4f4f4; /* Gray 10 */
+	transition: all 0.3s ease;
+}
+
+/* Status message states */
+.progressbar_maincontentbox .status-message.state-not-started {
+	background-color: #f4f4f4; /* Gray 10 */
+	color: #525252; /* Gray 70 */
+}
+
+.progressbar_maincontentbox .status-message.state-in-progress {
+	background-color: #e5f6ff; /* Info background */
+	color: #0043ce; /* @bpm-link-text-color-hover */
+}
+
+.progressbar_maincontentbox .status-message.state-complete {
+	background-color: #defbe6; /* Success background */
+	color: #0e6027; /* Success text */
+}
+
+/* Pulse animation for in-progress state */
+@keyframes pulse {
+	0%, 100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.7;
+	}
+}
+
+.progressbar_maincontentbox .status-message.state-in-progress {
+	animation: pulse 2s ease-in-out infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 672px) {
+	.progressbar_maincontentbox {
+		padding: 0.75rem;
+		min-height: 100px;
+	}
+	
+	.progressbar_maincontentbox .progressbar-container {
+		gap: 0.75rem;
+	}
+	
+	.progressbar_maincontentbox .percentage-value {
+		font-size: 24px; /* @bpm-font-size-xlarge */
+	}
+	
+	.progressbar_maincontentbox .status-message {
+		font-size: 12px; /* @bpm-font-size-small */
+		padding: 0.375rem 0.75rem;
+	}
+	
+	.progressbar_maincontentbox .progressbar-track {
+		height: 6px;
+	}
+}
+
+/* Accessibility - High Contrast Mode Support */
+@media (prefers-contrast: high) {
+	.progressbar_maincontentbox .progressbar-track {
+		border: 1px solid #000000;
+	}
+	
+	.progressbar_maincontentbox .progressbar-fill {
+		border: 1px solid #000000;
+	}
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+	.progressbar_maincontentbox .progressbar-fill {
+		transition: none;
+	}
+	
+	.progressbar_maincontentbox .progressbar-fill::after {
+		animation: none;
+	}
+	
+	.progressbar_maincontentbox .status-message.state-in-progress {
+		animation: none;
+	}
+}
+
+/* Made with Bob */</scriptBlock>
+            <seq>1</seq>
+            <description></description>
+            <guid>guid:db824ed3-93e7-4eb6-a583-56a0a2bf25c0-css</guid>
+            <versionId>0346a8c9-c9f4-48de-b533-c22161d9c7c7</versionId>
+        </inlineScript>
+    </coachView>
+</teamworks>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.287ea3a8-c1f3-4848-9839-426774d93301" name="MultiCheckbox.svg">
+        <lastModified>1781331760220</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.287ea3a8-c1f3-4848-9839-426774d93301</managedAssetId>
+        <assetUuid>34213ef3-6704-4340-b624-60c3b115681b</assetUuid>
+        <mimeType>image/svg+xml</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>1484</length>
+        <localLastModification>1781331760220</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:287ea3a8-c1f3-4848-9839-426774d93301</guid>
+        <versionId>81880f1a-3012-4795-9965-1c2051437267</versionId>
+    </managedAsset>
+</teamworks>

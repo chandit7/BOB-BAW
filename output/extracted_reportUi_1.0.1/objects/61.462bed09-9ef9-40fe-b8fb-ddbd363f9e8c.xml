@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.462bed09-9ef9-40fe-b8fb-ddbd363f9e8c" name="FileNetImport.svg">
+        <lastModified>1781331758197</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.462bed09-9ef9-40fe-b8fb-ddbd363f9e8c</managedAssetId>
+        <assetUuid>6acf72ff-ea2a-4b9a-9300-a78b5817afdd</assetUuid>
+        <mimeType>image/svg+xml</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>1539</length>
+        <localLastModification>1781331758197</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:462bed09-9ef9-40fe-b8fb-ddbd363f9e8c</guid>
+        <versionId>63589ec7-9ec4-4d52-ab5d-bd5b586795f8</versionId>
+    </managedAsset>
+</teamworks>

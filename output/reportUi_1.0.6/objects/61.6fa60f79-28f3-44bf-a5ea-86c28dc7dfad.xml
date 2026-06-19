@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.6fa60f79-28f3-44bf-a5ea-86c28dc7dfad" name="BreadcrumbSnippet.js">
+        <lastModified>1781330059413</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.6fa60f79-28f3-44bf-a5ea-86c28dc7dfad</managedAssetId>
+        <assetUuid>f0ebcd45-829f-4158-a8a7-65a8111b80da</assetUuid>
+        <mimeType>application/javascript</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>4386</length>
+        <localLastModification>1781330059413</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:6fa60f79-28f3-44bf-a5ea-86c28dc7dfad</guid>
+        <versionId>2406001e-1844-4f7c-b953-db05762543dc</versionId>
+    </managedAsset>
+</teamworks>

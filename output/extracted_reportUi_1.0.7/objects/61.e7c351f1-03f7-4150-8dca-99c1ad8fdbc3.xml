@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.e7c351f1-03f7-4150-8dca-99c1ad8fdbc3" name="FileNetImportSnippet.js">
+        <lastModified>1781330260295</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.e7c351f1-03f7-4150-8dca-99c1ad8fdbc3</managedAssetId>
+        <assetUuid>216429b9-853a-4142-9f9e-67fc155f6abc</assetUuid>
+        <mimeType>application/javascript</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>9511</length>
+        <localLastModification>1781330260295</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:e7c351f1-03f7-4150-8dca-99c1ad8fdbc3</guid>
+        <versionId>ee5b2f60-9d2e-4873-ad5c-23b727aad727</versionId>
+    </managedAsset>
+</teamworks>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.19d8bd43-d600-41db-a9ca-5a6ee876a762" name="ProgressBar.svg">
+        <lastModified>1781330260389</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.19d8bd43-d600-41db-a9ca-5a6ee876a762</managedAssetId>
+        <assetUuid>787b7ac9-359c-45a3-9587-a30536a93f68</assetUuid>
+        <mimeType>image/svg+xml</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>1060</length>
+        <localLastModification>1781330260389</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:19d8bd43-d600-41db-a9ca-5a6ee876a762</guid>
+        <versionId>52f3ff07-2763-4d9a-bb12-061803ea5c5b</versionId>
+    </managedAsset>
+</teamworks>

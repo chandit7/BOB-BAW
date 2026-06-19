@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.d5a0756f-2e0a-4744-98f9-aa3e84dfee26" name="DateOutputSnippet.js">
+        <lastModified>1781330259470</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.d5a0756f-2e0a-4744-98f9-aa3e84dfee26</managedAssetId>
+        <assetUuid>fb326f4f-5cdd-4fbb-b2e8-677501f068f3</assetUuid>
+        <mimeType>application/javascript</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>3802</length>
+        <localLastModification>1781330259470</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:d5a0756f-2e0a-4744-98f9-aa3e84dfee26</guid>
+        <versionId>a9146ba4-5c78-4ced-89a8-fefbee95159a</versionId>
+    </managedAsset>
+</teamworks>

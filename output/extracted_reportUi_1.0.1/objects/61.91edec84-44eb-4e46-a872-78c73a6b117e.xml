@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.91edec84-44eb-4e46-a872-78c73a6b117e" name="MarkdownViewer.js">
+        <lastModified>1781331759593</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.91edec84-44eb-4e46-a872-78c73a6b117e</managedAssetId>
+        <assetUuid>78df68be-f250-417d-886a-58f24919e1ca</assetUuid>
+        <mimeType>application/javascript</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>5767</length>
+        <localLastModification>1781331759593</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:91edec84-44eb-4e46-a872-78c73a6b117e</guid>
+        <versionId>e1d0ffef-5636-4080-873f-e9e948d510d5</versionId>
+    </managedAsset>
+</teamworks>

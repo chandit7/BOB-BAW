@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.53356255-f130-4848-87d7-60c51b317e7f" name="DynamicReportGridSnippet.js">
+        <lastModified>1781333572252</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.53356255-f130-4848-87d7-60c51b317e7f</managedAssetId>
+        <assetUuid>965383fa-050a-4b96-87e0-ca490eb24fce</assetUuid>
+        <mimeType>application/javascript</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>2108</length>
+        <localLastModification>1781333572252</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:53356255-f130-4848-87d7-60c51b317e7f</guid>
+        <versionId>9c875b46-4729-41ab-9348-942e3b5f96cf</versionId>
+    </managedAsset>
+</teamworks>

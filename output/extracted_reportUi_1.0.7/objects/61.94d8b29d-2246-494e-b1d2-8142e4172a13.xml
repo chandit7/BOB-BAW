@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.94d8b29d-2246-494e-b1d2-8142e4172a13" name="MultiCheckboxSnippet.js">
+        <lastModified>1781330260343</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.94d8b29d-2246-494e-b1d2-8142e4172a13</managedAssetId>
+        <assetUuid>9cb79867-86b1-4bc8-91a5-382a06f4be81</assetUuid>
+        <mimeType>application/javascript</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>4569</length>
+        <localLastModification>1781330260343</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:94d8b29d-2246-494e-b1d2-8142e4172a13</guid>
+        <versionId>2228fadb-3b7b-4c18-8df8-021c1da8b231</versionId>
+    </managedAsset>
+</teamworks>

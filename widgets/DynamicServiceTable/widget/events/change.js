@@ -16,7 +16,8 @@ var config = {
 	sortDirection: this.getOption("sortDirection") || "ASC",
 	isLoading: this.getOption("isLoading") || false,
 	styleTheme: this.getOption("styleTheme") || "default",
-	enableSearch: this.getOption("enableSearch") !== false
+	enableSearch: this.getOption("enableSearch") !== false,
+	showPageSizeSelector: this.getOption("showPageSizeSelector") !== false
 };
 
 // Store widget context for event firing
@@ -359,9 +360,19 @@ if (refreshBtn && config.showRefresh) {
 
 // Page size select
 if (pageSizeSelect) {
-	pageSizeSelect.addEventListener("change", function() {
-		handlePageSizeChange(parseInt(this.value, 10));
-	});
+	var pageSizeWrap = container.querySelector(".dt-page-size-wrap");
+	if (config.showPageSizeSelector) {
+		if (pageSizeWrap) {
+			pageSizeWrap.style.display = "flex";
+		}
+		pageSizeSelect.addEventListener("change", function() {
+			handlePageSizeChange(parseInt(this.value, 10));
+		});
+	} else {
+		if (pageSizeWrap) {
+			pageSizeWrap.style.display = "none";
+		}
+	}
 }
 
 // Previous page button

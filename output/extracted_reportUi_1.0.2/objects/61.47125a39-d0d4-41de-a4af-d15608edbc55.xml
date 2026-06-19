@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.47125a39-d0d4-41de-a4af-d15608edbc55" name="MultiDocumentUpload.svg">
+        <lastModified>1781333576378</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.47125a39-d0d4-41de-a4af-d15608edbc55</managedAssetId>
+        <assetUuid>d4268acc-b648-4d33-b004-d2afb1db76d9</assetUuid>
+        <mimeType>image/svg+xml</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>2439</length>
+        <localLastModification>1781333576378</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:47125a39-d0d4-41de-a4af-d15608edbc55</guid>
+        <versionId>1b21b72a-7940-4665-9848-20eb8eeb79ea</versionId>
+    </managedAsset>
+</teamworks>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.2c2a6b30-eb75-4858-8e3e-b1d04b8a76a1" name="FileNetImport.html">
+        <lastModified>1781330059437</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.2c2a6b30-eb75-4858-8e3e-b1d04b8a76a1</managedAssetId>
+        <assetUuid>d0cef02a-c135-414a-bbf5-006e0e8d6d47</assetUuid>
+        <mimeType>text/html</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>6705</length>
+        <localLastModification>1781330059437</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:2c2a6b30-eb75-4858-8e3e-b1d04b8a76a1</guid>
+        <versionId>8d941085-0891-4fb0-9ece-f6cfacd7bd32</versionId>
+    </managedAsset>
+</teamworks>

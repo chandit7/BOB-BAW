@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#0f62fe" rx="2"/>
+  
+  <!-- Grid Icon -->
+  <g fill="#ffffff">
+    <!-- Header Row -->
+    <rect x="6" y="6" width="20" height="3" rx="0.5"/>
+    
+    <!-- Data Rows -->
+    <rect x="6" y="11" width="20" height="2" rx="0.5" opacity="0.8"/>
+    <rect x="6" y="15" width="20" height="2" rx="0.5" opacity="0.8"/>
+    <rect x="6" y="19" width="20" height="2" rx="0.5" opacity="0.8"/>
+    
+    <!-- Pagination Dots -->
+    <circle cx="10" cy="26" r="1.5"/>
+    <circle cx="16" cy="26" r="1.5"/>
+    <circle cx="22" cy="26" r="1.5"/>
+  </g>
+  
+  <!-- Sort Arrow Indicator -->
+  <path d="M24 7 L26 9 L22 9 Z" fill="#ffffff"/>
+</svg>
+
+<!-- Made with Bob -->

@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <coachView id="64.85fc6053-ab02-4cbe-b327-e895ba2b4e0e" name="Breadcrumb">
+        <lastModified>1781331754617</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <coachViewId>64.85fc6053-ab02-4cbe-b327-e895ba2b4e0e</coachViewId>
+        <isTemplate>false</isTemplate>
+        <layout>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;ns2:layout xmlns:ns2=&quot;http://www.ibm.com/bpm/CoachDesignerNG&quot; xmlns:ns3=&quot;http://www.ibm.com/bpm/coachview&quot;&gt;&lt;ns2:layoutItem xsi:type=&quot;ns2:CustomHTML&quot; version=&quot;8550&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&lt;ns2:id&gt;e7c442ee-2229-42d8-9ff9-ba3cca99ec76&lt;/ns2:id&gt;&lt;ns2:layoutItemId&gt;CustomHTML1&lt;/ns2:layoutItemId&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;4c2f441a-1761-443e-ad1b-7a030d565d12&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.contentType&lt;/ns2:optionName&gt;&lt;ns2:value&gt;TEXT&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;387012b1-f145-42c9-b60c-bb5ee1b34703&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.textContent&lt;/ns2:optionName&gt;&lt;ns2:value&gt;&amp;lt;div class=&amp;quot;breadcrumb_maincontentbox&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;breadcrumb-nav&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;breadcrumb-list&amp;quot;&amp;gt;
+      &amp;lt;!-- Breadcrumb items will be dynamically generated here --&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;/ns2:layoutItem&gt;&lt;/ns2:layout&gt;</layout>
+        <paletteIcon>/61.427b1767-292f-4895-8985-6287f5665f8e</paletteIcon>
+        <previewImage isNull="true" />
+        <hasLabel>false</hasLabel>
+        <labelPosition>0</labelPosition>
+        <nineSliceX1Coord>0</nineSliceX1Coord>
+        <nineSliceX2Coord>0</nineSliceX2Coord>
+        <nineSliceY1Coord>0</nineSliceY1Coord>
+        <nineSliceY2Coord>0</nineSliceY2Coord>
+        <emitBoundary>false</emitBoundary>
+        <isPrototypeFunc>false</isPrototypeFunc>
+        <enableDevMode>false</enableDevMode>
+        <isMobileReady>false</isMobileReady>
+        <loadJsFunction isNull="true" />
+        <unloadJsFunction isNull="true" />
+        <viewJsFunction isNull="true" />
+        <changeJsFunction>// Get the breadcrumb container elements
+var breadcrumbContainer = this.context.element.querySelector(&quot;.breadcrumb_maincontentbox&quot;);
+var breadcrumbList = breadcrumbContainer.querySelector(&quot;.breadcrumb-list&quot;);
+
+// Get the updated breadcrumb data
+var breadcrumbData = this.getData();
+
+// Get configuration options
+var showNumbering = this.getOption(&quot;showNumbering&quot;) !== false; // Default true
+var maxItems = this.getOption(&quot;maxItems&quot;) || 0; // 0 means no limit
+
+// Clear existing breadcrumb items
+breadcrumbList.innerHTML = &quot;&quot;;
+
+// Function to create a breadcrumb item
+function createBreadcrumbItem(item, index, isLast, totalItems) {
+  var div = document.createElement(&quot;div&quot;);
+  div.className = &quot;breadcrumb-item&quot;;
+  
+  // Add status class if provided
+  var status = item.status;
+  if (!status) {
+    // Auto-determine status based on position
+    if (index &lt; totalItems - 1) {
+      status = &quot;completed&quot;;
+    } else if (isLast) {
+      status = &quot;working&quot;;
+    } else {
+      status = &quot;notyetstarted&quot;;
+    }
+  }
+  
+  // Add status class to the div for CSS styling (enables status-based border colors)
+  div.classList.add(status);
+  
+  if (isLast) {
+    div.classList.add(&quot;current&quot;);
+  }
+  
+  var link = document.createElement(&quot;a&quot;);
+  link.className = &quot;breadcrumb-link&quot;;
+  link.href = item.href || &quot;#&quot;;
+  
+  // Add status icon - directly use status value with breadcrumb_ prefix
+  var iconDiv = document.createElement(&quot;div&quot;);
+  iconDiv.className = &quot;breadcrumb_&quot; + status;
+  link.appendChild(iconDiv);
+  
+  // Add text with optional numbering
+  var textSpan = document.createElement(&quot;span&quot;);
+  var labelText = item.label || item.text || &quot;&quot;;
+  if (showNumbering) {
+    labelText = (index + 1) + &quot;. &quot; + labelText;
+  }
+  textSpan.textContent = labelText;
+  link.appendChild(textSpan);
+  
+  // Add click event handler if provided
+  if (item.onClick &amp;&amp; typeof item.onClick === &quot;function&quot;) {
+    link.addEventListener(&quot;click&quot;, function(e) {
+      e.preventDefault();
+      item.onClick(item, index);
+    });
+  }
+  
+  div.appendChild(link);
+  return div;
+}
+
+// Render breadcrumb items
+if (breadcrumbData &amp;&amp; Array.isArray(breadcrumbData) &amp;&amp; breadcrumbData.length &gt; 0) {
+  var itemsToRender = breadcrumbData;
+  
+  // Apply max items limit if configured
+  if (maxItems &gt; 0 &amp;&amp; breadcrumbData.length &gt; maxItems) {
+    // Keep first items up to maxItems
+    itemsToRender = breadcrumbData.slice(0, maxItems);
+  }
+  
+  // Calculate width percentage for each item
+  var itemWidth = 100 / itemsToRender.length;
+  
+  // Render each breadcrumb item
+  itemsToRender.forEach(function(item, index) {
+    var isLast = index === itemsToRender.length - 1;
+    var breadcrumbItem = createBreadcrumbItem(item, index, isLast, itemsToRender.length);
+    breadcrumbItem.style.width = itemWidth + &quot;%&quot;;
+    breadcrumbList.appendChild(breadcrumbItem);
+  });
+} else {
+  // If no data, show a default breadcrumb
+  var defaultItem = createBreadcrumbItem({ label: &quot;Home&quot;, href: &quot;#&quot; }, 0, true, 1);
+  defaultItem.style.width = &quot;100%&quot;;
+  breadcrumbList.appendChild(defaultItem);
+}
+
+// Made with Bob</changeJsFunction>
+        <collaborationJsFunction isNull="true" />
+        <description>Horizontal breadcrumb navigation widget for IBM Business Automation Workflow</description>
+        <validateJsFunction isNull="true" />
+        <previewAdvHtml>/61.f2ecb673-088f-4019-9379-bd5b8cb63509</previewAdvHtml>
+        <previewAdvJs>/61.6fa60f79-28f3-44bf-a5ea-86c28dc7dfad</previewAdvJs>
+        <useUrlBinding>false</useUrlBinding>
+        <guid>guid:85fc6053-ab02-4cbe-b327-e895ba2b4e0e</guid>
+        <versionId>33f0a3be-4999-47f1-b53c-4214e3b5c07a</versionId>
+        <field1 isNull="true" />
+        <field2 isNull="true" />
+        <field3>0</field3>
+        <field4 isNull="true" />
+        <field5>false</field5>
+        <clobField1 isNull="true" />
+        <bindingType name="BreadcrumbData">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewBindingTypeId>65.3052f0ab-ded6-43d8-a9da-42fe0fa88b42</coachViewBindingTypeId>
+            <coachViewId>64.85fc6053-ab02-4cbe-b327-e895ba2b4e0e</coachViewId>
+            <isList>true</isList>
+            <classId>/12.a1b2c3d4-e5f6-7890-abcd-ef1234567890</classId>
+            <seq>0</seq>
+            <description isNull="true" />
+            <guid>guid:d2ecbd5b-19fa-40ec-bb0b-89f71e751ce5</guid>
+            <versionId>a6f3e6a3-45fb-422b-9792-4cf5deeb324f</versionId>
+        </bindingType>
+        <configOption name="showNumbering">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.c56112a7-5994-4fa7-b393-d388fe5673ec</coachViewConfigOptionId>
+            <coachViewId>64.85fc6053-ab02-4cbe-b327-e895ba2b4e0e</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Show Numbering</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>0</seq>
+            <description>Display step numbers before breadcrumb labels (e.g., &#x27;1. Home&#x27;)</description>
+            <groupName></groupName>
+            <guid>guid:85fc6053-ab02-4cbe-b327-e895ba2b4e0e-shownumbering</guid>
+            <versionId>82cb9a4d-7592-4beb-bb0d-5302a3b7c96c</versionId>
+        </configOption>
+
+        <configOption name="maxItems">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.a038de53-037a-4a1e-a8af-e90dbb462908</coachViewConfigOptionId>
+            <coachViewId>64.85fc6053-ab02-4cbe-b327-e895ba2b4e0e</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Max Items</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.3fa0d7a0-828a-4d60-99cc-db5ed143fc2d</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>1</seq>
+            <description>Maximum number of breadcrumb items to display (0 = no limit)</description>
+            <groupName></groupName>
+            <guid>guid:85fc6053-ab02-4cbe-b327-e895ba2b4e0e-maxitems</guid>
+            <versionId>7b0d2639-6e6c-4456-ab86-50f1df4c5e7c</versionId>
+        </configOption>
+
+        <configOption name="onClick">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.78905c76-2332-4186-9032-e721e6f8187e</coachViewConfigOptionId>
+            <coachViewId>64.85fc6053-ab02-4cbe-b327-e895ba2b4e0e</coachViewId>
+            <isList>false</isList>
+            <propertyType>EVENT</propertyType>
+            <label>On Click</label>
+            <classId>6b8d712d-9bce-46dd-b112-f94df7c41b0d/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>2</seq>
+            <description>Event fired when a breadcrumb item is clicked</description>
+            <groupName></groupName>
+            <guid>guid:85fc6053-ab02-4cbe-b327-e895ba2b4e0e-onclick</guid>
+            <versionId>86c66ea4-e824-459e-aaa7-4bcf89c9e4f4</versionId>
+        </configOption>
+        <inlineScript name="Inline Javascript">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.c0a39fe0-8405-467f-b3b5-c4502ac69a88</coachViewInlineScriptId>
+            <coachViewId>64.85fc6053-ab02-4cbe-b327-e895ba2b4e0e</coachViewId>
+            <scriptType>JS</scriptType>
+            <scriptBlock>// Get the breadcrumb data (array of breadcrumb items)
+var breadcrumbData = this.getData().items;
+// Get configuration options
+var showNumbering = this.getOption(&quot;showNumbering&quot;) !== false; // Default true
+var maxItems = this.getOption(&quot;maxItems&quot;) || 0; // 0 means no limit
+// Register events
+this.registerEventHandlingFunction(this, &quot;onClick&quot;,      &quot;data&quot;);
+
+
+// Get the breadcrumb container elements
+var breadcrumbContainer = this.context.element.querySelector(&quot;.breadcrumb_maincontentbox&quot;);
+var breadcrumbList = breadcrumbContainer.querySelector(&quot;.breadcrumb-list&quot;);
+
+// Clear existing breadcrumb items
+breadcrumbList.innerHTML = &quot;&quot;;
+
+// Function to create a breadcrumb item
+function createBreadcrumbItem(item, index, isLast, totalItems) {
+  var div = document.createElement(&quot;div&quot;);
+  div.className = &quot;breadcrumb-item&quot;;
+  
+  // Add status class if providedx
+  var status = item.status;
+  if (!status) {
+    // Auto-determine status based on position
+    if (index &lt; totalItems - 1) {
+      status = &quot;completed&quot;;
+    } else if (isLast) {
+      status = &quot;working&quot;;
+    } else {
+      status = &quot;notyetstarted&quot;;
+    }
+  }
+  
+  // Add status class to the div for CSS styling
+  div.classList.add(status);
+  
+  if (isLast) {
+    div.classList.add(&quot;current&quot;);
+  }
+  
+  var link = document.createElement(&quot;a&quot;);
+  link.className = &quot;breadcrumb-link&quot;;
+  link.href = item.href || &quot;#&quot;;
+  
+  // Add status icon - directly use status value with breadcrumb_ prefix
+  var iconDiv = document.createElement(&quot;div&quot;);
+  iconDiv.className = &quot;breadcrumb_&quot; + status;
+  link.appendChild(iconDiv);
+  
+  // Add text with optional numbering
+  var textSpan = document.createElement(&quot;span&quot;);
+  var labelText = item.label || item.text || &quot;&quot;;
+  if (showNumbering) {
+    labelText = (index + 1) + &quot;. &quot; + labelText;
+  }
+  textSpan.textContent = labelText;
+  link.appendChild(textSpan);
+  
+  // Add click event handler if provided
+  if (item.onClick &amp;&amp; typeof item.onClick === &quot;function&quot;) {
+    link.addEventListener(&quot;click&quot;, function(e) {
+      e.preventDefault();
+     
+      item.onClick(item, index);
+    });
+  }
+  
+  div.appendChild(link);
+  return div;
+}
+
+// Render breadcrumb items
+if (breadcrumbData &amp;&amp; Array.isArray(breadcrumbData) &amp;&amp; breadcrumbData.length &gt; 0) {
+  var itemsToRender = breadcrumbData;
+  
+  // Apply max items limit if configured
+  if (maxItems &gt; 0 &amp;&amp; breadcrumbData.length &gt; maxItems) {
+    // Keep first items up to maxItems
+    itemsToRender = breadcrumbData.slice(0, maxItems);
+  }
+  
+  // Calculate width percentage for each item
+  var itemWidth = 100 / itemsToRender.length;
+  
+  // Render each breadcrumb item
+  itemsToRender.forEach(function(item, index) {
+    var isLast = index === itemsToRender.length - 1;
+    var breadcrumbItem = createBreadcrumbItem(item, index, isLast, itemsToRender.length);
+    breadcrumbItem.style.width = itemWidth + &quot;%&quot;;
+    breadcrumbList.appendChild(breadcrumbItem);
+  });
+} else {
+  // If no data, show a default breadcrumb
+  var defaultItem = createBreadcrumbItem({ label: &quot;Home&quot;, href: &quot;#&quot; }, 0, true, 1);
+  defaultItem.style.width = &quot;100%&quot;;
+  breadcrumbList.appendChild(defaultItem);
+}
+
+// Made with Bob
+</scriptBlock>
+            <seq>0</seq>
+            <description></description>
+            <guid>guid:85fc6053-ab02-4cbe-b327-e895ba2b4e0e-js</guid>
+            <versionId>dbfd0776-0c3e-4868-b188-bd93273450d3</versionId>
+        </inlineScript>
+
+        <inlineScript name="Inline CSS">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.8769d852-20fc-4952-b4cc-9a6da2ece30b</coachViewInlineScriptId>
+            <coachViewId>64.85fc6053-ab02-4cbe-b327-e895ba2b4e0e</coachViewId>
+            <scriptType>CSS</scriptType>
+            <scriptBlock>/* Breadcrumb Widget Styles - Carbon Design System */
+/* Colors and typography aligned with themes/Carbon.less */
+
+.breadcrumb_maincontentbox {
+	width: 100%;
+	min-height: 35px;
+	overflow: hidden;
+	font-family: &#x27;IBM Plex Sans&#x27;, &#x27;Helvetica Neue&#x27;, Helvetica, Arial, sans-serif; /* @bpm-font-family-sans-serif */
+}
+
+.breadcrumb_maincontentbox .breadcrumb-nav{
+	display: table;
+	width: 100%;
+}
+
+.breadcrumb_maincontentbox .breadcrumb-nav .breadcrumb-list{
+	display: flex;
+	flex-direction: row;
+}
+
+.breadcrumb_maincontentbox .breadcrumb-nav .breadcrumb-list .breadcrumb-item{
+	border-top: 2px solid #e0e0e0; /* Gray 20 */
+	width: 25%;
+}
+
+/* Status-based border colors - JavaScript adds these classes */
+.breadcrumb_maincontentbox .breadcrumb-nav .breadcrumb-list .breadcrumb-item.completed{
+	border-top-color: #0f62fe; /* @bpm-color-primary */
+}
+
+.breadcrumb_maincontentbox .breadcrumb-nav .breadcrumb-list .breadcrumb-item.working{
+	border-top-color: #0f62fe; /* @bpm-color-primary */
+}
+
+.breadcrumb_maincontentbox .breadcrumb-nav .breadcrumb-list .breadcrumb-item.current{
+	border-top-color: #0f62fe; /* @bpm-color-primary */
+}
+
+.breadcrumb_maincontentbox .breadcrumb-nav .breadcrumb-list .breadcrumb-item .breadcrumb-link{
+	background: transparent;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: #0f62fe; /* @bpm-link-text-color */
+	outline: 2px solid transparent;
+	outline-offset: -2px;
+	transition: color 110ms cubic-bezier(0.2, 0, 0.38, 0.9);
+	font-size: 14px; /* @bpm-font-size-base */
+}
+
+.breadcrumb_maincontentbox .breadcrumb-nav .breadcrumb-list .breadcrumb-item .breadcrumb-link:hover {
+	color: #0043ce; /* @bpm-link-text-color-hover */
+	text-decoration: underline;
+}
+
+.breadcrumb_maincontentbox .breadcrumb-nav .breadcrumb-list .breadcrumb-item .breadcrumb-link:focus {
+	outline: 2px solid #0f62fe; /* @bpm-link-text-color */
+	outline-offset: 2px;
+}
+
+.breadcrumb_maincontentbox .breadcrumb-nav .breadcrumb-list .breadcrumb-item .breadcrumb-link &gt; span {
+	padding-top: 3px;
+}
+
+.breadcrumb_maincontentbox .breadcrumb-nav .breadcrumb-list .breadcrumb-item.current .breadcrumb-link {
+	color: #161616; /* @bpm-text-color */
+	cursor: default;
+	pointer-events: none;
+	font-weight: 600; /* @bpm-font-weight-semibold */
+}
+
+/* Status Icons */
+.breadcrumb_completed{
+	background-image:url(&quot;data:image/svg+xml;utf8,%3Csvg%20id%3D%22icon%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3Cstyle%3E%0A%20%20%20%20%20%20.cls-1%20%7B%0A%20%20%20%20%20%20%20%20fill%3A%20none%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%3C%2Fstyle%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cpolygon%20points%3D%2214%2021.414%209%2016.413%2010.413%2015%2014%2018.586%2021.585%2011%2023%2012.415%2014%2021.414%22%20style%3D%22fill%3A%231446c6%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M16%2C2A14%2C14%2C0%2C1%2C0%2C30%2C16%2C14%2C14%2C0%2C0%2C0%2C16%2C2Zm0%2C26A12%2C12%2C0%2C1%2C1%2C28%2C16%2C12%2C12%2C0%2C0%2C1%2C16%2C28Z%22%20style%3D%22fill%3A%231446c6%22%2F%3E%0A%20%20%3Crect%20id%3D%22_Transparent_Rectangle_%22%20data-name%3D%22%26lt%3BTransparent%20Rectangle%26gt%3B%22%20class%3D%22cls-1%22%20width%3D%2232%22%20height%3D%2232%22%2F%3E%0A%3C%2Fsvg%3E&quot;);
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+	background-size: 16px 16px;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-right: 8px;
+}
+
+.breadcrumb_working{
+	background-image: url(&quot;data:image/svg+xml;utf8,%3Csvg%20id%3D%22icon%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20d%3D%22M23.7642%2C6.8593l1.2851-1.5315A13.976%2C13.976%2C0%2C0%2C0%2C20.8672%2C2.887l-.6836%2C1.8776A11.9729%2C11.9729%2C0%2C0%2C1%2C23.7642%2C6.8593Z%22%20fill%3D%22%231446c6%22%2F%3E%3Cpath%20d%3D%22M27.81%2C14l1.9677-.4128A13.8888%2C13.8888%2C0%2C0%2C0%2C28.14%2C9.0457L26.4087%2C10A12.52%2C12.52%2C0%2C0%2C1%2C27.81%2C14Z%22%20fill%3D%22%231446c6%22%2F%3E%3Cpath%20d%3D%22M20.1836%2C27.2354l.6836%2C1.8776a13.976%2C13.976%2C0%2C0%2C0%2C4.1821-2.4408l-1.2851-1.5315A11.9729%2C11.9729%2C0%2C0%2C1%2C20.1836%2C27.2354Z%22%20fill%3D%22%231446c6%22%2F%3E%3Cpath%20d%3D%22M16%2C30V2a14%2C14%2C0%2C0%2C0%2C0%2C28Z%22%20fill%3D%22%231446c6%22%2F%3E%3C%2Fsvg%3E&quot;);
+ 	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+	background-size: 16px 16px;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-right: 8px;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+.breadcrumb_notyetstarted{
+	background-image:url(&quot;data:image/svg+xml;utf8,%3Csvg%20id%3D%22icon%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3A%23161616%3B%7D.cls-2%7Bfill%3Anone%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3Ecircle--dash%3C%2Ftitle%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M7.7%2C4.7a14.7%2C14.7%2C0%2C0%2C0-3%2C3.1L6.3%2C9A13.26%2C13.26%2C0%2C0%2C1%2C8.9%2C6.3Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M4.6%2C12.3l-1.9-.6A12.51%2C12.51%2C0%2C0%2C0%2C2%2C16H4A11.48%2C11.48%2C0%2C0%2C1%2C4.6%2C12.3Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M2.7%2C20.4a14.4%2C14.4%2C0%2C0%2C0%2C2%2C3.9l1.6-1.2a12.89%2C12.89%2C0%2C0%2C1-1.7-3.3Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M7.8%2C27.3a14.4%2C14.4%2C0%2C0%2C0%2C3.9%2C2l.6-1.9A12.89%2C12.89%2C0%2C0%2C1%2C9%2C25.7Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M11.7%2C2.7l.6%2C1.9A11.48%2C11.48%2C0%2C0%2C1%2C16%2C4V2A12.51%2C12.51%2C0%2C0%2C0%2C11.7%2C2.7Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M24.2%2C27.3a15.18%2C15.18%2C0%2C0%2C0%2C3.1-3.1L25.7%2C23A11.53%2C11.53%2C0%2C0%2C1%2C23%2C25.7Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M27.4%2C19.7l1.9.6A15.47%2C15.47%2C0%2C0%2C0%2C30%2C16H28A11.48%2C11.48%2C0%2C0%2C1%2C27.4%2C19.7Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M29.2%2C11.6a14.4%2C14.4%2C0%2C0%2C0-2-3.9L25.6%2C8.9a12.89%2C12.89%2C0%2C0%2C1%2C1.7%2C3.3Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M24.1%2C4.6a14.4%2C14.4%2C0%2C0%2C0-3.9-2l-.6%2C1.9a12.89%2C12.89%2C0%2C0%2C1%2C3.3%2C1.7Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M20.3%2C29.3l-.6-1.9A11.48%2C11.48%2C0%2C0%2C1%2C16%2C28v2A21.42%2C21.42%2C0%2C0%2C0%2C20.3%2C29.3Z%22%2F%3E%3Crect%20id%3D%22_Transparent_Rectangle_%22%20data-name%3D%22%26lt%3BTransparent%20Rectangle%26gt%3B%22%20class%3D%22cls-2%22%20width%3D%2232%22%20height%3D%2232%22%2F%3E%3C%2Fsvg%3E&quot;);
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+	background-size: 16px 16px;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-right: 8px;
+}
+
+/* Alias classes for different status naming conventions */
+.breadcrumb_inprogress,
+.breadcrumb_in-progress {
+	background-image: url(&quot;data:image/svg+xml;utf8,%3Csvg%20id%3D%22icon%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20d%3D%22M23.7642%2C6.8593l1.2851-1.5315A13.976%2C13.976%2C0%2C0%2C0%2C20.8672%2C2.887l-.6836%2C1.8776A11.9729%2C11.9729%2C0%2C0%2C1%2C23.7642%2C6.8593Z%22%20fill%3D%22%231446c6%22%2F%3E%3Cpath%20d%3D%22M27.81%2C14l1.9677-.4128A13.8888%2C13.8888%2C0%2C0%2C0%2C28.14%2C9.0457L26.4087%2C10A12.52%2C12.52%2C0%2C0%2C1%2C27.81%2C14Z%22%20fill%3D%22%231446c6%22%2F%3E%3Cpath%20d%3D%22M20.1836%2C27.2354l.6836%2C1.8776a13.976%2C13.976%2C0%2C0%2C0%2C4.1821-2.4408l-1.2851-1.5315A11.9729%2C11.9729%2C0%2C0%2C1%2C20.1836%2C27.2354Z%22%20fill%3D%22%231446c6%22%2F%3E%3Cpath%20d%3D%22M16%2C30V2a14%2C14%2C0%2C0%2C0%2C0%2C28Z%22%20fill%3D%22%231446c6%22%2F%3E%3C%2Fsvg%3E&quot;);
+ 	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+	background-size: 16px 16px;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-right: 8px;
+	animation: spin 1s linear infinite;
+}
+
+.breadcrumb_pending,
+.breadcrumb_notstarted,
+.breadcrumb_not-started {
+	background-image:url(&quot;data:image/svg+xml;utf8,%3Csvg%20id%3D%22icon%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3A%23161616%3B%7D.cls-2%7Bfill%3Anone%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3Ecircle--dash%3C%2Ftitle%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M7.7%2C4.7a14.7%2C14.7%2C0%2C0%2C0-3%2C3.1L6.3%2C9A13.26%2C13.26%2C0%2C0%2C1%2C8.9%2C6.3Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M4.6%2C12.3l-1.9-.6A12.51%2C12.51%2C0%2C0%2C0%2C2%2C16H4A11.48%2C11.48%2C0%2C0%2C1%2C4.6%2C12.3Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M2.7%2C20.4a14.4%2C14.4%2C0%2C0%2C0%2C2%2C3.9l1.6-1.2a12.89%2C12.89%2C0%2C0%2C1-1.7-3.3Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M7.8%2C27.3a14.4%2C14.4%2C0%2C0%2C0%2C3.9%2C2l.6-1.9A12.89%2C12.89%2C0%2C0%2C1%2C9%2C25.7Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M11.7%2C2.7l.6%2C1.9A11.48%2C11.48%2C0%2C0%2C1%2C16%2C4V2A12.51%2C12.51%2C0%2C0%2C0%2C11.7%2C2.7Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M24.2%2C27.3a15.18%2C15.18%2C0%2C0%2C0%2C3.1-3.1L25.7%2C23A11.53%2C11.53%2C0%2C0%2C1%2C23%2C25.7Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M27.4%2C19.7l1.9.6A15.47%2C15.47%2C0%2C0%2C0%2C30%2C16H28A11.48%2C11.48%2C0%2C0%2C1%2C27.4%2C19.7Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M29.2%2C11.6a14.4%2C14.4%2C0%2C0%2C0-2-3.9L25.6%2C8.9a12.89%2C12.89%2C0%2C0%2C1%2C1.7%2C3.3Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M24.1%2C4.6a14.4%2C14.4%2C0%2C0%2C0-3.9-2l-.6%2C1.9a12.89%2C12.89%2C0%2C0%2C1%2C3.3%2C1.7Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M20.3%2C29.3l-.6-1.9A11.48%2C11.48%2C0%2C0%2C1%2C16%2C28v2A21.42%2C21.42%2C0%2C0%2C0%2C20.3%2C29.3Z%22%2F%3E%3Crect%20id%3D%22_Transparent_Rectangle_%22%20data-name%3D%22%26lt%3BTransparent%20Rectangle%26gt%3B%22%20class%3D%22cls-2%22%20width%3D%2232%22%20height%3D%2232%22%2F%3E%3C%2Fsvg%3E&quot;);
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+	background-size: 16px 16px;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-right: 8px;
+}
+
+/* Made with Bob */
+</scriptBlock>
+            <seq>1</seq>
+            <description></description>
+            <guid>guid:85fc6053-ab02-4cbe-b327-e895ba2b4e0e-css</guid>
+            <versionId>adb376b6-fe9a-4687-be13-cd1aa6c091cd</versionId>
+        </inlineScript>
+    </coachView>
+</teamworks>

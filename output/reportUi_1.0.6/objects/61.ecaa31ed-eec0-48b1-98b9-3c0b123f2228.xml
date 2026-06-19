@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.ecaa31ed-eec0-48b1-98b9-3c0b123f2228" name="StepperSnippet.js">
+        <lastModified>1781330059569</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.ecaa31ed-eec0-48b1-98b9-3c0b123f2228</managedAssetId>
+        <assetUuid>016bcbff-2975-4e9f-b902-000963fffd98</assetUuid>
+        <mimeType>application/javascript</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>3860</length>
+        <localLastModification>1781330059569</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:ecaa31ed-eec0-48b1-98b9-3c0b123f2228</guid>
+        <versionId>a0385d7a-8fd5-4db2-81e9-47c957910fd6</versionId>
+    </managedAsset>
+</teamworks>

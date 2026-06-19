@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.b0829494-ea0d-4677-8ad9-fc4315caf619" name="FileNetBrowserSnippet.js">
+        <lastModified>1781330260281</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.b0829494-ea0d-4677-8ad9-fc4315caf619</managedAssetId>
+        <assetUuid>0f64717f-ff69-4952-967d-b31e339c928f</assetUuid>
+        <mimeType>application/javascript</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>11987</length>
+        <localLastModification>1781330260281</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:b0829494-ea0d-4677-8ad9-fc4315caf619</guid>
+        <versionId>7ec40ecb-16dc-4f46-b8dd-ea829d728591</versionId>
+    </managedAsset>
+</teamworks>

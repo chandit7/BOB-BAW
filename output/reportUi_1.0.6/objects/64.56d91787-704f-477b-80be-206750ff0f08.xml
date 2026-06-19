@@ -1,0 +1,1558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <coachView id="64.56d91787-704f-477b-80be-206750ff0f08" name="FileNetImport">
+        <lastModified>1781330059434</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <coachViewId>64.56d91787-704f-477b-80be-206750ff0f08</coachViewId>
+        <isTemplate>false</isTemplate>
+        <layout>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;ns2:layout xmlns:ns2=&quot;http://www.ibm.com/bpm/CoachDesignerNG&quot; xmlns:ns3=&quot;http://www.ibm.com/bpm/coachview&quot;&gt;&lt;ns2:layoutItem xsi:type=&quot;ns2:CustomHTML&quot; version=&quot;8550&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&lt;ns2:id&gt;e6a2c483-e682-4053-8f30-d1a11c79cd04&lt;/ns2:id&gt;&lt;ns2:layoutItemId&gt;CustomHTML1&lt;/ns2:layoutItemId&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;82a20cce-804f-4bdd-93e2-2880a5bbba19&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.contentType&lt;/ns2:optionName&gt;&lt;ns2:value&gt;TEXT&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;720ec1c9-d125-431a-9b64-063ea1a7bd3b&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.textContent&lt;/ns2:optionName&gt;&lt;ns2:value&gt;&amp;lt;div class=&amp;quot;fnimport-widget&amp;quot; role=&amp;quot;region&amp;quot; aria-label=&amp;quot;FileNet Document Import&amp;quot;&amp;gt;
+
+  &amp;lt;!-- Drop Zone --&amp;gt;
+  &amp;lt;div class=&amp;quot;fnimport-dropzone&amp;quot;
+       role=&amp;quot;region&amp;quot;
+       aria-label=&amp;quot;Drop zone for files and folders&amp;quot;
+       aria-describedby=&amp;quot;fnimport-dropzone-hint&amp;quot;
+       tabindex=&amp;quot;0&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;fnimport-dropzone-icon&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;
+      &amp;lt;div class=&amp;quot;fnimport-icon-upload&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;p class=&amp;quot;fnimport-dropzone-title&amp;quot;&amp;gt;Drop documents or folders here&amp;lt;/p&amp;gt;
+    &amp;lt;p class=&amp;quot;fnimport-dropzone-subtitle&amp;quot; id=&amp;quot;fnimport-dropzone-hint&amp;quot;&amp;gt;
+      Drag and drop a single document, multiple documents, or entire folder structures. Subfolders are preserved for folder imports.
+    &amp;lt;/p&amp;gt;
+    &amp;lt;div class=&amp;quot;fnimport-browse-actions&amp;quot; role=&amp;quot;group&amp;quot; aria-label=&amp;quot;Browse import sources&amp;quot;&amp;gt;
+      &amp;lt;button class=&amp;quot;fnimport-browse-btn fnimport-browse-files-btn&amp;quot; type=&amp;quot;button&amp;quot; aria-label=&amp;quot;Browse documents to upload&amp;quot;&amp;gt;
+        Browse documents
+      &amp;lt;/button&amp;gt;
+      &amp;lt;button class=&amp;quot;fnimport-browse-btn fnimport-browse-folder-btn&amp;quot; type=&amp;quot;button&amp;quot; aria-label=&amp;quot;Browse a folder to upload&amp;quot;&amp;gt;
+        Browse folder
+      &amp;lt;/button&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;input class=&amp;quot;fnimport-file-input&amp;quot;
+           type=&amp;quot;file&amp;quot;
+           multiple
+           aria-hidden=&amp;quot;true&amp;quot;
+           tabindex=&amp;quot;-1&amp;quot; /&amp;gt;
+    &amp;lt;input class=&amp;quot;fnimport-folder-input&amp;quot;
+           type=&amp;quot;file&amp;quot;
+           multiple
+           webkitdirectory
+           directory
+           aria-hidden=&amp;quot;true&amp;quot;
+           tabindex=&amp;quot;-1&amp;quot; /&amp;gt;
+  &amp;lt;/div&amp;gt;
+
+  &amp;lt;!-- Status Bar --&amp;gt;
+  &amp;lt;div class=&amp;quot;fnimport-statusbar&amp;quot; role=&amp;quot;status&amp;quot; aria-live=&amp;quot;polite&amp;quot; aria-atomic=&amp;quot;false&amp;quot;&amp;gt;
+    &amp;lt;span class=&amp;quot;fnimport-status-text&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;
+    &amp;lt;div class=&amp;quot;fnimport-progress-bar&amp;quot; role=&amp;quot;progressbar&amp;quot; aria-valuemin=&amp;quot;0&amp;quot; aria-valuemax=&amp;quot;100&amp;quot; aria-valuenow=&amp;quot;0&amp;quot;&amp;gt;
+      &amp;lt;div class=&amp;quot;fnimport-progress-fill&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+
+  &amp;lt;!-- File Queue --&amp;gt;
+  &amp;lt;div class=&amp;quot;fnimport-queue&amp;quot; role=&amp;quot;list&amp;quot; aria-label=&amp;quot;Files queued for import&amp;quot;&amp;gt;
+    &amp;lt;!-- Items injected by JS --&amp;gt;
+  &amp;lt;/div&amp;gt;
+
+  &amp;lt;!-- Action Bar --&amp;gt;
+  &amp;lt;div class=&amp;quot;fnimport-actions&amp;quot; style=&amp;quot;display: none;&amp;quot;&amp;gt;
+    &amp;lt;button class=&amp;quot;fnimport-btn-import&amp;quot; type=&amp;quot;button&amp;quot; aria-label=&amp;quot;Import all queued files&amp;quot; disabled&amp;gt;
+      &amp;lt;span class=&amp;quot;fnimport-btn-icon fnimport-icon-cloud-upload&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;
+      Import
+    &amp;lt;/button&amp;gt;
+    &amp;lt;button class=&amp;quot;fnimport-btn-clear&amp;quot; type=&amp;quot;button&amp;quot; aria-label=&amp;quot;Clear all queued files&amp;quot;&amp;gt;
+      Clear all
+    &amp;lt;/button&amp;gt;
+  &amp;lt;/div&amp;gt;
+
+  &amp;lt;!-- Result Log --&amp;gt;
+  &amp;lt;div class=&amp;quot;fnimport-log&amp;quot; role=&amp;quot;log&amp;quot; aria-label=&amp;quot;Import results&amp;quot; aria-live=&amp;quot;polite&amp;quot;&amp;gt;
+    &amp;lt;!-- Log entries injected by JS --&amp;gt;
+  &amp;lt;/div&amp;gt;
+
+&amp;lt;/div&amp;gt;&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;/ns2:layoutItem&gt;&lt;/ns2:layout&gt;</layout>
+        <paletteIcon>/61.462bed09-9ef9-40fe-b8fb-ddbd363f9e8c</paletteIcon>
+        <previewImage isNull="true" />
+        <hasLabel>false</hasLabel>
+        <labelPosition>0</labelPosition>
+        <nineSliceX1Coord>0</nineSliceX1Coord>
+        <nineSliceX2Coord>0</nineSliceX2Coord>
+        <nineSliceY1Coord>0</nineSliceY1Coord>
+        <nineSliceY2Coord>0</nineSliceY2Coord>
+        <emitBoundary>false</emitBoundary>
+        <isPrototypeFunc>false</isPrototypeFunc>
+        <enableDevMode>false</enableDevMode>
+        <isMobileReady>false</isMobileReady>
+        <loadJsFunction isNull="true" />
+        <unloadJsFunction isNull="true" />
+        <viewJsFunction isNull="true" />
+        <changeJsFunction isNull="true" />
+        <collaborationJsFunction isNull="true" />
+        <description>Drag-and-drop document and folder import widget for IBM FileNet Content Engine via GraphQL, used in IBM Business Automation Workflow</description>
+        <validateJsFunction isNull="true" />
+        <previewAdvHtml>/61.2c2a6b30-eb75-4858-8e3e-b1d04b8a76a1</previewAdvHtml>
+        <previewAdvJs>/61.e7c351f1-03f7-4150-8dca-99c1ad8fdbc3</previewAdvJs>
+        <useUrlBinding>false</useUrlBinding>
+        <guid>guid:56d91787-704f-477b-80be-206750ff0f08</guid>
+        <versionId>ed4c92c3-323f-4cb9-bcfe-7c145175afae</versionId>
+        <field1 isNull="true" />
+        <field2 isNull="true" />
+        <field3>0</field3>
+        <field4 isNull="true" />
+        <field5>false</field5>
+        <clobField1 isNull="true" />
+        <bindingType name="ImportResult">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewBindingTypeId>65.180968fe-1ffc-4db1-bb29-f5b041365df8</coachViewBindingTypeId>
+            <coachViewId>64.56d91787-704f-477b-80be-206750ff0f08</coachViewId>
+            <isList>false</isList>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <seq>0</seq>
+            <description isNull="true" />
+            <guid>guid:e965089c-40a2-459a-9725-27115f0ca62d</guid>
+            <versionId>e25b3305-12ce-46f1-bae0-17d3c5dba282</versionId>
+        </bindingType>
+        <configOption name="graphqlEndpoint">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.5a492742-c882-4da7-b8af-7101902ea6e1</coachViewConfigOptionId>
+            <coachViewId>64.56d91787-704f-477b-80be-206750ff0f08</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>GraphQL Endpoint</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>0</seq>
+            <description>Full URL of the FileNet Content Engine GraphQL API endpoint</description>
+            <groupName></groupName>
+            <guid>guid:56d91787-704f-477b-80be-206750ff0f08-graphqlendpoint</guid>
+            <versionId>69808bf7-bc88-45cb-9f18-6465ab43ee2c</versionId>
+        </configOption>
+
+        <configOption name="repositoryIdentifier">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.c1bd702c-5614-4a7f-9baa-09d99cb98f70</coachViewConfigOptionId>
+            <coachViewId>64.56d91787-704f-477b-80be-206750ff0f08</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Repository Identifier</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>1</seq>
+            <description>FileNet repository identifier (e.g., &#x27;OS1&#x27;)</description>
+            <groupName></groupName>
+            <guid>guid:56d91787-704f-477b-80be-206750ff0f08-repositoryidentifier</guid>
+            <versionId>ddd3a69d-b877-4a83-95c2-c23a90fdf2d4</versionId>
+        </configOption>
+
+        <configOption name="parentFolderPath">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.f4a2853a-c969-47b5-8c46-7ae4d4de4ff0</coachViewConfigOptionId>
+            <coachViewId>64.56d91787-704f-477b-80be-206750ff0f08</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Parent Folder Path</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>2</seq>
+            <description>FileNet folder path where files will be imported</description>
+            <groupName></groupName>
+            <guid>guid:56d91787-704f-477b-80be-206750ff0f08-parentfolderpath</guid>
+            <versionId>d503eb4e-447b-49a1-9a6c-4c57235630db</versionId>
+        </configOption>
+
+        <configOption name="maxFileSizeMB">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.bc687fb5-b35e-440f-9c36-d6fdbeee0ef5</coachViewConfigOptionId>
+            <coachViewId>64.56d91787-704f-477b-80be-206750ff0f08</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Max File Size (MB)</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.3fa0d7a0-828a-4d60-99cc-db5ed143fc2d</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>3</seq>
+            <description>Maximum allowed file size in megabytes</description>
+            <groupName></groupName>
+            <guid>guid:56d91787-704f-477b-80be-206750ff0f08-maxfilesizemb</guid>
+            <versionId>6accd803-b71a-4201-81c9-908acd99bee5</versionId>
+        </configOption>
+
+        <configOption name="allowedMimeTypes">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.ee48e241-da96-45f7-8946-c3f5f8412ea0</coachViewConfigOptionId>
+            <coachViewId>64.56d91787-704f-477b-80be-206750ff0f08</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Allowed MIME Types</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>4</seq>
+            <description>Comma-separated list of accepted MIME types (empty = all types)</description>
+            <groupName></groupName>
+            <guid>guid:56d91787-704f-477b-80be-206750ff0f08-allowedmimetypes</guid>
+            <versionId>7c6bf4ce-d893-4d0d-a586-0a2f21471651</versionId>
+        </configOption>
+
+        <configOption name="documentClassIdentifier">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.bdfdeb71-bbd3-4e50-9e7b-e16275d565f6</coachViewConfigOptionId>
+            <coachViewId>64.56d91787-704f-477b-80be-206750ff0f08</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Document Class Identifier</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>5</seq>
+            <description>Optional FileNet document class identifier (symbolic name)</description>
+            <groupName></groupName>
+            <guid>guid:56d91787-704f-477b-80be-206750ff0f08-documentclassidentifier</guid>
+            <versionId>72d6bd11-9f64-4b15-8bf1-8c2610f0e9b5</versionId>
+        </configOption>
+
+        <configOption name="folderClassIdentifier">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.f385a317-2916-4477-8ce9-8afb3bfd1129</coachViewConfigOptionId>
+            <coachViewId>64.56d91787-704f-477b-80be-206750ff0f08</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Folder Class Identifier</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>6</seq>
+            <description>Optional FileNet folder class identifier (symbolic name)</description>
+            <groupName></groupName>
+            <guid>guid:56d91787-704f-477b-80be-206750ff0f08-folderclassidentifier</guid>
+            <versionId>e76a16bc-c581-4242-9e33-ef03eaf601da</versionId>
+        </configOption>
+
+        <configOption name="onImportComplete">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.c8960b1f-e689-4e3e-baaf-a8a0d262e2f5</coachViewConfigOptionId>
+            <coachViewId>64.56d91787-704f-477b-80be-206750ff0f08</coachViewId>
+            <isList>false</isList>
+            <propertyType>EVENT</propertyType>
+            <label>On Import Complete</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>7</seq>
+            <description>Event fired when import completes successfully</description>
+            <groupName></groupName>
+            <guid>guid:56d91787-704f-477b-80be-206750ff0f08-onimportcomplete</guid>
+            <versionId>591c0ca1-18d4-4801-a627-449af101c263</versionId>
+        </configOption>
+
+        <configOption name="onImportError">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.2980e1f5-8661-4021-ba41-8622e0e5b464</coachViewConfigOptionId>
+            <coachViewId>64.56d91787-704f-477b-80be-206750ff0f08</coachViewId>
+            <isList>false</isList>
+            <propertyType>EVENT</propertyType>
+            <label>On Import Error</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>8</seq>
+            <description>Event fired when import encounters errors</description>
+            <groupName></groupName>
+            <guid>guid:56d91787-704f-477b-80be-206750ff0f08-onimporterror</guid>
+            <versionId>0ddf726d-0603-462a-9c80-431bf2bd0cf4</versionId>
+        </configOption>
+
+        <configOption name="onFileAdded">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.b73a46fc-8704-4c0a-a866-bdb8f383d982</coachViewConfigOptionId>
+            <coachViewId>64.56d91787-704f-477b-80be-206750ff0f08</coachViewId>
+            <isList>false</isList>
+            <propertyType>EVENT</propertyType>
+            <label>On File Added</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>9</seq>
+            <description>Event fired when a file is added to the import queue</description>
+            <groupName></groupName>
+            <guid>guid:56d91787-704f-477b-80be-206750ff0f08-onfileadded</guid>
+            <versionId>71fff0c2-7e08-4ef3-abbd-89121a71465d</versionId>
+        </configOption>
+        <inlineScript name="Inline Javascript">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.b99a6a8a-3989-4a31-a1a9-f66883c43655</coachViewInlineScriptId>
+            <coachViewId>64.56d91787-704f-477b-80be-206750ff0f08</coachViewId>
+            <scriptType>JS</scriptType>
+            <scriptBlock>// ============================================================
+// FileNetImport Widget — Inline JavaScript
+// IBM BAW Coach View Widget
+// Handles drag-and-drop of files/folders, preserves folder
+// structure, and imports via FileNet GraphQL API.
+// ============================================================
+
+// ── Configuration from options ──────────────────────────────
+var graphqlEndpoint    = this.getOption(&quot;graphqlEndpoint&quot;) || &quot;&quot;;
+var repositoryId       = this.getOption(&quot;repositoryIdentifier&quot;) || &quot;&quot;;
+var parentFolderPath   = this.getOption(&quot;parentFolderPath&quot;) || &quot;/&quot;;
+var maxFileSizeMB      = this.getOption(&quot;maxFileSizeMB&quot;) || 100;
+var allowedMimeTypes   = this.getOption(&quot;allowedMimeTypes&quot;) || &quot;&quot;;
+var showImportLog      = this.getOption(&quot;showImportLog&quot;) !== false; // Default true
+var documentClassId    = this.getOption(&quot;documentClassIdentifier&quot;) || &quot;&quot;;
+var folderClassId      = this.getOption(&quot;folderClassIdentifier&quot;) || &quot;&quot;;
+
+// ── DOM references ───────────────────────────────────────────
+var root        = this.context.element.querySelector(&quot;.fnimport-widget&quot;);
+var dropzone    = root.querySelector(&quot;.fnimport-dropzone&quot;);
+var fileInput   = root.querySelector(&quot;.fnimport-file-input&quot;);
+var folderInput = root.querySelector(&quot;.fnimport-folder-input&quot;);
+var browseFilesBtn  = root.querySelector(&quot;.fnimport-browse-files-btn&quot;);
+var browseFolderBtn = root.querySelector(&quot;.fnimport-browse-folder-btn&quot;);
+var statusBar   = root.querySelector(&quot;.fnimport-statusbar&quot;);
+var statusText  = root.querySelector(&quot;.fnimport-status-text&quot;);
+var progressBar = root.querySelector(&quot;.fnimport-progress-bar&quot;);
+var progressFill= root.querySelector(&quot;.fnimport-progress-fill&quot;);
+var queueEl     = root.querySelector(&quot;.fnimport-queue&quot;);
+var actionsBar  = root.querySelector(&quot;.fnimport-actions&quot;);
+var importBtn   = root.querySelector(&quot;.fnimport-btn-import&quot;);
+var clearBtn    = root.querySelector(&quot;.fnimport-btn-clear&quot;);
+var logEl       = root.querySelector(&quot;.fnimport-log&quot;);
+
+// ── Apply log visibility based on configuration ─────────────
+if (!showImportLog) {
+  logEl.style.display = &quot;none&quot;;
+}
+
+// ── Widget state ─────────────────────────────────────────────
+var fileQueue   = [];   // Array of { file, relativePath, type:&quot;file&quot;|&quot;folder&quot; }
+var folderCache = {};   // Map: relativeFolderPath → FileNet folder ID
+var isImporting = false;
+
+// ── Register BAW event handlers ──────────────────────────────
+this.registerEventHandlingFunction(this, &quot;onImportComplete&quot;, &quot;data&quot;);
+this.registerEventHandlingFunction(this, &quot;onImportError&quot;,    &quot;data&quot;);
+this.registerEventHandlingFunction(this, &quot;onFileAdded&quot;,      &quot;data&quot;);
+
+// ── Utility: format bytes ────────────────────────────────────
+function formatBytes(bytes) {
+  if (bytes === 0) return &quot;0 B&quot;;
+  var k = 1024;
+  var sizes = [&quot;B&quot;, &quot;KB&quot;, &quot;MB&quot;, &quot;GB&quot;];
+  var i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + &quot; &quot; + sizes[i];
+}
+
+// ── Utility: get file extension ──────────────────────────────
+function getExtension(name) {
+  var parts = name.split(&quot;.&quot;);
+  return parts.length &gt; 1 ? parts[parts.length - 1].toLowerCase() : &quot;&quot;;
+}
+
+// ── Utility: sanitize path segment ──────────────────────────
+function sanitizeName(name) {
+  return name.replace(/[&lt;&gt;:&quot;/\\|?*\x00-\x1F]/g, &quot;_&quot;);
+}
+
+// ── Utility: add log entry ───────────────────────────────────
+function addLog(message, type) {
+  // Skip if log is hidden
+  if (!showImportLog) return;
+  
+  // type: &quot;success&quot; | &quot;error&quot; | &quot;info&quot; | &quot;warning&quot;
+  var icons = { success: &quot;✓&quot;, error: &quot;✗&quot;, info: &quot;ℹ&quot;, warning: &quot;⚠&quot; };
+  var entry = document.createElement(&quot;div&quot;);
+  entry.className = &quot;fnimport-log-entry fnimport-log-&quot; + (type || &quot;info&quot;);
+  entry.setAttribute(&quot;role&quot;, &quot;listitem&quot;);
+
+  var iconSpan = document.createElement(&quot;span&quot;);
+  iconSpan.className = &quot;fnimport-log-icon&quot;;
+  iconSpan.setAttribute(&quot;aria-hidden&quot;, &quot;true&quot;);
+  iconSpan.textContent = icons[type] || &quot;ℹ&quot;;
+
+  var msgSpan = document.createElement(&quot;span&quot;);
+  msgSpan.className = &quot;fnimport-log-message&quot;;
+  msgSpan.textContent = message;
+
+  entry.appendChild(iconSpan);
+  entry.appendChild(msgSpan);
+  logEl.appendChild(entry);
+  logEl.scrollTop = logEl.scrollHeight;
+}
+
+// ── Utility: update progress ─────────────────────────────────
+function updateProgress(done, total, message) {
+  var pct = total &gt; 0 ? Math.round((done / total) * 100) : 0;
+  progressFill.style.width = pct + &quot;%&quot;;
+  progressBar.setAttribute(&quot;aria-valuenow&quot;, pct);
+  statusText.textContent = message || (done + &quot; / &quot; + total + &quot; imported&quot;);
+  statusBar.classList.add(&quot;fnimport-visible&quot;);
+}
+
+// ── Utility: set import button state and action bar visibility ──
+function refreshImportButton() {
+  importBtn.disabled = fileQueue.length === 0 || isImporting;
+  // Show/hide action bar based on queue state
+  if (fileQueue.length &gt; 0) {
+    actionsBar.style.display = &quot;flex&quot;;
+  } else {
+    actionsBar.style.display = &quot;none&quot;;
+  }
+}
+
+// ── Build queue item DOM ─────────────────────────────────────
+function buildQueueItem(entry, index) {
+  var item = document.createElement(&quot;div&quot;);
+  item.className = &quot;fnimport-queue-item&quot;;
+  item.setAttribute(&quot;role&quot;, &quot;listitem&quot;);
+  item.setAttribute(&quot;data-queue-index&quot;, index);
+
+  // Icon
+  var icon = document.createElement(&quot;span&quot;);
+  icon.className = &quot;fnimport-item-icon &quot; +
+    (entry.type === &quot;folder&quot; ? &quot;fnimport-icon-folder&quot; : &quot;fnimport-icon-document&quot;);
+  icon.setAttribute(&quot;aria-hidden&quot;, &quot;true&quot;);
+
+  // Path info
+  var pathDiv = document.createElement(&quot;div&quot;);
+  pathDiv.className = &quot;fnimport-item-path&quot;;
+
+  var folderPrefix = document.createElement(&quot;span&quot;);
+  folderPrefix.className = &quot;fnimport-item-folder-prefix&quot;;
+  var dirPart = entry.relativePath.includes(&quot;/&quot;)
+    ? entry.relativePath.substring(0, entry.relativePath.lastIndexOf(&quot;/&quot;))
+    : &quot;&quot;;
+  folderPrefix.textContent = dirPart ? &quot;📁 &quot; + dirPart : &quot;&quot;;
+
+  var nameSpan = document.createElement(&quot;span&quot;);
+  nameSpan.className = &quot;fnimport-item-name&quot;;
+  nameSpan.textContent = entry.file ? entry.file.name : entry.relativePath;
+
+  pathDiv.appendChild(folderPrefix);
+  pathDiv.appendChild(nameSpan);
+
+  // Size
+  var sizeSpan = document.createElement(&quot;span&quot;);
+  sizeSpan.className = &quot;fnimport-item-size&quot;;
+  sizeSpan.textContent = entry.file ? formatBytes(entry.file.size) : &quot;&quot;;
+
+  // Status badge
+  var statusBadge = document.createElement(&quot;span&quot;);
+  statusBadge.className = &quot;fnimport-item-status fnimport-status-pending&quot;;
+  statusBadge.textContent = &quot;Pending&quot;;
+  statusBadge.setAttribute(&quot;data-status-badge&quot;, &quot;true&quot;);
+
+  // Remove button
+  var removeBtn = document.createElement(&quot;button&quot;);
+  removeBtn.className = &quot;fnimport-item-remove&quot;;
+  removeBtn.type = &quot;button&quot;;
+  removeBtn.setAttribute(&quot;aria-label&quot;, &quot;Remove &quot; + (entry.file ? entry.file.name : entry.relativePath) + &quot; from queue&quot;);
+  removeBtn.textContent = &quot;×&quot;;
+  removeBtn.addEventListener(&quot;click&quot;, function() {
+    fileQueue.splice(index, 1);
+    renderQueue();
+    refreshImportButton();
+  });
+
+  item.appendChild(icon);
+  item.appendChild(pathDiv);
+  item.appendChild(sizeSpan);
+  item.appendChild(statusBadge);
+  item.appendChild(removeBtn);
+  return item;
+}
+
+// ── Render the full queue ────────────────────────────────────
+function renderQueue() {
+  queueEl.innerHTML = &quot;&quot;;
+  if (fileQueue.length === 0) return;
+
+  // Group by top-level folder
+  var groups = {};
+  var ungrouped = [];
+
+  fileQueue.forEach(function(entry, idx) {
+    var parts = entry.relativePath.split(&quot;/&quot;);
+    if (parts.length &gt; 1) {
+      var topFolder = parts[0];
+      if (!groups[topFolder]) groups[topFolder] = [];
+      groups[topFolder].push({ entry: entry, idx: idx });
+    } else {
+      ungrouped.push({ entry: entry, idx: idx });
+    }
+  });
+
+  // Render ungrouped files first
+  ungrouped.forEach(function(item) {
+    queueEl.appendChild(buildQueueItem(item.entry, item.idx));
+  });
+
+  // Render grouped folders
+  Object.keys(groups).forEach(function(folderName) {
+    var header = document.createElement(&quot;div&quot;);
+    header.className = &quot;fnimport-folder-header&quot;;
+    header.setAttribute(&quot;role&quot;, &quot;heading&quot;);
+    header.setAttribute(&quot;aria-level&quot;, &quot;3&quot;);
+    header.textContent = &quot;📁 &quot; + folderName + &quot; (&quot; + groups[folderName].length + &quot; files)&quot;;
+    queueEl.appendChild(header);
+
+    groups[folderName].forEach(function(item) {
+      queueEl.appendChild(buildQueueItem(item.entry, item.idx));
+    });
+  });
+}
+
+// ── Update a single item&#x27;s status badge ─────────────────────
+function setItemStatus(index, status, label) {
+  var item = queueEl.querySelector(&quot;[data-queue-index=&#x27;&quot; + index + &quot;&#x27;] [data-status-badge]&quot;);
+  if (!item) return;
+  item.className = &quot;fnimport-item-status fnimport-status-&quot; + status;
+  item.textContent = label;
+}
+
+// ── Process dropped DataTransferItemList (supports folders) ──
+function processDataTransferItems(items) {
+  var promises = [];
+
+  function traverseEntry(entry, path) {
+    path = path || &quot;&quot;;
+    if (entry.isFile) {
+      return new Promise(function(resolve) {
+        entry.file(function(file) {
+          var relPath = path ? path + &quot;/&quot; + file.name : file.name;
+          addFileToQueue(file, relPath);
+          resolve();
+        }, function() { resolve(); });
+      });
+    } else if (entry.isDirectory) {
+      var dirReader = entry.createReader();
+      return new Promise(function(resolve) {
+        var allEntries = [];
+        function readBatch() {
+          dirReader.readEntries(function(batch) {
+            if (batch.length === 0) {
+              var subPromises = allEntries.map(function(subEntry) {
+                var subPath = path ? path + &quot;/&quot; + entry.name : entry.name;
+                return traverseEntry(subEntry, subPath);
+              });
+              Promise.all(subPromises).then(resolve);
+            } else {
+              allEntries = allEntries.concat(Array.prototype.slice.call(batch));
+              readBatch();
+            }
+          }, function() { resolve(); });
+        }
+        readBatch();
+      });
+    }
+    return Promise.resolve();
+  }
+
+  for (var i = 0; i &lt; items.length; i++) {
+    var item = items[i];
+    if (item.kind === &quot;file&quot;) {
+      var entry = item.webkitGetAsEntry ? item.webkitGetAsEntry() : null;
+      if (entry) {
+        promises.push(traverseEntry(entry, &quot;&quot;));
+      } else {
+        // Fallback: plain file
+        var file = item.getAsFile();
+        if (file) addFileToQueue(file, file.name);
+      }
+    }
+  }
+
+  Promise.all(promises).then(function() {
+    renderQueue();
+    refreshImportButton();
+    if (fileQueue.length &gt; 0) {
+      addLog(fileQueue.length + &quot; item(s) added to queue.&quot;, &quot;info&quot;);
+    }
+  });
+}
+
+// ── Add a file to the queue (with validation) ────────────────
+var self = this;
+
+function isMimeTypeAllowed(file) {
+  if (!allowedMimeTypes) {
+    return true;
+  }
+
+  var acceptedTypes = allowedMimeTypes.split(&quot;,&quot;).map(function(type) {
+    return type.replace(/^\s+|\s+$/g, &quot;&quot;).toLowerCase();
+  }).filter(function(type) {
+    return type.length &gt; 0;
+  });
+
+  if (acceptedTypes.length === 0) {
+    return true;
+  }
+
+  var fileType = (file.type || &quot;&quot;).toLowerCase();
+  if (fileType &amp;&amp; acceptedTypes.indexOf(fileType) !== -1) {
+    return true;
+  }
+
+  var extension = getExtension(file.name);
+  return acceptedTypes.some(function(type) {
+    if (type.indexOf(&quot;.&quot;) === 0) {
+      return extension === type.substring(1);
+    }
+    if (type.indexOf(&quot;/*&quot;) !== -1 &amp;&amp; fileType) {
+      return fileType.indexOf(type.replace(&quot;/*&quot;, &quot;/&quot;)) === 0;
+    }
+    return false;
+  });
+}
+
+function addFileToQueue(file, relativePath) {
+  var normalizedPath = relativePath || file.name;
+
+  if (file.size &gt; maxFileSizeMB * 1024 * 1024) {
+    addLog(&quot;Skipped (too large): &quot; + normalizedPath + &quot; (&quot; + formatBytes(file.size) + &quot;)&quot;, &quot;warning&quot;);
+    return;
+  }
+
+  if (!isMimeTypeAllowed(file)) {
+    addLog(&quot;Skipped (type not allowed): &quot; + normalizedPath, &quot;warning&quot;);
+    return;
+  }
+
+  for (var i = 0; i &lt; fileQueue.length; i++) {
+    if (fileQueue[i].relativePath === normalizedPath) return;
+  }
+
+  fileQueue.push({ file: file, relativePath: normalizedPath, type: &quot;file&quot; });
+  self.executeEventHandlingFunction(self, &quot;onFileAdded&quot;, { path: normalizedPath, size: file.size });
+}
+
+// ── GraphQL: create a folder under a parent path ─────────────
+function gqlCreateFolder(folderName, parentPath) {
+  // Build mutation dynamically based on whether classIdentifier is provided
+  var mutationParts = [
+    &quot;mutation CreateFolder($repoId: String!, $name: String!, $parentPath: String!&quot; + (folderClassId ? &quot;, $classId: String!&quot; : &quot;&quot;) + &quot;) {&quot;,
+    &quot;  createFolder(&quot;,
+    &quot;    repositoryIdentifier: $repoId&quot;
+  ];
+  
+  // Add classIdentifier at the top level if provided
+  if (folderClassId) {
+    mutationParts.push(&quot;    classIdentifier: $classId&quot;);
+  }
+  
+  mutationParts = mutationParts.concat([
+    &quot;    folderProperties: {&quot;,
+    &quot;      name: $name&quot;,
+    &quot;      parent: {&quot;,
+    &quot;        identifier: $parentPath&quot;,
+    &quot;      }&quot;,
+    &quot;    }&quot;,
+    &quot;  ) {&quot;,
+    &quot;    id&quot;,
+    &quot;    name&quot;,
+    &quot;    pathName&quot;,
+    &quot;  }&quot;,
+    &quot;}&quot;
+  ]);
+  
+  var mutation = mutationParts.join(&quot;\n&quot;);
+  
+  var variables = {
+    repoId: repositoryId,
+    name: sanitizeName(folderName),
+    parentPath: parentPath
+  };
+  
+  if (folderClassId) {
+    variables.classId = folderClassId;
+  }
+
+  return fetch(graphqlEndpoint, {
+    method: &quot;POST&quot;,
+    credentials: &quot;include&quot;,
+    headers: { &quot;Content-Type&quot;: &quot;application/json&quot; },
+    body: JSON.stringify({
+      query: mutation,
+      variables: variables
+    })
+  })
+  .then(function(res) { return res.json(); })
+  .then(function(json) {
+    if (json.errors &amp;&amp; json.errors.length &gt; 0) {
+      throw new Error(json.errors[0].message);
+    }
+    return json.data.createFolder.pathName;
+  });
+}
+
+// ── GraphQL: import a document into a folder (multipart form) ─
+function gqlImportDocument(file, folderPath) {
+  return new Promise(function(resolve, reject) {
+    var mimeType = file.type || &quot;application/octet-stream&quot;;
+    
+    // Build GraphQL mutation dynamically based on whether classIdentifier is provided
+    var mutationParts = [
+      &quot;mutation ($contvar: String) {&quot;,
+      &quot;  createDocument(&quot;,
+      &quot;    repositoryIdentifier: \&quot;&quot; + repositoryId + &quot;\&quot;&quot;,
+      &quot;    fileInFolderIdentifier: \&quot;&quot; + folderPath + &quot;\&quot;&quot;
+    ];
+    
+    // Add classIdentifier at the top level if provided
+    if (documentClassId) {
+      mutationParts.push(&quot;    classIdentifier: \&quot;&quot; + documentClassId + &quot;\&quot;&quot;);
+    }
+    
+    mutationParts = mutationParts.concat([
+      &quot;    documentProperties: {&quot;,
+      &quot;      name: \&quot;&quot; + sanitizeName(file.name) + &quot;\&quot;&quot;,
+      &quot;      contentElements: {&quot;,
+      &quot;        replace: [{&quot;,
+      &quot;          type: CONTENT_TRANSFER&quot;,
+      &quot;          contentType: \&quot;&quot; + mimeType + &quot;\&quot;&quot;,
+      &quot;          subContentTransfer: {&quot;,
+      &quot;            content: $contvar&quot;,
+      &quot;          }&quot;,
+      &quot;        }]&quot;,
+      &quot;      }&quot;,
+      &quot;    }&quot;,
+      &quot;    checkinAction: {}&quot;,
+      &quot;  ) {&quot;,
+      &quot;    id&quot;,
+      &quot;    name&quot;,
+      &quot;  }&quot;,
+      &quot;}&quot;
+    ]);
+    
+    var mutation = mutationParts.join(&quot;\n&quot;);
+
+    // Build multipart form data
+    var formData = new FormData();
+    
+    // Add GraphQL query and variables as JSON
+    formData.append(&quot;graphql&quot;, JSON.stringify({
+      query: mutation,
+      variables: { contvar: null }  // null because file is in separate part
+    }));
+    
+    // Add file content as separate part named &quot;contvar&quot;
+    formData.append(&quot;contvar&quot;, file);
+
+    fetch(graphqlEndpoint, {
+      method: &quot;POST&quot;,
+      credentials: &quot;include&quot;,
+      body: formData  // No Content-Type header - browser sets it with boundary
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(json) {
+      if (json.errors &amp;&amp; json.errors.length &gt; 0) {
+        reject(new Error(json.errors[0].message));
+      } else {
+        resolve(json.data.createDocument);
+      }
+    })
+    .catch(reject);
+  });
+}
+
+// ── Ensure folder path exists, return leaf folder path ───────
+function ensureFolderPath(relativePath) {
+  // relativePath: e.g. &quot;ProjectA/SubFolder&quot;
+  var segments = relativePath.split(&quot;/&quot;).filter(function(s) { return s.length &gt; 0; });
+  if (segments.length === 0) return Promise.resolve(parentFolderPath);
+
+  var chain = Promise.resolve(parentFolderPath);
+  var builtPath = &quot;&quot;;
+
+  segments.forEach(function(segment) {
+    chain = chain.then(function(currentParentPath) {
+      builtPath = builtPath ? builtPath + &quot;/&quot; + segment : segment;
+      if (folderCache[builtPath]) {
+        return Promise.resolve(folderCache[builtPath]);
+      }
+      return gqlCreateFolder(segment, currentParentPath).then(function(newPath) {
+        folderCache[builtPath] = newPath;
+        addLog(&quot;Created folder: &quot; + newPath, &quot;info&quot;);
+        return newPath;
+      });
+    });
+  });
+
+  return chain;
+}
+
+// ── Main import routine ──────────────────────────────────────
+function startImport() {
+  if (!graphqlEndpoint) {
+    addLog(&quot;Error: GraphQL endpoint is not configured.&quot;, &quot;error&quot;);
+    return;
+  }
+  if (!repositoryId) {
+    addLog(&quot;Error: Repository identifier is not configured.&quot;, &quot;error&quot;);
+    return;
+  }
+  if (!parentFolderPath) {
+    addLog(&quot;Error: Parent folder path is not configured.&quot;, &quot;error&quot;);
+    return;
+  }
+  if (fileQueue.length === 0) return;
+
+  isImporting = true;
+  importBtn.disabled = true;
+  clearBtn.disabled = true;
+  folderCache = {};
+
+  var total = fileQueue.length;
+  var done  = 0;
+  var errors = 0;
+
+  addLog(&quot;Starting import of &quot; + total + &quot; file(s)…&quot;, &quot;info&quot;);
+  updateProgress(0, total, &quot;Preparing…&quot;);
+
+  // Process sequentially to avoid overwhelming the server
+  var chain = Promise.resolve();
+
+  fileQueue.forEach(function(entry, idx) {
+    chain = chain.then(function() {
+      setItemStatus(idx, &quot;uploading&quot;, &quot;Uploading…&quot;);
+      updateProgress(done, total, &quot;Uploading: &quot; + entry.file.name);
+
+      // Determine target folder
+      var dirPath = entry.relativePath.includes(&quot;/&quot;)
+        ? entry.relativePath.substring(0, entry.relativePath.lastIndexOf(&quot;/&quot;))
+        : &quot;&quot;;
+
+      return ensureFolderPath(dirPath)
+        .then(function(targetFolderPath) {
+          return gqlImportDocument(entry.file, targetFolderPath);
+        })
+        .then(function(doc) {
+          done++;
+          setItemStatus(idx, &quot;success&quot;, &quot;✓ Done&quot;);
+          addLog(&quot;Imported: &quot; + entry.relativePath + &quot; (ID: &quot; + doc.id + &quot;)&quot;, &quot;success&quot;);
+          updateProgress(done, total);
+        })
+        .catch(function(err) {
+          errors++;
+          done++;
+          setItemStatus(idx, &quot;error&quot;, &quot;✗ Failed&quot;);
+          addLog(&quot;Failed: &quot; + entry.relativePath + &quot; — &quot; + err.message, &quot;error&quot;);
+          updateProgress(done, total);
+        });
+    });
+  });
+
+  chain.then(function() {
+    isImporting = false;
+    clearBtn.disabled = false;
+    refreshImportButton();
+    var summary = &quot;Import complete: &quot; + (total - errors) + &quot; succeeded, &quot; + errors + &quot; failed.&quot;;
+    statusText.textContent = summary;
+    addLog(summary, errors &gt; 0 ? &quot;warning&quot; : &quot;success&quot;);
+
+    // Fire BAW event
+    var result = {
+      total: total,
+      succeeded: total - errors,
+      failed: errors,
+      repositoryIdentifier: repositoryId,
+      parentFolderPath: parentFolderPath
+    };
+    if (errors &gt; 0) {
+      this.executeEventHandlingFunction(this, &quot;onImportError&quot;, result);
+    } else {
+      this.executeEventHandlingFunction(this, &quot;onImportComplete&quot;, result);
+    }
+  }.bind(this));
+}
+
+// ── Drag-and-drop event listeners ────────────────────────────
+dropzone.addEventListener(&quot;dragenter&quot;, function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  dropzone.classList.add(&quot;fnimport-drag-over&quot;);
+});
+
+dropzone.addEventListener(&quot;dragover&quot;, function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  e.dataTransfer.dropEffect = &quot;copy&quot;;
+  dropzone.classList.add(&quot;fnimport-drag-over&quot;);
+});
+
+dropzone.addEventListener(&quot;dragleave&quot;, function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  // Only remove if leaving the dropzone entirely
+  if (!dropzone.contains(e.relatedTarget)) {
+    dropzone.classList.remove(&quot;fnimport-drag-over&quot;);
+  }
+});
+
+dropzone.addEventListener(&quot;drop&quot;, function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  dropzone.classList.remove(&quot;fnimport-drag-over&quot;);
+  if (isImporting) return;
+
+  var items = e.dataTransfer.items;
+  if (items &amp;&amp; items.length &gt; 0) {
+    processDataTransferItems(items);
+  } else if (e.dataTransfer.files &amp;&amp; e.dataTransfer.files.length &gt; 0) {
+    // Fallback for browsers without DataTransferItem API
+    Array.prototype.forEach.call(e.dataTransfer.files, function(file) {
+      addFileToQueue(file, file.name);
+    });
+    renderQueue();
+    refreshImportButton();
+  }
+});
+
+// Keyboard accessibility for dropzone
+dropzone.addEventListener(&quot;keydown&quot;, function(e) {
+  if (e.key === &quot;Enter&quot; || e.key === &quot; &quot;) {
+    e.preventDefault();
+    fileInput.click();
+  }
+});
+
+// ── Browse buttons ───────────────────────────────────────────
+// Browse documents button - opens file picker for single or multiple files
+browseFilesBtn.addEventListener(&quot;click&quot;, function(e) {
+  e.stopPropagation();
+  fileInput.click();
+});
+
+// Browse folder button - opens folder picker
+browseFolderBtn.addEventListener(&quot;click&quot;, function(e) {
+  e.stopPropagation();
+  folderInput.click();
+});
+
+// File input change handler (for single/multiple document selection)
+fileInput.addEventListener(&quot;change&quot;, function() {
+  if (!fileInput.files || fileInput.files.length === 0) return;
+  Array.prototype.forEach.call(fileInput.files, function(file) {
+    // For direct file selection, use just the file name (no folder structure)
+    addFileToQueue(file, file.name);
+  });
+  renderQueue();
+  refreshImportButton();
+  if (fileInput.files.length &gt; 0) {
+    addLog(fileInput.files.length + &quot; document(s) added to queue.&quot;, &quot;info&quot;);
+  }
+  fileInput.value = &quot;&quot;; // Reset so same file can be re-added
+});
+
+// Folder input change handler (for folder selection with structure preservation)
+folderInput.addEventListener(&quot;change&quot;, function() {
+  if (!folderInput.files || folderInput.files.length === 0) return;
+  Array.prototype.forEach.call(folderInput.files, function(file) {
+    // Use webkitRelativePath to preserve folder structure
+    var relativePath = file.webkitRelativePath || file.name;
+    addFileToQueue(file, relativePath);
+  });
+  renderQueue();
+  refreshImportButton();
+  if (folderInput.files.length &gt; 0) {
+    addLog(&quot;Folder with &quot; + folderInput.files.length + &quot; file(s) added to queue.&quot;, &quot;info&quot;);
+  }
+  folderInput.value = &quot;&quot;; // Reset so same folder can be re-added
+});
+
+// ── Import button ────────────────────────────────────────────
+importBtn.addEventListener(&quot;click&quot;, function() {
+  startImport.call(this);
+}.bind(this));
+
+// ── Clear button ─────────────────────────────────────────────
+clearBtn.addEventListener(&quot;click&quot;, function() {
+  if (isImporting) return;
+  fileQueue = [];
+  folderCache = {};
+  queueEl.innerHTML = &quot;&quot;;
+  logEl.innerHTML = &quot;&quot;;
+  statusBar.classList.remove(&quot;fnimport-visible&quot;);
+  progressFill.style.width = &quot;0%&quot;;
+  refreshImportButton();
+});
+
+// ── Initial state ────────────────────────────────────────────
+refreshImportButton();
+
+// Made with Bob</scriptBlock>
+            <seq>0</seq>
+            <description></description>
+            <guid>guid:56d91787-704f-477b-80be-206750ff0f08-js</guid>
+            <versionId>4efc3e92-563e-4502-9ec0-048bf7893342</versionId>
+        </inlineScript>
+
+        <inlineScript name="Inline CSS">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.14e5b9e0-0212-4c4f-9661-c94aecfb994a</coachViewInlineScriptId>
+            <coachViewId>64.56d91787-704f-477b-80be-206750ff0f08</coachViewId>
+            <scriptType>CSS</scriptType>
+            <scriptBlock>/* ============================================================
+   FileNetImport Widget — Inline CSS
+   IBM BAW Coach View Widget
+   ============================================================ */
+
+/* ── Root container ─────────────────────────────────────── */
+.fnimport-widget {
+  --fnimport-blue:        #0f62fe;
+  --fnimport-blue-hover:  #0043ce;
+  --fnimport-blue-light:  #edf5ff;
+  --fnimport-green:       #24a148;
+  --fnimport-red:         #da1e28;
+  --fnimport-orange:      #f1620a;
+  --fnimport-gray-10:     #f4f4f4;
+  --fnimport-gray-20:     #e0e0e0;
+  --fnimport-gray-40:     #a8a8a8;
+  --fnimport-gray-60:     #6f6f6f;
+  --fnimport-gray-80:     #393939;
+  --fnimport-gray-100:    #161616;
+  --fnimport-border-r:    4px;
+  --fnimport-transition:  110ms cubic-bezier(0.2, 0, 0.38, 0.9);
+
+  font-family: &#x27;IBM Plex Sans&#x27;, &#x27;Helvetica Neue&#x27;, Arial, sans-serif;
+  font-size: 14px;
+  color: var(--fnimport-gray-100);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ── Drop Zone ──────────────────────────────────────────── */
+.fnimport-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 180px;
+  border: 2px dashed var(--fnimport-gray-40);
+  border-radius: var(--fnimport-border-r);
+  background-color: var(--fnimport-gray-10);
+  padding: 32px 24px;
+  cursor: pointer;
+  transition: border-color var(--fnimport-transition),
+              background-color var(--fnimport-transition);
+  outline: none;
+  position: relative;
+}
+
+.fnimport-dropzone:hover,
+.fnimport-dropzone:focus {
+  border-color: var(--fnimport-blue);
+  background-color: var(--fnimport-blue-light);
+}
+
+.fnimport-dropzone:focus {
+  outline: 2px solid var(--fnimport-blue);
+  outline-offset: 2px;
+}
+
+.fnimport-dropzone.fnimport-drag-over {
+  border-color: var(--fnimport-blue);
+  background-color: var(--fnimport-blue-light);
+  border-style: solid;
+}
+
+.fnimport-dropzone.fnimport-drag-over::after {
+  content: &quot;Release to add files&quot;;
+  position: absolute;
+  bottom: 10px;
+  font-size: 12px;
+  color: var(--fnimport-blue);
+  font-weight: 600;
+}
+
+/* Upload icon (CSS-drawn cloud-upload) */
+.fnimport-dropzone-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fnimport-icon-upload {
+  width: 40px;
+  height: 40px;
+  background-image: url(&quot;data:image/svg+xml;utf8,%3Csvg xmlns%3D&#x27;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#x27; viewBox%3D&#x27;0 0 32 32&#x27;%3E%3Cpath d%3D&#x27;M26 15H24a8 8 0 1 0-16 0H6a6 6 0 0 0 0 12h4v-2H6a4 4 0 0 1 0-8h2v-2a6 6 0 1 1 12 0v2h2a4 4 0 0 1 0 8h-4v2h4a6 6 0 0 0 0-12z&#x27; fill%3D&#x27;%230f62fe&#x27;%2F%3E%3Cpath d%3D&#x27;M17 21.586V14h-2v7.586l-3.293-3.293-1.414 1.414L16 25.414l5.707-5.707-1.414-1.414z&#x27; fill%3D&#x27;%230f62fe&#x27;%2F%3E%3C%2Fsvg%3E&quot;);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.fnimport-dropzone-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--fnimport-gray-100);
+}
+
+.fnimport-dropzone-subtitle {
+  margin: 0;
+  font-size: 12px;
+  color: var(--fnimport-gray-60);
+  text-align: center;
+  max-width: 360px;
+}
+
+/* Browse actions group */
+.fnimport-browse-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Browse buttons */
+.fnimport-browse-btn {
+  padding: 8px 20px;
+  background-color: var(--fnimport-blue);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--fnimport-border-r);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--fnimport-transition);
+  outline: none;
+}
+
+.fnimport-browse-btn:hover {
+  background-color: var(--fnimport-blue-hover);
+}
+
+.fnimport-browse-btn:focus {
+  outline: 2px solid var(--fnimport-blue);
+  outline-offset: 2px;
+}
+
+/* Hidden file inputs */
+.fnimport-file-input,
+.fnimport-folder-input {
+  display: none !important;
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* ── Status Bar ─────────────────────────────────────────── */
+.fnimport-statusbar {
+  margin-top: 12px;
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fnimport-statusbar.fnimport-visible {
+  display: flex;
+}
+
+.fnimport-status-text {
+  font-size: 12px;
+  color: var(--fnimport-gray-60);
+}
+
+.fnimport-progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: var(--fnimport-gray-20);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.fnimport-progress-fill {
+  height: 100%;
+  width: 0%;
+  background-color: var(--fnimport-blue);
+  border-radius: 2px;
+  transition: width 200ms ease;
+}
+
+/* ── File Queue ─────────────────────────────────────────── */
+.fnimport-queue {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.fnimport-queue:empty {
+  display: none;
+}
+
+/* Queue item */
+.fnimport-queue-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border: 1px solid var(--fnimport-gray-20);
+  border-radius: var(--fnimport-border-r);
+  font-size: 13px;
+  transition: background-color var(--fnimport-transition);
+}
+
+.fnimport-queue-item:hover {
+  background-color: var(--fnimport-gray-10);
+}
+
+/* Item type icon */
+.fnimport-item-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.fnimport-item-icon.fnimport-icon-folder {
+  background-image: url(&quot;data:image/svg+xml;utf8,%3Csvg xmlns%3D&#x27;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#x27; viewBox%3D&#x27;0 0 32 32&#x27;%3E%3Cpath d%3D&#x27;M11.17 6l3.42 3.41.58.59H28v16H4V6h7.17m0-2H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2H16L12.59 4.59A2 2 0 0 0 11.17 4z&#x27; fill%3D&#x27;%23f1620a&#x27;%2F%3E%3C%2Fsvg%3E&quot;);
+}
+
+.fnimport-item-icon.fnimport-icon-document {
+  background-image: url(&quot;data:image/svg+xml;utf8,%3Csvg xmlns%3D&#x27;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#x27; viewBox%3D&#x27;0 0 32 32&#x27;%3E%3Cpath d%3D&#x27;M25.7 9.3l-7-7A1 1 0 0 0 18 2H8a2 2 0 0 0-2 2v24a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V10a1 1 0 0 0-.3-.7zM18 4.4l5.6 5.6H18zM24 28H8V4h8v6a2 2 0 0 0 2 2h6z&#x27; fill%3D&#x27;%230f62fe&#x27;%2F%3E%3C%2Fsvg%3E&quot;);
+}
+
+/* Item path / name */
+.fnimport-item-path {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--fnimport-gray-80);
+}
+
+.fnimport-item-path .fnimport-item-folder-prefix {
+  color: var(--fnimport-gray-60);
+  font-size: 11px;
+  display: block;
+}
+
+.fnimport-item-path .fnimport-item-name {
+  font-weight: 500;
+}
+
+/* Item size */
+.fnimport-item-size {
+  font-size: 11px;
+  color: var(--fnimport-gray-60);
+  flex-shrink: 0;
+}
+
+/* Item status badge */
+.fnimport-item-status {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.fnimport-item-status.fnimport-status-pending {
+  background-color: var(--fnimport-gray-20);
+  color: var(--fnimport-gray-60);
+}
+
+.fnimport-item-status.fnimport-status-uploading {
+  background-color: #d0e2ff;
+  color: var(--fnimport-blue);
+}
+
+.fnimport-item-status.fnimport-status-success {
+  background-color: #defbe6;
+  color: var(--fnimport-green);
+}
+
+.fnimport-item-status.fnimport-status-error {
+  background-color: #fff1f1;
+  color: var(--fnimport-red);
+}
+
+/* Remove button */
+.fnimport-item-remove {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fnimport-gray-60);
+  border-radius: 2px;
+  transition: color var(--fnimport-transition),
+              background-color var(--fnimport-transition);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.fnimport-item-remove:hover {
+  color: var(--fnimport-red);
+  background-color: #fff1f1;
+}
+
+.fnimport-item-remove:focus {
+  outline: 2px solid var(--fnimport-blue);
+  outline-offset: 1px;
+}
+
+/* Folder group header */
+.fnimport-folder-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background-color: var(--fnimport-gray-10);
+  border-left: 3px solid var(--fnimport-orange);
+  border-radius: 0 var(--fnimport-border-r) var(--fnimport-border-r) 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--fnimport-gray-80);
+  margin-top: 8px;
+}
+
+.fnimport-folder-header:first-child {
+  margin-top: 0;
+}
+
+/* ── Action Bar ─────────────────────────────────────────── */
+.fnimport-actions {
+  display: none; /* Hidden by default, shown when files are added */
+  gap: 12px;
+  margin-top: 16px;
+  align-items: center;
+}
+
+.fnimport-actions[style*=&quot;display: flex&quot;] {
+  display: flex !important;
+}
+
+/* Primary import button */
+.fnimport-btn-import {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background-color: var(--fnimport-blue);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--fnimport-border-r);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--fnimport-transition);
+  outline: none;
+}
+
+.fnimport-btn-import:hover:not(:disabled) {
+  background-color: var(--fnimport-blue-hover);
+}
+
+.fnimport-btn-import:focus {
+  outline: 2px solid var(--fnimport-blue);
+  outline-offset: 2px;
+}
+
+.fnimport-btn-import:disabled {
+  background-color: var(--fnimport-gray-40);
+  cursor: not-allowed;
+}
+
+.fnimport-btn-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.fnimport-icon-cloud-upload {
+  background-image: url(&quot;data:image/svg+xml;utf8,%3Csvg xmlns%3D&#x27;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#x27; viewBox%3D&#x27;0 0 32 32&#x27;%3E%3Cpath d%3D&#x27;M26 15H24a8 8 0 1 0-16 0H6a6 6 0 0 0 0 12h4v-2H6a4 4 0 0 1 0-8h2v-2a6 6 0 1 1 12 0v2h2a4 4 0 0 1 0 8h-4v2h4a6 6 0 0 0 0-12z&#x27; fill%3D&#x27;%23ffffff&#x27;%2F%3E%3Cpath d%3D&#x27;M17 21.586V14h-2v7.586l-3.293-3.293-1.414 1.414L16 25.414l5.707-5.707-1.414-1.414z&#x27; fill%3D&#x27;%23ffffff&#x27;%2F%3E%3C%2Fsvg%3E&quot;);
+}
+
+/* Clear button */
+.fnimport-btn-clear {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: var(--fnimport-gray-80);
+  border: 1px solid var(--fnimport-gray-40);
+  border-radius: var(--fnimport-border-r);
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color var(--fnimport-transition),
+              color var(--fnimport-transition);
+  outline: none;
+}
+
+.fnimport-btn-clear:hover {
+  border-color: var(--fnimport-gray-80);
+  color: var(--fnimport-gray-100);
+}
+
+.fnimport-btn-clear:focus {
+  outline: 2px solid var(--fnimport-blue);
+  outline-offset: 2px;
+}
+
+/* ── Result Log ─────────────────────────────────────────── */
+.fnimport-log {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.fnimport-log:empty {
+  display: none;
+}
+
+.fnimport-log-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: var(--fnimport-border-r);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.fnimport-log-entry.fnimport-log-success {
+  background-color: #defbe6;
+  color: #0e6027;
+}
+
+.fnimport-log-entry.fnimport-log-error {
+  background-color: #fff1f1;
+  color: #a2191f;
+}
+
+.fnimport-log-entry.fnimport-log-info {
+  background-color: #edf5ff;
+  color: #0043ce;
+}
+
+.fnimport-log-entry.fnimport-log-warning {
+  background-color: #fdf6dd;
+  color: #8a3800;
+}
+
+.fnimport-log-icon {
+  flex-shrink: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.fnimport-log-message {
+  flex: 1;
+}
+
+/* ── Scrollbar styling ──────────────────────────────────── */
+.fnimport-queue::-webkit-scrollbar,
+.fnimport-log::-webkit-scrollbar {
+  width: 4px;
+}
+
+.fnimport-queue::-webkit-scrollbar-track,
+.fnimport-log::-webkit-scrollbar-track {
+  background: var(--fnimport-gray-10);
+}
+
+.fnimport-queue::-webkit-scrollbar-thumb,
+.fnimport-log::-webkit-scrollbar-thumb {
+  background: var(--fnimport-gray-40);
+  border-radius: 2px;
+}
+
+/* ── Animations ─────────────────────────────────────────── */
+@keyframes fnimport-spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fnimport-fadein {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fnimport-queue-item,
+.fnimport-log-entry {
+  animation: fnimport-fadein 150ms ease forwards;
+}
+
+/* ── Uploading spinner on item ──────────────────────────── */
+.fnimport-item-status.fnimport-status-uploading::before {
+  content: &quot;&quot;;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #d0e2ff;
+  border-top-color: var(--fnimport-blue);
+  border-radius: 50%;
+  animation: fnimport-spin 0.7s linear infinite;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+/* Made with Bob */</scriptBlock>
+            <seq>1</seq>
+            <description></description>
+            <guid>guid:56d91787-704f-477b-80be-206750ff0f08-css</guid>
+            <versionId>727ffd1c-945b-4cf7-85c0-3f8625a2de78</versionId>
+        </inlineScript>
+    </coachView>
+</teamworks>

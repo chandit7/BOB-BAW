@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <coachView id="64.b0544446-e26e-43ea-b3de-c05356b1c45e" name="MultiCheckbox">
+        <lastModified>1781330059456</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <coachViewId>64.b0544446-e26e-43ea-b3de-c05356b1c45e</coachViewId>
+        <isTemplate>false</isTemplate>
+        <layout>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;ns2:layout xmlns:ns2=&quot;http://www.ibm.com/bpm/CoachDesignerNG&quot; xmlns:ns3=&quot;http://www.ibm.com/bpm/coachview&quot;&gt;&lt;ns2:layoutItem xsi:type=&quot;ns2:CustomHTML&quot; version=&quot;8550&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&lt;ns2:id&gt;bbc7e8c0-ebd0-447d-b703-6a811459319b&lt;/ns2:id&gt;&lt;ns2:layoutItemId&gt;CustomHTML1&lt;/ns2:layoutItemId&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;1110fd87-f09f-4201-89c1-c73c3ee39b1a&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.contentType&lt;/ns2:optionName&gt;&lt;ns2:value&gt;TEXT&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;ns2:configData&gt;&lt;ns2:id&gt;071d002c-d842-4ec4-9148-a90341535406&lt;/ns2:id&gt;&lt;ns2:optionName&gt;@customHTML.textContent&lt;/ns2:optionName&gt;&lt;ns2:value&gt;&amp;lt;div class=&amp;quot;multicheckbox-container&amp;quot; role=&amp;quot;group&amp;quot; aria-labelledby=&amp;quot;multicheckbox-label&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;multicheckbox-label-wrapper&amp;quot;&amp;gt;
+    &amp;lt;label id=&amp;quot;multicheckbox-label&amp;quot; class=&amp;quot;multicheckbox-label&amp;quot;&amp;gt;&amp;lt;/label&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;multicheckbox-select-all-wrapper&amp;quot;&amp;gt;
+    &amp;lt;label class=&amp;quot;multicheckbox-option multicheckbox-select-all-option&amp;quot;&amp;gt;
+      &amp;lt;input type=&amp;quot;checkbox&amp;quot; class=&amp;quot;multicheckbox-input multicheckbox-select-all-input&amp;quot; id=&amp;quot;multicheckbox-select-all&amp;quot;&amp;gt;
+      &amp;lt;span class=&amp;quot;multicheckbox-checkbox&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;
+        &amp;lt;svg viewBox=&amp;quot;0 0 16 16&amp;quot; fill=&amp;quot;currentColor&amp;quot;&amp;gt;&amp;lt;path d=&amp;quot;M6.5 11.7L3.3 8.5l.7-.7 2.5 2.5 5.2-5.2.7.7z&amp;quot;/&amp;gt;&amp;lt;/svg&amp;gt;
+      &amp;lt;/span&amp;gt;
+      &amp;lt;span class=&amp;quot;multicheckbox-label-text multicheckbox-select-all-text&amp;quot;&amp;gt;Select All&amp;lt;/span&amp;gt;
+    &amp;lt;/label&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;multicheckbox-options&amp;quot; role=&amp;quot;list&amp;quot;&amp;gt;
+    &amp;lt;!-- Checkbox options will be dynamically generated --&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;multicheckbox-helper-text&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/ns2:value&gt;&lt;/ns2:configData&gt;&lt;/ns2:layoutItem&gt;&lt;/ns2:layout&gt;</layout>
+        <paletteIcon>/61.287ea3a8-c1f3-4848-9839-426774d93301</paletteIcon>
+        <previewImage isNull="true" />
+        <hasLabel>false</hasLabel>
+        <labelPosition>0</labelPosition>
+        <nineSliceX1Coord>0</nineSliceX1Coord>
+        <nineSliceX2Coord>0</nineSliceX2Coord>
+        <nineSliceY1Coord>0</nineSliceY1Coord>
+        <nineSliceY2Coord>0</nineSliceY2Coord>
+        <emitBoundary>false</emitBoundary>
+        <isPrototypeFunc>false</isPrototypeFunc>
+        <enableDevMode>false</enableDevMode>
+        <isMobileReady>false</isMobileReady>
+        <loadJsFunction isNull="true" />
+        <unloadJsFunction isNull="true" />
+        <viewJsFunction isNull="true" />
+        <changeJsFunction>// MultiCheckbox - Change Event Handler
+// Executed when the widget data changes
+var _this = this;
+
+// Get the updated data
+var data = _this.getData();
+
+console.log(&#x27;MultiCheckbox data changed:&#x27;, data);
+
+// Re-render the checkboxes to reflect the new selection state
+var container = _this.context.element.querySelector(&quot;.multicheckbox-container&quot;);
+var optionsContainer = container.querySelector(&quot;.multicheckbox-options&quot;);
+
+// Update checkbox states based on new data
+var checkboxes = optionsContainer.querySelectorAll(&quot;.multicheckbox-input&quot;);
+var selectedValues = data || [];
+
+if (!Array.isArray(selectedValues)) {
+  selectedValues = [];
+}
+
+checkboxes.forEach(function(checkbox) {
+  var isSelected = selectedValues.indexOf(checkbox.value) !== -1;
+  checkbox.checked = isSelected;
+});
+
+// Update ARIA label
+var count = selectedValues.length;
+var label = count === 0 ? &quot;No items selected&quot; :
+            count === 1 ? &quot;1 item selected&quot; :
+            count + &quot; items selected&quot;;
+container.setAttribute(&quot;aria-label&quot;, label);
+
+// Made with Bob</changeJsFunction>
+        <collaborationJsFunction isNull="true" />
+        <description>Multi-checkbox widget for selecting multiple values with direct checkbox display for IBM Business Automation Workflow</description>
+        <validateJsFunction isNull="true" />
+        <previewAdvHtml>/61.50377173-9684-4f1b-abff-da0be44ca668</previewAdvHtml>
+        <previewAdvJs>/61.94d8b29d-2246-494e-b1d2-8142e4172a13</previewAdvJs>
+        <useUrlBinding>false</useUrlBinding>
+        <guid>guid:b0544446-e26e-43ea-b3de-c05356b1c45e</guid>
+        <versionId>d26582d9-f2f2-4bbc-b888-8caf951691c4</versionId>
+        <field1 isNull="true" />
+        <field2 isNull="true" />
+        <field3>0</field3>
+        <field4 isNull="true" />
+        <field5>false</field5>
+        <clobField1 isNull="true" />
+        <bindingType name="SelectedItems">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewBindingTypeId>65.eb6233d5-caee-4127-92a0-5fa8de990469</coachViewBindingTypeId>
+            <coachViewId>64.b0544446-e26e-43ea-b3de-c05356b1c45e</coachViewId>
+            <isList>true</isList>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <seq>0</seq>
+            <description isNull="true" />
+            <guid>guid:508cbf7a-161a-47a6-b7eb-92a8afd6deb2</guid>
+            <versionId>be7dfb1b-e143-48e6-ada9-0949051f46bc</versionId>
+        </bindingType>
+        <configOption name="options">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.bbcad2b4-2279-4cea-8e7a-a725c16418bc</coachViewConfigOptionId>
+            <coachViewId>64.b0544446-e26e-43ea-b3de-c05356b1c45e</coachViewId>
+            <isList>true</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Options</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.d2e5a15a-ea53-4793-9e93-29af5bd80b13</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>0</seq>
+            <description>Array of available options with value and name properties</description>
+            <groupName></groupName>
+            <guid>guid:b0544446-e26e-43ea-b3de-c05356b1c45e-options</guid>
+            <versionId>35edf2c1-b5fd-4c88-9e8c-faf420e81891</versionId>
+        </configOption>
+
+        <configOption name="label">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.6c6bec84-a6bc-48c8-8e7c-d405bfeb5a90</coachViewConfigOptionId>
+            <coachViewId>64.b0544446-e26e-43ea-b3de-c05356b1c45e</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Label</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>1</seq>
+            <description>Label text displayed above the checkboxes</description>
+            <groupName></groupName>
+            <guid>guid:b0544446-e26e-43ea-b3de-c05356b1c45e-label</guid>
+            <versionId>0d93c3f7-420a-46e0-a066-f2156b2aedba</versionId>
+        </configOption>
+
+        <configOption name="layout">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.74da39c3-94fb-4748-8bee-66f3003e00bd</coachViewConfigOptionId>
+            <coachViewId>64.b0544446-e26e-43ea-b3de-c05356b1c45e</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Layout</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>2</seq>
+            <description>Layout direction: &#x27;vertical&#x27;, &#x27;horizontal&#x27;, or &#x27;compact&#x27;</description>
+            <groupName></groupName>
+            <guid>guid:b0544446-e26e-43ea-b3de-c05356b1c45e-layout</guid>
+            <versionId>941ae531-52c7-4e23-b04e-3afa1915bf2d</versionId>
+        </configOption>
+
+        <configOption name="showSelectAll">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.d39027c8-abf7-4baa-9b2e-ec22fdb5121e</coachViewConfigOptionId>
+            <coachViewId>64.b0544446-e26e-43ea-b3de-c05356b1c45e</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Show Select All</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>3</seq>
+            <description>Show/hide the Select All checkbox</description>
+            <groupName></groupName>
+            <guid>guid:b0544446-e26e-43ea-b3de-c05356b1c45e-showselectall</guid>
+            <versionId>8149c661-758c-461b-aff8-dc35d06d0aa9</versionId>
+        </configOption>
+
+        <configOption name="disabled">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.41e584d7-0937-4aa8-81c5-d213cea1368f</coachViewConfigOptionId>
+            <coachViewId>64.b0544446-e26e-43ea-b3de-c05356b1c45e</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Disabled</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.83ff975e-8dbc-42e5-b738-fa8bc08274a2</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>4</seq>
+            <description>Disable all checkboxes</description>
+            <groupName></groupName>
+            <guid>guid:b0544446-e26e-43ea-b3de-c05356b1c45e-disabled</guid>
+            <versionId>5fce77b1-6336-4910-874b-b316a99a7385</versionId>
+        </configOption>
+
+        <configOption name="helperText">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewConfigOptionId>66.c1c6ade2-e108-448e-b0a3-001e2cc477bd</coachViewConfigOptionId>
+            <coachViewId>64.b0544446-e26e-43ea-b3de-c05356b1c45e</coachViewId>
+            <isList>false</isList>
+            <propertyType>OBJECT</propertyType>
+            <label>Helper Text</label>
+            <classId>cf3f1815-aea7-43ed-ab46-f113df9c91a7/12.db884a3c-c533-44b7-bb2d-47bec8ad4022</classId>
+            <processId isNull="true" />
+            <actionflowId isNull="true" />
+            <isAdaptive>false</isAdaptive>
+            <seq>5</seq>
+            <description>Helper text displayed below the checkboxes</description>
+            <groupName></groupName>
+            <guid>guid:b0544446-e26e-43ea-b3de-c05356b1c45e-helpertext</guid>
+            <versionId>8287ac26-6468-47e3-a6da-b1a221a08fa6</versionId>
+        </configOption>
+        <inlineScript name="Inline Javascript">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.6cb5b5b9-1d12-4414-9981-8308adcea7cb</coachViewInlineScriptId>
+            <coachViewId>64.b0544446-e26e-43ea-b3de-c05356b1c45e</coachViewId>
+            <scriptType>JS</scriptType>
+            <scriptBlock>// Store widget context reference
+var widget = this;
+
+// Get DOM elements
+var container = widget.context.element.querySelector(&quot;.multicheckbox-container&quot;);
+var labelElement = container.querySelector(&quot;.multicheckbox-label&quot;);
+var selectAllWrapper = container.querySelector(&quot;.multicheckbox-select-all-wrapper&quot;);
+var selectAllInput = container.querySelector(&quot;.multicheckbox-select-all-input&quot;);
+var optionsContainer = container.querySelector(&quot;.multicheckbox-options&quot;);
+var helperText = container.querySelector(&quot;.multicheckbox-helper-text&quot;);
+
+// Get configuration options
+var options = widget.getOption(&quot;options&quot;);
+var label = widget.getOption(&quot;label&quot;) || &quot;&quot;;
+var layout = widget.getOption(&quot;layout&quot;) || &quot;vertical&quot;;
+var showSelectAll = widget.getOption(&quot;showSelectAll&quot;);
+var disabled = widget.getOption(&quot;disabled&quot;);
+var helperTextValue = widget.getOption(&quot;helperText&quot;) || &quot;&quot;;
+
+// Validate and ensure options is an array with .items property
+if (options &amp;&amp; options.items &amp;&amp; Array.isArray(options.items)) {
+  options = options.items;
+} else if (!options || !Array.isArray(options)) {
+  options = [];
+}
+
+// Set default values
+if (showSelectAll === undefined || showSelectAll === null) showSelectAll = true;
+if (disabled === undefined || disabled === null) disabled = false;
+
+// Get selected values from bound data
+var selectedValues = widget.getData() || [];
+if (!Array.isArray(selectedValues)) {
+  selectedValues = [];
+}
+
+// State management
+var state = {
+  selectedValues: selectedValues,
+  allOptions: options.slice() // Create a copy
+};
+
+// Initialize widget
+function init() {
+  // Set label
+  if (label) {
+    labelElement.textContent = label;
+  }
+  
+  // Set helper text
+  if (helperTextValue) {
+    helperText.textContent = helperTextValue;
+  }
+  
+  // Show/hide Select All
+  if (!showSelectAll) {
+    selectAllWrapper.style.display = &quot;none&quot;;
+  }
+  
+  // Set layout
+  if (layout === &quot;horizontal&quot;) {
+    container.classList.add(&quot;horizontal&quot;);
+  } else if (layout === &quot;compact&quot;) {
+    container.classList.add(&quot;compact&quot;);
+  }
+  
+  // Set disabled state
+  if (disabled) {
+    container.classList.add(&quot;disabled&quot;);
+    if (selectAllInput) selectAllInput.disabled = true;
+  }
+  
+  // Attach Select All event listener
+  if (showSelectAll &amp;&amp; selectAllInput) {
+    selectAllInput.addEventListener(&quot;change&quot;, handleSelectAllChange);
+  }
+  
+  // Render checkboxes
+  renderCheckboxes();
+  updateSelectAllState();
+}
+
+// Render checkboxes
+function renderCheckboxes() {
+  optionsContainer.innerHTML = &quot;&quot;;
+  
+  if (state.allOptions.length === 0) {
+    var noOptions = document.createElement(&quot;div&quot;);
+    noOptions.className = &quot;multicheckbox-no-options&quot;;
+    noOptions.textContent = &quot;No options available&quot;;
+    optionsContainer.appendChild(noOptions);
+    return;
+  }
+  
+  state.allOptions.forEach(function(option, index) {
+    var optionEl = document.createElement(&quot;label&quot;);
+    optionEl.className = &quot;multicheckbox-option&quot;;
+    optionEl.setAttribute(&quot;role&quot;, &quot;listitem&quot;);
+    
+    if (disabled) {
+      optionEl.classList.add(&quot;disabled&quot;);
+    }
+    
+    // Hidden checkbox input
+    var input = document.createElement(&quot;input&quot;);
+    input.type = &quot;checkbox&quot;;
+    input.className = &quot;multicheckbox-input&quot;;
+    input.value = option.value;
+    input.id = &quot;multicheckbox-&quot; + widget.context.viewid + &quot;-&quot; + index;
+    
+    var isSelected = state.selectedValues.indexOf(option.value) !== -1;
+    if (isSelected) {
+      input.checked = true;
+    }
+    
+    if (disabled) {
+      input.disabled = true;
+    }
+    
+    // Custom checkbox
+    var checkbox = document.createElement(&quot;span&quot;);
+    checkbox.className = &quot;multicheckbox-checkbox&quot;;
+    checkbox.setAttribute(&quot;aria-hidden&quot;, &quot;true&quot;);
+    checkbox.innerHTML = &#x27;&lt;svg viewBox=&quot;0 0 16 16&quot; fill=&quot;currentColor&quot;&gt;&lt;path d=&quot;M6.5 11.7L3.3 8.5l.7-.7 2.5 2.5 5.2-5.2.7.7z&quot;/&gt;&lt;/svg&gt;&#x27;;
+    
+    // Label text
+    var labelText = document.createElement(&quot;span&quot;);
+    labelText.className = &quot;multicheckbox-label-text&quot;;
+    labelText.textContent = option.name;
+    labelText.setAttribute(&quot;for&quot;, input.id);
+    
+    // Assemble option
+    optionEl.appendChild(input);
+    optionEl.appendChild(checkbox);
+    optionEl.appendChild(labelText);
+    
+    // Change handler
+    input.addEventListener(&quot;change&quot;, function(e) {
+      handleCheckboxChange(option.value, e.target.checked);
+    });
+    
+    optionsContainer.appendChild(optionEl);
+  });
+}
+
+// Handle checkbox change
+function handleCheckboxChange(value, checked) {
+  if (disabled) return;
+  
+  var index = state.selectedValues.indexOf(value);
+  
+  if (checked &amp;&amp; index === -1) {
+    // Add to selected values
+    state.selectedValues.push(value);
+  } else if (!checked &amp;&amp; index !== -1) {
+    // Remove from selected values
+    state.selectedValues.splice(index, 1);
+  }
+  
+  // Update data binding
+  widget.setData(state.selectedValues);
+  
+  // Update Select All state
+  updateSelectAllState();
+  
+  // Update ARIA label
+  updateAriaLabel();
+}
+
+// Handle Select All change
+function handleSelectAllChange(e) {
+  if (disabled) return;
+  
+  // Clear indeterminate state first
+  if (selectAllInput) {
+    selectAllInput.indeterminate = false;
+  }
+  
+  var checked = e.target.checked;
+  
+  if (checked) {
+    // Select all options
+    state.selectedValues = state.allOptions.map(function(opt) {
+      return opt.value;
+    });
+  } else {
+    // Deselect all options
+    state.selectedValues = [];
+  }
+  
+  // Update data binding - check if binding exists first
+  try {
+    if (widget &amp;&amp; widget.context &amp;&amp; widget.context.binding) {
+      widget.setData(state.selectedValues);
+    }
+  } catch (error) {
+    console.log(&#x27;MultiCheckbox: Unable to update data binding&#x27;, error);
+  }
+  
+  // Update all checkboxes to match
+  var checkboxes = optionsContainer.querySelectorAll(&quot;.multicheckbox-input&quot;);
+  checkboxes.forEach(function(checkbox) {
+    checkbox.checked = checked;
+  });
+  
+  // Update ARIA label
+  updateAriaLabel();
+}
+
+// Update Select All checkbox state
+function updateSelectAllState() {
+  if (!showSelectAll || !selectAllInput) return;
+  
+  var allSelected = state.selectedValues.length === state.allOptions.length &amp;&amp; state.allOptions.length &gt; 0;
+  var someSelected = state.selectedValues.length &gt; 0 &amp;&amp; state.selectedValues.length &lt; state.allOptions.length;
+  
+  selectAllInput.checked = allSelected;
+  selectAllInput.indeterminate = someSelected;
+}
+
+// Update ARIA label
+function updateAriaLabel() {
+  var count = state.selectedValues.length;
+  var label = count === 0 ? &quot;No items selected&quot; :
+              count === 1 ? &quot;1 item selected&quot; :
+              count + &quot; items selected&quot;;
+  container.setAttribute(&quot;aria-label&quot;, label);
+}
+
+// Initialize the widget
+init();
+updateAriaLabel();
+
+// Made with Bob</scriptBlock>
+            <seq>0</seq>
+            <description></description>
+            <guid>guid:b0544446-e26e-43ea-b3de-c05356b1c45e-js</guid>
+            <versionId>b9693946-0bdf-42f1-9e27-6e0b3b20e0bf</versionId>
+        </inlineScript>
+
+        <inlineScript name="Inline CSS">
+            <lastModified isNull="true" />
+            <lastModifiedBy isNull="true" />
+            <tenantId isNull="true" />
+            <coachViewInlineScriptId>68.1d9bcab9-d848-4a91-8d6a-7a91655a7c2a</coachViewInlineScriptId>
+            <coachViewId>64.b0544446-e26e-43ea-b3de-c05356b1c45e</coachViewId>
+            <scriptType>CSS</scriptType>
+            <scriptBlock>/* MultiCheckbox Widget - Carbon Design System */
+/* Colors and typography aligned with themes/Carbon.less */
+
+.multicheckbox-container {
+  width: 100%;
+  font-family: &#x27;IBM Plex Sans&#x27;, &#x27;Helvetica Neue&#x27;, Arial, sans-serif; /* @bpm-font-family-sans-serif */
+  font-size: 14px; /* @bpm-font-size-base */
+  color: #161616; /* @bpm-text-color */
+}
+
+/* Label */
+.multicheckbox-label-wrapper {
+  margin-bottom: 8px;
+}
+
+.multicheckbox-label {
+  display: block;
+  font-size: 12px; /* @bpm-font-size-small */
+  font-weight: 400; /* @bpm-font-weight-normal */
+  line-height: 1.33;
+  color: #525252; /* Gray 70 */
+  letter-spacing: 0.32px;
+}
+
+.multicheckbox-label:empty {
+  display: none;
+}
+
+/* Select All Wrapper */
+.multicheckbox-select-all-wrapper {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e0e0e0; /* Gray 20 */
+}
+
+.multicheckbox-select-all-wrapper:empty {
+  display: none;
+}
+
+.multicheckbox-select-all-option {
+  font-weight: 600; /* @bpm-font-weight-semibold */
+}
+
+.multicheckbox-select-all-text {
+  color: #0f62fe; /* @bpm-color-primary */
+}
+
+/* Options Container */
+.multicheckbox-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Checkbox Option Item */
+.multicheckbox-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+.multicheckbox-option:hover {
+  background-color: #f4f4f4; /* Gray 10 */
+}
+
+.multicheckbox-option:focus-within {
+  outline: 2px solid #0f62fe; /* @bpm-color-primary */
+  outline-offset: 2px;
+}
+
+/* Checkbox Input (Hidden) */
+.multicheckbox-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Custom Checkbox */
+.multicheckbox-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #8d8d8d; /* Gray 50 */
+  background-color: transparent;
+  transition: all 110ms cubic-bezier(0.2, 0, 0.38, 0.9);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.multicheckbox-option:hover .multicheckbox-checkbox {
+  border-color: #0f62fe; /* @bpm-color-primary */
+}
+
+.multicheckbox-input:checked + .multicheckbox-checkbox {
+  background-color: #0f62fe; /* @bpm-color-primary */
+  border-color: #0f62fe; /* @bpm-color-primary */
+}
+
+.multicheckbox-input:focus + .multicheckbox-checkbox {
+  outline: 2px solid #0f62fe; /* @bpm-color-primary */
+  outline-offset: 2px;
+}
+
+/* Checkmark Icon */
+.multicheckbox-checkbox svg {
+  width: 12px;
+  height: 12px;
+  color: #ffffff; /* @bpm-body-bg */
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 110ms cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+.multicheckbox-input:checked + .multicheckbox-checkbox svg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Label Text */
+.multicheckbox-label-text {
+  flex: 1;
+  font-size: 14px; /* @bpm-font-size-base */
+  line-height: 1.29;
+  color: #161616; /* @bpm-text-color */
+  user-select: none;
+}
+
+/* Helper Text */
+.multicheckbox-helper-text {
+  margin-top: 8px;
+  font-size: 12px; /* @bpm-font-size-small */
+  line-height: 1.33;
+  color: #525252; /* Gray 70 */
+}
+
+.multicheckbox-helper-text:empty {
+  display: none;
+}
+
+.multicheckbox-helper-text.error {
+  color: #da1e28; /* @bpm-color-alert */
+}
+
+/* Error State */
+.multicheckbox-container.error .multicheckbox-checkbox {
+  border-color: #da1e28; /* @bpm-color-alert */
+}
+
+.multicheckbox-container.error .multicheckbox-input:checked + .multicheckbox-checkbox {
+  background-color: #da1e28; /* @bpm-color-alert */
+  border-color: #da1e28; /* @bpm-color-alert */
+}
+
+/* Disabled State */
+.multicheckbox-option.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.multicheckbox-option.disabled:hover {
+  background-color: transparent;
+}
+
+.multicheckbox-option.disabled .multicheckbox-checkbox {
+  border-color: #c6c6c6; /* Gray 30 - @bpm-link-text-color-disabled */
+  background-color: #f4f4f4; /* Gray 10 */
+}
+
+.multicheckbox-option.disabled .multicheckbox-input:checked + .multicheckbox-checkbox {
+  background-color: #c6c6c6; /* Gray 30 - @bpm-link-text-color-disabled */
+  border-color: #c6c6c6; /* Gray 30 - @bpm-link-text-color-disabled */
+}
+
+.multicheckbox-option.disabled .multicheckbox-label-text {
+  color: #c6c6c6; /* Gray 30 - @bpm-link-text-color-disabled */
+}
+
+/* Horizontal Layout */
+.multicheckbox-container.horizontal .multicheckbox-options {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.multicheckbox-container.horizontal .multicheckbox-option {
+  padding: 8px 12px;
+}
+
+/* Compact Layout */
+.multicheckbox-container.compact .multicheckbox-option {
+  padding: 4px 0;
+  gap: 6px;
+}
+
+.multicheckbox-container.compact .multicheckbox-options {
+  gap: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 672px) {
+  .multicheckbox-container.horizontal .multicheckbox-options {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .multicheckbox-option {
+    padding: 10px 0;
+  }
+}
+
+/* Accessibility - High Contrast Mode */
+@media (prefers-contrast: high) {
+  .multicheckbox-checkbox {
+    border-width: 2px;
+  }
+  
+  .multicheckbox-input:focus + .multicheckbox-checkbox {
+    outline-width: 3px;
+  }
+}
+
+/* Animation */
+@keyframes checkboxCheck {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-45deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.multicheckbox-input:checked + .multicheckbox-checkbox svg {
+  animation: checkboxCheck 0.2s ease-out;
+}
+
+/* Made with Bob */</scriptBlock>
+            <seq>1</seq>
+            <description></description>
+            <guid>guid:b0544446-e26e-43ea-b3de-c05356b1c45e-css</guid>
+            <versionId>278689c7-0c91-4a9d-bb9b-9932bb2dabcc</versionId>
+        </inlineScript>
+    </coachView>
+</teamworks>

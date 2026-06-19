@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamworks>
+    <managedAsset id="61.5b31b52b-b136-4887-93d0-4be9219ef64e" name="MultiSelectSnippet.js">
+        <lastModified>1781331761772</lastModified>
+        <lastModifiedBy>bob</lastModifiedBy>
+        <tenantId isNull="true" />
+        <managedAssetId>61.5b31b52b-b136-4887-93d0-4be9219ef64e</managedAssetId>
+        <assetUuid>872921ee-db8d-450a-bdb0-14cb9ca5d9f9</assetUuid>
+        <mimeType>application/javascript</mimeType>
+        <charEncoding isNull="true" />
+        <assetTypeCode>W</assetTypeCode>
+        <length>5912</length>
+        <localLastModification>1781331761772</localLastModification>
+        <description isNull="true" />
+        <isDocumentationFile>false</isDocumentationFile>
+        <guid>guid:5b31b52b-b136-4887-93d0-4be9219ef64e</guid>
+        <versionId>24db34f6-0ec8-4494-949b-92c8a47fbc34</versionId>
+    </managedAsset>
+</teamworks>
