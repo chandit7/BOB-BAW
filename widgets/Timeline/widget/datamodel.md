@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Timeline widget displays a vertical timeline of chronological events. It expects an array of `TimelineEvent` objects bound to the widget's data property.
+The Timeline widget displays a timeline of chronological events. It supports three layouts (Vertical, Alternate, Horizontal) controlled by the `layout` configuration option. All three layouts share the same data model — `TimelineEvent` objects bound to the widget's data property.
 
 ## Data Binding
 

@@ -1,6 +1,6 @@
 {
-  "name": "Timeline",
-  "description": "Timeline widget for displaying chronological events in IBM Business Automation Workflow (supports Vertical, Alternate, and Horizontal layouts)",
+  "name": "TimelineHorizontal",
+  "description": "Horizontal timeline widget for displaying chronological events in IBM Business Automation Workflow",
   "bindingType": {
     "name": "TimelineData",
     "isList": true,
@@ -20,14 +20,6 @@
       "label": "Show Icons",
       "description": "Display status icons for events",
       "default": true
-    },
-    {
-      "name": "layout",
-      "type": "String",
-      "label": "Layout",
-      "description": "Timeline layout direction: Vertical (top-down), Alternate (left/right), or Horizontal (left-to-right scroll)",
-      "default": "Vertical",
-      "options": ["Vertical", "Alternate", "Horizontal"]
     },
     {
       "name": "compact",

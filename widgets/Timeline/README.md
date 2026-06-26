@@ -1,15 +1,14 @@
 # Timeline Widget
 
-A vertical timeline widget for displaying chronological events in IBM Business Automation Workflow. The widget provides a clean, visual representation of events with support for status indicators, dates, descriptions, and interactive features.
+A timeline widget for displaying chronological events in IBM Business Automation Workflow. The widget provides a clean, visual representation of events with support for status indicators, dates, descriptions, and interactive features. Three layout modes are available — **Vertical**, **Alternate**, and **Horizontal** — selectable from a single configuration option.
 
 ## Features
 
-- **Vertical Timeline Layout**: Events displayed in chronological order with a connecting line
+- **Three Layout Modes**: Vertical (top-down), Alternate (zigzag left/right), and Horizontal (left-to-right scroll)
 - **Status Indicators**: Visual markers for different event states (completed, current, pending, error, warning)
 - **Date Display**: Optional date/time information for each event
 - **Rich Content**: Support for titles, descriptions, and metadata
 - **Interactive Events**: Optional click handling for timeline events
-- **Flexible Layouts**: Standard or alternate (zigzag) layout options
 - **Compact Mode**: Space-efficient display for dense timelines
 - **Responsive Design**: Adapts to different screen sizes
 - **Carbon Design System**: Follows IBM Carbon design principles
@@ -26,11 +25,13 @@ A vertical timeline widget for displaying chronological events in IBM Business A
 - **Description**: Display status icons for events
 - Shows visual indicators based on event status (checkmark for completed, etc.)
 
-### alternateLayout (Boolean)
-- **Default**: `false`
-- **Description**: Alternate event positions (left/right) for visual variety
-- Creates a zigzag pattern with events alternating sides of the timeline
-- Automatically disabled on mobile devices for better readability
+### layout (String)
+- **Default**: `"Vertical"`
+- **Allowed Values**: `"Vertical"` | `"Alternate"` | `"Horizontal"`
+- **Description**: Controls the visual layout of the timeline
+  - `"Vertical"` — events displayed top-to-bottom with a left-side connector line (default)
+  - `"Alternate"` — events alternate left/right of the centre line (zigzag pattern); automatically collapses to Vertical on mobile
+  - `"Horizontal"` — events displayed left-to-right in a scrollable row with a gradient connector line
 
 ### compact (Boolean)
 - **Default**: `false`
@@ -172,7 +173,7 @@ The widget uses Carbon Design System colors and follows IBM design guidelines:
 4. **Date Formatting**: Provide dates in a consistent format
 5. **Event Count**: For long timelines, consider pagination or filtering
 6. **Compact Mode**: Use for timelines with many events in limited space
-7. **Alternate Layout**: Best for timelines with 4-10 events for visual interest
+7. **Layout Choice**: Use *Horizontal* for step-based flows or dashboards where screen width is ample; use *Alternate* for visual variety with 4–10 events; use *Vertical* (default) for long or dense timelines
 
 ## Related Widgets
 
@@ -181,6 +182,11 @@ The widget uses Carbon Design System colors and follows IBM design guidelines:
 - **Breadcrumb**: For navigation paths
 
 ## Version History
+
+- **2.0.0**: Added Horizontal layout mode
+  - `alternateLayout` Boolean replaced by `layout` String option (`Vertical` / `Alternate` / `Horizontal`)
+  - Horizontal layout reuses the same data model and event handlers
+  - Both vertical wrappers and horizontal wrapper coexist in the DOM; JS toggles which is visible
 
 - **1.0.0** (2026-05-05): Initial release
   - Vertical timeline layout

@@ -200,7 +200,8 @@
       "classId": "/12.ddec1ee9-4687-4f01-ad9e-8dbb0a9b0b25",
       "description": "Business object representing a single event in the Timeline widget",
       "widgets": [
-        "Timeline"
+        "Timeline",
+        "TimelineHorizontal"
       ],
       "created": "2026-05-05T20:49:04.504585Z"
     },
